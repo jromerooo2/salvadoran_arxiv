@@ -1,8 +1,8 @@
 <template>
     <nav class="bg-blue-600 p-4">
-      <div class="container mx-auto flex justify-between items-center">
+      <div class="container flex justify-between items-center">
         <!-- Brand Logo -->
-        <router-link to="/" class="text-white font-bold text-xl">Brand</router-link>
+        <router-link to="/" class="text-white font-bold text-xl">Repositorio Salvadoreño de Ciencia.</router-link>
         
         <!-- Hamburger Icon for Mobile -->
         <button
@@ -35,7 +35,7 @@
               <router-link to="/about" class="block text-white py-2" @click="isOpen = false">About</router-link>
             </li>
             <li>
-              <router-link to="/services" class="block text-white py-2" @click="isOpen = false">Services</router-link>
+              <router-link to="/articulos" class="block text-white py-2" @click="isOpen = false">Artículos</router-link>
             </li>
             <li>
               <router-link to="/contact" class="block text-white py-2" @click="isOpen = false">Contact</router-link>
