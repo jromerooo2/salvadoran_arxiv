@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-3 gap-8">
+    <div class="md:grid md:grid-cols-3 md:gap-8 flex flex-col">
         <div v-for="x in 5" class="">
             <Tarjeta />
         </div>
