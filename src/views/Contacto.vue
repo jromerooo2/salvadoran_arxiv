@@ -20,6 +20,7 @@
               type="email"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
               placeholder="Tu Correo"
+              required
             />
 
             <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -48,6 +49,7 @@
                 type="text"
                 class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                 placeholder="Tu Nombre"
+                required
               />
             </div>
           </div>
@@ -73,7 +75,14 @@
             </div>
           </div>
         </div>
-
+        <div class=" bg-white">
+            <label for="cars" class="">Motivo :</label>
+              <select name="materia" id="materia" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
+                <option value="Matematicas">Entrevista</option>
+                <option value="Fisica">Publicar en el Repositorio</option>
+                <option value="Quimica">Ambos</option>
+              </select>
+        </div>
         <div class="flex items-center justify-center">
 
           <button
