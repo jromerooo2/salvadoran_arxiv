@@ -40,7 +40,7 @@ console.log(props.title)
     <dl class="mt-6 flex gap-4 sm:gap-6">
         <div class="flex flex-col-reverse">
         <dt class="text-sm font-medium text-gray-600">Published</dt>
-        <dd class="text-xs text-gray-500">{{date}}</dd>
+        <dd class="text-xs text-gray-500">{{date_published}}</dd>
         </div>
 
         <div class="flex flex-col-reverse">
