@@ -1,3 +1,8 @@
+<script setup>
+const props = defineProps(['id', 'title', 'subject', 'description', 'author', 'date_published'])
+console.log(props.title)
+</script>
+
 <template>
     <div>
         <a
@@ -11,10 +16,10 @@
     <div class="sm:flex sm:justify-between sm:gap-4">
         <div>
         <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
-            Chaos in inhomogeneous neutrino fast flavor instability
+           {{  title }}
         </h3>
 
-        <p class="mt-1 text-xs font-medium text-gray-600">Por E. Urquilla</p>
+        <p class="mt-1 text-xs font-medium text-gray-600">Por {{ author }} </p>
         </div>
 
         <div class="hidden sm:block sm:shrink-0">
@@ -28,19 +33,19 @@
 
     <div class="mt-4">
         <p class="text-pretty text-sm text-gray-500">
-            In dense neutrino gases, the neutrino-neutrino coherent forward scattering gives rise to a complex flavor oscillation phenomenon not fully incorporated in simulations of neutron star mergers (NSM) and core collapse supernovae (CCSNe).
+            {{description}}
         </p>
     </div>
 
     <dl class="mt-6 flex gap-4 sm:gap-6">
         <div class="flex flex-col-reverse">
         <dt class="text-sm font-medium text-gray-600">Published</dt>
-        <dd class="text-xs text-gray-500">2024/5/15</dd>
+        <dd class="text-xs text-gray-500">{{date}}</dd>
         </div>
 
         <div class="flex flex-col-reverse">
-        <dt class="text-sm font-medium text-gray-600">Física</dt>
-        <dd class="text-xs text-gray-500">Tema</dd>
+        <dt class="text-sm font-medium text-gray-600">{{subject}}</dt>
+        <dd class="text-xs text-gray-500">Materia</dd>
         </div>
     </dl>
     </a>
