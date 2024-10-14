@@ -8,20 +8,23 @@
 </template>
 
 <script>
-import Tarjeta from './Tarjeta.vue';
-import articlesData from '../assets/data.json';
-export default {
+
+  import Tarjeta from './Tarjeta.vue';
+  import articlesData from '../assets/data.json';
+
+  export default {
     components: {
-        Tarjeta
+      Tarjeta
     },
     data() {
-    return {
-      articles: []
-    };
-  },
-  mounted() {
-    // Assign the imported JSON data to the component's data property
-    this.articles = articlesData;
+      return {
+        articles: []
+      };
+    },
+    mounted() {
+      // Assign the imported JSON data to the component's data property
+      this.articles = articlesData;
+    }
   }
-}
+
 </script>
