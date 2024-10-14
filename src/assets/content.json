@@ -1,0 +1,46 @@
+[
+  {
+    "category_name": "Fisica",
+    "category_recentLink": "#",
+    "category_searchLink": "#",
+    "subcategories": [
+      {
+        "subcategories_name": "Astrophysics (astro-ph)",
+        "subcategories_recentLink": "#",
+        "subcategories_searchLink": "#"
+      },
+      {
+        "subcategories_name": "Condensed Matter (cond-mat)",
+        "subcategories_recentLink": "#",
+        "subcategories_searchLink": "#"
+      },
+      {
+        "subcategories_name": "General Relativity and Quantum Cosmology (gr-qc)",
+        "subcategories_recentLink": "#",
+        "subcategories_searchLink": "#"
+      }
+    ]
+  },
+  {
+    "category_name": "Fisica",
+    "category_recentLink": "#",
+    "category_searchLink": "#",
+    "subcategories": [
+      {
+        "subcategories_name": "Astrophysics (astro-ph)",
+        "subcategories_recentLink": "#",
+        "subcategories_searchLink": "#"
+      },
+      {
+        "subcategories_name": "Condensed Matter (cond-mat)",
+        "subcategories_recentLink": "#",
+        "subcategories_searchLink": "#"
+      },
+      {
+        "subcategories_name": "General Relativity and Quantum Cosmology (gr-qc)",
+        "subcategories_recentLink": "#",
+        "subcategories_searchLink": "#"
+      }
+    ]
+  }
+]

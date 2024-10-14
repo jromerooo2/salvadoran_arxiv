@@ -55,38 +55,20 @@
 </template>
 
 <script>
+  
+  // Import the array of data containing the table of contents to be printed on the homepage.
+  import contentData from '../assets/content.json';
 
   export default {
     data() {
       return {
         searchQuery: '',
         selectedField: 'All fields',
-        table_of_content: [
-          {
-            category_name: "Fisica",
-            category_recentLink: "#",
-            category_searchLink: "#",
-            subcategories: [
-              {
-                subcategories_name: "Astrophysics (astro-ph)",
-                subcategories_recentLink: "#",
-                subcategories_searchLink: "#",
-              },
-              {
-                subcategories_name: "Condensed Matter (cond-mat)",
-                subcategories_recentLink: "#",
-                subcategories_searchLink: "#",
-              },
-              {
-                subcategories_name: "General Relativity and Quantum Cosmology (gr-qc)",
-                subcategories_recentLink: "#",
-                subcategories_searchLink: "#",
-              }
-            ],
-          },
-          // Add other categories here as necessary
-        ],
+        table_of_content: [],
       };
+    },
+    mounted() {
+      this.table_of_content = contentData;
     },
     methods: {
       performSearch() {
