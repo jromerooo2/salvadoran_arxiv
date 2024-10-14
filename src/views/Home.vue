@@ -3,12 +3,9 @@
   <!-- Home page initial description -->
   <div class="container">
     <h3>
-      El Repositorio Salvadoreño de Ciencia (RSC) es una plataforma dedicada a la
-      difusion gratuita de artículos científicos realizados por investigadores salvadoreños.
-      Este repositorio permite que la ciencia producida en El Salvador sea visible y accesible
-      tanto a nivel local como internacional. Los temas abarcan desde las ciencias naturales,
-      ingeniería, ciencias sociales y otros campos del conocimiento, y buscan promover la
-      colaboración y difusión de la ciencia hecha en El Salvador.
+      El Repositorio Salvadoreño de Ciencia (RSC) recopila y organiza los artículos científicos publicados 
+      por investigadores salvadoreños en revistas arbitradas de alto impacto con el objetivo centralizar y 
+      visibilizar la producción científica del país.    
     </h3>
   </div>
 
