@@ -10,21 +10,7 @@
   </div>
 
   <!-- Search bar -->
-  <div class="search-bar">
-    <input
-      type="text"
-      class="search-input"
-      placeholder="Search..."
-      v-model="searchQuery"
-    />
-    <select v-model="selectedField" class="search-select">
-      <option>All fields</option>
-      <option>Title</option>
-      <option>Author</option>
-      <option>Abstract</option>
-    </select>
-    <button @click="performSearch" class="search-button">Search</button>
-  </div>
+  <Search_bar />
 
   <!-- Table of content -->
   <div class="category-index">
@@ -53,24 +39,23 @@
 
 <script>
   
+  // Import the SearchBar component
+  import Search_bar from '../components/SearchBar.vue';
+
   // Import the array of data containing the table of contents to be printed on the homepage.
   import contentData from '../assets/content.json';
 
   export default {
+    components: {
+      Search_bar
+    },
     data() {
       return {
-        searchQuery: '',
-        selectedField: 'All fields',
         table_of_content: [],
       };
     },
     mounted() {
       this.table_of_content = contentData;
-    },
-    methods: {
-      performSearch() {
-        console.log(`Searching for "${this.searchQuery}" in ${this.selectedField}`);
-      },
     },
   };
 
