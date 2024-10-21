@@ -1,24 +1,22 @@
 <template>
-    <div>
-        <h1>Search Results</h1>
-        <ul v-if="results.length > 0">
-            <li v-for="article in results" :key="article.id">
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.description }}</p>
-                <p><strong>Author:</strong> {{ article.author }}</p>
-                <p><strong>Date Published:</strong> {{ article.date_published }}</p>
-                <p><strong>Subject:</strong> {{ article.subject }}</p>
-                </li>
-            </ul>
-        <p v-else>No articles found.</p>
+    <div class="md:grid md:grid-cols-3 md:gap-8 flex flex-col">
+        <div v-for="article in results" :key="article.id" class="">
+            <Tarjeta :id="article.id" :title="article.title" :subject="article.subject" :description="article.description" :author="article.author" :date_published="article.date_published" />
+        </div>
     </div>
 </template>
   
 <script>
+
+    import Tarjeta from '../components/Tarjeta.vue';
+    
     export default {
+        components: {
+            Tarjeta
+        },
         data() {
             return {
-            results: []
+                results: []
             };
         },
         created() {
@@ -27,4 +25,5 @@
             this.results = searchResults ? JSON.parse(searchResults) : [];
         }
     };
+
 </script>
