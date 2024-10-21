@@ -1,18 +1,266 @@
 [
-    {
-      "id": 1,
-      "title": "First article",
-      "description": "This is the content of the first article.",
-      "author": "John Doe",
-      "date_published": "2020-01-01",
-      "subject" : "physics"
-    },
-    {
-      "id": 2,
-      "title": "First article",
-      "description": "This is the content of the first article.",
-      "author": "John Doe",
-      "date_published": "2020-01-01",
-      "subject" : "physics"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Networked web-enabled open architecture",
+    "description": "Everyone society own character idea woman. Point town foot threat probably. Forward reflect they nearly party hear. Throughout agent state occur color be. Quality conference season analysis guess decade part. Listen eight impact manage control crime own. Lead agree indicate as fall commercial nation.",
+    "author": "Jacob Johnson",
+    "date_published": "2024-04-24",
+    "subject": "biology",
+    "year": 2020,
+    "month": 11,
+    "day": 8
+  },
+  {
+    "id": 2,
+    "title": "Function-based systematic moderator",
+    "description": "Control newspaper behind water finally believe enjoy. Imagine throughout growth every other. Writer reduce question challenge by marriage finish employee.",
+    "author": "Richard Cortez",
+    "date_published": "2017-03-23",
+    "subject": "computer science",
+    "year": 2016,
+    "month": 9,
+    "day": 18
+  },
+  {
+    "id": 3,
+    "title": "Exclusive 5thgeneration intranet",
+    "description": "Such same attention. Happy safe big quickly race like. Into together agree newspaper reason who. Record either our field perhaps. Close yes physical might take. Price claim people grow. Car medical western finish production discussion training.",
+    "author": "Philip Greene",
+    "date_published": "2018-10-04",
+    "subject": "mathematics",
+    "year": 2016,
+    "month": 7,
+    "day": 19
+  },
+  {
+    "id": 4,
+    "title": "Enhanced upward-trending artificial intelligence",
+    "description": "Peace push speak provide growth feel say. Record back create bag. Fear break address PM. Manager attack create quickly. Hotel central expect. System purpose teacher wide onto. Include letter radio gun price school. Lot model gun case return wall full.",
+    "author": "Vanessa Ortiz",
+    "date_published": "2018-01-06",
+    "subject": "computer science",
+    "year": 2018,
+    "month": 2,
+    "day": 22
+  },
+  {
+    "id": 5,
+    "title": "Synergized static encryption",
+    "description": "Police provide out ago camera role six human. Point increase without claim free air. Public this officer environment. Industry center life.",
+    "author": "Michael Gibson",
+    "date_published": "2016-12-22",
+    "subject": "astronomy",
+    "year": 2021,
+    "month": 2,
+    "day": 5
+  },
+  {
+    "id": 6,
+    "title": "Reduced secondary system engine",
+    "description": "Month return life us window. Girl soldier field science instead. Article although low drive ever enjoy. Form do specific within most example beyond. Prove thank music hair eight development rule cover. Community weight according young. Move design nation.",
+    "author": "Duane Gibbs",
+    "date_published": "2023-10-24",
+    "subject": "engineering",
+    "year": 2020,
+    "month": 12,
+    "day": 24
+  },
+  {
+    "id": 7,
+    "title": "Ameliorated demand-driven concept",
+    "description": "Bill decade allow garden citizen administration. Two human national they several no. Truth question child situation sometimes. Identify tough unit ten first. Brother seat ability American support listen. Capital plan have leave issue. Else pass work room because. If research let why.",
+    "author": "James Knight",
+    "date_published": "2023-12-31",
+    "subject": "computer science",
+    "year": 2018,
+    "month": 9,
+    "day": 17
+  },
+  {
+    "id": 8,
+    "title": "Reverse-engineered high-level capability",
+    "description": "Red matter continue claim consumer bank. Owner blue history artist. Clear speak institution factor. Along show administration daughter tend plan opportunity hospital. Our reflect ground. Dark maybe town if.",
+    "author": "Patricia Rodriguez",
+    "date_published": "2018-11-07",
+    "subject": "physics",
+    "year": 2019,
+    "month": 12,
+    "day": 29
+  },
+  {
+    "id": 9,
+    "title": "Streamlined demand-driven firmware",
+    "description": "Every minute financial itself happy together kitchen it. There pick yard address. Including listen because yard. Among moment chair world game. Accept brother gas drug administration past administration.",
+    "author": "Michael Brown",
+    "date_published": "2019-06-30",
+    "subject": "mathematics",
+    "year": 2021,
+    "month": 7,
+    "day": 11
+  },
+  {
+    "id": 10,
+    "title": "Persevering maximized extranet",
+    "description": "Design people interesting. Network war spring fish southern half. Hope others during determine example activity.",
+    "author": "Rebecca Parker",
+    "date_published": "2020-04-09",
+    "subject": "biology",
+    "year": 2020,
+    "month": 10,
+    "day": 17
+  },
+  {
+    "id": 11,
+    "title": "Persistent dedicated instruction set",
+    "description": "Thought store class course want floor authority. This open fund office single require example. City player fish all born message chance. Our amount financial blood guy identify. Leave lay sit edge artist continue. Food smile especially chance. One right build always hair result. Magazine figure cut and simply.",
+    "author": "Caroline Rodriguez",
+    "date_published": "2020-02-16",
+    "subject": "engineering",
+    "year": 2017,
+    "month": 4,
+    "day": 1
+  },
+  {
+    "id": 12,
+    "title": "Stand-alone didactic open architecture",
+    "description": "Moment federal form a level majority radio. Marriage could person official. Door many fly tonight thank. Be hotel opportunity book young sound rule. At born white response several laugh. Society human hope marriage explain.",
+    "author": "Matthew Mosley",
+    "date_published": "2022-04-30",
+    "subject": "biology",
+    "year": 2019,
+    "month": 11,
+    "day": 3
+  },
+  {
+    "id": 13,
+    "title": "Front-line zero-defect projection",
+    "description": "He decision memory threat low decide. Attorney by although never probably themselves. Most run can us five. Program bar charge trade next eight.",
+    "author": "Lori Wallace",
+    "date_published": "2016-12-19",
+    "subject": "physics",
+    "year": 2017,
+    "month": 4,
+    "day": 25
+  },
+  {
+    "id": 14,
+    "title": "Open-source multi-tasking matrix",
+    "description": "War major our cut indicate party. Respond just single camera past. Put this join board security. Maybe quickly act key financial green live. And trouble finish model. Same my suddenly collection.",
+    "author": "Ebony Chaney DVM",
+    "date_published": "2014-11-14",
+    "subject": "biology",
+    "year": 2022,
+    "month": 6,
+    "day": 27
+  },
+  {
+    "id": 15,
+    "title": "Versatile next generation product",
+    "description": "Street range benefit customer left feel seem. Rule rule yet grow lay significant. Land heart nearly long. Us save leg simply interesting interview fund. A coach country north. Especially ever including I. Fly fund window participant senior see.",
+    "author": "Mark Lopez",
+    "date_published": "2019-11-22",
+    "subject": "chemistry",
+    "year": 2021,
+    "month": 7,
+    "day": 1
+  },
+  {
+    "id": 16,
+    "title": "Pre-emptive disintermediate frame",
+    "description": "Else population trip practice become place court. Six method management level. Performance behind available develop walk account. Left economic level meet. Machine safe worry art participant natural win. Eye hot before thing easy space tax.",
+    "author": "Susan Phillips",
+    "date_published": "2021-12-16",
+    "subject": "computer science",
+    "year": 2024,
+    "month": 2,
+    "day": 19
+  },
+  {
+    "id": 17,
+    "title": "Customizable background encryption",
+    "description": "Apply against arrive scene. Evening spend foreign change organization strategy. Include line our.",
+    "author": "Joseph Fowler",
+    "date_published": "2015-12-19",
+    "subject": "astronomy",
+    "year": 2017,
+    "month": 10,
+    "day": 18
+  },
+  {
+    "id": 18,
+    "title": "User-centric national middleware",
+    "description": "Big charge religious friend option agreement teacher. Serious my spring reach suggest doctor. Win see trip receive. Camera model glass reason ahead.",
+    "author": "Abigail Sweeney",
+    "date_published": "2018-09-09",
+    "subject": "physics",
+    "year": 2019,
+    "month": 9,
+    "day": 17
+  },
+  {
+    "id": 19,
+    "title": "Front-line secondary conglomeration",
+    "description": "There ten strategy by only. Apply part left seven head upon civil institution. Somebody rest discuss forget really would. Call argue base just.",
+    "author": "April Ortiz",
+    "date_published": "2018-03-05",
+    "subject": "astronomy",
+    "year": 2015,
+    "month": 3,
+    "day": 9
+  },
+  {
+    "id": 20,
+    "title": "Horizontal analyzing initiative",
+    "description": "Whatever above hold ago low capital. Job produce sit former wall stock recent. Practice police local. Method site rule letter give deal trouble.",
+    "author": "Peggy Campbell",
+    "date_published": "2024-06-18",
+    "subject": "physics",
+    "year": 2017,
+    "month": 3,
+    "day": 7
+  },
+  {
+    "id": 21,
+    "title": "Balanced 5thgeneration open architecture",
+    "description": "East brother eat share yeah prove prepare. Record crime far serious. Example night word court strong keep idea. Modern quality often head.",
+    "author": "Elizabeth Armstrong",
+    "date_published": "2015-03-28",
+    "subject": "mathematics",
+    "year": 2021,
+    "month": 4,
+    "day": 10
+  },
+  {
+    "id": 22,
+    "title": "Networked exuding protocol",
+    "description": "Administration born executive. Interesting month short kitchen public ground address force. Pay direction of enter social true.",
+    "author": "Crystal Owens",
+    "date_published": "2014-11-18",
+    "subject": "computer science",
+    "year": 2023,
+    "month": 3,
+    "day": 5
+  },
+  {
+    "id": 23,
+    "title": "Cross-group multi-state moderator",
+    "description": "Drug produce economic serve character movement. Particular interesting admit fill kid whole many. Consumer white himself present speech from behavior day. Reason nation change poor many. Good strong become wear early such know.",
+    "author": "Kaitlyn Horne",
+    "date_published": "2017-11-21",
+    "subject": "computer science",
+    "year": 2018,
+    "month": 6,
+    "day": 28
+  },
+  {
+    "id": 24,
+    "title": "Diverse bifurcated capability",
+    "description": "Face we commercial. Blue test clear might during main. Staff little six much ready ready view. Control score catch. Listen point picture.",
+    "author": "Ryan Hernandez",
+    "date_published": "2015-12-04",
+    "subject": "physics",
+    "year": 2017,
+    "month": 9,
+    "day": 25
+  }
+]
