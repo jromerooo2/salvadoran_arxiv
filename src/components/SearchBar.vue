@@ -65,11 +65,8 @@
                     }
                 });
 
-                // Redirect to the results page with searchResults as prop
-                this.$router.push({
-                    path: '/results',
-                    query: { searchResults: JSON.stringify(searchResults) }       
-                });
+                window.location.assign(`/results?searchResults=${encodeURIComponent(JSON.stringify(searchResults))}`);
+
             }
         }
     };
