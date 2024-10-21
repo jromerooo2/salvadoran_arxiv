@@ -17,8 +17,6 @@
         <option value="title">Title</option>
         <option value="description">Description</option>
         <option value="author">Author</option>
-        <option value="date_published">Date Published</option>
-        <option value="subject">Subject</option>
       </select>
   
       <!-- Smaller search button -->
