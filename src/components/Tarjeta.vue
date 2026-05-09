@@ -83,7 +83,10 @@ const abstractPreview = computed(() => {
           {{ yearLabel }}
         </span>
         <span class="text-gray-400" aria-hidden="true">·</span>
-        <span class="min-w-0 font-medium text-gray-700">{{ journalLabel }}</span>
+        <span class="inline-flex min-w-0 flex-wrap items-center gap-x-1 break-words text-gray-800">
+          <span class="shrink-0 font-medium text-gray-500">Journal:</span>
+          <span class="min-w-0 font-medium text-gray-700">{{ journalLabel }}</span>
+        </span>
         <span class="text-gray-400" aria-hidden="true">·</span>
         <span class="inline-flex min-w-0 flex-wrap items-center gap-x-1 break-all text-gray-800">
           <span class="shrink-0 font-medium text-gray-500">DOI:</span>
