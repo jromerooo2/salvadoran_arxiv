@@ -8,7 +8,7 @@
       <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
         Discover science by Salvadoran researchers
       </h2>
-      <Search_bar layout="hero" :centered="true" />
+      <SearchBar layout="hero" :centered="true" />
     </section>
 
     <Tarjetas />
@@ -19,12 +19,12 @@
 <script>
 
   import Tarjetas from '../components/Tarjetas.vue';
-  import Search_bar from '../components/SearchBar.vue';
+  import SearchBar from '../components/SearchBar.vue';
   
   export default {
     components: {
       Tarjetas,
-      Search_bar,
+      SearchBar,
     }
   }
 </script>

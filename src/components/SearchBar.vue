@@ -52,6 +52,7 @@ import { getAllArticles } from '../data/articleItems.js'
 import { articleMatchesQuery } from '../utils/searchMatch.js'
 
 export default {
+  name: 'SearchBar',
   props: {
     /** Center controls (home page hero) */
     centered: {

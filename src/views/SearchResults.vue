@@ -1,5 +1,5 @@
 <template>
-  <Search_bar />
+  <SearchBar />
 
   <div class="flex flex-col space-y-8">
     <div v-for="group in sortedArticlesByYear" :key="group.year" class="space-y-4">
@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import Search_bar from '../components/SearchBar.vue'
+import SearchBar from '../components/SearchBar.vue'
 import Tarjeta from '../components/Tarjeta.vue'
 import { publicationYearValue } from '../data/articleItems.js'
 
 export default {
   components: {
     Tarjeta,
-    Search_bar,
+    SearchBar,
   },
   data() {
     return {
