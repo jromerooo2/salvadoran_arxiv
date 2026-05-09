@@ -1,10 +1,16 @@
 <template>
 
   <div class="space-y-10">
-    <h1 class="text-2xl font-bold">Publications</h1>
-    <p class="text-gray-700">
-      Research articles in which Salvadoran scientists have participated, drawn from the society’s catalog.
-    </p>
+    <section
+      class="mx-auto w-full max-w-3xl rounded-xl px-5 py-8 text-center shadow-md sm:px-8"
+      style="background-color: #0047ab"
+    >
+      <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
+        Discover science by Salvadoran researchers
+      </h2>
+      <Search_bar layout="hero" :centered="true" />
+    </section>
+
     <Tarjetas />
   </div>
 
@@ -13,10 +19,12 @@
 <script>
 
   import Tarjetas from '../components/Tarjetas.vue';
+  import Search_bar from '../components/SearchBar.vue';
   
   export default {
     components: {
-      Tarjetas
+      Tarjetas,
+      Search_bar,
     }
   }
 </script>
