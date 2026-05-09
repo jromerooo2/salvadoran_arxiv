@@ -9,6 +9,7 @@
       "abstract": "N/A",
       "year": "2025",
       "journal": "Physics of the Dark Universe",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.1016/j.dark.2025.101901"
     },
     {
@@ -16,6 +17,7 @@
       "abstract": "In dense neutrino gases, the neutrino-neutrino coherent forward scattering gives rise to a complex flavor oscillation phenomenon not fully incorporated in simulations of neutron star mergers (NSM) and core collapse supernovae (CCSNe). Moreover, it has been proposed to be chaotic, potentially limiting our ability to predict neutrino flavor transformations in simulations. To address this issue, we explore how small flavor perturbations evolve in the nonlinear regime of the neutrino quantum kinetic equation within a narrow centimeter-scale region inside a NSM and a toy neutrino distribution. Our findings reveal that paths in the flavor state space of solutions with similar initial conditions diverge exponentially, exhibiting chaos. This inherent chaos makes the microscopic scales of neutrino flavor transformations unpredictable. However, the domain-averaged neutrino density matrix remains relatively stable, with chaos minimally affecting it. This particular property suggests that domain-averaged quantities remain reliable despite the exponential amplification of errors.\n          \n            \n            \n              \n                Published by the American Physical Society\n                2024",
       "year": "2024",
       "journal": "Physical Review D",
+      "affiliation": "University of Tennessee",
       "doi": "https://doi.org/10.1103/PhysRevD.109.103040"
     }
   ]

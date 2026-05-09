@@ -1,6 +1,7 @@
 """
 Publication Search Script — ORCID + Crossref
-Fetches publications from ORCID and enriches them with abstracts via Crossref.
+Fetches publications from ORCID and enriches them with abstracts and
+affiliation at time of publication via Crossref.
 
 Requirements:
     pip install requests
@@ -19,13 +20,12 @@ import re
 import time
 
 
-# ── FETCH ABSTRACT FROM CROSSREF ───────────────────────────────────────────────
-def fetch_abstract_from_crossref(doi):
-    """Fetch abstract for a given DOI using the Crossref API."""
+# ── FETCH ABSTRACT + AFFILIATION FROM CROSSREF ────────────────────────────────
+def fetch_details_from_crossref(doi, author_name):
+    """Fetch abstract and affiliation for a given DOI using the Crossref API."""
     if not doi or doi == "N/A":
-        return "N/A"
+        return "N/A", "N/A"
 
-    # Extract raw DOI from full URL if needed
     raw_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
 
     try:
@@ -35,14 +35,34 @@ def fetch_abstract_from_crossref(doi):
 
         if response.status_code == 200:
             data = response.json().get("message", {})
+
+            # Abstract — clean JATS XML tags if present
             abstract = data.get("abstract", "N/A")
-            # Crossref sometimes wraps abstract in JATS XML tags, clean them
             abstract = re.sub(r"<[^>]+>", "", abstract).strip() if abstract != "N/A" else "N/A"
-            return abstract
+
+            # Affiliation — search among all authors for a name match
+            affiliation = "N/A"
+            crossref_authors = data.get("author", [])
+            author_parts = author_name.lower().split()
+
+            for ca in crossref_authors:
+                given  = ca.get("given",  "").lower()
+                family = ca.get("family", "").lower()
+                full   = f"{given} {family}"
+
+                # Match if any part of the ORCID author name appears in this author entry
+                if any(part in full for part in author_parts if len(part) > 2):
+                    affiliations = ca.get("affiliation", [])
+                    if affiliations:
+                        affiliation = affiliations[0].get("name", "N/A")
+                    break
+
+            return abstract, affiliation
+
     except Exception:
         pass
 
-    return "N/A"
+    return "N/A", "N/A"
 
 
 # ── ORCID SEARCH ───────────────────────────────────────────────────────────────
@@ -87,6 +107,7 @@ def search_orcid(orcid_id):
     works_data = response.json().get("group", [])
     papers = []
     total = len(works_data)
+    skipped = 0
 
     for idx, group in enumerate(works_data, 1):
         summaries = group.get("work-summary", [])
@@ -97,7 +118,7 @@ def search_orcid(orcid_id):
 
         title     = w.get("title", {}).get("title", {}).get("value", "N/A")
         year_data = w.get("publication-date", {})
-        pub_year  = year_data.get("year",  {}).get("value", "N/A") if year_data else "N/A"
+        pub_year  = year_data.get("year", {}).get("value", "N/A") if year_data else "N/A"
         journal   = w.get("journal-title", {}).get("value", "N/A") if w.get("journal-title") else "N/A"
 
         # Extract DOI
@@ -109,22 +130,30 @@ def search_orcid(orcid_id):
                 doi = f"https://doi.org/{doi_val}" if doi_val else "N/A"
                 break
 
-        # Fetch abstract from Crossref
-        print(f"  [{idx}/{total}] Fetching abstract for: {title[:60]}...")
-        abstract = fetch_abstract_from_crossref(doi)
+        # ── Skip articles without a DOI ──────────────────────────────────────
+        if doi == "N/A":
+            print(f"  [{idx}/{total}] ⏭️  Skipping (no DOI): {title[:60]}")
+            skipped += 1
+            continue
+
+        # Fetch abstract and affiliation from Crossref
+        print(f"  [{idx}/{total}] Fetching details for: {title[:60]}...")
+        abstract, affiliation = fetch_details_from_crossref(doi, author_name)
         time.sleep(0.2)  # Be polite to the API
 
         papers.append({
-            "title"   : title,
-            "abstract": abstract,
-            "year"    : pub_year,
-            "journal" : journal,
-            "doi"     : doi,
+            "title"      : title,
+            "abstract"   : abstract,
+            "year"       : pub_year,
+            "journal"    : journal,
+            "affiliation": affiliation,
+            "doi"        : doi,
         })
 
     # Sort by year descending
     papers.sort(key=lambda x: x["year"] if x["year"] != "N/A" else "0000", reverse=True)
 
+    print(f"\n  ✅ {len(papers)} articles saved | ⏭️  {skipped} skipped (no DOI)")
     return papers, author_name, orcid_id
 
 
@@ -137,13 +166,18 @@ def display_results(papers, author_name, orcid_id):
     print(f"{'='*70}\n")
 
     for i, paper in enumerate(papers, 1):
-        abstract_preview = paper['abstract'][:150] + "..." if paper['abstract'] != "N/A" and len(paper['abstract']) > 150 else paper['abstract']
+        abstract_preview = (
+            paper['abstract'][:150] + "..."
+            if paper['abstract'] != "N/A" and len(paper['abstract']) > 150
+            else paper['abstract']
+        )
 
         print(f"[{i}] {paper['title']}")
-        print(f"     Year   : {paper['year']}")
-        print(f"     Journal: {paper['journal']}")
-        print(f"     DOI    : {paper['doi']}")
-        print(f"     Abstract: {abstract_preview}")
+        print(f"     Year        : {paper['year']}")
+        print(f"     Journal     : {paper['journal']}")
+        print(f"     Affiliation : {paper['affiliation']}")
+        print(f"     DOI         : {paper['doi']}")
+        print(f"     Abstract    : {abstract_preview}")
         print()
 
 
