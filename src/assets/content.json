@@ -10,12 +10,12 @@
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "Condensed Matter (cond-mat)",
+        "subcategories_name": "Condensed Matter (cond-ph)",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "General Relativity and Quantum Cosmology (gr-qc)",
+        "subcategories_name": "General Relativity and Cosmology (genrel-ph)",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
@@ -25,7 +25,17 @@
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "Nuclear Experiment (nucl-ex)",
+        "subcategories_name": "Nuclear Physics (nucl-ex)",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Quantum Physics (quant-ph)",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Physics (ph-ph)",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }
