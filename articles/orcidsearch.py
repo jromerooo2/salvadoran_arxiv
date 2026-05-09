@@ -1,6 +1,6 @@
 """
-Publication Search Script — ORCID
-Fetches scientific publications from ORCID public API using an ORCID ID.
+Publication Search Script — ORCID + Crossref
+Fetches publications from ORCID and enriches them with abstracts via Crossref.
 
 Requirements:
     pip install requests
@@ -16,6 +16,33 @@ Usage:
 import requests
 import json
 import re
+import time
+
+
+# ── FETCH ABSTRACT FROM CROSSREF ───────────────────────────────────────────────
+def fetch_abstract_from_crossref(doi):
+    """Fetch abstract for a given DOI using the Crossref API."""
+    if not doi or doi == "N/A":
+        return "N/A"
+
+    # Extract raw DOI from full URL if needed
+    raw_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
+
+    try:
+        url = f"https://api.crossref.org/works/{raw_doi}"
+        headers = {"User-Agent": "PublicationSearchScript/1.0 (mailto:your@email.com)"}
+        response = requests.get(url, headers=headers, timeout=10)
+
+        if response.status_code == 200:
+            data = response.json().get("message", {})
+            abstract = data.get("abstract", "N/A")
+            # Crossref sometimes wraps abstract in JATS XML tags, clean them
+            abstract = re.sub(r"<[^>]+>", "", abstract).strip() if abstract != "N/A" else "N/A"
+            return abstract
+    except Exception:
+        pass
+
+    return "N/A"
 
 
 # ── ORCID SEARCH ───────────────────────────────────────────────────────────────
@@ -59,22 +86,21 @@ def search_orcid(orcid_id):
 
     works_data = response.json().get("group", [])
     papers = []
+    total = len(works_data)
 
-    for group in works_data:
+    for idx, group in enumerate(works_data, 1):
         summaries = group.get("work-summary", [])
         if not summaries:
             continue
 
-        # Take the first summary (most complete)
         w = summaries[0]
 
-        title   = w.get("title", {}).get("title", {}).get("value", "N/A")
+        title     = w.get("title", {}).get("title", {}).get("value", "N/A")
         year_data = w.get("publication-date", {})
-        year    = year_data.get("year", {}).get("value", "N/A") if year_data else "N/A"
-        journal = w.get("journal-title", {}).get("value", "N/A") if w.get("journal-title") else "N/A"
-        work_type = w.get("type", "N/A")
+        pub_year  = year_data.get("year",  {}).get("value", "N/A") if year_data else "N/A"
+        journal   = w.get("journal-title", {}).get("value", "N/A") if w.get("journal-title") else "N/A"
 
-        # Extract DOI from external IDs
+        # Extract DOI
         doi = "N/A"
         ext_ids = w.get("external-ids", {}).get("external-id", [])
         for eid in ext_ids:
@@ -83,12 +109,17 @@ def search_orcid(orcid_id):
                 doi = f"https://doi.org/{doi_val}" if doi_val else "N/A"
                 break
 
+        # Fetch abstract from Crossref
+        print(f"  [{idx}/{total}] Fetching abstract for: {title[:60]}...")
+        abstract = fetch_abstract_from_crossref(doi)
+        time.sleep(0.2)  # Be polite to the API
+
         papers.append({
-            "title"  : title,
-            "year"   : year,
-            "journal": journal,
-            "type"   : work_type,
-            "doi"    : doi,
+            "title"   : title,
+            "abstract": abstract,
+            "year"    : pub_year,
+            "journal" : journal,
+            "doi"     : doi,
         })
 
     # Sort by year descending
@@ -106,10 +137,13 @@ def display_results(papers, author_name, orcid_id):
     print(f"{'='*70}\n")
 
     for i, paper in enumerate(papers, 1):
+        abstract_preview = paper['abstract'][:150] + "..." if paper['abstract'] != "N/A" and len(paper['abstract']) > 150 else paper['abstract']
+
         print(f"[{i}] {paper['title']}")
-        print(f"     Year   : {paper['year']}  |  Type: {paper['type']}")
+        print(f"     Year   : {paper['year']}")
         print(f"     Journal: {paper['journal']}")
         print(f"     DOI    : {paper['doi']}")
+        print(f"     Abstract: {abstract_preview}")
         print()
 
 
@@ -120,7 +154,7 @@ def save_results(papers, author_name, orcid_id):
     data = {
         "author"            : author_name,
         "orcid"             : f"https://orcid.org/{orcid_id}",
-        "source"            : "ORCID",
+        "source"            : "ORCID + Crossref",
         "total_publications": len(papers),
         "publications"      : papers,
     }
