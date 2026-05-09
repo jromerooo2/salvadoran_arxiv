@@ -139,6 +139,11 @@ def search_orcid(orcid_id):
         # Fetch abstract and affiliation from Crossref
         print(f"  [{idx}/{total}] Fetching details for: {title[:60]}...")
         abstract, affiliation = fetch_details_from_crossref(doi, author_name)
+        
+        # Remove leading "Abstract" or variants (case-insensitive, optional colon/space/dot)
+        if abstract != "N/A":
+            abstract = re.sub(r'^\s*abstract[:\.\s-]*', '', abstract, flags=re.IGNORECASE).lstrip()
+ 
         time.sleep(0.2)  # Be polite to the API
 
         papers.append({
