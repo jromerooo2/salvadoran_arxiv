@@ -70,7 +70,7 @@ export default {
 
       const groupedByYear = sortedArticles.reduce((acc, article) => {
         const y = publicationYearValue(article.year)
-        const key = y > 0 ? String(y) : 'Sin año'
+        const key = y > 0 ? String(y) : 'No year'
         if (!acc[key]) acc[key] = []
         acc[key].push(article)
         return acc
@@ -78,8 +78,8 @@ export default {
 
       return Object.keys(groupedByYear)
         .sort((a, b) => {
-          if (a === 'Sin año') return 1
-          if (b === 'Sin año') return -1
+          if (a === 'No year') return 1
+          if (b === 'No year') return -1
           return Number(b) - Number(a)
         })
         .map((year) => ({

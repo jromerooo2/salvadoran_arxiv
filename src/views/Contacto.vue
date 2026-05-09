@@ -1,13 +1,12 @@
 <template>
-    <div>
-      <p></p>
+  <div>
   <section class="relative flex flex-wrap lg:h-screen lg:items-center">
     <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
       <div class="mx-auto max-w-lg text-center">
-        <h1 class="text-2xl font-bold sm:text-3xl">Contáctanos!</h1>
+        <h1 class="text-2xl font-bold sm:text-3xl">Contact us</h1>
 
         <p class="mt-4 text-gray-500">
-          Contáctanos para ser entrevistado, o solicitar que tus articulos sean publicados.
+          Reach out to request an interview or to ask about publishing or collaborating with the society.
         </p>
       </div>
 
@@ -17,9 +16,10 @@
 
           <div class="relative">
             <input
+              id="email"
               type="email"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-              placeholder="Tu Correo"
+              placeholder="Your email"
               required
             />
 
@@ -42,45 +42,47 @@
           </div>
         </div>
         <div>
-            <label for="Nombre" class="sr-only">Tu Nombre</label>
+            <label for="name" class="sr-only">Your name</label>
   
             <div class="relative">
               <input
+                id="name"
                 type="text"
                 class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Tu Nombre"
+                placeholder="Your name"
                 required
               />
             </div>
           </div>
         <div class="flex items-center justify-center space-x-3">
           <div class=" bg-white">
-            <label for="cars" class="sr-only">Materia:</label>
-              <select name="materia" id="materia" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
-                <option value="Matematicas">Matematicas</option>
-                <option value="Fisica">Fisica</option>
-                <option value="Quimica">Quimica</option>
-                <option value="otro">Otro</option>
+            <label for="topic" class="sr-only">Subject area</label>
+              <select id="topic" name="topic" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
+                <option value="Mathematics">Mathematics</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="other">Other</option>
               </select>
           </div>
           <div>
-            <label for="Articulo" class="sr-only">Articulo</label>
+            <label for="paper-link" class="sr-only">Paper link</label>
   
             <div class="relative">
               <input
+                id="paper-link"
                 type="text"
                 class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Link a tu articulo"
+                placeholder="Link to your paper (optional)"
               />
             </div>
           </div>
         </div>
         <div class=" bg-white">
-            <label for="cars" class="">Motivo :</label>
-              <select name="materia" id="materia" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
-                <option value="Matematicas">Entrevista</option>
-                <option value="Fisica">Publicación / colaboración</option>
-                <option value="Quimica">Ambos</option>
+            <label for="reason" class="sr-only">Reason</label>
+              <select id="reason" name="reason" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
+                <option value="interview">Interview request</option>
+                <option value="publish">Publication / collaboration</option>
+                <option value="both">Both</option>
               </select>
         </div>
         <div class="flex items-center justify-center">
@@ -89,7 +91,7 @@
             type="submit"
             class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
           >
-            Enviar
+            Send
           </button>
         </div>
       </form>
@@ -97,7 +99,7 @@
 
     <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
       <img
-        alt=""
+        alt="Salvadoran Society of Sciences"
         src="/src/assets/logo1.png"
         class="absolute inset-0 h-full w-full object-cover"
       />

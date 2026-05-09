@@ -8,7 +8,8 @@ import Results from './views/SearchResults.vue';
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/about', name: 'About', component: About },
-  { path: '/articulos', name: 'Artículos', component: Articulos },
+  { path: '/articulos', redirect: '/articles' },
+  { path: '/articles', name: 'Articles', component: Articulos },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/results', name: 'Results', component: Results},
 ];

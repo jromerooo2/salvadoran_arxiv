@@ -2,7 +2,7 @@
     <nav class="nav-salvador w-full border-b border-black/10 px-4 py-4 sm:px-6 lg:px-8">
       <div class="mx-auto flex w-full max-w-none items-center justify-between">
         <!-- Brand Logo -->
-        <router-link to="/" class="text-white font-bold text-xl">Sociedad Salvadoreña de Ciencia</router-link>
+        <router-link to="/" class="text-white font-bold text-xl">Salvadoran Society of Sciences</router-link>
         
         <!-- Hamburger Icon for Mobile -->
         <button
@@ -35,7 +35,7 @@
               <router-link to="/about" class="block text-white py-2" @click="isOpen = false">About</router-link>
             </li>
             <li>
-              <router-link to="/articulos" class="block text-white py-2" @click="isOpen = false">Artículos</router-link>
+              <router-link to="/articles" class="block text-white py-2" @click="isOpen = false">Articles</router-link>
             </li>
             <li>
               <router-link to="/contact" class="block text-white py-2" @click="isOpen = false">Contact</router-link>

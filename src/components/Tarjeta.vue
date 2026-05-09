@@ -79,12 +79,12 @@ const abstractPreview = computed(() => {
     </header>
 
     <section class="mt-3 min-h-0 flex-1 border-t border-gray-100 pt-3">
-      <h4 class="sr-only">Resumen</h4>
+      <h4 class="sr-only">Abstract</h4>
       <p
         v-if="abstractIsMissing"
         class="text-sm italic text-gray-400"
       >
-        Sin resumen disponible.
+        No abstract available.
       </p>
       <p
         v-else

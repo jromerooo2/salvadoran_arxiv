@@ -20,19 +20,19 @@
           v-model="searchQuery"
           type="search"
           autocomplete="off"
-          placeholder="Buscar artículos, autores, revistas…"
+          placeholder="Search articles, authors, journals…"
           :class="inputClass"
           @keydown.enter.prevent="performSearch"
         />
 
         <select v-model="searchField" :class="selectClass">
-          <option value="all">Todos los campos</option>
-          <option value="title">Título</option>
-          <option value="abstract">Resumen</option>
-          <option value="journal">Revista</option>
-          <option value="year">Año</option>
+          <option value="all">All fields</option>
+          <option value="title">Title</option>
+          <option value="abstract">Abstract</option>
+          <option value="journal">Journal</option>
+          <option value="year">Year</option>
           <option value="doi">DOI</option>
-          <option value="author">Autor</option>
+          <option value="author">Author</option>
         </select>
 
         <button
@@ -40,7 +40,7 @@
           :class="buttonClass"
           @click="performSearch"
         >
-          Buscar
+          Search
         </button>
       </div>
     </div>
@@ -53,12 +53,12 @@ import { articleMatchesQuery } from '../utils/searchMatch.js'
 
 export default {
   props: {
-    /** Centrar controles (página principal) */
+    /** Center controls (home page hero) */
     centered: {
       type: Boolean,
       default: false,
     },
-    /** hero = campos claros sobre fondo azul (el padre debe pintar #0047ab). default = franja clara en resultados */
+    /** hero = light fields on blue (#0047ab) background; default = light strip on results */
     layout: {
       type: String,
       default: 'default',

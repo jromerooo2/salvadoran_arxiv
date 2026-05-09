@@ -1,21 +1,21 @@
 <template>
 
-  <!-- Home page initial description -->
+  <!-- Intro -->
   <div class="container">
     <h3>
-      La Sociedad Salvadoreña de Ciencia es una organización sin fines de lucro dedicada a fomentar el debate
-      científico, el trabajo en red entre investigadoras e investigadores y la difusión del conocimiento en
-      beneficio de la sociedad. Este sitio ofrece información general y recursos de interés para la comunidad.
+      The <strong>Salvadoran Society of Sciences</strong> is a non-profit organization dedicated to fostering
+      scientific debate, networks among researchers, and the dissemination of knowledge for the benefit of society.
+      This site offers general information and resources for the community.
     </h3>
   </div>
 
-  <!-- Búsqueda principal (azul bandera, centrada) -->
+  <!-- Main search -->
   <section
     class="home-search mx-auto mb-10 mt-6 w-full max-w-3xl rounded-xl px-5 py-8 text-center shadow-md sm:px-8"
     style="background-color: #0047ab"
   >
     <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
-      Conoce la ciencia de científicos salvadoreños
+      Discover science by Salvadoran researchers
     </h2>
     <Search_bar layout="hero" :centered="true" />
   </section>
