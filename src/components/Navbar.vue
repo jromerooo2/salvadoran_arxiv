@@ -1,6 +1,6 @@
 <template>
-    <nav class="bg-blue-600 p-4">
-      <div class="container flex justify-between items-center">
+    <nav class="nav-salvador w-full border-b border-black/10 px-4 py-4 sm:px-6 lg:px-8">
+      <div class="mx-auto flex w-full max-w-none items-center justify-between">
         <!-- Brand Logo -->
         <router-link to="/" class="text-white font-bold text-xl">Sociedad Salvadoreña de Ciencia</router-link>
         
@@ -58,5 +58,8 @@
   </script>
   
   <style scoped>
-  /* Add custom styles if needed */
+  /* Cobalt blue of the El Salvador flag stripes (~RGB 0, 71, 171) */
+  .nav-salvador {
+    background-color: #0047ab;
+  }
   </style>

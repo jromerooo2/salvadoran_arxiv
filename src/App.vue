@@ -1,7 +1,9 @@
 <template>
-  <div class="h-screen p-10 bg-white">
+  <div class="flex min-h-screen flex-col bg-white">
     <Navbar />
-    <router-view/>
+    <main class="flex-1 p-10">
+      <router-view />
+    </main>
   </div>
 </template>
 
