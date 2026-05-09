@@ -2,7 +2,7 @@
     <nav class="bg-blue-600 p-4">
       <div class="container flex justify-between items-center">
         <!-- Brand Logo -->
-        <router-link to="/" class="text-white font-bold text-xl">Repositorio Salvadoreño de Ciencia</router-link>
+        <router-link to="/" class="text-white font-bold text-xl">Sociedad Salvadoreña de Ciencia</router-link>
         
         <!-- Hamburger Icon for Mobile -->
         <button

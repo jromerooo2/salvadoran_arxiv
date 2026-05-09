@@ -3,9 +3,9 @@
   <!-- Home page initial description -->
   <div class="container">
     <h3>
-      El Repositorio Salvadoreño de Ciencia (RSC) recopila y organiza los artículos científicos publicados 
-      por investigadores salvadoreños en revistas arbitradas de alto impacto con el objetivo centralizar y 
-      visibilizar la producción científica del país.    
+      La Sociedad Salvadoreña de Ciencia es una organización sin fines de lucro dedicada a fomentar el debate
+      científico, el trabajo en red entre investigadoras e investigadores y la difusión del conocimiento en
+      beneficio de la sociedad. Este sitio ofrece información general y recursos de interés para la comunidad.
     </h3>
   </div>
 

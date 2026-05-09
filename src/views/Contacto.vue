@@ -79,7 +79,7 @@
             <label for="cars" class="">Motivo :</label>
               <select name="materia" id="materia" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
                 <option value="Matematicas">Entrevista</option>
-                <option value="Fisica">Publicar en el Repositorio</option>
+                <option value="Fisica">Publicación / colaboración</option>
                 <option value="Quimica">Ambos</option>
               </select>
         </div>
