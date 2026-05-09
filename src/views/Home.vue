@@ -27,15 +27,15 @@
         <h1>
           {{ category.category_name }}
           <span class="links">
-            (<a :href="category.category_recentLink">recent</a>,
-            <a :href="category.category_searchLink">search</a>)
+            (<a :href="category.category_articlesLink">recent articles</a>,
+            <a :href="category.category_researchersLink">researchers</a>)
           </span>
         </h1>
         <div v-for="(subcategory, subIndex) in category.subcategories" :key="subIndex">
           <b>{{ subcategory.subcategories_name }}
             <span class="links">
-              (<a :href="subcategory.subcategories_recentLink">recent</a>,
-              <a :href="subcategory.subcategories_searchLink">search</a>)
+              (<a :href="subcategory.subcategories_articlesLink">recent articles</a>,
+              <a :href="subcategory.subcategories_researchersLink">researchers</a>)
             </span>
           </b>
         </div>
