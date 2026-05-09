@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-    <div v-for="article in articles" :key="article.id" class="min-h-0">
+  <div class="flex w-full max-w-none flex-col gap-6">
+    <div v-for="article in articles" :key="article.id" class="min-h-0 w-full">
       <Tarjeta
         :id="article.id"
         :title="article.title"

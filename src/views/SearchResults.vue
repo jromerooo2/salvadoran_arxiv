@@ -5,8 +5,8 @@
     <div v-for="group in sortedArticlesByYear" :key="group.year" class="space-y-4">
       <h2 class="text-2xl font-semibold">{{ group.year }}</h2>
 
-      <div class="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-        <div v-for="article in group.articles" :key="article.id">
+      <div class="flex w-full max-w-none flex-col gap-6">
+        <div v-for="article in group.articles" :key="article.id" class="w-full">
           <Tarjeta
             :id="article.id"
             :title="article.title"
@@ -25,13 +25,7 @@
 <script>
 import Search_bar from '../components/SearchBar.vue'
 import Tarjeta from '../components/Tarjeta.vue'
-
-function publicationYear(article) {
-  const y = article.year
-  if (y === undefined || y === null || String(y).trim() === '') return 0
-  const n = parseInt(String(y), 10)
-  return Number.isFinite(n) ? n : 0
-}
+import { publicationYearValue } from '../data/articleItems.js'
 
 export default {
   components: {
@@ -49,12 +43,15 @@ export default {
   },
   computed: {
     sortedArticlesByYear() {
-      const sortedArticles = [...this.results].sort(
-        (a, b) => publicationYear(b) - publicationYear(a),
-      )
+      const sortedArticles = [...this.results].sort((a, b) => {
+        const ya = publicationYearValue(a.year)
+        const yb = publicationYearValue(b.year)
+        if (ya !== yb) return yb - ya
+        return (b.id ?? 0) - (a.id ?? 0)
+      })
 
       const groupedByYear = sortedArticles.reduce((acc, article) => {
-        const y = publicationYear(article)
+        const y = publicationYearValue(article.year)
         const key = y > 0 ? String(y) : 'Sin año'
         if (!acc[key]) acc[key] = []
         acc[key].push(article)

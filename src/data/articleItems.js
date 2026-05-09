@@ -2,9 +2,16 @@ const itemModules = import.meta.glob('../../articles/items/*.json', {
   eager: true,
 })
 
+export function publicationYearValue(year) {
+  if (year === undefined || year === null || String(year).trim() === '') return 0
+  const n = parseInt(String(year), 10)
+  return Number.isFinite(n) ? n : 0
+}
+
 /**
  * Flatten all ORCID publication bundles under articles/items into one list.
  * Each row: id, author, orcid, title, abstract, year, journal, doi
+ * Sorted with newest first (higher year on top; within the same year, higher id first).
  */
 export function getAllArticles() {
   const articles = []
@@ -27,5 +34,11 @@ export function getAllArticles() {
       })
     }
   }
+  articles.sort((a, b) => {
+    const ya = publicationYearValue(a.year)
+    const yb = publicationYearValue(b.year)
+    if (ya !== yb) return yb - ya
+    return (b.id ?? 0) - (a.id ?? 0)
+  })
   return articles
 }
