@@ -37,7 +37,7 @@
           </p>
           <p v-if="r.recentAffiliation" class="mt-2 text-sm leading-relaxed text-gray-700">
             <span class="font-medium text-gray-500">Affiliation</span>
-            <span class="text-gray-800"> (most recent paper with affiliation): </span>
+            <span class="text-gray-800">: </span>
             {{ r.recentAffiliation }}
           </p>
           <p v-else class="mt-2 text-sm italic text-gray-400">
