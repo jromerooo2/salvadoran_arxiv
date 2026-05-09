@@ -1,22 +1,31 @@
 <template>
-  <SearchBar />
+  <div class="space-y-10">
+    <section
+      class="mx-auto w-full max-w-3xl rounded-xl bg-[#0047ab] px-5 py-8 text-center shadow-md sm:px-8"
+    >
+      <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
+        Discover science by Salvadoran researchers
+      </h2>
+      <SearchBar layout="hero" :centered="true" />
+    </section>
 
-  <div class="flex flex-col space-y-8">
-    <div v-for="group in sortedArticlesByYear" :key="group.year" class="space-y-4">
-      <h2 class="text-2xl font-semibold">{{ group.year }}</h2>
+    <div class="flex flex-col space-y-8">
+      <div v-for="group in sortedArticlesByYear" :key="group.year" class="space-y-4">
+        <h2 class="text-2xl font-semibold">{{ group.year }}</h2>
 
-      <div class="flex w-full max-w-none flex-col gap-6">
-        <div v-for="article in group.articles" :key="article.id" class="w-full">
-          <Tarjeta
-            :id="article.id"
-            :title="article.title"
-            :abstract="article.abstract"
-            :year="article.year"
-            :journal="article.journal"
-            :doi="article.doi"
-            :author="article.author"
-            :affiliation="article.affiliation"
-          />
+        <div class="flex w-full max-w-none flex-col gap-6">
+          <div v-for="article in group.articles" :key="article.id" class="w-full">
+            <Tarjeta
+              :id="article.id"
+              :title="article.title"
+              :abstract="article.abstract"
+              :year="article.year"
+              :journal="article.journal"
+              :doi="article.doi"
+              :author="article.author"
+              :affiliation="article.affiliation"
+            />
+          </div>
         </div>
       </div>
     </div>
