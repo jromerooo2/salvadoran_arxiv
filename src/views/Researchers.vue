@@ -35,6 +35,10 @@
             >{{ orcidDisplayId(r.orcid) }}</a>
             <span v-else class="text-gray-400">—</span>
           </p>
+          <p class="mt-1 text-sm text-gray-600">
+            <span class="font-medium text-gray-500">Papers in catalog:</span>
+            <span class="ml-1 text-gray-800">{{ r.paperCount }}</span>
+          </p>
           <p v-if="r.recentAffiliation" class="mt-2 text-sm leading-relaxed text-gray-700">
             <span class="font-medium text-gray-500">Affiliation</span>
             <span class="text-gray-800">: </span>

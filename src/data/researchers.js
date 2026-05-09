@@ -10,8 +10,9 @@ function validAffiliation(aff) {
 }
 
 /**
- * One entry per JSON bundle in articles/items: name, orcid, affiliation from
- * newest paper that has a real affiliation, and the three newest paper titles.
+ * One entry per JSON bundle in articles/items: name, orcid, paperCount,
+ * affiliation from newest paper that has a real affiliation, and the three
+ * newest paper titles.
  */
 export function getResearchers() {
   const out = []
@@ -35,11 +36,16 @@ export function getResearchers() {
       .map((p) => (p.title ?? '').trim())
       .filter(Boolean)
 
+    const paperCount = Array.isArray(data.publications)
+      ? data.publications.length
+      : 0
+
     out.push({
       name: (data.author ?? '').trim(),
       orcid: (data.orcid ?? '').trim(),
       recentAffiliation: recentAffiliation || null,
       recentTitles,
+      paperCount,
     })
   }
   out.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }))
