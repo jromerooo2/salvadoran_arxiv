@@ -63,7 +63,7 @@ const abstractPreview = computed(() => {
 
 <template>
   <article
-    class="relative flex h-full w-full max-w-none flex-col overflow-hidden rounded-lg border border-gray-100 bg-white p-4 shadow-sm sm:p-5"
+    class="relative flex h-full w-full max-w-none flex-col overflow-hidden rounded-lg border border-gray-100 bg-white p-4 font-sans shadow-sm sm:p-5"
   >
     <span
       class="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-blue-100 via-blue-400 to-blue-700"

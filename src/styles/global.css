@@ -1,0 +1,12 @@
+/* One family sitewide — matches Tailwind theme in index.html */
+html,
+body {
+  font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
