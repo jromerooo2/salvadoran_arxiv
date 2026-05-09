@@ -1,53 +1,113 @@
 <script setup>
-const props = defineProps(['id', 'title', 'subject', 'description', 'author', 'date_published'])
-console.log(props.title)
+import { computed } from 'vue'
+
+const props = defineProps({
+  id: [String, Number],
+  title: String,
+  abstract: String,
+  year: [String, Number],
+  journal: String,
+  doi: String,
+  author: String,
+})
+
+const yearLabel = computed(() => {
+  const y = props.year
+  if (y === undefined || y === null || String(y).trim() === '') return '—'
+  return String(y)
+})
+
+const journalLabel = computed(() => {
+  const j = props.journal
+  if (!j || String(j).trim() === '') return '—'
+  return String(j)
+})
+
+const doiHref = computed(() => {
+  const d = props.doi
+  if (!d || String(d).trim() === '') return null
+  const s = String(d).trim()
+  if (s.startsWith('http')) return s
+  if (s.startsWith('10.')) return `https://doi.org/${s}`
+  return null
+})
+
+const doiDisplay = computed(() => {
+  const d = props.doi
+  if (!d || String(d).trim() === '') return '—'
+  const s = String(d).trim()
+  if (s.startsWith('https://doi.org/')) return s.replace('https://doi.org/', '')
+  if (s.startsWith('http://doi.org/')) return s.replace('http://doi.org/', '')
+  return s
+})
+
+const abstractIsMissing = computed(() => {
+  const a = (props.abstract ?? '').trim()
+  return !a || a === 'N/A' || a.toUpperCase() === 'N/A'
+})
+
+const abstractPreview = computed(() => {
+  if (abstractIsMissing.value) return ''
+  return String(props.abstract).trim()
+})
 </script>
 
 <template>
-    <div>
-        <a
-    href="#"
-    class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
-    >
+  <article
+    class="relative flex h-full flex-col overflow-hidden rounded-lg border border-gray-100 bg-white p-4 shadow-sm sm:p-5"
+  >
     <span
-        class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-blue-100 via-blue-300 to-blue-700"
+      class="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-blue-100 via-blue-400 to-blue-700"
     ></span>
 
-    <div class="sm:flex sm:justify-between sm:gap-4">
-        <div>
-        <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
-           {{  title }}
-        </h3>
+    <header class="pr-1">
+      <h3 class="text-base font-bold leading-snug text-gray-900 sm:text-lg">
+        {{ title }}
+      </h3>
+      <p v-if="author" class="mt-1 text-xs text-gray-500">
+        {{ author }}
+      </p>
+      <div
+        class="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-600"
+      >
+        <span class="inline-flex items-center rounded bg-gray-100 px-2 py-0.5 font-medium text-gray-800">
+          {{ yearLabel }}
+        </span>
+        <span class="text-gray-400" aria-hidden="true">·</span>
+        <span class="min-w-0 flex-1 font-medium text-gray-700">{{ journalLabel }}</span>
+      </div>
+    </header>
 
-        <p class="mt-1 text-xs font-medium text-gray-600">Por {{ author }} </p>
-        </div>
+    <section class="mt-3 min-h-0 flex-1 border-t border-gray-100 pt-3">
+      <h4 class="sr-only">Resumen</h4>
+      <p
+        v-if="abstractIsMissing"
+        class="text-sm italic text-gray-400"
+      >
+        Sin resumen disponible.
+      </p>
+      <p
+        v-else
+        class="line-clamp-5 text-pretty text-sm leading-relaxed text-gray-600"
+      >
+        {{ abstractPreview }}
+      </p>
+    </section>
 
-        <div class="hidden sm:block sm:shrink-0">
-        <img
-            alt=""
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-            class="size-16 rounded-lg object-cover shadow-sm"
-        />
-        </div>
-    </div>
-
-    <div class="mt-4">
-        <p class="text-pretty text-sm text-gray-500">
-            {{description}}
-        </p>
-    </div>
-
-    <dl class="mt-6 flex gap-4 sm:gap-6">
-        <div class="flex flex-col-reverse">
-        <dt class="text-sm font-medium text-gray-600">Published</dt>
-        <dd class="text-xs text-gray-500">{{date_published}}</dd>
-        </div>
-
-        <div class="flex flex-col-reverse">
-        <dt class="text-sm font-medium text-gray-600">{{subject}}</dt>
-        <dd class="text-xs text-gray-500">Materia</dd>
-        </div>
-    </dl>
-    </a>
-    </div>
+    <footer class="mt-4 border-t border-gray-100 pt-3">
+      <dl class="text-xs">
+        <dt class="font-medium text-gray-500">DOI</dt>
+        <dd class="mt-0.5 break-all text-gray-900">
+          <a
+            v-if="doiHref"
+            :href="doiHref"
+            class="text-blue-700 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{{ doiDisplay }}</a>
+          <span v-else>{{ doiDisplay }}</span>
+        </dd>
+      </dl>
+    </footer>
+  </article>
 </template>

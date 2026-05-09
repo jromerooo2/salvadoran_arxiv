@@ -1,72 +1,68 @@
 <template>
-    <div class="my-4">
-      <!-- Smaller search input with blue background -->
-      <input 
-        type="text" 
-        v-model="searchQuery" 
-        placeholder="Search..." 
-        class="w-full md:w-2/5 px-3 py-1 bg-white border border-black rounded-md text-black text-sm focus:bg-gray-100 focus:outline-none focus:border-gray-600 focus:ring-2 focus:ring-gray-600 mb-2"
-      />
-  
-      <!-- Smaller select dropdown with blue background -->
-      <select 
-        v-model="searchField" 
-        class="w-full md:w-1/5 px-3 py-1 bg-white border border-black rounded-md text-black text-sm focus:bg-gray-100 focus:outline-none focus:border-gray-600 focus:ring-2 focus:ring-gray-600 mb-2"
-      >
-        <option value="all">All fields</option>
-        <option value="title">Title</option>
-        <option value="description">Description</option>
-        <option value="author">Author</option>
-      </select>
-  
-      <!-- Smaller search button -->
-      <button 
-        @click="performSearch" 
-        class="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded-md text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-      >
-        Search
-      </button>
-    </div>
-  </template>
-  
-  
+  <div class="my-4">
+    <input
+      v-model="searchQuery"
+      type="text"
+      placeholder="Buscar…"
+      class="mb-2 w-full rounded-md border border-black bg-white px-3 py-1 text-sm text-black focus:border-gray-600 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-600 md:w-2/5"
+    />
+
+    <select
+      v-model="searchField"
+      class="mb-2 w-full rounded-md border border-black bg-white px-3 py-1 text-sm text-black focus:border-gray-600 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-600 md:w-1/5"
+    >
+      <option value="all">Todos los campos</option>
+      <option value="title">Título</option>
+      <option value="abstract">Resumen</option>
+      <option value="journal">Revista</option>
+      <option value="year">Año</option>
+      <option value="doi">DOI</option>
+      <option value="author">Autor</option>
+    </select>
+
+    <button
+      type="button"
+      class="w-full rounded-md bg-blue-600 px-4 py-1 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 md:w-auto"
+      @click="performSearch"
+    >
+      Buscar
+    </button>
+  </div>
+</template>
+
 <script>
+import { getAllArticles } from '../data/articleItems.js'
 
-    import axios from 'axios';  
+export default {
+  data() {
+    return {
+      searchQuery: '',
+      searchField: 'all',
+    }
+  },
+  methods: {
+    performSearch() {
+      const articles = getAllArticles()
+      const q = this.searchQuery.toLowerCase().trim()
 
-    export default {
-        data() {
-            return {
-                searchQuery: '',
-                searchField: 'all',
-                articles: []
-            };
-        },
-        methods: {
-            async performSearch() {
-                
-                // Fetch data from data.json
-                const response = await axios.get('/data.json');
-                const articles = response.data;
-        
-                // Filter based on the selected field
-                const searchResults = articles.filter(article => {
-                    if (this.searchField === 'all') {
-                        return Object.values(article)
-                        .join(' ')
-                        .toLowerCase()
-                        .includes(this.searchQuery.toLowerCase());
-                    } else {
-                        return article[this.searchField]
-                        .toLowerCase()
-                        .includes(this.searchQuery.toLowerCase());
-                    }
-                });
-
-                window.location.assign(`/results?searchResults=${encodeURIComponent(JSON.stringify(searchResults))}`);
-
-            }
+      const searchResults = articles.filter((article) => {
+        if (!q) return true
+        if (this.searchField === 'all') {
+          return Object.values(article)
+            .join(' ')
+            .toLowerCase()
+            .includes(q)
         }
-    };
+        const field = article[this.searchField]
+        return String(field ?? '')
+          .toLowerCase()
+          .includes(q)
+      })
+
+      window.location.assign(
+        `/results?searchResults=${encodeURIComponent(JSON.stringify(searchResults))}`,
+      )
+    },
+  },
+}
 </script>
-  

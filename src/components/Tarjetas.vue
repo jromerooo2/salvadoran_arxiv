@@ -1,30 +1,34 @@
 <template>
-    <div class="md:grid md:grid-cols-3 md:gap-8 flex flex-col">
-        <div v-for="article in articles" :key="article.id" class="">
-          <!-- const props = defineProps(['id', 'title', 'subject', 'description', 'author', 'date_published']) -->
-            <Tarjeta :id="article.id" :title="article.title" :subject="article.subject" :description="article.description" :author="article.author" :date_published="article.date_published" />
-        </div>
+  <div class="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    <div v-for="article in articles" :key="article.id" class="min-h-0">
+      <Tarjeta
+        :id="article.id"
+        :title="article.title"
+        :abstract="article.abstract"
+        :year="article.year"
+        :journal="article.journal"
+        :doi="article.doi"
+        :author="article.author"
+      />
     </div>
+  </div>
 </template>
 
 <script>
+import Tarjeta from './Tarjeta.vue'
+import { getAllArticles } from '../data/articleItems.js'
 
-  import Tarjeta from './Tarjeta.vue';
-  import articlesData from '../assets/data.json';
-
-  export default {
-    components: {
-      Tarjeta
-    },
-    data() {
-      return {
-        articles: []
-      };
-    },
-    mounted() {
-      // Assign the imported JSON data to the component's data property
-      this.articles = articlesData;
+export default {
+  components: {
+    Tarjeta,
+  },
+  data() {
+    return {
+      articles: [],
     }
-  }
-
+  },
+  mounted() {
+    this.articles = getAllArticles()
+  },
+}
 </script>

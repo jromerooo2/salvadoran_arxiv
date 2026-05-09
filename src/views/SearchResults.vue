@@ -1,76 +1,77 @@
 <template>
-    <!-- Search bar -->
-    <Search_bar />
+  <Search_bar />
 
-    <!-- Main results content with articles grouped by year -->
-    <div class="flex flex-col space-y-8">
-      <!-- Loop through each year group -->
-      <div v-for="group in sortedArticlesByYear" :key="group.year" class="space-y-4">
-        <!-- Year subtitle -->
-        <h2 class="text-2xl font-semibold">{{ group.year }}</h2>
-  
-        <!-- Articles grid for each year -->
-        <div class="md:grid md:grid-cols-3 md:gap-8 flex flex-col">
-          <div v-for="article in group.articles" :key="article.id">
-            <Tarjeta 
-              :id="article.id" 
-              :title="article.title" 
-              :subject="article.subject" 
-              :description="article.description" 
-              :author="article.author" 
-              :date_published="article.date_published" 
-            />
-          </div>
+  <div class="flex flex-col space-y-8">
+    <div v-for="group in sortedArticlesByYear" :key="group.year" class="space-y-4">
+      <h2 class="text-2xl font-semibold">{{ group.year }}</h2>
+
+      <div class="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+        <div v-for="article in group.articles" :key="article.id">
+          <Tarjeta
+            :id="article.id"
+            :title="article.title"
+            :abstract="article.abstract"
+            :year="article.year"
+            :journal="article.journal"
+            :doi="article.doi"
+            :author="article.author"
+          />
         </div>
       </div>
     </div>
-  </template>
- 
+  </div>
+</template>
+
 <script>
-  // Import the SearchBar component
-  import Search_bar from '../components/SearchBar.vue';
-  import Tarjeta from '../components/Tarjeta.vue';
-  
-  export default {
-    components: {
-      Tarjeta,
-      Search_bar
-    },
-    data() {
-      return {
-        results: []
-      };
-    },
-    created() {
-      // Get the search results from the query parameters
-      const searchResults = this.$route.query.searchResults;
-      this.results = searchResults ? JSON.parse(searchResults) : [];
-    },
-    computed: {
-        sortedArticlesByYear() {
-            // Sort the articles by most recent date first
-            const sortedArticles = [...this.results].sort((a, b) => {
-            return new Date(b.date_published) - new Date(a.date_published);
-            });
+import Search_bar from '../components/SearchBar.vue'
+import Tarjeta from '../components/Tarjeta.vue'
 
-            // Group articles by year
-            const groupedByYear = sortedArticles.reduce((acc, article) => {
-            const year = new Date(article.date_published).getFullYear();
-            if (!acc[year]) {
-                acc[year] = [];
-            }
-            acc[year].push(article);
-            return acc;
-            }, {});
+function publicationYear(article) {
+  const y = article.year
+  if (y === undefined || y === null || String(y).trim() === '') return 0
+  const n = parseInt(String(y), 10)
+  return Number.isFinite(n) ? n : 0
+}
 
-            // Return an array of year groups sorted in descending order
-            return Object.keys(groupedByYear)
-            .sort((a, b) => b - a) // Sort years in descending order (newest year first)
-            .map(year => ({
-                year,
-                articles: groupedByYear[year]
-            }));
-        }
+export default {
+  components: {
+    Tarjeta,
+    Search_bar,
+  },
+  data() {
+    return {
+      results: [],
     }
-  };
-  </script>
+  },
+  created() {
+    const searchResults = this.$route.query.searchResults
+    this.results = searchResults ? JSON.parse(searchResults) : []
+  },
+  computed: {
+    sortedArticlesByYear() {
+      const sortedArticles = [...this.results].sort(
+        (a, b) => publicationYear(b) - publicationYear(a),
+      )
+
+      const groupedByYear = sortedArticles.reduce((acc, article) => {
+        const y = publicationYear(article)
+        const key = y > 0 ? String(y) : 'Sin año'
+        if (!acc[key]) acc[key] = []
+        acc[key].push(article)
+        return acc
+      }, {})
+
+      return Object.keys(groupedByYear)
+        .sort((a, b) => {
+          if (a === 'Sin año') return 1
+          if (b === 'Sin año') return -1
+          return Number(b) - Number(a)
+        })
+        .map((year) => ({
+          year,
+          articles: groupedByYear[year],
+        }))
+    },
+  },
+}
+</script>
