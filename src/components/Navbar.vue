@@ -32,10 +32,10 @@
               <router-link to="/" class="block text-white py-2" @click="isOpen = false">Home</router-link>
             </li>
             <li>
-              <router-link to="/about" class="block text-white py-2" @click="isOpen = false">About</router-link>
+              <router-link to="/articles" class="block text-white py-2" @click="isOpen = false">Articles</router-link>
             </li>
             <li>
-              <router-link to="/articles" class="block text-white py-2" @click="isOpen = false">Articles</router-link>
+              <router-link to="/about" class="block text-white py-2" @click="isOpen = false">About</router-link>
             </li>
             <li>
               <router-link to="/contact" class="block text-white py-2" @click="isOpen = false">Contact</router-link>
