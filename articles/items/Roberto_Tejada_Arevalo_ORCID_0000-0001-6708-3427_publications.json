@@ -2,13 +2,14 @@
   "author": "Roberto Tejada Arevalo",
   "orcid": "https://orcid.org/0000-0001-6708-3427",
   "source": "ORCID + Crossref",
-  "total_publications": 17,
+  "total_publications": 14,
   "publications": [
     {
       "title": "Sub-Neptune Memories. I. Implications of Inefficient Mantle Cooling and Silicate Rain",
       "abstract": "Abstract\n                  \n                    We explore the evolution of sub-Neptune (radii between ∼1.5 and 4\n                    R\n                    ⊕\n                    ) exoplanet interior structures using our upgraded evolution code,\n                    APPLE\n                    , which self-consistently couples the thermal and compositional evolution of the whole structure. We incorporate stably stratified regions with convective mixing and, for the first time, ab initio results on the phase separation of silicate-hydrogen mixtures to model silicate rain in sub-Neptune envelopes. We demonstrate that inefficient mantle cooling can retain sufficient heat to Gyr ages: inefficient heat transport from mantle to envelope alone keeps radii ∼10% larger than predicted by adiabatic models at late times. Silicate rain can contribute an additional ∼5% to the radius, depending on envelope mass and initial metal abundance. The silicate-hydrogen immiscibility region may lie in the middle or even upper envelope, far above the envelope–mantle boundary layer, and bifurcates the envelope into two an upper, hydrogen-rich region and a lower, metal-rich region above the mantle. If silicate rain occurs, atmospheres should appear depleted of silicates while radii remain inflated at late ages. To demonstrate the effects of inefficient mantle cooling, we present interior evolution models for GJ 1214 b, K2-18 b, TOI-270 d, and TOI-1801 b, showing that hot, liquid silicate mantles with thin envelopes reproduce their radii and mean densities, providing an alternative to water-world interpretations. These results imply that bulk compositions inferred from mean density must account for the mantle thermal state and the envelope mixing/phase-separation history; such thermal “memories” may constrain formation entropies and temperatures when metallicities are more precisely measured.",
       "year": "2026",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ae5483"
     },
     {
@@ -16,6 +17,7 @@
       "abstract": "Abstract\n                  \n                    Many evolutionary models of giant exoplanets still rely on simplifying assumptions that are no longer adequate, given detailed constraints from Jupiter, Saturn, and modern exoplanet observations. Here, we identify the key physical improvements required for next-generation planetary evolution models using our code\n                    APPLE\n                    , which enables the systematic emulation and extension of legacy studies. We quantify the effects of updated equations of state, helium rain, fuzzy cores, nonadiabatic and compositionally inhomogeneous envelopes, and improved atmospheric boundary conditions, by first isolating the impact of each physical ingredient and then constructing combined baseline models for planets with masses between 0.3 and 4\n                    M\n                    Jup\n                    , to assess their collective influence on planetary structure and observable properties. We find that the adoption of modern equations of state and realistic heavy-element distributions leads to systematic but sometimes subtle differences (∼5% to 10%) in radius evolution, while helium rain and the treatment of convection can significantly alter thermal histories and atmospheric compositions (by ∼5% to 20%). These updated physical processes must be incorporated into the next-generation exoplanet evolutionary models to achieve physically consistent interpretations of planetary observations.",
       "year": "2026",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ae3a85"
     },
     {
@@ -23,6 +25,7 @@
       "abstract": "Abstract\n                  \n                    Computed using the\n                    APPLE\n                    planetary evolution code, we present updated evolutionary models for Jupiter and Saturn that incorporate helium rain, nonadiabatic thermal structures, and “fuzzy” extended heavy-element cores. Building on our previous Ledoux-stable models, we implement improved atmospheric boundary conditions that account for composition-dependent effective temperatures and systematically explore the impact of varying the parameter\n                    R\n                    \n                      ρ\n                    \n                    , which allows one to explore in an approximate way the efficiency of semiconvection. For both Jupiter and Saturn, we construct models spanning from\n                    R\n                    \n                      ρ\n                    \n                    = 1 (Ledoux) to\n                    R\n                    \n                      ρ\n                    \n                    = 0 (Schwarzschild), and identify best-fit solutions that match each planet’s effective temperature, equatorial radius, lower-order gravitational moments, and atmospheric composition at 4.56 Gyr. We find that lower\n                    R\n                    \n                      ρ\n                    \n                    values lead to stronger convective mixing, resulting in higher surface metallicities and lower deep interior temperatures, while requiring reduced heavy-element masses and lower initial entropies to stabilize the dilute inner cores. Our Saturn models also broadly agree with the observed Brunt–Väisälä frequency profile inferred from Cassini ring seismology, with stable layers arising from both the helium rain region and the dilute core. These findings support the presence of complex, compositionally stratified interiors in both gas giants.",
       "year": "2025",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ae16a3"
     },
     {
@@ -30,6 +33,7 @@
       "abstract": "Abstract\n                  We present updated nonadiabatic and inhomogeneous evolution models for Uranus and Neptune, employing an interior composition of methane, ammonia, water, and rocks. Following the formation trends of the gas giants, Uranus and Neptune formation models are applied, where both planets begin with layers stable to convection. Both planets are subject to convective mixing throughout their evolution. Consistent with past work on this subject, the interior heat of Uranus evolution models is preserved by the stability of an outer composition gradient at lower initial entropy, where convective mixing is inhibited over evolutionary timescales. In contrast, if Neptune’s initial entropy is enough to convectively mix its envelope, it undergoes homogenization and adiabatic cooling of the outer 40% of its envelope. The subsequent release of internal energy during Neptune’s evolution, driven by the convective instability of its primordial outer compositional gradient, accounts for its higher luminosity relative to Uranus. This work proposes that the observed luminosity differences between Uranus and Neptune could be explained by the convective stability of their outer envelopes. The extensive convective mixing in Neptune can lead to a higher metallicity in its outer region compared to Uranus, a feature seen in atmospheric measurements and shown in past interior models of Neptune. Due to Neptune’s more pronounced cooling, our models predict favorable conditions for hydrogen–water immiscibility in its envelope.",
       "year": "2025",
       "journal": "The Astrophysical Journal Letters",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/2041-8213/adf3a5"
     },
     {
@@ -37,6 +41,7 @@
       "abstract": "Abstract\n               With the recent realization that there likely are stably stratified regions in the interiors of both Jupiter and Saturn, we construct new nonadiabatic, inhomogeneous evolutionary models with the same microphysics for each that result at the present time in respectable fits for all major bulk observables for both planets. These include the effective temperature, radius, atmospheric heavy-element and helium abundances (including helium rain), and the lower-order gravity moments J\n                  2 and J\n                  4. The models preserve from birth most of an extended “fuzzy” heavy-element core. Our predicted atmospheric helium mass fraction for Saturn is ∼0.2, close to some measured estimates but in disagreement with some published predictions. To preserve a fuzzy core from birth, the interiors of both planets must start out at lower entropies than would be used for traditional “hot start” adiabatic models, though the initial exterior mantle entropies can range from hot to warm start values. We do not see a helium ocean in Saturn’s interior, and both models have inner envelopes with significant Brunt–Väisälä frequencies; this region for Saturn at the current epoch is more extended, and in it, the Brunt is larger. The total heavy-element mass fraction in Jupiter and in Saturn is determined to be ∼14% and ∼26%, respectively, though there is some play in these determinations.",
       "year": "2025",
       "journal": "The Astrophysical Journal Letters",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/2041-8213/adad62"
     },
     {
@@ -44,6 +49,7 @@
       "abstract": "Abstract\n               We address the issue of which broad set of initial conditions for the planet Jupiter best matches the current presence of a “fuzzy core” of heavy elements, while at the same time comporting with measured parameters such as its effective temperature, atmospheric helium abundance, radius, and atmospheric metallicity. Our focus is on the class of fuzzy cores that can survive convective mixing to the present day and on the unique challenges of an inhomogeneous Jupiter with stably stratified regions now demanded by the Juno gravity data. Hence, using the new code APPLE, we attempt to put a nonadiabatic Jupiter into an evolutionary context. This requires not only a mass density model, the major relevant byproduct of the Juno data, but a thermal model that is subject to interior heat transport, a realistic atmospheric flux boundary, a helium rain algorithm, and the latest equation of state. The result is a good fit to most major thermal, compositional, and structural constraints that still preserve a fuzzy core and that should inform future more detailed models of the current Jupiter in the context of its evolution from birth.",
       "year": "2025",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ada030"
     },
     {
@@ -51,6 +57,7 @@
       "abstract": "Abstract\n               The equation of state of hydrogen–helium (H–He) mixtures plays a vital role in the evolution and structure of gas giant planets and exoplanets. Recent equations of state that account for H–He interactions, coupled with H–He immiscibility curves, can now produce more physical evolutionary models, such as accounting for helium rain with greater fidelity than in the past. In this work, we present a set of tools for planetary evolution that provides a Python interface for existing tables of useful thermodynamic quantities, state-of-the-art H–He equations of state, and pressure-dependent H–He immiscibility curves. In particular, for a collection of independent variable choices, we provide scripts to calculate the variety of thermodynamic derivatives used to model convection and energy transport. These include the chemical potential derived from the internal energy, which is a modeling necessity in the presence of composition gradients when entropy is the other primary variable. Finally, an entropy-based convection formalism is presented and fully described that highlights the physical differences between adiabatic and isentropic interior models. This centralized resource is meant to facilitate both giant planet structural and evolutionary modeling and the entry of new research groups into the field of giant planet modeling. All tables of thermodynamic quantities and derivatives are available at https://github.com/Rob685/hhe_eos_misc, along with a unified Python interface. Tutorials demonstrating the interface are also available in the repository.",
       "year": "2024",
       "journal": "The Astrophysical Journal Supplement Series",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4365/ad6cd7"
     },
     {
@@ -58,6 +65,7 @@
       "abstract": "Abstract\n               We introduce APPLE, a novel planetary evolution code designed specifically for the study of giant exoplanet and Jovian planet evolution in the era of Galileo, Juno, and Cassini. With APPLE, state-of-the-art equations of state for hydrogen, helium, ice, and rock are integrated with advanced features to treat ice/rock cores and metals in the gaseous envelope; models for helium rain and hydrogen/helium immiscibility; detailed atmosphere boundary tables that also provide self-consistent albedos and spectra; and options to address envelope metal gradients and stably stratified regions. Our hope is that these purpose-built features of APPLE will help catalyze the development of the next generation of giant exoplanet and Jovian planet evolutionary models.",
       "year": "2024",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ad57c3"
     },
     {
@@ -65,6 +73,7 @@
       "abstract": "Abstract\n               We present updated atmospheric tables suitable for calculating the post-formation evolution and cooling of Jupiter and Jupiter-like exoplanets. These tables are generated using a 1D radiative transfer modeling code that incorporates the latest opacities and realistic prescriptions for stellar irradiation and ammonia clouds. To ensure the accuracy of our model parameters, we calibrate them against the measured temperature structure and geometric albedo spectrum of Jupiter, its effective temperature, and its inferred internal temperature. As a test case, we calculate the cooling history of Jupiter using an adiabatic and homogeneous interior and compare with extant models now used to evolve Jupiter and the giant planets. We find that our model reasonably matches Jupiter after evolving a hot-start initial condition to the present age of the solar system, with a discrepancy in brightness temperature/radius within 2%. Our algorithm allows us to customize for different cloud, irradiation, and metallicity parameters. This class of boundary conditions can be used to study the evolution of solar system giant planets and exoplanets with more complicated interior structures and nonadiabatic, inhomogeneous internal profiles.",
       "year": "2023",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/acf456"
     },
     {
@@ -72,6 +81,7 @@
       "abstract": "Abstract\n               Ultracool dwarfs (UCDs) represent a significant proportion of stars in the Milky Way, and deep samples of these sources have the potential to constrain the formation history and evolution of low-mass objects in the Galaxy. Until recently, spectral samples have been limited to the local volume (d &lt; 100 pc). Here, we analyze a sample of 164 spectroscopically characterized UCDs identified by Aganze et al. in the Hubble Space Telescope (HST) WFC3 Infrared Spectroscopic Parallel Survey (WISPS) and 3D-HST. We model the observed luminosity function using population simulations to place constraints on scaleheights, vertical velocity dispersions, and population ages as a function of spectral type. Our star counts are consistent with a power-law mass function and constant star formation history for UCDs, with vertical scaleheights of 249\n                     \n\n\n                     \n                        \n                           \n                           \n                              −\n                              61\n                           \n                           \n                              +\n                              48\n                           \n                        \n                     \n                     \n                   pc for late-M dwarfs, 153\n                     \n\n\n                     \n                        \n                           \n                           \n                              −\n                              30\n                           \n                           \n                              +\n                              56\n                           \n                        \n                     \n                     \n                   pc for L dwarfs, and 175\n                     \n\n\n                     \n                        \n                           \n                           \n                              −\n                              56\n                           \n                           \n                              +\n                              149\n                           \n                        \n                     \n                     \n                   pc for T dwarfs. Using spatial and velocity dispersion relations, these scaleheights correspond to disk population ages of 3.6\n                     \n\n\n                     \n                        \n                           \n                           \n                              −\n                              1.0\n                           \n                           \n                              +\n                              0.8\n                           \n                        \n                     \n                     \n                   Gyr for late-M dwarfs, 2.1\n                     \n\n\n                     \n                        \n                           \n                           \n                              −\n                              0.5\n                           \n                           \n                              +\n                              0.9\n                           \n                        \n                     \n                     \n                   Gyr for L dwarfs, and 2.4\n                     \n\n\n                     \n                        \n                           \n                           \n                              −\n                              0.8\n                           \n                           \n                              +\n                              2.4\n                           \n                        \n                     \n                     \n                   Gyr for T dwarfs, which are consistent with prior simulations that predict that L-type dwarfs are on average a younger and less dispersed population. There is an additional 1–2 Gyr systematic uncertainty on these ages due to variances in age-velocity relations. We use our population simulations to predict the UCD yield in the James Webb Space Telescope PASSAGES survey, a similar and deeper survey to WISPS and 3D-HST, and find that it will produce a comparably sized UCD sample, albeit dominated by thick disk and halo sources.",
       "year": "2022",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ac7053"
     },
     {
@@ -79,48 +89,31 @@
       "abstract": "Abstract\n               A leading theoretical expectation for the final stages of planet formation is that disk migration should naturally drive orbits into chains of mean motion resonances (MMRs). In order to explain the dearth of MMR chains observed at Gyr ages (&lt;1%), this picture requires such configurations to destabilize and scramble period ratios following disk dispersal. Strikingly, the only two known stars with three or more planets younger than ≲100 Myr, HR 8799 and V1298 Tau, have been suggested to be in such MMR chains, given the orbits’ near-integer period ratios. We incorporate recent transit and radial velocity (RV) observations of the V1298 Tau system, and investigate constraints on the system’s orbital architecture imposed by requiring dynamical stability on timescales much shorter than the system’s age. We show that the recent RV mass measurement of V1298 Tau b places it within a factor of 2 of the instability limit, and that this allows us to set significantly lower limits on the eccentricity (e\n                  \n                     b\n                   ≤0.17 at 99.7% confidence). Additionally, we rule out a resonant chain configuration for V1298 Tau at ≳99% confidence. Thus, if the ∼23 Myr old V1298 Tau system did form as a resonant chain, it must have undergone instability and rearrangement shortly after disk dispersal. We expect that similar stability constrained characterization of future young multiplanet systems will be valuable in informing planet formation models.",
       "year": "2022",
       "journal": "The Astrophysical Journal Letters",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/2041-8213/ac70e0"
-    },
-    {
-      "title": "Stability Constrained Characterization of the 23 Myr-old V1298 Tau System: Do Young Planets Form in Mean Motion Resonance Chains?",
-      "abstract": "N/A",
-      "year": "2022",
-      "journal": "N/A",
-      "doi": "N/A"
     },
     {
       "title": "Beyond the Local Volume. I. Surface Densities of Ultracool Dwarfs in Deep HST/WFC3 Parallel Fields",
       "abstract": "Abstract\n               Ultracool dwarf stars and brown dwarfs provide a unique probe of large-scale Galactic structure and evolution; however, until recently spectroscopic samples of sufficient size, depth, and fidelity have been unavailable. Here, we present the identification of 164 M7-T9 ultracool dwarfs in 0.6 deg2 of deep, low-resolution, near-infrared spectroscopic data obtained with the Hubble Space Telescope (HST) Wide Field Camera 3 (WFC3) instrument as part of the WFC3 Infrared Spectroscopic Parallel Survey and the 3D-HST survey. We describe the methodology by which we isolate ultracool dwarf candidates from over 200,000 spectra, and show that selection by machine-learning classification is superior to spectral index-based methods in terms of completeness and contamination. We use the spectra to accurately determine classifications and spectrophotometric distances, the latter reaching to ∼2 kpc for L dwarfs and ∼400 pc for T dwarfs.",
       "year": "2022",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ac35ea"
-    },
-    {
-      "title": "Beyond the Local Volume I: Surface Densities of Ultracool Dwarfs in Deep HST/WFC3 Parallel Fields",
-      "abstract": "N/A",
-      "year": "2021",
-      "journal": "N/A",
-      "doi": "N/A"
     },
     {
       "title": "Further Evidence for Tidal Spin-up of Hot Jupiter Host Stars",
       "abstract": "Abstract\n               For most hot Jupiters around main-sequence Sun-like stars, tidal torques are expected to transfer angular momentum from the planet’s orbit to the star’s rotation. The timescale for this process is difficult to calculate, leading to uncertainties in the history of orbital evolution of hot Jupiters. We present evidence for tidal spin-up by taking advantage of recent advances in planet detection and host-star characterization. We compared the projected rotation velocities and rotation periods of Sun-like stars with hot Jupiters and spectroscopically similar stars with (i) giant planets on wider orbits and (ii) lower-mass planets. The hot-Jupiter hosts tend to spin faster than the stars in either of the control samples. Reinforcing earlier studies, the results imply that hot Jupiters alter the spins of their host stars while they are on the main sequence, and that the ages of hot-Jupiter hosts cannot be reliably determined using gyrochronology.",
       "year": "2021",
       "journal": "The Astrophysical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-4357/ac1429"
-    },
-    {
-      "title": "Further Evidence for Tidal Spin-Up of Hot Jupiter Host Stars",
-      "abstract": "N/A",
-      "year": "2021",
-      "journal": "arXiv e-prints",
-      "doi": "N/A"
     },
     {
       "title": "orbitize!: A Comprehensive Orbit-fitting Software Package for the High-contrast Imaging Community",
       "abstract": "Abstract\n               \n                  orbitize! is an open-source, object-oriented software package for fitting the orbits of directly imaged objects. It packages the Orbits for the Impatient (OFTI) algorithm and a parallel-tempered Markov Chain Monte Carlo (MCMC) algorithm into a consistent and intuitive Python API. orbitize! makes it easy to run standard astrometric orbit fits; in less than 10 lines of code, users can read in data, perform one fit using OFTI and another using MCMC, and make two publication-ready figures. Extensive pedagogical tutorials, intended to be navigable by both orbit-fitting novices and seasoned experts, are available on our documentation page. We have designed the orbitize! API to be flexible and easy to use/modify for unique cases. orbitize! was designed by members of the exoplanet imaging community to be a central repository for algorithms, techniques, and know-how developed by this community. We intend for it to continue to expand and change as the field progresses and new techniques are developed, and call for community involvement in this process. Complete and up-to-date documentation is available at orbitize.info, and the source code is available at github.com/sblunt/orbitize.",
       "year": "2020",
       "journal": "The Astronomical Journal",
+      "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-3881/ab6663"
     }
   ]

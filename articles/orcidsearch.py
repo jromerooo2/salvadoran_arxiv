@@ -202,18 +202,22 @@ def save_results(papers, author_name, orcid_id):
 def main():
     print("\n🔭 ORCID Publication Search Tool")
     print("─" * 40)
-    orcid_input = input("  Enter ORCID ID (e.g. 0000-0001-5765-2061): ").strip()
 
-    papers, author_name, orcid_id = search_orcid(orcid_input)
+    with open("orcid_comunidad", "r", encoding="utf-8") as f:
+        orcid_ids = [line.strip() for line in f if line.strip()]
 
-    if papers:
-        display_results(papers, author_name, orcid_id)
-        save = input("Save results to JSON file? (y/n): ").strip().lower()
-        if save == "y":
+    for orcid_input in orcid_ids:
+        print(f"Processing ORCID ID: {orcid_input}")
+        papers, author_name, orcid_id = search_orcid(orcid_input)
+
+        if papers:
+            display_results(papers, author_name, orcid_id)
             save_results(papers, author_name, orcid_id)
-    else:
-        print("⚠️  No publications found.")
+        else:
+            print(f"⚠️  No publications found for ORCID ID {orcid_input}.")
 
+    # Prevent main() from re-running below, as we moved the logic to this loop.
+    return
 
 if __name__ == "__main__":
     main()
