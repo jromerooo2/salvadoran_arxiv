@@ -29,6 +29,7 @@ export function articleHaystackAll(article) {
     article.year,
     article.doi,
     article.author,
+    article.affiliation,
     article.orcid,
   ]
   return normalizeSearchText(parts.join(' '))
@@ -48,7 +49,10 @@ export function articleMatchesQuery(article, query, searchField) {
     return tokens.every((t) => hay.includes(t))
   }
 
-  const raw = article[searchField]
+  const raw =
+    searchField === 'author'
+      ? [article.author, article.affiliation].join(' ')
+      : article[searchField]
   const hay = normalizeSearchText(raw)
   return tokens.every((t) => hay.includes(t))
 }

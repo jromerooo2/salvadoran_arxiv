@@ -9,6 +9,7 @@
         :journal="article.journal"
         :doi="article.doi"
         :author="article.author"
+        :affiliation="article.affiliation"
       />
     </div>
   </div>

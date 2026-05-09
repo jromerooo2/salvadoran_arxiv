@@ -9,6 +9,7 @@ const props = defineProps({
   journal: String,
   doi: String,
   author: String,
+  affiliation: String,
 })
 
 const yearLabel = computed(() => {
@@ -41,6 +42,14 @@ const doiDisplay = computed(() => {
   return s
 })
 
+const authorLine = computed(() => {
+  const auth = (props.author ?? '').trim()
+  if (!auth) return ''
+  const aff = (props.affiliation ?? '').trim()
+  if (!aff || aff.toUpperCase() === 'N/A') return auth
+  return `${auth}, ${aff}`
+})
+
 const abstractIsMissing = computed(() => {
   const a = (props.abstract ?? '').trim()
   return !a || a === 'N/A' || a.toUpperCase() === 'N/A'
@@ -64,8 +73,8 @@ const abstractPreview = computed(() => {
       <h3 class="text-base font-bold leading-snug text-gray-900 sm:text-lg">
         {{ title }}
       </h3>
-      <p v-if="author" class="mt-1 text-xs text-gray-500">
-        {{ author }}
+      <p v-if="authorLine" class="mt-1 text-sm text-gray-600">
+        {{ authorLine }}
       </p>
       <div
         class="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-600"
@@ -74,7 +83,19 @@ const abstractPreview = computed(() => {
           {{ yearLabel }}
         </span>
         <span class="text-gray-400" aria-hidden="true">·</span>
-        <span class="min-w-0 flex-1 font-medium text-gray-700">{{ journalLabel }}</span>
+        <span class="min-w-0 font-medium text-gray-700">{{ journalLabel }}</span>
+        <span class="text-gray-400" aria-hidden="true">·</span>
+        <span class="inline-flex min-w-0 flex-wrap items-center gap-x-1 break-all text-gray-800">
+          <span class="shrink-0 font-medium text-gray-500">DOI:</span>
+          <a
+            v-if="doiHref"
+            :href="doiHref"
+            class="text-blue-700 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >{{ doiDisplay }}</a>
+          <span v-else>{{ doiDisplay }}</span>
+        </span>
       </div>
     </header>
 
@@ -93,21 +114,5 @@ const abstractPreview = computed(() => {
         {{ abstractPreview }}
       </p>
     </section>
-
-    <footer class="mt-4 border-t border-gray-100 pt-3">
-      <dl class="text-xs">
-        <dt class="font-medium text-gray-500">DOI</dt>
-        <dd class="mt-0.5 break-all text-gray-900">
-          <a
-            v-if="doiHref"
-            :href="doiHref"
-            class="text-blue-700 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >{{ doiDisplay }}</a>
-          <span v-else>{{ doiDisplay }}</span>
-        </dd>
-      </dl>
-    </footer>
   </article>
 </template>

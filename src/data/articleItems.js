@@ -10,7 +10,7 @@ export function publicationYearValue(year) {
 
 /**
  * Flatten all ORCID publication bundles under articles/items into one list.
- * Each row: id, author, orcid, title, abstract, year, journal, doi
+ * Each row: id, author, orcid, affiliation, title, abstract, year, journal, doi
  * Newest first (higher year first; within a year, higher id first).
  */
 export function getAllArticles() {
@@ -26,6 +26,7 @@ export function getAllArticles() {
         id: ++id,
         author,
         orcid,
+        affiliation: pub.affiliation ?? '',
         title: pub.title ?? '',
         abstract: pub.abstract ?? '',
         year: pub.year ?? '',
