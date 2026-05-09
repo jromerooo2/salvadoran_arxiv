@@ -9,8 +9,16 @@
     </h3>
   </div>
 
-  <!-- Search bar -->
-  <Search_bar />
+  <!-- Búsqueda principal (azul bandera, centrada) -->
+  <section
+    class="home-search mx-auto mb-10 mt-6 w-full max-w-3xl rounded-xl px-5 py-8 text-center shadow-md sm:px-8"
+    style="background-color: #0047ab"
+  >
+    <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
+      Conoce la ciencia de científicos salvadoreños
+    </h2>
+    <Search_bar layout="hero" :centered="true" />
+  </section>
 
   <!-- Table of content -->
   <div class="category-index">

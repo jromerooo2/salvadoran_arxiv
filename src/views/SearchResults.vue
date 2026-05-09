@@ -37,9 +37,27 @@ export default {
       results: [],
     }
   },
+  methods: {
+    loadResultsFromRoute() {
+      const raw = this.$route.query.searchResults
+      if (raw == null || raw === '') {
+        this.results = []
+        return
+      }
+      try {
+        this.results = typeof raw === 'string' ? JSON.parse(raw) : raw
+      } catch {
+        this.results = []
+      }
+    },
+  },
   created() {
-    const searchResults = this.$route.query.searchResults
-    this.results = searchResults ? JSON.parse(searchResults) : []
+    this.loadResultsFromRoute()
+  },
+  watch: {
+    '$route.query.searchResults'() {
+      this.loadResultsFromRoute()
+    },
   },
   computed: {
     sortedArticlesByYear() {
