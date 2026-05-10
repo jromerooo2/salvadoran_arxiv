@@ -32,7 +32,11 @@
               href="#"
               @click.prevent="searchByCategoryGroup(category)"
             >recent articles</a>,
-            <a class="text-blue-700 hover:underline" :href="category.category_researchersLink">researchers</a>)
+            <a
+              class="cursor-pointer text-blue-700 hover:underline"
+              href="#"
+              @click.prevent="researchersByCategoryGroup(category)"
+            >researchers</a>)
           </p>
         </header>
 
@@ -123,6 +127,23 @@ export default {
       this.$router.push({
         path: '/researchers',
         query: { category: target },
+      })
+    },
+    researchersByCategoryGroup(category) {
+      let prefix = (category?.category_code ?? '').toString().trim()
+      if (!prefix) {
+        const codes = (category?.subcategories ?? [])
+          .map((s) => (s?.subcategories_code ?? '').toString().trim())
+          .filter(Boolean)
+        if (codes.length === 0) return
+        const first = codes[0]
+        const dash = first.indexOf('-')
+        prefix = dash >= 0 ? first.slice(0, dash) : first
+      }
+      if (!prefix) return
+      this.$router.push({
+        path: '/researchers',
+        query: { prefix },
       })
     },
   },

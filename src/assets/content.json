@@ -1,6 +1,7 @@
 [
   {
     "category_name": "Physics",
+    "category_code": "phy",
     "category_articlesLink": "#",
     "category_researchersLink": "#",
     "subcategories": [
@@ -50,6 +51,7 @@
   },
   {
     "category_name": "Mathematics",
+    "category_code": "math",
     "category_articlesLink": "#",
     "category_researchersLink": "#",
     "subcategories": [
@@ -93,6 +95,7 @@
   },
   {
     "category_name": "Biology",
+    "category_code": "bio",
     "category_articlesLink": "#",
     "category_researchersLink": "#",
     "subcategories": [
@@ -130,6 +133,7 @@
   },
   {
     "category_name": "Chemistry",
+    "category_code": "chem",
     "category_articlesLink": "#",
     "category_researchersLink": "#",
     "subcategories": [
@@ -167,6 +171,7 @@
   },
   {
     "category_name": "Engineering",
+    "category_code": "eng",
     "category_articlesLink": "#",
     "category_researchersLink": "#",
     "subcategories": [
@@ -204,6 +209,7 @@
   },
   {
     "category_name": "Health Sciences",
+    "category_code": "health",
     "category_articlesLink": "#",
     "category_researchersLink": "#",
     "subcategories": [

@@ -105,20 +105,38 @@ export default {
     '$route.query.category'() {
       this.applyFilterFromRoute()
     },
+    '$route.query.prefix'() {
+      this.applyFilterFromRoute()
+    },
   },
   methods: {
     orcidDisplayId: (url) => orcidDisplayId(url),
     applyFilterFromRoute() {
       const all = getResearchers()
       const code = (this.$route.query.category ?? '').toString().trim()
-      if (!code) {
-        this.researchers = all
+      const prefix = (this.$route.query.prefix ?? '').toString().trim()
+
+      if (code) {
+        this.researchers = all.filter((r) =>
+          Array.isArray(r.categories) &&
+          r.categories.some((c) => (c?.code ?? '').toString().trim() === code),
+        )
         return
       }
-      this.researchers = all.filter((r) =>
-        Array.isArray(r.categories) &&
-        r.categories.some((c) => (c?.code ?? '').toString().trim() === code),
-      )
+
+      if (prefix) {
+        const head = `${prefix}-`
+        this.researchers = all.filter((r) =>
+          Array.isArray(r.categories) &&
+          r.categories.some((c) => {
+            const cc = (c?.code ?? '').toString().trim()
+            return cc === prefix || cc.startsWith(head)
+          }),
+        )
+        return
+      }
+
+      this.researchers = all
     },
     seeMorePapers(orcid) {
       const all = getAllArticles()
