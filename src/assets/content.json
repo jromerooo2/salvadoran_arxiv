@@ -250,5 +250,49 @@
         "subcategories_researchersLink": "#"
       }
     ]
+  },
+  {
+    "category_name": "Education",
+    "category_code": "edu",
+    "category_articlesLink": "#",
+    "category_researchersLink": "#",
+    "subcategories": [
+      {
+        "subcategories_name": "Physics Education",
+        "subcategories_code": "edu-phy",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Mathematics Education",
+        "subcategories_code": "edu-math",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Biology Education",
+        "subcategories_code": "edu-bio",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Chemistry Education",
+        "subcategories_code": "edu-chem",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Engineering Education",
+        "subcategories_code": "edu-eng",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      },
+      {
+        "subcategories_name": "Health Sciences Education",
+        "subcategories_code": "edu-health",
+        "subcategories_articlesLink": "#",
+        "subcategories_researchersLink": "#"
+      }
+    ]
   }
 ]
