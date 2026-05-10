@@ -3,7 +3,7 @@
   "orcid": "https://orcid.org/0000-0002-4802-3872",
   "source": "ORCID + Crossref",
   "total_publications": 16,
-  "author_categories": "",
+  "author_categories": "phy-astro",
   "publications": [
     {
       "title": "Reassessment of the glyoxal-to-formaldehyde ratio (RGF) as a proxy for VOC source identification",
@@ -21,7 +21,7 @@
       "journal": "Remote Sensing of Environment",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1016/j.rse.2024.114379",
-      "category": "uncategorized"
+      "category": "phy-astro"
     },
     {
       "title": "Full mission evaluation of EnMAP water leaving reflectance products using three atmospheric correction processors",

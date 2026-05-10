@@ -3,7 +3,7 @@
   "orcid": "https://orcid.org/0000-0002-1933-4700",
   "source": "ORCID + Crossref",
   "total_publications": 1,
-  "author_categories": "",
+  "author_categories": "chem-mat",
   "publications": [
     {
       "title": "Robustness of Classical Nucleation Theory to Chemical Heterogeneity of Crystal Nucleating Substrates",
@@ -12,7 +12,7 @@
       "journal": "Crystal Growth & Design",
       "affiliation": "Department of Chemical and Environmental Engineering",
       "doi": "https://doi.org/10.1021/acs.cgd.5c01399",
-      "category": "uncategorized"
+      "category": "chem-mat"
     }
   ]
 }

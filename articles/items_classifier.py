@@ -370,14 +370,17 @@ if __name__ == "__main__":
             print("No uncategorized publications to classify. Nothing to do.")
             raise SystemExit(0)
 
-        results = classify_batch(sample_publications, model=OLLAMA_MODEL)
+        for pub in sample_publications:
+            print(f"  {pub['title']}")
+            print(f"  {pub['abstract']}")
+            print(f"  {pub['journal']}")
+            print(f"  {pub['affiliation']}")
+            print(f"  {pub['doi']}")
+            print(f"  {pub['category']}")
+            print("=" * 60)
 
-        print("\n── Summary ──────────────────────────────────────────────")
-        for r in results:
-            label = r["discipline"]
-            conf  = f"{r['confidence']:.0%}"
-            title = r["title"][:55]
-            print(f"  {label} ({conf})  {title}")
+            # Classify this publication one-by-one (not as batch)
+            results = classify_batch([pub], model=OLLAMA_MODEL)
 
-        print("\n── Writing categories back to file ──────────────────────")
-        update_categories_in_file(json_path, results)
+            print("\n── Writing categories back to file ──────────────────────")
+            update_categories_in_file(json_path, results)
