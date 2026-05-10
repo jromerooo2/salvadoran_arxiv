@@ -44,7 +44,11 @@
                 {{ subcategory.subcategories_name }}<span v-if="subcategory.subcategories_code"> ({{ subcategory.subcategories_code }})</span>
               </span>
               <span class="font-normal text-gray-600">
-                (<a class="text-blue-700 hover:underline" :href="subcategory.subcategories_articlesLink">recent articles</a>,
+                (<a
+                  class="cursor-pointer text-blue-700 hover:underline"
+                  href="#"
+                  @click.prevent="searchByCategory(subcategory.subcategories_code)"
+                >recent articles</a>,
                 <a class="text-blue-700 hover:underline" :href="subcategory.subcategories_researchersLink">researchers</a>)
               </span>
             </li>
@@ -58,6 +62,7 @@
 <script>
 import SearchBar from '../components/SearchBar.vue'
 import contentData from '../assets/content.json'
+import { getAllArticles } from '../data/articleItems.js'
 
 export default {
   components: {
@@ -70,6 +75,22 @@ export default {
   },
   mounted() {
     this.table_of_content = contentData
+  },
+  methods: {
+    searchByCategory(code) {
+      const target = (code ?? '').toString().trim()
+      if (!target) return
+      const articles = getAllArticles()
+      const searchResults = articles.filter(
+        (a) => (a.category ?? '').toString().trim() === target,
+      )
+      this.$router.push({
+        path: '/results',
+        query: {
+          searchResults: JSON.stringify(searchResults),
+        },
+      })
+    },
   },
 }
 </script>
