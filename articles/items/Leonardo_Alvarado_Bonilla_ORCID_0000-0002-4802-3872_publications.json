@@ -3,7 +3,7 @@
   "orcid": "https://orcid.org/0000-0002-4802-3872",
   "source": "ORCID + Crossref",
   "total_publications": 16,
-  "author_categories": "phy-astro",
+  "author_categories": "bio-eco, math-acm, phy-astro",
   "publications": [
     {
       "title": "Reassessment of the glyoxal-to-formaldehyde ratio (RGF) as a proxy for VOC source identification",
@@ -30,7 +30,7 @@
       "journal": "Optics Express",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1364/OE.523813",
-      "category": "uncategorized"
+      "category": "math-acm"
     },
     {
       "title": "Measurement report: Combined use of MAX-DOAS and AERONET ground-based measurements in Montevideo, Uruguay, for the detection of distant biomass burning",
@@ -48,7 +48,7 @@
       "journal": "State of the Planet",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.5194/sp-1-osr7-5-2023",
-      "category": "uncategorized"
+      "category": "bio-eco"
     },
     {
       "title": "INTERCOMPARISON OF DESIS, SENTINEL-2 (MSI) AND SENTINEL-3 (OLCI) DATA FOR WATER COLOUR APPLICATIONS",
@@ -57,7 +57,7 @@
       "journal": "The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.5194/isprs-archives-XLVI-1-W1-2021-69-2022",
-      "category": "uncategorized"
+      "category": "phy-astro"
     },
     {
       "title": "Glyoxal tropospheric column retrievals from TROPOMI – multi-satellite intercomparison and ground-based validation",
@@ -129,7 +129,7 @@
       "journal": "Towards an Interdisciplinary Approach in Earth System Science",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/978-3-319-13865-7_7",
-      "category": "uncategorized"
+      "category": "bio-eco"
     },
     {
       "title": "Liquid water absorption and scattering effects in DOAS retrievals over oceans",

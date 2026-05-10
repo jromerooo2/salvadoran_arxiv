@@ -1,0 +1,162 @@
+{
+  "author": "Francisco Alexander Zelaya-Arrazabal",
+  "orcid": "https://orcid.org/0000-0003-3013-8871",
+  "source": "ORCID + Crossref",
+  "total_publications": 17,
+  "author_categories": "eng-ece, math-acm",
+  "publications": [
+    {
+      "title": "Switch-Based Oscillation Control via State-Space Projections in Interconnected Systems",
+      "abstract": "N/A",
+      "year": "2026",
+      "journal": "IEEE Transactions on Circuits and Systems I: Regular Papers",
+      "affiliation": "Department of Electrical Engineering and Computer Science, The University of Tennessee, Knoxville, TN, USA",
+      "doi": "https://doi.org/10.1109/TCSI.2026.3664676",
+      "category": "math-acm"
+    },
+    {
+      "title": "Web-based wide-area monitoring platform for ringdown and clustering analytics in power systems",
+      "abstract": "N/A",
+      "year": "2025",
+      "journal": "International Journal of Electrical Power & Energy Systems",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.ijepes.2025.110714",
+      "category": "math-acm"
+    },
+    {
+      "title": "Coordination of damping controllers: A novel data-informed approach for adaptability",
+      "abstract": "N/A",
+      "year": "2025",
+      "journal": "Electric Power Systems Research",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.epsr.2024.111351",
+      "category": "math-acm"
+    },
+    {
+      "title": "Coordination of Damping Controllers: A Novel Data-Informed Approach for Adaptability",
+      "abstract": "N/A",
+      "year": "2024",
+      "journal": "SSRN",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.2139/ssrn.4801026",
+      "category": "math-acm"
+    },
+    {
+      "title": "Practical Methods of Defective Input Feature Correction to Enable Machine Learning in Power Systems",
+      "abstract": "N/A",
+      "year": "2024",
+      "journal": "IEEE Transactions on Power Systems",
+      "affiliation": "University of Tennessee, Knoxville, TN, USA",
+      "doi": "https://doi.org/10.1109/TPWRS.2023.3328161",
+      "category": "math-acm"
+    },
+    {
+      "title": "Enhancing wide-area damping controllers via data-assisted power system linear models",
+      "abstract": "N/A",
+      "year": "2023",
+      "journal": "Electric Power Systems Research",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.epsr.2022.109085",
+      "category": "math-acm"
+    },
+    {
+      "title": "Coordination of Damping Controllers: A Novel Data-Informed Approach for Adaptability",
+      "abstract": "N/A",
+      "year": "2023",
+      "journal": "arXiv",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.48550/arXiv.2312.07739",
+      "category": "math-acm"
+    },
+    {
+      "title": "Supplementary Primary Frequency Control Through Deep Reinforcement Learning Algorithms",
+      "abstract": "N/A",
+      "year": "2023",
+      "journal": "2023 North American Power Symposium, NAPS 2023",
+      "affiliation": "University of Tennessee,Department of Electrical Engineering and Computer Science,Knoxville",
+      "doi": "https://doi.org/10.1109/NAPS58826.2023.10318681",
+      "category": "math-acm"
+    },
+    {
+      "title": "Data-driven adaptive dynamic coordination of damping controllers",
+      "abstract": "N/A",
+      "year": "2022",
+      "journal": "2022 North American Power Symposium (NAPS)",
+      "affiliation": "University of Tennessee,Department of Electrical Engineering and Computer Science,Knoxville",
+      "doi": "https://doi.org/10.1109/naps56150.2022.10012155",
+      "category": "eng-ece"
+    },
+    {
+      "title": "Enhancing Wide-Area Damping Controllers Via Data-Assisted Power System Linear Models",
+      "abstract": "N/A",
+      "year": "2022",
+      "journal": "SSRN",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.2139/ssrn.4059938",
+      "category": "math-acm"
+    },
+    {
+      "title": "Two effective methods for impedance estimation in distance relays based on the DC offset removal",
+      "abstract": "N/A",
+      "year": "2021",
+      "journal": "Electric Power Systems Research",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.epsr.2021.107102",
+      "category": "eng-ece"
+    },
+    {
+      "title": "Data‐driven power system linear model identification for selective modal analysis by frequency interpolations",
+      "abstract": "This paper proposes a new approach to identify a data‐based power system linear model by means of frequency interpolations, aiming to obtain a suitable system representation for selective‐modal analysis purposes. The key idea behind the identification process is the Loewner‐based frequency interpolation carried out by the Loewner matrices. The proposed approach demonstrates that the Loewner‐based frequency interpolation is able to fit a linear model that can be used for small‐signal analysis studies, since it provides the state‐space representation, the frequency response, and modal information (frequency, damping, and mode‐shape). Then, a selective modal analysis is accomplished over two test cases (Kundur and New England–New York power grids) by employing the identified linear model provided by the Loewner‐based frequency interpolation method. The attained results confirm the outstanding performance of the proposal which is validated against the small‐signal analysis and compared with the eigensystem realisation algorithm, overcoming the absolute error of the model identified with the traditional eigensystem realisation algorithm approach by at least 37 times, and properly capturing the modal information in a frequency band of concern.",
+      "year": "2021",
+      "journal": "IET Generation, Transmission & Distribution",
+      "affiliation": "National Autonomous University of Mexico (UNAM) Mex. 04510 Mexico",
+      "doi": "https://doi.org/10.1049/gtd2.12084",
+      "category": "math-acm"
+    },
+    {
+      "title": "Power system linear model selective identification by exploiting the Loewner interpolation method",
+      "abstract": "N/A",
+      "year": "2020",
+      "journal": "2020 IEEE Power & Energy Society General Meeting (PESGM)",
+      "affiliation": "UNAM,Mexico City,Mexico",
+      "doi": "https://doi.org/10.1109/pesgm41954.2020.9282088",
+      "category": "math-acm"
+    },
+    {
+      "title": "Model-based synchrophasor estimation by exploiting the eigensystem realization approach",
+      "abstract": "N/A",
+      "year": "2020",
+      "journal": "Electric Power Systems Research",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.epsr.2020.106249",
+      "category": "math-acm"
+    },
+    {
+      "title": "A Matlab and PowerFactory-based WAMS Simulator",
+      "abstract": "N/A",
+      "year": "2019",
+      "journal": "2019 North American Power Symposium (NAPS)",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1109/naps46351.2019.9000245",
+      "category": "math-acm"
+    },
+    {
+      "title": "Inter-area Oscillation Control Based on Eigensystem Realization Approach",
+      "abstract": "N/A",
+      "year": "2018",
+      "journal": "2018 IEEE International Autumn Meeting on Power, Electronics and Computing (ROPEC)",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1109/ropec.2018.8661402",
+      "category": "math-acm"
+    },
+    {
+      "title": "Synchrophasor Estimation Through An Eigensystem Realization Approach",
+      "abstract": "N/A",
+      "year": "2018",
+      "journal": "2018 North American Power Symposium (NAPS)",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1109/naps.2018.8600636",
+      "category": "math-acm"
+    }
+  ]
+}

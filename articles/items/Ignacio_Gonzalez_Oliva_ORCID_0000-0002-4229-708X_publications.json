@@ -1,0 +1,81 @@
+{
+  "author": "Ignacio Gonzalez Oliva",
+  "orcid": "https://orcid.org/0000-0002-4229-708X",
+  "source": "ORCID + Crossref",
+  "total_publications": 8,
+  "author_categories": "chem-mat, phy-cond, phy-phys",
+  "publications": [
+    {
+      "title": "Impact of electron–phonon interaction on the electronic structure of interfaces between organic molecules and a MoS2 monolayer",
+      "abstract": "By means of first-principles calculations, we investigate the role of electron–phonon interaction on the electronic structure of hybrid interfaces formed by MoS2 and monolayers of the organic molecules pyrene and pyridine, respectively. Quasiparticle energies are initially obtained within the G0W0 approximation and are subsequently used to evaluate the electron–phonon self-energy and momentum-resolved spectral functions to assess the temperature renormalization of the band structure. We find that the band-gap renormalization by zero-point vibrations of both hybrid systems is comparable to that of pristine MoS2, with a value of ∼80 meV. Pronounced features of molecular origin emerge in the spectral function of the valence region, which we attribute to satellites arising from out-of-plane vibrational modes of the organic monolayers. For pyrene, this satellite exhibits a predominantly molecular character, while for pyridine, it has a hybrid nature originating from the coupling of molecular vibrations to the MoS2 valence band.",
+      "year": "2026",
+      "journal": "The Journal of Chemical Physics",
+      "affiliation": "Physics Department and CSMB, Humboldt-Universität zu Berlin 1 , Zum Großen Windkanal 2, 12489 Berlin,",
+      "doi": "https://doi.org/10.1063/5.0311371",
+      "category": "phy-phys"
+    },
+    {
+      "title": "Hybrid Frenkel–Wannier excitons facilitate ultrafast energy transfer at a 2D–organic interface",
+      "abstract": "Two-dimensional transition metal dichalcogenides and organic semiconductors have emerged as promising material platforms for optoelectronic devices. Combining the two is predicted to yield emergent properties while retaining the advantages of each. In organic semiconductors, the optoelectronic response is typically dominated by localized Frenkel-type excitons, whereas transition metal dichalcogenides host delocalized Wannier-type excitons. However, much less is known about the characteristics of excitons at hybrid interfaces between these materials, which determine the possible energy- and charge-transfer pathways. Here we identify a hybrid exciton at one such interface using ultrafast momentum microscopy and many-body perturbation theory. We show that this hybrid exciton, formed predominantly via resonant Förster energy transfer, has both Frenkel- and Wannier-type contributions: intralayer electron–hole transitions within the organic semiconductor layer and interlayer transitions across the interface give rise to an exciton wavefunction with mixed character. This work advances our understanding of charge and energy transfer processes across 2D–organic heterostructures.",
+      "year": "2025",
+      "journal": "Nature Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1038/s41567-025-03075-5",
+      "category": "phy-cond"
+    },
+    {
+      "title": "Efficient G0W0 and Bethe-Salpeter equation calculations of heterostructures within an all-electron framework",
+      "abstract": "The combination of two-dimensional materials into heterostructures offers new opportunities for the design of optoelectronic devices with tunable properties. However, computing electronic and optical properties of such systems using state-of-the-art methodology is challenging due to their large unit cells. This is particularly so for highly precise all-electron calculations within the framework of many-body perturbation theory, which come with high computational costs. Here, we extend an approach that allows for the efficient calculation of the noninteracting polarizability, previously developed for plane wave basis sets, to the (linearized) augmented plane wave method. This approach is based on an additive ansatz, which computes and superposes the polarizabilities of the individual components in their respective unit cells. We implement this formalism in the G0W0 module of the exciting code and implement an analogous approach for BSE calculations. This allows the calculation of highly precise optical spectra at low cost. So-obtained results of the quasiparticle band structure and optical spectra are demonstrated for bilayer WSe2 and pyridine@MoS2 in comparison with exact reference calculations.",
+      "year": "2025",
+      "journal": "Physical Review B",
+      "affiliation": "Humboldt-Universität zu Berlin",
+      "doi": "https://doi.org/10.1103/hm7q-y2x7",
+      "category": "phy-cond"
+    },
+    {
+      "title": "Critical assessment of G0W0 calculations for 2D materials: the example of monolayer MoS2",
+      "abstract": "Two-dimensional (2D) materials combine many fascinating properties that make them more interesting than their three-dimensional counterparts for a variety of applications. For example, 2D materials exhibit stronger electron-phonon and electron-hole interactions, and their energy gaps and effective carrier masses can be easily tuned. Surprisingly, published band gaps of several 2D materials obtained with the GW approach, the state-of-the-art in electronic-structure calculations, are quite scattered. The details of these calculations, such as the underlying geometry, the starting point, the inclusion of spin-orbit coupling, and the treatment of the Coulomb potential can critically determine how accurate the results are. Taking monolayer MoS2 as a representative material, we employ the linearized augmented planewave + local orbital method to systematically investigate how all these aspects affect the quality of G0W0 calculations, and also provide a summary of literature data. We conclude that the best overall agreement with experiments and coupled-cluster calculations is found for G0W0 results with HSE06 as a starting point including spin-orbit coupling, a truncated Coulomb potential, and an analytical treatment of the singularity at q = 0.",
+      "year": "2024",
+      "journal": "npj Computational Materials",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1038/s41524-024-01253-2",
+      "category": "phy-cond"
+    },
+    {
+      "title": "Hybrid Materials: Still Challenging for Ab Initio Theory?",
+      "abstract": "Hybrid inorganic/organic systems (HIOS) open new avenues for tailoring them with respect to desired features and functions by exploiting the respective advantages of their components. Therefore, these materials are actively explored in many experimental studies and devices. On the theory side, similar investigations are rather scarce as such interfaces, in addition to exhibiting large unit cells, require highest‐level theories to be described reliably. Consequently, hybrid materials pose a challenge for electronic structure theory, starting from density‐functional theory to methods beyond, particularly many‐body perturbation theory. This concerns both conceptual aspects and computational bottlenecks. In this perspective, the performance of state‐of‐the‐art theoretical approaches applied to HIOS is summarized, mainly focusing on optoelectronic properties. Recent achievements, open challenges, and urgent needs are addressed.",
+      "year": "2024",
+      "journal": "physica status solidi (a)",
+      "affiliation": "Institut für Physik and IRIS Adlershof Humboldt-Universität zu Berlin  12489 Berlin Germany",
+      "doi": "https://doi.org/10.1002/pssa.202300170",
+      "category": "chem-mat"
+    },
+    {
+      "title": "Hybrid excitations at the interface between a MoS2 monolayer and organic molecules: A first-principles study",
+      "abstract": "N/A",
+      "year": "2022",
+      "journal": "Physical Review Materials",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1103/physrevmaterials.6.054004",
+      "category": "chem-mat"
+    },
+    {
+      "title": "Changes on the Stokes Shift in Large CdSe Colloidal Quantum Dots by a Ligand Exchange",
+      "abstract": "N/A",
+      "year": "2018",
+      "journal": "International Conference of Theoretical and Applied Nanoscience and Nanotechnology",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.11159/tann18.140",
+      "category": "chem-mat"
+    },
+    {
+      "title": "A Theoretical-Experimental Comparison of CdSe Quantum Dot Optical\nProperties",
+      "abstract": "N/A",
+      "year": "2017",
+      "journal": "Proceedings of the 2nd World Congress on Recent Advances in Nanotechnology",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.11159/icnms17.105",
+      "category": "chem-mat"
+    }
+  ]
+}

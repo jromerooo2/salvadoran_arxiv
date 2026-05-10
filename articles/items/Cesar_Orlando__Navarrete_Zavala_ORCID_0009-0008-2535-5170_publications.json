@@ -1,0 +1,18 @@
+{
+  "author": "Cesar Orlando  Navarrete Zavala",
+  "orcid": "https://orcid.org/0009-0008-2535-5170",
+  "source": "ORCID + Crossref",
+  "total_publications": 1,
+  "author_categories": "phy-astro",
+  "publications": [
+    {
+      "title": "Testing black hole space–times with the S2 star orbit: a Bayesian comparison",
+      "abstract": "We implement a Markov Chain Monte Carlo method to obtain posterior probability distributions for the parameters of the S2 star orbit around Sagittarius A*, for seven representative non-rotating black hole space–time solutions. In particular, we consider the Schwarzschild, Reissner–Nordström, Janis–Newman–Winicour, and Bardeen black hole space–times from general relativity, as well as a black hole solution from Einstein–Maxwell-dilaton gravity, a hairy black hole solution from Horndeski theory, and a Yukawa-like black hole from $f(\\mathcal {R})$ gravity. To constrain model parameters, we use the most recent publicly available observational data of the S2 star orbit, namely astrometric measurements, spectroscopic data, and the pericentre advance measured by the GRAVITY Collaboration. We further perform a consistent Bayesian comparison of models, calculating the log-Bayes factor of each space–time with respect to the Schwarzschild solution. Our results show that the currently available data indicate no statistically significant preference among the space–times considered. The Bardeen and Yukawa-like models are indistinguishable from Schwarzschild within current uncertainties, while the Reissner–Nordström, Janis–Newman–Winicour, Horndeski and Einstein–Maxwell-dilaton geometries show at most weak and non-decisive strength of evidence under the adopted priors and likelihood choices.",
+      "year": "2026",
+      "journal": "Monthly Notices of the Royal Astronomical Society",
+      "affiliation": "Instituto de Ciencias Nucleares, Universidad Nacional Autónoma de México , AP 70-264, Ciudad de México 04510 ,",
+      "doi": "https://doi.org/10.1093/mnras/stag059",
+      "category": "phy-astro"
+    }
+  ]
+}

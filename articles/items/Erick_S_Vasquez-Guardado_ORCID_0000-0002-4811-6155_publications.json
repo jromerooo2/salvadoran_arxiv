@@ -3,7 +3,7 @@
   "orcid": "https://orcid.org/0000-0002-4811-6155",
   "source": "ORCID + Crossref",
   "total_publications": 38,
-  "author_categories": "",
+  "author_categories": "chem-mat, chem-phys, edu-bio, edu-chem, edu-eng, eng-bio, eng-chem, math-acm, phy-nucl",
   "publications": [
     {
       "title": "Magnetic Nanoparticles: Synthesis and Applications in Life Sciences",
@@ -12,7 +12,7 @@
       "journal": "ChemistryOpen",
       "affiliation": "Department of Chemical and Materials Engineering University of Dayton  300 College Park Ave. Dayton OH 45469‐0256 USA",
       "doi": "https://doi.org/10.1002/open.202500214",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Magnetically Recoverable and Adsorptive Alginate Hydrogel Composite Beads Reinforced with Cellulose Nanocrystals",
@@ -21,7 +21,7 @@
       "journal": "ACS Applied Engineering Materials",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park Ave., Dayton, Ohio 45469, United States",
       "doi": "https://doi.org/10.1021/acsaenm.5c00699",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Synthesis and Characterization of Temperature- and pH-Responsive PIA-b-PNIPAM@Fe3O4 Nanocomposites",
@@ -30,7 +30,7 @@
       "journal": "Nanomaterials",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, Dayton, OH 45469, USA",
       "doi": "https://doi.org/10.3390/nano15131041",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "CAMINO—Career Advancement, Mentorship, Inspiration, and Opportunities: A STEM K-12 Outreach Initiative.",
@@ -39,7 +39,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--56050",
-      "category": "uncategorized"
+      "category": "edu-bio"
     },
     {
       "title": "Entrepreneurially Minded Learning (EML) Micromoment Activities Generated Using Students' Experiences in a Fluid Flow and Heat Transfer Course",
@@ -48,7 +48,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--56432",
-      "category": "uncategorized"
+      "category": "edu-eng"
     },
     {
       "title": "Impacting Global Mindset Using International Case Studies",
@@ -57,7 +57,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--56746",
-      "category": "uncategorized"
+      "category": "edu-bio"
     },
     {
       "title": "Student-led Video Podcasting in a Chemical Behavior of Materials Course",
@@ -66,7 +66,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--57700",
-      "category": "uncategorized"
+      "category": "edu-eng"
     },
     {
       "title": "Carboxymethyl Chitosan‐based Biodegradable Films Preparation and Prospects for Food Preservation",
@@ -75,7 +75,7 @@
       "journal": "ChemistrySelect",
       "affiliation": "Department of Chemical and Materials Engineering University of Dayton Dayton OH 45469 USA",
       "doi": "https://doi.org/10.1002/slct.202404675",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "A review on pyrimidine‐based derivatives: Synthesis and their biological application",
@@ -84,7 +84,7 @@
       "journal": "Journal of Heterocyclic Chemistry",
       "affiliation": "Department of Chemical and Materials Engineering University of Dayton  Dayton Ohio USA",
       "doi": "https://doi.org/10.1002/jhet.4837",
-      "category": "uncategorized"
+      "category": "edu-chem"
     },
     {
       "title": "Board 112: Work in Progress: Exploring the Impact of International Experiences on the Development of Students’ Entrepreneurial Mindset",
@@ -93,7 +93,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--46668",
-      "category": "uncategorized"
+      "category": "edu-eng"
     },
     {
       "title": "Board 225: Collaborative Research: Research Initiation: Assessing Global Engagement Interventions to Advance Global Engineering Competence for Engineering Formation",
@@ -102,7 +102,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--46794",
-      "category": "uncategorized"
+      "category": "edu-eng"
     },
     {
       "title": "Enhancing Entrepreneurial Minded Learning of Process Control and Heat Transfer Concepts Using Micromoments and Concept Maps",
@@ -111,7 +111,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--47306",
-      "category": "uncategorized"
+      "category": "edu-eng"
     },
     {
       "title": "Using Micromoments and Concept Maps to Enhance Entrepreneurially Minded Learning of Indoor Air Pollution Control",
@@ -120,7 +120,7 @@
       "journal": "N/A",
       "affiliation": "University of Dayton",
       "doi": "https://doi.org/10.18260/1-2--48237",
-      "category": "uncategorized"
+      "category": "edu-eng"
     },
     {
       "title": "Correction: Gautam et al. Experimental Thermal Conductivity Studies of Agar-Based Aqueous Suspensions with Lignin Magnetic Nanocomposites. Magnetochemistry 2024, 10, 12",
@@ -129,7 +129,7 @@
       "journal": "Magnetochemistry",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park Ave., Dayton, OH 45469, USA",
       "doi": "https://doi.org/10.3390/magnetochemistry10040027",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Experimental Thermal Conductivity Studies of Agar-Based Aqueous Suspensions with Lignin Magnetic Nanocomposites",
@@ -138,7 +138,7 @@
       "journal": "Magnetochemistry",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park Ave., Dayton, OH 45469, USA",
       "doi": "https://doi.org/10.3390/magnetochemistry10020012",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Adsorptive properties and on-demand magnetic response of lignin@Fe3O4 nanoparticles at castor oil–water interfaces",
@@ -147,7 +147,7 @@
       "journal": "RSC Advances",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park, Dayton, OH, 45469-0256, USA",
       "doi": "https://doi.org/10.1039/D2RA07952F",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Identification of Lithocholic Acid as a Molecular Glass Host for Room‐Temperature Phosphorescent Materials",
@@ -156,7 +156,7 @@
       "journal": "ChemPhotoChem",
       "affiliation": "Department of Chemical and Materials Engineering University of Dayton  Dayton Ohio 45469 USA",
       "doi": "https://doi.org/10.1002/cptc.202200134",
-      "category": "uncategorized"
+      "category": "chem-phys"
     },
     {
       "title": "Analytical model for electromagnetic induction in pulsating ferrofluid pipe flows",
@@ -165,7 +165,7 @@
       "journal": "International Journal of Heat and Mass Transfer",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2021.121325",
-      "category": "uncategorized"
+      "category": "math-acm"
     },
     {
       "title": "Magnetically induced demulsification of water and castor oil dispersions stabilized by Fe3O4-coated cellulose nanocrystals",
@@ -174,7 +174,7 @@
       "journal": "Cellulose",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/s10570-021-03813-x",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Fabrication and Characterization of Electrospun Poly(acrylonitrile-co-Methyl Acrylate)/Lignin Nanofibers: Effects of Lignin Type and Total Polymer Concentration",
@@ -183,7 +183,7 @@
       "journal": "Polymers",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, Dayton, OH 45469, USA",
       "doi": "https://doi.org/10.3390/polym13070992",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Assessing magnetic iron oxide nanoparticle properties under different thermal treatments",
@@ -192,7 +192,7 @@
       "journal": "Journal of Thermal Analysis and Calorimetry",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/s10973-019-09195-4",
-      "category": "uncategorized"
+      "category": "chem-mat"
     },
     {
       "title": "Optimization and Structural Stability of Gold Nanoparticle–Antibody Bioconjugates",
@@ -201,7 +201,7 @@
       "journal": "ACS Omega",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1021/acsomega.9b02276",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Computational and experimental approach to understanding the structural interplay of self-assembled end-terminated alkanethiolates on gold surfaces",
@@ -210,7 +210,7 @@
       "journal": "Physical Chemistry Chemical Physics",
       "affiliation": "Department of Chemical and Materials Engineering",
       "doi": "https://doi.org/10.1039/C9CP03613J",
-      "category": "uncategorized"
+      "category": "chem-phys"
     },
     {
       "title": "Optothermal microbubble assisted manufacturing of nanogap-rich structures for active chemical sensing",
@@ -219,7 +219,7 @@
       "journal": "Nanoscale",
       "affiliation": "Department of Chemical and Materials Engineering",
       "doi": "https://doi.org/10.1039/C9NR05892C",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Experimental and Numerical Investigation of the Silicon Particle Distribution in Electrospun Nanofibers",
@@ -228,7 +228,7 @@
       "journal": "Langmuir",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park, Dayton, Ohio 45469, United States",
       "doi": "https://doi.org/10.1021/acs.langmuir.8b01167",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Fabricated nanogap-rich plasmonic nanostructures through an optothermal surface bubble in a droplet",
@@ -246,7 +246,7 @@
       "journal": "IEEE Aerospace Conference Proceedings",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1109/AERO.2018.8396540",
-      "category": "uncategorized"
+      "category": "phy-nucl"
     },
     {
       "title": "Bioluminescent magnetic nanoparticles as potential imaging agents for mammalian spermatozoa",
@@ -255,7 +255,7 @@
       "journal": "Journal of Nanobiotechnology",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1186/s12951-016-0168-y",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Analysis of Particle Transport and Deposition of Micron-Sized Particles in a 90 degrees Bend Using a Two-Fluid Eulerian-Eulerian Approach",
@@ -264,7 +264,7 @@
       "journal": "Aerosol Science and Technology",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1080/02786826.2015.1062466",
-      "category": "uncategorized"
+      "category": "math-acm"
     },
     {
       "title": "Electromagnetic induction by ferrofluid in an oscillating heat pipe",
@@ -273,7 +273,7 @@
       "journal": "Applied Physics Letters",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1063/1.4923400",
-      "category": "uncategorized"
+      "category": "math-acm"
     },
     {
       "title": "Energy harvesting via ferrofluidic induction",
@@ -282,7 +282,7 @@
       "journal": "Energy Harvesting and Storage: Materials, Devices, and Applications Vi",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1117/12.2178419",
-      "category": "uncategorized"
+      "category": "math-acm"
     },
     {
       "title": "Fetuin-A adsorption and stabilization of calcium carbonate nanoparticles in a simulated body fluid",
@@ -291,7 +291,7 @@
       "journal": "Journal of Materials Chemistry B",
       "affiliation": "Dave C. Swalm School of Chemical Engineering",
       "doi": "https://doi.org/10.1039/c5tb00565e",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Functional holey graphene oxide: a new electrochemically transformed substrate material for dopamine sensing",
@@ -300,7 +300,7 @@
       "journal": "Rsc Advances",
       "affiliation": "Department of Chemical and Materials Engineering",
       "doi": "https://doi.org/10.1039/c5ra19991c",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Janus Magnetic Nanoparticles with a Bicompartmental Polymer Brush Prepared Using Electrostatic Adsorption to Facilitate Toposelective Surface-Initiated ATRP",
@@ -309,7 +309,7 @@
       "journal": "Langmuir",
       "affiliation": "Dave C. Swalm School of Chemical\rEngineering and ‡Institute for Imaging and Analytical\rTechnologies, Mississippi State University, Mississippi State, Mississippi 39762, United States",
       "doi": "https://doi.org/10.1021/la500824r",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Ligand Adsorption and Exchange on Pegylated Gold Nanoparticles",
@@ -318,7 +318,7 @@
       "journal": "J. Phys. Chem. C",
       "affiliation": "Swalm School of Chemical Engineering, Mississippi State University, Mississippi State, Mississippi 39762, United States",
       "doi": "https://doi.org/10.1021/jp501391x",
-      "category": "uncategorized"
+      "category": "eng-chem"
     },
     {
       "title": "Rheological characterization of mammalian lung mucus",
@@ -327,7 +327,7 @@
       "journal": "RSC Adv.",
       "affiliation": "Dave C. Swalm School of Chemical Engineering",
       "doi": "https://doi.org/10.1039/c4ra05055j",
-      "category": "uncategorized"
+      "category": "eng-bio"
     },
     {
       "title": "Mechanistic Study of Continuous Reactive Aromatic Organothiol Adsorption onto Silver Nanoparticles",
@@ -336,7 +336,7 @@
       "journal": "J. Phys. Chem. C",
       "affiliation": "Swalm School of Chemical Engineering, Mississippi State University, Mississippi State, Mississippi 39762, United States",
       "doi": "https://doi.org/10.1021/jp4090102",
-      "category": "uncategorized"
+      "category": "chem-phys"
     },
     {
       "title": "Simultaneous and Sequential Protein and Organothiol Interactions with Gold Nanoparticles",
@@ -345,7 +345,7 @@
       "journal": "J. Phys. Chem. C",
       "affiliation": "Swalm\rSchool of Chemical Engineering, Mississippi State University, Mississippi State, Mississippi\r39762, United States",
       "doi": "https://doi.org/10.1021/jp310085u",
-      "category": "uncategorized"
+      "category": "chem-phys"
     }
   ]
 }

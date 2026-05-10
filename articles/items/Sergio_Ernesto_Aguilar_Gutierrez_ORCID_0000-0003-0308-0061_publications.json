@@ -1,0 +1,234 @@
+{
+  "author": "Sergio Ernesto Aguilar Gutierrez",
+  "orcid": "https://orcid.org/0000-0003-0308-0061",
+  "source": "ORCID + Crossref",
+  "total_publications": 25,
+  "author_categories": "phy-genrel, phy-hep, phy-phys, phy-quant",
+  "publications": [
+    {
+      "title": "Geometry of chord intertwiner, multiple shocks and switchback in double-scaled SYK",
+      "abstract": "A\n                    bstract\n                  \n                  \n                    We revisit the bulk Hilbert space interpretation of chords in the double-scaled SYK (DSSYK) model and introduce a notion of intertwiner that constructs bulk states from states with fixed boundary conditions. This leads to an isometric map that factorizes the one-particle bulk Hilbert space into a tensor product of two boundary Hilbert spaces without particle insertion. The map enables a systematic derivation of a family of correlation functions with arbitrary finite amount of matter insertions, relevant for capturing the switchback effect — a feature of holographic complexity. We further develop a path integral framework that describes multiple shockwave configurations in the semiclassical limit. For the two-body scattering processes in semi-classical regime, we show it exhibits sub-maximal chaos at finite temperature, consistent with the scramblon dynamics associated with the “fake disk” geometry. The effective “fake temperature” governing this behavior emerges from the semiclassical limit of the quantum 6\n                    j\n                    -symbol associated with the out-of-time-order correlator. We further analyze multi-shockwave configurations and derive precise conditions under which the switchback effect is realized, both in terms of the total chord number and the Krylov complexity of precursor operators. Our results clarify the structure of correlation functions with multiple operator insertions, their bulk interpretation in terms of shockwave geometries in the semi-classical regime, and provide a microscopic derivation of the switchback effect in the DSSYK model.",
+      "year": "2026",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University (沖縄科学技術大学院大学)",
+      "doi": "https://doi.org/10.1007/JHEP02(2026)246",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Evolution with(out) time: relational holography & BPS complexity growth in $$ \\mathcal{N} $$ = 2 double-scaled SYK",
+      "abstract": "A\n                    bstract\n                  \n                  \n                    How do we describe non-trivial bulk measurements relative to an observer (i.e. relationally) when both the observer and the system it probes may/may not evolve in time? How can we interpret this holographically; particularly for zero-energy BPS states in supersymmetric theories? We address these questions, in the\n                    \n                      \n                        $$ \\mathcal{N} $$\n                        \n                          N\n                        \n                      \n                    \n                    = 2 double-scaled SYK model and its putative bulk dual by: (i) formulating a holographic procedure in the language of quantum reference frames to gravitationally dress bulk observables to “clocks” parametrized by both boundary time and R-charge; and (ii) proposing a\n                    new measure of Krylov complexity\n                    with R-charge in the boundary theory that probes zero-energy BPS states. Holographically, this proposal reproduces a relational bulk observable, a BPS wormhole length. We contrast this to the Krylov complexity for Hartle-Hawking states with non-trivial time flow. The latter reproduces the same observable as for the bosonic DSSYK in the semiclassical limit, while its quantum fluctuations can capture supersymmetric corrections depending on the specific initial state.",
+      "year": "2026",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University",
+      "doi": "https://doi.org/10.1007/JHEP02(2026)229",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Entanglement and factorization in axion-De Sitter universes",
+      "abstract": "A\n                    bstract\n                  \n                  \n                    We study extremal codimension-two areas and late-time bulk correlators between a pair of asymptotically de Sitter space universes connected through an Euclidean axion wormhole, in arbitrary dimensions. Assuming the validity of the de Sitter (dS)/conformal field theory (CFT) correspondence, we describe factorized Hilbert spaces for the putative boundary theories at\n                    \n                      \n                        $$ {\\mathcal{I}}^{+} $$\n                        \n                          \n                            I\n                            +\n                          \n                        \n                      \n                    \n                    in each of the universes based on the asymptotically dS isometries. This allow us to we interpret the extremal areas as complex-valued holographic entanglement entropy between the microscopic duals. Later, we evaluate two-point correlation functions for heavy particles detected near\n                    \n                      \n                        $$ {\\mathcal{I}}^{+} $$\n                        \n                          \n                            I\n                            +\n                          \n                        \n                      \n                    \n                    . The Euclidean wormhole saddle point is responsible for finiteness of the correlators. The results are compatible with the boundary dual being non-unitary and having a large Hilbert space dimension. At last, we dimensionally reduce these geometries in terms of dilaton-gravity theory with conformally coupled matter.",
+      "year": "2026",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP02(2026)036",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Krylov operator complexity in holographic CFTs: Smeared boundary reconstruction and the dual proper radial momentum",
+      "abstract": "Motivated by bulk reconstruction of smeared boundary operators, we study the Krylov complexity of local and nonlocal primary\n                    \n                      \n                        \n                          \n                            CFT\n                          \n                          \n                            d\n                          \n                        \n                      \n                    \n                    operators from the local bulk-to-bulk propagator of a minimally coupled massive scalar field in\n                    \n                      \n                        \n                          Rindler\n                          −\n                          AdS\n                        \n                        \n                          d\n                          +\n                          1\n                        \n                      \n                    \n                    space. We derive analytic and numerical evidence on how the degree of nonlocality in the dual\n                    \n                      \n                        \n                          \n                            CFT\n                          \n                          \n                            d\n                          \n                        \n                      \n                    \n                    observable affects the evolution of Krylov complexity and the Lanczos coefficients. Curiously, the near-horizon limit matches with the same observable for conformally coupled probe scalar fields inserted at the asymptotic boundary of\n                    \n                      \n                        \n                          \n                            AdS\n                          \n                          \n                            d\n                            +\n                            1\n                          \n                        \n                      \n                    \n                    space. Our results also show that the evolution of the growth rate of Krylov operator complexity in the\n                    \n                      \n                        \n                          \n                            CFT\n                          \n                          \n                            d\n                          \n                        \n                      \n                    \n                    takes the same form as to the proper radial momentum of a probe particle inside the bulk to a good approximation. The exact equality only occurs when the probe particle is inserted in the asymptotic boundary or in the horizon limit. Our results capture a prosperous interplay between Krylov complexity in the CFT, thermal ensembles at finite bulk locations and their role in the holographic dictionary.",
+      "year": "2025",
+      "journal": "Physical Review D",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University",
+      "doi": "https://doi.org/10.1103/6bgg-vglp",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Building the holographic dictionary of the DSSYK from chords, complexity & wormholes with matter",
+      "abstract": "A\n                    bstract\n                  \n                  \n                    In this work, we formulate the holographic dictionary for the double-scaled SYK (DSSYK) model with matter operators. Based on the two-sided Hartle-Hawking (HH) state, we derive several properties of the DSSYK model, without making assumptions about the specific dual theory, including its semiclassical thermodynamics, correlation functions, and Krylov complexity. We derive these quantities from the saddle points of the DSSYK path integral preparing the HH state. We also construct a Lanczos algorithm that simultaneously evaluates Krylov state and operator complexity in the two-sided Hamiltonian system including finite temperature effects. In the semiclassical limit, both measures are encoded in the saddle points of the path integral. They have a bulk interpretation in terms of minimal geodesic lengths in an effective AdS\n                    2\n                    space with matter backreaction. Different saddle points correspond to geodesic distances with different evolution, and they display different scrambling properties. We also discuss about the quantization of the bulk theory dual to the DSSYK model. At last, we formulate the double-scaled algebra [\n                    JHEP\n                    11\n                    (2022) 060] in bulk terms, and the dual entry of the proper radial momentum of a bulk probe.",
+      "year": "2025",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University (沖縄科学技術大学院大学)",
+      "doi": "https://doi.org/10.1007/JHEP10(2025)221",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Symmetry sectors in chord space and relational holography in the DSSYK. Lessons from branes, wormholes, and de Sitter space",
+      "abstract": "A\n                    bstract\n                  \n                  In holography, gauging symmetries of the boundary theory leads to important modifications in the bulk. In this work, we study constraints to gauge symmetry sectors in the chord Hilbert space of the double-scaled SYK (DSSYK) with matter, and we connect them to different proposals of its bulk dual. These sectors include chord parity symmetry, corresponding to End-Of-The-World (ETW) branes and Euclidean wormholes in sine dilaton gravity; and relative time-translations in a doubled DSSYK model (resulting from a single DSSYK with an infinitely heavy matter chord) used in de Sitter holography. We define and evaluate partition functions and thermal correlation functions of the ETW brane and Euclidean wormhole systems in the boundary theory. We deduce the holographic dictionary by matching geodesic lengths in the bulk with the spread complexity of the parity-gauged DSSYK. The Euclidean wormholes of fixed size are perturbatively stable, and their baby universe Hilbert space is non-trivial only when matter is added. We conclude studying the constraints in the path integral of the doubled DSSYK. We derive the gauge invariant operator algebra of one of the DSSYKs dressed to the other one and discuss its holographic interpretation.",
+      "year": "2025",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University",
+      "doi": "https://doi.org/10.1007/JHEP10(2025)044",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Quasinormal modes and complexity in saddle-dominated SU(N) spin systems",
+      "abstract": "We study SU(N) spin systems that mimic the behavior of particles in N-dimensional de Sitter space for N = 2, 3. Their Hamiltonians describe a dynamical system with hyperbolic fixed points, leading to emergent quasinormal modes at the quantum level. These manifest as quasiparticle peaks in the density of states. For a particle in 2-dimensional de Sitter, we find both principal and complementary series densities of states from a PT-symmetric version of the Lipkin-Meshkov-Glick model, having two hyperbolic fixed points in the classical phase space. We then study different spectral and dynamical properties of this class of models, including level spacing statistics, two-point functions, squared commutators, spectral form factor, Krylov operator and state complexity. We find that, even though the early-time properties of these quantities are governed by the saddle points — thereby in some cases mimicking corresponding properties of chaotic systems, a close look at the late-time behavior reveals the integrable nature of the system.",
+      "year": "2025",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology",
+      "doi": "https://doi.org/10.1007/JHEP09(2025)039",
+      "category": "phy-hep"
+    },
+    {
+      "title": "A teleportation protocol in Schwarzschild-de Sitter space",
+      "abstract": "We propose a new information transfer protocol for de Sitter space, using black holes as energy reservoirs. We consider antipodal observers in pure de Sitter space in the Bunch-Davis state. They can store Hawking modes from the cosmological horizon in a box. Alternatively, due to thermal fluctuations in de Sitter space, black holes formed through a pair-creation process can be used as energy reservoirs. We focus on the Nariai black hole case, which corresponds to an equilibrium state. Once the black hole is produced, energy pulses can be released into its interior, opening a traversable wormhole. We provide bounds for the amount of information that can be transferred. Specializing in (1+1)-dimensions, we explore how the teleportation protocol leads to an explicit geometric description of the information transmitted through an island region. The protocol uncovers quantum information aspects of de Sitter space, independently of any particular realization of de Sitter space holography.",
+      "year": "2025",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP03(2025)095",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "A multiverse model in T2 dS wedge holography",
+      "abstract": "We construct a multiverse model where empty AdS\n              d+1 space is cut off by a pair of accelerated dS\n              d\n             space universes, at a finite AdS boundary cutoff which we treat as a T\n            2 deformation in the holographic dual, and one in the AdS interior, the IR brane; and denote the construction as T\n            2 dS wedge holography. We glue together several copies of this configuration along the UV cutoff and the IR branes in a periodic matter. To provide the model with dynamics similar to those of near Nariai black holes used in other multiverse toy models, we specialize to d = 2 and add dS JT gravity as an intrinsic gravity theory on the IR branes. We then study the entanglement entropy with respect to a finite cutoff observer, who finds a Page curve transition due to an entanglement island connecting the UV cutoff and IR brane. This process involves the coarse-graining of information outside the causally accessible region to the observer. Our model provides an explicit realization of entanglement between IR and UV degrees of freedom encoded in the multiverse.",
+      "year": "2024",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP11(2024)122",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Towards complexity in de Sitter space from the doubled-scaled Sachdev-Ye-Kitaev model",
+      "abstract": "How can we define complexity in dS space from microscopic principles? Based on recent developments pointing towards a correspondence between a pair of double-scaled Sachdev-Ye-Kitaev (DSSYK) models/ 2D Liouville-de Sitter (LdS2) field theory/ 3D Schwarzschild de Sitter (SdS3) space in [1–3], we study concrete complexity proposals in the microscopic models and their dual descriptions. First, we examine the spread complexity of the maximal entropy state of the doubled DSSYK model. We show that it counts the number of entangled chord states in its doubled Hilbert space. We interpret spread complexity in terms of a time difference between antipodal observers in SdS3 space, and a boundary time difference of the dual LdS2 CFTs. This provides a new connection between entanglement and geometry in dS space. Second, Krylov complexity, which describes operator growth, is computed for physical operators on all sides of the correspondence. Their late time evolution behaves as expected for chaotic systems. Later, we define the query complexity in the LdS2 model as the number of steps in an algorithm computing n-point correlation functions of boundary operators of the corresponding antipodal points in SdS3 space. We interpret query complexity as the number of matter operator chord insertions in a cylinder amplitude in the DSSYK, and the number of junctions of Wilson lines between antipodal static patch observers in SdS3 space. Finally, we evaluate a specific proposal of Nielsen complexity for the DSSYK model and comment on its possible dual manifestations.",
+      "year": "2024",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP10(2024)107",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Complexity equals anything can grow forever in de Sitter space",
+      "abstract": "Recent developments in anti–de Sitter holography point towards the association of an infinite class of covariant objects, the simplest one being codimension-one extremal volumes, with quantum computational complexity in the microscopic description. One of the defining features of these gravitational complexity proposals is describing the persistent growth of black hole interior in classical gravity. It is tempting to assume that the gravitational complexity proposals apply also to gravity outside their native anti–de Sitter setting in which case they may reveal new truths about these cases with much less understood microscopics. Recent first steps in this direction in de Sitter static patch demonstrated a very different behavior from anti–de Sitter holography deemed hyperfast growth; diverging complexification rate after a finite time. We show that this feature is not a necessity and among gravitational complexity proposals there are ones, that predict linear or exponential late-time growth behaviors for complexity in de Sitter static patches persisting classically forever.\n          \n            \n            \n              \n                Published by the American Physical Society\n                2024",
+      "year": "2024",
+      "journal": "Physical Review D",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1103/PhysRevD.110.066009",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Krylov complexity is not a measure of distance between states or operators",
+      "abstract": "We ask whether Krylov complexity is mutually compatible with the circuit and Nielsen definitions of complexity. We show that the Krylov complexities between three states fail to satisfy the triangle inequality and so cannot be a measure of distance: there is no possible metric for which Krylov complexity is the length of the shortest path to the target state or operator. We show this explicitly in the simplest example, a single qubit, and in general.\n          \n            \n            \n              \n                Published by the American Physical Society\n                2024",
+      "year": "2024",
+      "journal": "Physical Review D",
+      "affiliation": "Institute for Theoretical Physics",
+      "doi": "https://doi.org/10.1103/PhysRevD.109.L081701",
+      "category": "phy-quant"
+    },
+    {
+      "title": "Holographic complexity: braneworld gravity versus the Lloyd bound",
+      "abstract": "We explore the complexity equals volume proposal for planar black holes in anti-de Sitter (AdS) spacetime in 2+1 dimensions, with an end of the world (ETW) brane behind the horizon. We allow for the possibility of intrinsic gravitational dynamics in the form of Jackiw-Teitelboim (JT) gravity to be localized on the brane. We compute the asymptotic rate of change of volume complexity analytically and obtain the full time dependence using numerical techniques. We find that the inclusion of JT gravity on the brane leads to interesting effects on time dependence of holographic complexity. We identify the region in parameter space (the brane location and the JT coupling) for which the rate of change of complexity violates the Lloyd bound. In an equivalent description of the model in terms of an asymptotically AdS wormhole, we connect the violation of the Lloyd bound to the violation of a suitable energy condition in the bulk that we introduce. We also compare the Lloyd bound constraints to previously derived constraints on the bulk parameters in this model that are based on bounds on entanglement growth in the dual CFT state.",
+      "year": "2024",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP03(2024)173",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "C=Anything and the switchback effect in Schwarzschild-de Sitter space",
+      "abstract": "We investigate observables within the framework of the codimension-one C=Anything (CAny) proposal for Schwarzschild-de Sitter (SdS) space under the influence of shockwave sources. Within the proposal, there is a set of time-reversal invariant observables that display the same rate of growth at early and late times for a background with or without shockwave sources. Once we introduce shockwaves in the weak gravitational coupling regime, there is a decrease in the late-time complexity growth due to cancellations with early-time perturbations, known as the switchback effect. The result shows that some CAny observables in SdS may reproduce the same type of behavior found in anti-de Sitter black holes. We comment on how our results might guide us to new explorations in the putative quantum mechanical theory.",
+      "year": "2024",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP03(2024)062",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "The centaur-algebra of observables",
+      "abstract": "This letter explores a transition in the type of von Neumann algebra for asymptotically AdS spacetimes from the implementations of the different gravitational constraints. We denote it as the centaur-algebra of observables. In the first part of the letter, we employ a class of flow geometries interpolating between AdS2 and dS2 spaces, the centaur geometries. We study the type II\n              ∞\n             crossed product algebra describing the semiclassical gravitational theory, and we explore the algebra of bounded sub-regions in the bulk theory following \n              \n                $$ T\\overline{T} $$\n                \n                  T\n                  \n                    T\n                    ¯\n                  \n                \n              \n             deformations of the geometry and study the gravitational constraints with respect to the quasi-local Brown-York energy of the system at a finite cutoff. In the second part, we study arbitrary asymptotically AdS spacetimes, where we implement the boundary protocol of an infalling observer modeled as a probe black hole proposed by [1] to study modifications in the algebra. In both situations, we show how incorporating the constraints requires a type II1 description.",
+      "year": "2024",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP03(2024)008",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Aspects of higher-curvature gravities with covariant derivatives",
+      "abstract": "N/A",
+      "year": "2023",
+      "journal": "Physical Review D",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1103/PhysRevD.108.124075",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Axion-de Sitter wormholes",
+      "abstract": "We construct wormholes supported by axion flux in the presence of a positive cosmological constant. The solutions describe compact, one-handle bodies colloquially known as kettlebell geometries. The wormholes are perturbatively stable, but regularity of the Euclidean geometry implies an upper bound on the axion flux. Viewed as no-boundary saddle points, wormholes are suppressed relative to the round sphere. The symmetric kettlebell with maximal axion density has vanishing Euclidean action. Continuing into the Lorentzian across the equator, the solutions describe two expanding branches of de Sitter space filled with an axion field that rapidly dilutes and which are connected by a quantum bounce across which the arrow of time reverses.",
+      "year": "2023",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/JHEP11(2023)225",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "An outsider's perspective on information recovery in de Sitter space",
+      "abstract": "Entanglement islands play a crucial role in our understanding of how Hawking radiation encodes information in a black hole, but their relevance in cosmological spacetimes is less clear. In this paper, we continue our investigation of information recovery in de Sitter space and construct a two-dimensional model of gravity containing a domain wall that interpolates between de Sitter space and Rindler space. The Rindler wedges introduce weakly-gravitating asymptotic regions from which de Sitter space can be probed, yielding an outside perspective of the cosmological horizon. In contrast to earlier works, backreaction effects are under control by considering a quantum state that only breaks the thermal equilibrium of the Bunch-Davies state for a finite time. This allows information to be decoded from the Gibbons-Hawking radiation in a controlled fashion.",
+      "year": "2023",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/JHEP01(2023)129",
+      "category": "phy-genrel"
+    },
+    {
+      "title": "Towards an “AdS1/CFT0” correspondence from the D(−1)/D7 system?",
+      "abstract": "We argue that a type IIB Euclidean supergravity solution of the form ℝ × S1× 𝕋8 with imaginary self-dual F1 flux through ℝ × S1 belongs to the chain of AdSd× Sd× 𝕋10−2d vacua with (imaginary) self-dual Fd flux, where d ≤ 5. Such vacua come from the near-horizon of D(d − 2)/D(8 − d) branes and are supersymmetric for odd values of d. For d = 1 we speculate that the hallmark of conformal symmetry for the matrix model dual is a vanishing free energy. The matrix dual was recently constructed by [1] by adding matrix interactions coming from strings stretching between the D(−1) and D7 branes to the IKKT matrix model. We find that the corresponding supergravity solution indeed has vanishing on-shell action. Specific F5 fluxes need to be switched on as a consequence of (a T-dual version of) the Hanany-Witten effect.",
+      "year": "2022",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/JHEP09(2022)249",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Addendum: Islands in multiverse models",
+      "abstract": "N/A",
+      "year": "2022",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/JHEP05(2022)137",
+      "category": "phy-hep"
+    },
+    {
+      "title": "On the correspondence principle for the Klein-Gordon and Dirac Equations",
+      "abstract": "N/A",
+      "year": "2022",
+      "journal": "Journal of Theoretical and Applied Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.30495/jtap.162244",
+      "category": "phy-phys"
+    },
+    {
+      "title": "Islands in multiverse models",
+      "abstract": "A\n                    bstract\n                  \n                  We consider multiverse models in two-dimensional linear dilaton-gravity theories as toy models of false vacuum eternal inflation. Coupling conformal matter we calculate the Von Neumann entropy of subregions. When these are sufficiently large we find that an island develops covering most of the rest of the multiverse, leading to a Page-like transition. This resonates with a description of multiverse models in semiclassical quantum cosmology, where a measure for local predictions is given by saddle point geometries which coarse-grain over any structure associated with eternal inflation beyond one’s patch.",
+      "year": "2021",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/JHEP11(2021)212",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Entangled universes in dS wedge holography",
+      "abstract": "A\n                    bstract\n                  \n                  We develop a new setting in the framework of braneworld holography to describe a pair of coupled and entangled uniformly accelerated universes. The model consists of two branes embedded into AdS space capping off the UV and IR regions, giving rise to a notion of dS wedge holography. Specializing in a three-dimensional bulk, we show that dS JT gravity can emerge as an effective braneworld theory, provided that fluctuations transverse to the branes are included. We study the holographic entanglement entropy between the branes as well as the holographic complexity within the ‘complexity=anything’ proposal. We reproduce a Page curve with respect to an observer collecting radiation on the UV brane, as long as we take the limit where gravity decouples in that universe, thus acting as a non-gravitating bath. The Page curve emerges due to momentum-space (UV/IR) entanglement and can be understood as analogous to the ‘confinement-deconfinement’ transition in theories with a mass gap. Moreover, the analysis of complexity shows that the hyperfast growth phenomenon is displayed within a set of proposals, while late-time linear growth can be recovered for a different set. Our framework thus provides new test grounds for understanding quantum information concepts in dS space and dS holography.",
+      "year": "N/A",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP10(2023)156",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Erratum to: Islands in multiverse models",
+      "abstract": "N/A",
+      "year": "N/A",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/JHEP05(2022)082",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Holographic complexity of the extended Schwarzschild-de Sitter space",
+      "abstract": "According to static patch holography, de Sitter space admits a unitary quantum description in terms of a dual theory living on the stretched horizon, that is a timelike surface close to the cosmological horizon. In this manuscript, we compute several holographic complexity conjectures in a periodic extension of the Schwarzschild-de Sitter black hole. We consider multiple configurations of the stretched horizons to which geometric objects are anchored. The holographic complexity proposals admit a hyperfast growth when the gravitational observables only lie in the cosmological patch, except for a class of complexity=anything observables that admit a linear growth. All the complexity conjectures present a linear increase when restricted to the black hole patch, similar to the AdS case. When both the black hole and the cosmological regions are probed, codimension-zero proposals are time-independent, while codimension-one proposals can have non-trivial evolution with linear increase at late times. As a byproduct of our analysis, we find that codimension-one spacelike surfaces are highly constrained in Schwarzschild-de Sitter space. Therefore, different locations of the stretched horizon give rise to different behaviours of the complexity conjectures.",
+      "year": "N/A",
+      "journal": "Journal Of High Energy Physics",
+      "affiliation": "KU Leuven",
+      "doi": "https://doi.org/10.1007/JHEP05(2024)201",
+      "category": "phy-genrel"
+    }
+  ]
+}
