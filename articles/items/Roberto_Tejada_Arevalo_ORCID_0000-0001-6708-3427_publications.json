@@ -3,6 +3,7 @@
   "orcid": "https://orcid.org/0000-0001-6708-3427",
   "source": "ORCID + Crossref",
   "total_publications": 14,
+  "author_categories": "bio-cell, bio-gen, chem-inorg, eng-bio, eng-chem, health-bi, health-nah, math-ade, math-ant, math-cdm, phy-phys, phy-quant",
   "publications": [
     {
       "title": "Sub-Neptune Memories. I. Implications of Inefficient Mantle Cooling and Silicate Rain",
@@ -10,7 +11,8 @@
       "year": "2026",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ae5483"
+      "doi": "https://doi.org/10.3847/1538-4357/ae5483",
+      "category": "bio-gen"
     },
     {
       "title": "Next-generation Improvements in Giant-exoplanet Evolutionary and Structural Models",
@@ -18,7 +20,8 @@
       "year": "2026",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ae3a85"
+      "doi": "https://doi.org/10.3847/1538-4357/ae3a85",
+      "category": "math-ant"
     },
     {
       "title": "The Evolution of Jupiter and Saturn as a Function of the R ρ Parameter",
@@ -26,7 +29,8 @@
       "year": "2025",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ae16a3"
+      "doi": "https://doi.org/10.3847/1538-4357/ae16a3",
+      "category": "phy-quant"
     },
     {
       "title": "Different Inhomogeneous Evolutionary Histories for Uranus and Neptune",
@@ -34,7 +38,8 @@
       "year": "2025",
       "journal": "The Astrophysical Journal Letters",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/2041-8213/adf3a5"
+      "doi": "https://doi.org/10.3847/2041-8213/adf3a5",
+      "category": "phy-phys"
     },
     {
       "title": "Simultaneous Evolutionary Fits for Jupiter and Saturn Incorporating Fuzzy Cores",
@@ -42,7 +47,8 @@
       "year": "2025",
       "journal": "The Astrophysical Journal Letters",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/2041-8213/adad62"
+      "doi": "https://doi.org/10.3847/2041-8213/adad62",
+      "category": "math-ade"
     },
     {
       "title": "Jupiter Evolutionary Models Incorporating Stably Stratified Regions",
@@ -50,7 +56,8 @@
       "year": "2025",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ada030"
+      "doi": "https://doi.org/10.3847/1538-4357/ada030",
+      "category": "health-bi"
     },
     {
       "title": "Equations of State, Thermodynamics, and Miscibility Curves for Jovian Planet and Giant Exoplanet Evolutionary Models",
@@ -58,7 +65,8 @@
       "year": "2024",
       "journal": "The Astrophysical Journal Supplement Series",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4365/ad6cd7"
+      "doi": "https://doi.org/10.3847/1538-4365/ad6cd7",
+      "category": "bio-cell"
     },
     {
       "title": "APPLE: An Evolution Code for Modeling Giant Planets",
@@ -66,7 +74,8 @@
       "year": "2024",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ad57c3"
+      "doi": "https://doi.org/10.3847/1538-4357/ad57c3",
+      "category": "eng-chem"
     },
     {
       "title": "Jupiter Atmospheric Models and Outer Boundary Conditions for Giant Planet Evolutionary Calculations",
@@ -74,7 +83,8 @@
       "year": "2023",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/acf456"
+      "doi": "https://doi.org/10.3847/1538-4357/acf456",
+      "category": "health-nah"
     },
     {
       "title": "Beyond the Local Volume. II. Population Scaleheights and Ages of Ultracool Dwarfs in Deep HST/WFC3 Parallel Fields",
@@ -82,7 +92,8 @@
       "year": "2022",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ac7053"
+      "doi": "https://doi.org/10.3847/1538-4357/ac7053",
+      "category": "math-cdm"
     },
     {
       "title": "Stability Constrained Characterization of the 23 Myr Old V1298 Tau System: Do Young Planets Form in Mean Motion Resonance Chains?",
@@ -90,7 +101,8 @@
       "year": "2022",
       "journal": "The Astrophysical Journal Letters",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/2041-8213/ac70e0"
+      "doi": "https://doi.org/10.3847/2041-8213/ac70e0",
+      "category": "eng-bio"
     },
     {
       "title": "Beyond the Local Volume. I. Surface Densities of Ultracool Dwarfs in Deep HST/WFC3 Parallel Fields",
@@ -98,7 +110,8 @@
       "year": "2022",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ac35ea"
+      "doi": "https://doi.org/10.3847/1538-4357/ac35ea",
+      "category": "math-cdm"
     },
     {
       "title": "Further Evidence for Tidal Spin-up of Hot Jupiter Host Stars",
@@ -106,7 +119,8 @@
       "year": "2021",
       "journal": "The Astrophysical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-4357/ac1429"
+      "doi": "https://doi.org/10.3847/1538-4357/ac1429",
+      "category": "chem-inorg"
     },
     {
       "title": "orbitize!: A Comprehensive Orbit-fitting Software Package for the High-contrast Imaging Community",
@@ -114,7 +128,8 @@
       "year": "2020",
       "journal": "The Astronomical Journal",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.3847/1538-3881/ab6663"
+      "doi": "https://doi.org/10.3847/1538-3881/ab6663",
+      "category": "bio-cell"
     }
   ]
 }

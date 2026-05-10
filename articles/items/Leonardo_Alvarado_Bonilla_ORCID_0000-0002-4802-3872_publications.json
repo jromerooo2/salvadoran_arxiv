@@ -3,6 +3,7 @@
   "orcid": "https://orcid.org/0000-0002-4802-3872",
   "source": "ORCID + Crossref",
   "total_publications": 16,
+  "author_categories": "bio-cell, bio-eco, bio-neuro, chem-inorg, eng-ece, eng-mech, health-gch, math-acm, math-ade, math-cdm, math-gt, math-ps, phy-cond",
   "publications": [
     {
       "title": "Reassessment of the glyoxal-to-formaldehyde ratio (RGF) as a proxy for VOC source identification",
@@ -10,7 +11,8 @@
       "year": "2025",
       "journal": "N/A",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/egusphere-2025-5285"
+      "doi": "https://doi.org/10.5194/egusphere-2025-5285",
+      "category": "eng-ece"
     },
     {
       "title": "The EnMAP spaceborne imaging spectroscopy mission: Initial scientific results two years after launch",
@@ -18,7 +20,8 @@
       "year": "2024",
       "journal": "Remote Sensing of Environment",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.1016/j.rse.2024.114379"
+      "doi": "https://doi.org/10.1016/j.rse.2024.114379",
+      "category": "health-gch"
     },
     {
       "title": "Full mission evaluation of EnMAP water leaving reflectance products using three atmospheric correction processors",
@@ -26,7 +29,8 @@
       "year": "2024",
       "journal": "Optics Express",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.1364/OE.523813"
+      "doi": "https://doi.org/10.1364/OE.523813",
+      "category": "math-acm"
     },
     {
       "title": "Measurement report: Combined use of MAX-DOAS and AERONET ground-based measurements in Montevideo, Uruguay, for the detection of distant biomass burning",
@@ -34,7 +38,8 @@
       "year": "2024",
       "journal": "Atmospheric Chemistry and Physics",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/acp-24-7447-2024"
+      "doi": "https://doi.org/10.5194/acp-24-7447-2024",
+      "category": "bio-cell"
     },
     {
       "title": "Satellite monitoring of surface phytoplankton functional types in the Atlantic Ocean over 20 years (2002–2021)",
@@ -42,7 +47,8 @@
       "year": "2023",
       "journal": "State of the Planet",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/sp-1-osr7-5-2023"
+      "doi": "https://doi.org/10.5194/sp-1-osr7-5-2023",
+      "category": "bio-neuro"
     },
     {
       "title": "INTERCOMPARISON OF DESIS, SENTINEL-2 (MSI) AND SENTINEL-3 (OLCI) DATA FOR WATER COLOUR APPLICATIONS",
@@ -50,7 +56,8 @@
       "year": "2022",
       "journal": "The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/isprs-archives-XLVI-1-W1-2021-69-2022"
+      "doi": "https://doi.org/10.5194/isprs-archives-XLVI-1-W1-2021-69-2022",
+      "category": "phy-cond"
     },
     {
       "title": "Glyoxal tropospheric column retrievals from TROPOMI – multi-satellite intercomparison and ground-based validation",
@@ -58,7 +65,8 @@
       "year": "2021",
       "journal": "Atmospheric Measurement Techniques",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/amt-14-7775-2021"
+      "doi": "https://doi.org/10.5194/amt-14-7775-2021",
+      "category": "math-cdm"
     },
     {
       "title": "Unexpected long-range transport of glyoxal and formaldehyde observed from the Copernicus Sentinel-5 Precursor satellite during the 2018 Canadian wildfires",
@@ -66,7 +74,8 @@
       "year": "2020",
       "journal": "Atmospheric Chemistry and Physics",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/acp-20-2057-2020"
+      "doi": "https://doi.org/10.5194/acp-20-2057-2020",
+      "category": "math-acm"
     },
     {
       "title": "Distribution of volatile organic compounds over Indian subcontinent during winter: WRF-chem simulation versus observations",
@@ -74,7 +83,8 @@
       "year": "2019",
       "journal": "Environmental Pollution",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.1016/j.envpol.2019.05.097"
+      "doi": "https://doi.org/10.1016/j.envpol.2019.05.097",
+      "category": "math-ps"
     },
     {
       "title": "Detection of outflow of formaldehyde and glyoxal from the African continent to the Atlantic Ocean with a MAX-DOAS instrument",
@@ -82,7 +92,8 @@
       "year": "2019",
       "journal": "Atmospheric Chemistry and Physics",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/acp-19-10257-2019"
+      "doi": "https://doi.org/10.5194/acp-19-10257-2019",
+      "category": "chem-inorg"
     },
     {
       "title": "Intercomparison of MAX-DOAS vertical profile retrieval algorithms: studies using synthetic data",
@@ -90,7 +101,8 @@
       "year": "2019",
       "journal": "Atmospheric Measurement Techniques",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/amt-12-2155-2019"
+      "doi": "https://doi.org/10.5194/amt-12-2155-2019",
+      "category": "bio-eco"
     },
     {
       "title": "Investigating missing sources of glyoxal over China using a regional air quality model (RAMS-CMAQ)",
@@ -98,7 +110,8 @@
       "year": "2018",
       "journal": "Journal of Environmental Sciences",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.1016/j.jes.2018.04.021"
+      "doi": "https://doi.org/10.1016/j.jes.2018.04.021",
+      "category": "math-ps"
     },
     {
       "title": "Enhanced trans-Himalaya pollution transport to the Tibetan Plateau by cut-off low systems",
@@ -106,7 +119,8 @@
       "year": "2017",
       "journal": "Atmospheric Chemistry and Physics",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/acp-17-3083-2017"
+      "doi": "https://doi.org/10.5194/acp-17-3083-2017",
+      "category": "eng-mech"
     },
     {
       "title": "Investigating the Link Between Glyoxal and Biogenic Activities",
@@ -114,7 +128,8 @@
       "year": "2015",
       "journal": "Towards an Interdisciplinary Approach in Earth System Science",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.1007/978-3-319-13865-7_7"
+      "doi": "https://doi.org/10.1007/978-3-319-13865-7_7",
+      "category": "math-ade"
     },
     {
       "title": "Liquid water absorption and scattering effects in DOAS retrievals over oceans",
@@ -122,7 +137,8 @@
       "year": "2014",
       "journal": "Atmospheric Measurement Techniques",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/amt-7-4203-2014"
+      "doi": "https://doi.org/10.5194/amt-7-4203-2014",
+      "category": "math-acm"
     },
     {
       "title": "An improved glyoxal retrieval from OMI measurements",
@@ -130,7 +146,8 @@
       "year": "2014",
       "journal": "Atmospheric Measurement Techniques",
       "affiliation": "N/A",
-      "doi": "https://doi.org/10.5194/amt-7-4133-2014"
+      "doi": "https://doi.org/10.5194/amt-7-4133-2014",
+      "category": "math-gt"
     }
   ]
 }

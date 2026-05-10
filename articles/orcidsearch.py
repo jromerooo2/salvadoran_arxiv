@@ -18,7 +18,8 @@ import requests
 import json
 import re
 import time
-
+import os
+import random
 
 # ── FETCH ABSTRACT + AFFILIATION FROM CROSSREF ────────────────────────────────
 def fetch_details_from_crossref(doi, author_name):
@@ -146,6 +147,27 @@ def search_orcid(orcid_id):
  
         time.sleep(0.2)  # Be polite to the API
 
+        # ── ASSIGN CATEGORY ─────────────────────────────────────────────────────
+        # for simplicity, we will assing them randomly
+        # Load category codes from ../src/assets/content.json (relative to this script)
+
+        content_json_path = os.path.join(os.path.dirname(__file__), "../src/assets/content.json")
+        try:
+            with open(content_json_path, "r", encoding="utf-8") as f:
+                toc = json.load(f)
+            category_codes = []
+            for cat in toc:
+                for sub in cat.get("subcategories", []):
+                    code = sub.get("subcategories_code")
+                    if code:
+                        category_codes.append(code)
+        except Exception as e:
+            print(f"Category code loading error: {e}")
+            category_codes = ["phy-phys", "chem-org", "bio-bio", "health-phe", "eng-ece"]  # fallback
+
+        category = random.choice(category_codes) if category_codes else "uncategorized"
+        # ───────────────────────────────────────────────────────────────────────
+
         papers.append({
             "title"      : title,
             "abstract"   : abstract,
@@ -153,6 +175,7 @@ def search_orcid(orcid_id):
             "journal"    : journal,
             "affiliation": affiliation,
             "doi"        : doi,
+            'category'   : category,
         })
 
     # Sort by year descending
@@ -187,7 +210,7 @@ def display_results(papers, author_name, orcid_id):
 
 
 # ── SAVE TO JSON ───────────────────────────────────────────────────────────────
-def save_results(papers, author_name, orcid_id):
+def save_results(papers, author_name, orcid_id, author_categories):
     filename = f"items/{author_name.replace(' ', '_').replace(',', '')}_ORCID_{orcid_id}_publications.json"
 
     data = {
@@ -195,6 +218,7 @@ def save_results(papers, author_name, orcid_id):
         "orcid"             : f"https://orcid.org/{orcid_id}",
         "source"            : "ORCID + Crossref",
         "total_publications": len(papers),
+        "author_categories"        : author_categories,
         "publications"      : papers,
     }
 
@@ -202,6 +226,18 @@ def save_results(papers, author_name, orcid_id):
         json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"✅ Results saved to: {filename}")
 
+
+def extract_categories_string(papers):
+    """
+    Extracts unique categories from the list of paper dicts and
+    returns them as a single string separated by ', '.
+    """
+    unique_categories = set()
+    for paper in papers:
+        cat = paper.get('category')
+        if cat and cat != "N/A":
+            unique_categories.add(cat)
+    return ', '.join(sorted(unique_categories))
 
 # ── MAIN ───────────────────────────────────────────────────────────────────────
 def main():
@@ -214,10 +250,11 @@ def main():
     for orcid_input in orcid_ids:
         print(f"Processing ORCID ID: {orcid_input}")
         papers, author_name, orcid_id = search_orcid(orcid_input)
+        author_categories = extract_categories_string(papers)
 
         if papers:
             display_results(papers, author_name, orcid_id)
-            save_results(papers, author_name, orcid_id)
+            save_results(papers, author_name, orcid_id, author_categories)
         else:
             print(f"⚠️  No publications found for ORCID ID {orcid_input}.")
 
