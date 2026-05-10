@@ -335,36 +335,49 @@ def update_categories_in_file(json_path: str, results: list[dict]) -> dict:
 
 if __name__ == "__main__":
 
-    json_path = "/root/software/salvadoran_arxiv/articles/items/Erick_Urquilla_ORCID_0009-0007-3861-3223_publications.json"
+    items_dir = os.path.join(os.path.dirname(__file__), "items")
+    items_paths = [
+        os.path.join(items_dir, fname)
+        for fname in os.listdir(items_dir)
+        if fname.endswith("_publications.json")
+    ]
+    print("Found items files:")
+    for p in items_paths:
+        print("  ", p)
 
-    try:
-        sample_publications, info = _load_publications_from_orcid_json(json_path)
-    except (OSError, json.JSONDecodeError) as e:
-        print(f"Error reading {json_path}: {e}")
-        raise SystemExit(1)
+    for json_path in items_paths:
+        print("=" * 60)
+        print(f"Processing {json_path}")
+        print("=" * 60)
+        # Example: Read and print info about a specific ORCID publications JSON file
+        try:
+            sample_publications, info = _load_publications_from_orcid_json(json_path)
+        except (OSError, json.JSONDecodeError) as e:
+            print(f"Error reading {json_path}: {e}")
+            raise SystemExit(1)
 
-    print("=" * 60)
-    print("Publication Classifier — Ollama")
-    print(f"Model : {OLLAMA_MODEL}")
-    print(f"Author: {info.get('author')}")
-    print(f"ORCID : {info.get('orcid')}")
-    print(f"Source: {info.get('source')}")
-    print(f"Total : {info.get('total_publications')} "
-          f"({len(sample_publications)} loaded for classification)")
-    print("=" * 60)
+        print("=" * 60)
+        print("Publication Classifier — Ollama")
+        print(f"Model : {OLLAMA_MODEL}")
+        print(f"Author: {info.get('author')}")
+        print(f"ORCID : {info.get('orcid')}")
+        print(f"Source: {info.get('source')}")
+        print(f"Total : {info.get('total_publications')} "
+            f"({len(sample_publications)} loaded for classification)")
+        print("=" * 60)
 
-    if not sample_publications:
-        print("No uncategorized publications to classify. Nothing to do.")
-        raise SystemExit(0)
+        if not sample_publications:
+            print("No uncategorized publications to classify. Nothing to do.")
+            raise SystemExit(0)
 
-    results = classify_batch(sample_publications, model=OLLAMA_MODEL)
+        results = classify_batch(sample_publications, model=OLLAMA_MODEL)
 
-    print("\n── Summary ──────────────────────────────────────────────")
-    for r in results:
-        label = r["discipline"]
-        conf  = f"{r['confidence']:.0%}"
-        title = r["title"][:55]
-        print(f"  {label} ({conf})  {title}")
+        print("\n── Summary ──────────────────────────────────────────────")
+        for r in results:
+            label = r["discipline"]
+            conf  = f"{r['confidence']:.0%}"
+            title = r["title"][:55]
+            print(f"  {label} ({conf})  {title}")
 
-    print("\n── Writing categories back to file ──────────────────────")
-    update_categories_in_file(json_path, results)
+        print("\n── Writing categories back to file ──────────────────────")
+        update_categories_in_file(json_path, results)
