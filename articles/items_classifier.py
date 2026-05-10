@@ -14,10 +14,12 @@ import ollama
 import json
 import re
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ── Configuration ─────────────────────────────────────────────────────────────
 OLLAMA_MODEL = "llama3"          # Change to "mistral", "gemma3", etc. as needed
 OLLAMA_HOST  = "http://localhost:11434"  # Default Ollama server address
+MAX_WORKERS  = 4                 # Concurrent LLM requests per file (tune to taste)
 CONTENT_JSON_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'assets', 'content.json')
 
 def _load_disciplines_from_content():
@@ -156,7 +158,7 @@ def _validate(data: dict) -> dict:
 
 def classify_batch(publications: list[dict], model: str = OLLAMA_MODEL) -> list[dict]:
     """
-    Classify a list of publications.
+    Classify a list of publications sequentially.
 
     Each item in `publications` should be a dict with keys:
         title, abstract, journal (optional), affiliation (optional)
@@ -181,6 +183,52 @@ def classify_batch(publications: list[dict], model: str = OLLAMA_MODEL) -> list[
             exit()
             
     return results
+
+
+def classify_batch_parallel(
+    publications: list[dict],
+    model: str = OLLAMA_MODEL,
+    max_workers: int = MAX_WORKERS,
+) -> list[dict]:
+    """Like `classify_batch`, but issues up to `max_workers` LLM calls concurrently.
+
+    The Ollama call is HTTP I/O-bound, so a thread pool gives a real speedup
+    even though Python has the GIL. Order of the returned list matches the
+    order of `publications`. Errors on individual papers are logged but do not
+    abort the rest of the batch.
+    """
+    if not publications:
+        return []
+
+    workers = max(1, min(max_workers, len(publications)))
+    total = len(publications)
+    results: list[dict | None] = [None] * total
+    done = 0
+
+    def _classify_one(idx: int, pub: dict):
+        classification = classify_with_ollama(
+            title=pub.get("title", ""),
+            abstract=pub.get("abstract", ""),
+            journal=pub.get("journal", ""),
+            affiliation=pub.get("affiliation", ""),
+            model=model,
+        )
+        return idx, pub, classification
+
+    print(f"  Classifying {total} publications with {workers} parallel workers...")
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futures = [ex.submit(_classify_one, i, p) for i, p in enumerate(publications)]
+        for fut in as_completed(futures):
+            idx, pub, classification = fut.result()
+            results[idx] = {**pub, **classification}
+            done += 1
+            print(f"  [{done}/{total}] → {classification['discipline']:20s} "
+                  f"(conf: {classification['confidence']:.2f})  "
+                  f"{pub.get('title', '')[:55]}")
+            if classification.get("error"):
+                print(f"           ! {classification['error']}")
+
+    return [r for r in results if r is not None]
 
 
 # ── Drop-in replacement for the original heuristic function ───────────────────
@@ -349,38 +397,31 @@ if __name__ == "__main__":
         print("=" * 60)
         print(f"Processing {json_path}")
         print("=" * 60)
-        # Example: Read and print info about a specific ORCID publications JSON file
         try:
             sample_publications, info = _load_publications_from_orcid_json(json_path)
         except (OSError, json.JSONDecodeError) as e:
             print(f"Error reading {json_path}: {e}")
-            raise SystemExit(1)
+            continue
 
-        print("=" * 60)
         print("Publication Classifier — Ollama")
-        print(f"Model : {OLLAMA_MODEL}")
-        print(f"Author: {info.get('author')}")
-        print(f"ORCID : {info.get('orcid')}")
-        print(f"Source: {info.get('source')}")
-        print(f"Total : {info.get('total_publications')} "
-            f"({len(sample_publications)} loaded for classification)")
+        print(f"Model  : {OLLAMA_MODEL}")
+        print(f"Author : {info.get('author')}")
+        print(f"ORCID  : {info.get('orcid')}")
+        print(f"Source : {info.get('source')}")
+        print(f"Total  : {info.get('total_publications')} "
+              f"({len(sample_publications)} loaded for classification)")
+        print(f"Workers: {MAX_WORKERS}")
         print("=" * 60)
 
         if not sample_publications:
-            print("No uncategorized publications to classify. Nothing to do.")
-            raise SystemExit(0)
+            print("No uncategorized publications to classify. Skipping.")
+            continue
 
-        for pub in sample_publications:
-            print(f"  {pub['title']}")
-            print(f"  {pub['abstract']}")
-            print(f"  {pub['journal']}")
-            print(f"  {pub['affiliation']}")
-            print(f"  {pub['doi']}")
-            print(f"  {pub['category']}")
-            print("=" * 60)
+        results = classify_batch_parallel(
+            sample_publications,
+            model=OLLAMA_MODEL,
+            max_workers=MAX_WORKERS,
+        )
 
-            # Classify this publication one-by-one (not as batch)
-            results = classify_batch([pub], model=OLLAMA_MODEL)
-
-            print("\n── Writing categories back to file ──────────────────────")
-            update_categories_in_file(json_path, results)
+        print("\n── Writing categories back to file ──────────────────────")
+        update_categories_in_file(json_path, results)
