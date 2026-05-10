@@ -1,4 +1,5 @@
 import { publicationYearValue } from './articleItems.js'
+import contentData from '../assets/content.json'
 
 const itemModules = import.meta.glob('../../articles/items/*.json', {
   eager: true,
@@ -7,6 +8,50 @@ const itemModules = import.meta.glob('../../articles/items/*.json', {
 function validAffiliation(aff) {
   const a = (aff ?? '').trim()
   return Boolean(a && a.toUpperCase() !== 'N/A')
+}
+
+const subcategoryNameByCode = (() => {
+  const map = {}
+  for (const category of contentData) {
+    const subs = Array.isArray(category.subcategories) ? category.subcategories : []
+    for (const sub of subs) {
+      const code = (sub.subcategories_code ?? '').trim()
+      const name = (sub.subcategories_name ?? '').trim()
+      if (code) map[code] = name || code
+    }
+  }
+  return map
+})()
+
+function buildCategoryList(data) {
+  const codes = []
+  const seen = new Set()
+
+  const raw = (data?.author_categories ?? '').toString()
+  if (raw.trim()) {
+    for (const piece of raw.split(',')) {
+      const code = piece.trim()
+      if (code && !seen.has(code)) {
+        seen.add(code)
+        codes.push(code)
+      }
+    }
+  }
+
+  if (Array.isArray(data?.publications)) {
+    for (const pub of data.publications) {
+      const code = (pub?.category ?? '').toString().trim()
+      if (code && !seen.has(code)) {
+        seen.add(code)
+        codes.push(code)
+      }
+    }
+  }
+
+  return codes.map((code) => ({
+    code,
+    name: subcategoryNameByCode[code] ?? code,
+  }))
 }
 
 /**
@@ -40,12 +85,16 @@ export function getResearchers() {
       ? data.publications.length
       : 0
 
+    const categories = buildCategoryList(data)
+    categories.sort((a, b) => a.code.localeCompare(b.code, undefined, { sensitivity: 'base' }))
+
     out.push({
       name: (data.author ?? '').trim(),
       orcid: (data.orcid ?? '').trim(),
       recentAffiliation: recentAffiliation || null,
       recentTitles,
       paperCount,
+      categories,
     })
   }
   out.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }))

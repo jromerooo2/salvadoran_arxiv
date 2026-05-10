@@ -47,6 +47,14 @@
           <p v-else class="mt-2 text-sm italic text-gray-400">
             No affiliation on record in recent publications.
           </p>
+          <p v-if="r.categories && r.categories.length" class="mt-2 text-sm leading-relaxed text-gray-700">
+            <span class="font-medium text-gray-500">Research fields:</span>
+            <span class="ml-1 text-gray-800">
+              <template v-for="(c, ci) in r.categories" :key="c.code">
+                <span v-if="ci > 0">, </span>{{ c.code }}
+              </template>
+            </span>
+          </p>
         </header>
 
         <section class="mt-3 min-h-0 flex-1 border-t border-gray-100 pt-3">
