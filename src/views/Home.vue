@@ -1,15 +1,7 @@
 <template>
-  <div>
-    <div class="max-w-3xl">
-      <p class="text-left text-base leading-relaxed text-stone-800">
-        The <strong class="font-semibold text-stone-900">Salvadoran Society of Sciences</strong> is a non-profit
-        organization dedicated to fostering scientific debate, networks among researchers, and the dissemination of
-        knowledge for the benefit of society. This site offers general information and resources for the community.
-      </p>
-    </div>
-
+  <div class="space-y-10">
     <section
-      class="home-search mx-auto mb-10 mt-6 w-full max-w-3xl rounded-xl bg-[#0047ab] px-5 py-8 text-center shadow-md sm:px-8"
+      class="mx-auto w-full max-w-3xl rounded-xl bg-[#0047ab] px-5 py-8 text-center shadow-md sm:px-8"
     >
       <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
         Discover science by Salvadoran researchers
@@ -18,7 +10,7 @@
     </section>
 
     <nav
-      class="category-index mx-auto mt-8 flex w-full max-w-3xl flex-col gap-6"
+      class="category-index mx-auto flex w-full max-w-3xl flex-col gap-6"
       aria-label="Browse by field"
     >
       <article
