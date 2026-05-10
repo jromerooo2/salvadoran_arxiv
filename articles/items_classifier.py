@@ -19,32 +19,60 @@ import re
 OLLAMA_MODEL = "llama3"          # Change to "mistral", "gemma3", etc. as needed
 OLLAMA_HOST  = "http://localhost:11434"  # Default Ollama server address
 
-DISCIPLINES = [
-    "physics",
-    "chemistry",
-    "biology",
-    "health sciences",
-    "engineering",
-]
+import os
 
-SYSTEM_PROMPT = """You are a scientific publication classifier.
+CONTENT_JSON_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'assets', 'content.json')
+
+def _load_disciplines_from_content():
+    """Return the set of subcategory names from content.json, lowercased and sorted.
+
+    Only `subcategories[*].subcategories_name` is read — top-level
+    `category_name` values (e.g. "Physics", "Mathematics", "Biology", ...) are
+    intentionally ignored.
+    """
+    with open(CONTENT_JSON_PATH, 'r', encoding='utf-8') as f:
+        content_obj = json.load(f)
+
+    if not isinstance(content_obj, list):
+        raise ValueError("Expected content.json to be a list of categories.")
+
+    disciplines = set()
+    for category in content_obj:
+        if not isinstance(category, dict):
+            continue
+        subcategories = category.get('subcategories')
+        if not isinstance(subcategories, list):
+            continue
+        for sub in subcategories:
+            if not isinstance(sub, dict):
+                continue
+            name = sub.get('subcategories_name')
+            if isinstance(name, str) and name.strip():
+                disciplines.add(name.strip().lower())
+
+    if not disciplines:
+        raise ValueError("No subcategory names found in content.json.")
+
+    return sorted(disciplines)
+
+DISCIPLINES = _load_disciplines_from_content()
+
+_DISCIPLINES_BULLETS = "\n".join(f"- {d}" for d in DISCIPLINES)
+
+SYSTEM_PROMPT = f"""You are a scientific publication classifier.
 Your task is to classify a publication into exactly ONE of these disciplines:
-- physics
-- chemistry
-- biology
-- health sciences
-- engineering
+{_DISCIPLINES_BULLETS}
 
 Rules:
 - Reply ONLY with a valid JSON object, no extra text.
 - The JSON must have two keys:
-    "discipline": one of the five disciplines above (lowercase, exact spelling)
+    "discipline": one of the disciplines above (lowercase, exact spelling)
     "confidence": a float from 0.0 to 1.0 indicating how certain you are
 - If the publication clearly spans two disciplines, pick the most dominant one.
 - If you cannot determine the discipline, use "N/A" for discipline and 0.0 for confidence.
 
 Example output:
-{"discipline": "biology", "confidence": 0.92}
+{{"discipline": "{DISCIPLINES[0]}", "confidence": 0.92}}
 """
 
 # ── Core classifier ────────────────────────────────────────────────────────────
