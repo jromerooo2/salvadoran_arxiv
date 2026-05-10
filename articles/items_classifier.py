@@ -24,11 +24,11 @@ import os
 CONTENT_JSON_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'assets', 'content.json')
 
 def _load_disciplines_from_content():
-    """Return the set of subcategory names from content.json, lowercased and sorted.
+    """Return (sorted discipline names, {name: code}) read from content.json.
 
-    Only `subcategories[*].subcategories_name` is read — top-level
-    `category_name` values (e.g. "Physics", "Mathematics", "Biology", ...) are
-    intentionally ignored.
+    Only `subcategories[*].subcategories_name` / `subcategories_code` are read —
+    top-level `category_name` / `category_code` values (e.g. "Physics", "phy",
+    "Mathematics", "math", ...) are intentionally ignored.
     """
     with open(CONTENT_JSON_PATH, 'r', encoding='utf-8') as f:
         content_obj = json.load(f)
@@ -36,7 +36,7 @@ def _load_disciplines_from_content():
     if not isinstance(content_obj, list):
         raise ValueError("Expected content.json to be a list of categories.")
 
-    disciplines = set()
+    name_to_code: dict[str, str | None] = {}
     for category in content_obj:
         if not isinstance(category, dict):
             continue
@@ -47,15 +47,21 @@ def _load_disciplines_from_content():
             if not isinstance(sub, dict):
                 continue
             name = sub.get('subcategories_name')
+            code = sub.get('subcategories_code')
             if isinstance(name, str) and name.strip():
-                disciplines.add(name.strip().lower())
+                key = name.strip().lower()
+                name_to_code[key] = code.strip() if isinstance(code, str) and code.strip() else None
 
-    if not disciplines:
+    if not name_to_code:
         raise ValueError("No subcategory names found in content.json.")
 
-    return sorted(disciplines)
+    sorted_names = sorted(name_to_code)
+    return sorted_names, {n: name_to_code[n] for n in sorted_names}
 
-DISCIPLINES = _load_disciplines_from_content()
+DISCIPLINES, DISCIPLINES_CODES = _load_disciplines_from_content()
+print(DISCIPLINES)
+print(DISCIPLINES_CODES)
+input("Press Enter to continue...")
 
 _DISCIPLINES_BULLETS = "\n".join(f"- {d}" for d in DISCIPLINES)
 
