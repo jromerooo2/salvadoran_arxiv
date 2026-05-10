@@ -27,7 +27,11 @@
             {{ category.category_name }}
           </h2>
           <p class="mt-1 text-sm text-gray-600">
-            (<a class="text-blue-700 hover:underline" :href="category.category_articlesLink">recent articles</a>,
+            (<a
+              class="cursor-pointer text-blue-700 hover:underline"
+              href="#"
+              @click.prevent="searchByCategoryGroup(category)"
+            >recent articles</a>,
             <a class="text-blue-700 hover:underline" :href="category.category_researchersLink">researchers</a>)
           </p>
         </header>
@@ -83,6 +87,24 @@ export default {
       const articles = getAllArticles()
       const searchResults = articles.filter(
         (a) => (a.category ?? '').toString().trim() === target,
+      )
+      this.$router.push({
+        path: '/results',
+        query: {
+          searchResults: JSON.stringify(searchResults),
+        },
+      })
+    },
+    searchByCategoryGroup(category) {
+      const codes = new Set(
+        (category?.subcategories ?? [])
+          .map((s) => (s?.subcategories_code ?? '').toString().trim())
+          .filter(Boolean),
+      )
+      if (codes.size === 0) return
+      const articles = getAllArticles()
+      const searchResults = articles.filter((a) =>
+        codes.has((a.category ?? '').toString().trim()),
       )
       this.$router.push({
         path: '/results',
