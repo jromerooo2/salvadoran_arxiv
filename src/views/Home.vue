@@ -53,7 +53,11 @@
                   href="#"
                   @click.prevent="searchByCategory(subcategory.subcategories_code)"
                 >recent articles</a>,
-                <a class="text-blue-700 hover:underline" :href="subcategory.subcategories_researchersLink">researchers</a>)
+                <a
+                  class="cursor-pointer text-blue-700 hover:underline"
+                  href="#"
+                  @click.prevent="researchersByCategory(subcategory.subcategories_code)"
+                >researchers</a>)
               </span>
             </li>
           </ul>
@@ -111,6 +115,14 @@ export default {
         query: {
           searchResults: JSON.stringify(searchResults),
         },
+      })
+    },
+    researchersByCategory(code) {
+      const target = (code ?? '').toString().trim()
+      if (!target) return
+      this.$router.push({
+        path: '/researchers',
+        query: { category: target },
       })
     },
   },

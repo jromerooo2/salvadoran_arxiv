@@ -98,11 +98,28 @@ export default {
       researchers: [],
     }
   },
-  mounted() {
-    this.researchers = getResearchers()
+  created() {
+    this.applyFilterFromRoute()
+  },
+  watch: {
+    '$route.query.category'() {
+      this.applyFilterFromRoute()
+    },
   },
   methods: {
     orcidDisplayId: (url) => orcidDisplayId(url),
+    applyFilterFromRoute() {
+      const all = getResearchers()
+      const code = (this.$route.query.category ?? '').toString().trim()
+      if (!code) {
+        this.researchers = all
+        return
+      }
+      this.researchers = all.filter((r) =>
+        Array.isArray(r.categories) &&
+        r.categories.some((c) => (c?.code ?? '').toString().trim() === code),
+      )
+    },
     seeMorePapers(orcid) {
       const all = getAllArticles()
       const list = orcid ? all.filter((a) => a.orcid === orcid) : []
