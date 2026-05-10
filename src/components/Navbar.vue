@@ -38,6 +38,9 @@
               <router-link to="/articles" class="block text-white py-2" @click="isOpen = false">Articles</router-link>
             </li>
             <li>
+              <router-link to="/people" class="block text-white py-2" @click="isOpen = false">People</router-link>
+            </li>
+            <li>
               <router-link to="/about" class="block text-white py-2" @click="isOpen = false">About</router-link>
             </li>
             <li>

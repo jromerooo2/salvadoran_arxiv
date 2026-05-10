@@ -4,6 +4,7 @@ import About from './views/About.vue';
 import Articulos from './views/Articulos.vue';
 import Contact from './views/Contacto.vue';
 import Researchers from './views/Researchers.vue';
+import People from './views/People.vue';
 import Results from './views/SearchResults.vue';
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { path: '/articulos', redirect: '/articles' },
   { path: '/articles', name: 'Articles', component: Articulos },
   { path: '/researchers', name: 'Researchers', component: Researchers },
+  { path: '/people', name: 'People', component: People },
   { path: '/contact', name: 'Contact', component: Contact },
   { path: '/results', name: 'Results', component: Results},
 ];
