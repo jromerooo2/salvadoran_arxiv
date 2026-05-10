@@ -13,14 +13,11 @@ Setup:
 import ollama
 import json
 import re
-
-# ── Configuration ─────────────────────────────────────────────────────────────
-
-OLLAMA_MODEL = "llama3"          # Change to "mistral", "gemma3", etc. as needed
-OLLAMA_HOST  = "http://localhost:11434"  # Default Ollama server address
-
 import os
 
+# ── Configuration ─────────────────────────────────────────────────────────────
+OLLAMA_MODEL = "llama3"          # Change to "mistral", "gemma3", etc. as needed
+OLLAMA_HOST  = "http://localhost:11434"  # Default Ollama server address
 CONTENT_JSON_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'assets', 'content.json')
 
 def _load_disciplines_from_content():
@@ -59,12 +56,7 @@ def _load_disciplines_from_content():
     return sorted_names, {n: name_to_code[n] for n in sorted_names}
 
 DISCIPLINES, DISCIPLINES_CODES = _load_disciplines_from_content()
-print(DISCIPLINES)
-print(DISCIPLINES_CODES)
-input("Press Enter to continue...")
-
 _DISCIPLINES_BULLETS = "\n".join(f"- {d}" for d in DISCIPLINES)
-
 SYSTEM_PROMPT = f"""You are a scientific publication classifier.
 Your task is to classify a publication into exactly ONE of these disciplines:
 {_DISCIPLINES_BULLETS}
@@ -209,75 +201,60 @@ def classify_section_discipline(
 
 # ── Demo ───────────────────────────────────────────────────────────────────────
 
+def _load_publications_from_orcid_json(json_path: str) -> list[dict]:
+    """Build a `sample_publications`-style list from an ORCID + Crossref JSON file.
+
+    Keeps only the fields the classifier consumes (title, abstract, journal,
+    affiliation) and normalizes "N/A" / missing values to empty strings so the
+    LLM prompt isn't polluted with placeholder text.
+    """
+    with open(json_path, "r", encoding="utf-8") as f:
+        info = json.load(f)
+
+    def _clean(v):
+        if not isinstance(v, str):
+            return ""
+        s = v.strip()
+        return "" if s.upper() == "N/A" else s
+
+    publications = []
+    for pub in info.get("publications", []):
+        if not isinstance(pub, dict):
+            continue
+        publications.append({
+            "title"      : _clean(pub.get("title")),
+            "abstract"   : _clean(pub.get("abstract")),
+            "journal"    : _clean(pub.get("journal")),
+            "affiliation": _clean(pub.get("affiliation")),
+        })
+    return publications, info
+
+
 if __name__ == "__main__":
-    sample_publications = [
-        {
-            "title": "Quantum entanglement in topological superconductors",
-            "abstract": (
-                "We investigate quantum entanglement properties of Majorana fermions "
-                "in topological superconducting nanowires under an external magnetic field. "
-                "Using density matrix renormalization group methods, we characterize the "
-                "entanglement spectrum and its connection to bulk topological invariants."
-            ),
-            "journal": "Physical Review Letters",
-            "affiliation": "Department of Physics, MIT",
-        },
-        {
-            "title": "CRISPR-Cas9 genome editing in mammalian stem cells",
-            "abstract": (
-                "We report efficient CRISPR-Cas9-mediated genome editing in human "
-                "induced pluripotent stem cells. Our protocol achieves >80% on-target "
-                "efficiency with minimal off-target effects, enabling precise correction "
-                "of disease-associated mutations."
-            ),
-            "journal": "Nature Cell Biology",
-            "affiliation": "Broad Institute, Cambridge MA",
-        },
-        {
-            "title": "Palladium-catalyzed cross-coupling of aryl halides",
-            "abstract": (
-                "A novel palladium catalyst system for Suzuki–Miyaura cross-coupling "
-                "reactions of sterically hindered aryl chlorides is described. The catalyst "
-                "exhibits exceptional turnover numbers and broad substrate scope, including "
-                "electron-rich and electron-poor arenes."
-            ),
-            "journal": "Journal of the American Chemical Society",
-            "affiliation": "Department of Chemistry, Stanford University",
-        },
-        {
-            "title": "Deep learning for early detection of diabetic retinopathy",
-            "abstract": (
-                "A convolutional neural network trained on 128,000 retinal fundus images "
-                "achieves AUC 0.99 for detection of diabetic retinopathy, outperforming "
-                "general ophthalmologists. Prospective clinical validation across three "
-                "hospital networks confirmed diagnostic accuracy."
-            ),
-            "journal": "JAMA Ophthalmology",
-            "affiliation": "Stanford Medical Center",
-        },
-        {
-            "title": "Topology optimization of additive-manufactured aerospace structures",
-            "abstract": (
-                "We present a density-based topology optimization framework for metal "
-                "additive manufacturing of load-bearing aerospace components. Finite element "
-                "analysis-driven design iterations reduce structural mass by 34% while "
-                "satisfying fatigue and buckling constraints."
-            ),
-            "journal": "International Journal of Mechanical Sciences",
-            "affiliation": "School of Aerospace Engineering, Georgia Tech",
-        },
-    ]
+
+    json_path = "/root/software/salvadoran_arxiv/articles/items/Erick_Urquilla_ORCID_0009-0007-3861-3223_publications.json"
+
+    try:
+        sample_publications, info = _load_publications_from_orcid_json(json_path)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"Error reading {json_path}: {e}")
+        raise SystemExit(1)
 
     print("=" * 60)
     print("Publication Classifier — Ollama")
-    print(f"Model: {OLLAMA_MODEL}")
+    print(f"Model : {OLLAMA_MODEL}")
+    print(f"Author: {info.get('author')}")
+    print(f"ORCID : {info.get('orcid')}")
+    print(f"Source: {info.get('source')}")
+    print(f"Total : {info.get('total_publications')} "
+          f"({len(sample_publications)} loaded for classification)")
     print("=" * 60)
 
     results = classify_batch(sample_publications, model=OLLAMA_MODEL)
 
     print("\n── Summary ──────────────────────────────────────────────")
     for r in results:
-        label = r["discipline"].upper().ljust(16)
+        label = r["discipline"]
         conf  = f"{r['confidence']:.0%}"
         title = r["title"][:55]
         print(f"  {label} ({conf})  {title}")
