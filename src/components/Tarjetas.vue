@@ -10,6 +10,7 @@
         :doi="article.doi"
         :author="article.author"
         :affiliation="article.affiliation"
+        :category="article.category"
       />
     </div>
   </div>

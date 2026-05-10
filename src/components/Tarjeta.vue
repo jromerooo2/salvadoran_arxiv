@@ -10,6 +10,12 @@ const props = defineProps({
   doi: String,
   author: String,
   affiliation: String,
+  category: String,
+})
+
+const categoryLabel = computed(() => {
+  const c = (props.category ?? '').toString().trim()
+  return c ? `[${c}]` : ''
 })
 
 const yearLabel = computed(() => {
@@ -71,7 +77,7 @@ const abstractPreview = computed(() => {
 
     <header class="pr-1">
       <h3 class="text-base font-bold leading-snug text-gray-900 sm:text-lg">
-        {{ title }}
+        {{ title }}<span v-if="categoryLabel" class="ml-1 align-middle text-[0.5em] font-normal text-gray-500">{{ categoryLabel }}</span>
       </h3>
       <p v-if="authorLine" class="mt-1 text-sm text-gray-600">
         {{ authorLine }}

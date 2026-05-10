@@ -32,6 +32,7 @@ export function getAllArticles() {
         year: pub.year ?? '',
         journal: pub.journal ?? '',
         doi: pub.doi ?? '',
+        category: pub.category ?? '',
       })
     }
   }
