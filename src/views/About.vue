@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-10">
-    <section class="mx-auto w-full max-w-3xl space-y-4 font-sans">
+    <section class="mx-auto w-full space-y-4 font-sans">
       <h1 class="text-2xl font-bold text-gray-900">About</h1>
       <p class="text-base leading-relaxed text-gray-700">
         The <strong class="font-semibold text-gray-900">Salvadoran Society of Sciences</strong> is a non-profit

@@ -2,7 +2,7 @@
 
   <div class="space-y-10">
     <section
-      class="mx-auto w-full max-w-3xl rounded-xl px-5 py-8 text-center shadow-md sm:px-8"
+      class="mx-auto w-full rounded-xl px-5 py-8 text-center shadow-md sm:px-8"
       style="background-color: #0047ab"
     >
       <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">

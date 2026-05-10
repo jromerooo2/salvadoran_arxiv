@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-10">
     <section
-      class="mx-auto w-full max-w-3xl rounded-xl bg-[#0047ab] px-5 py-8 text-center shadow-md sm:px-8"
+      class="mx-auto w-full rounded-xl bg-[#0047ab] px-5 py-8 text-center shadow-md sm:px-8"
     >
       <h2 class="mb-6 text-xl font-semibold leading-snug text-white sm:text-2xl">
         Discover science by Salvadoran researchers
@@ -10,7 +10,7 @@
     </section>
 
     <nav
-      class="category-index mx-auto flex w-full max-w-3xl flex-col gap-6"
+      class="category-index mx-auto flex w-full flex-col gap-6"
       aria-label="Browse by field"
     >
       <article

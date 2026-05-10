@@ -7,7 +7,7 @@
     <div
       :class="[
         'flex flex-col gap-4',
-        isHero && centered ? 'mx-auto max-w-2xl items-center' : '',
+        isHero && centered ? 'mx-auto max-w-4xl items-center' : '',
       ]"
     >
       <div
