@@ -165,8 +165,8 @@ def search_orcid(orcid_id):
         #     print(f"Category code loading error: {e}")
         #     category_codes = ["phy-phys", "chem-org", "bio-bio", "health-phe", "eng-ece"]  # fallback
 
-        # category = random.choice(category_codes) if category_codes else "uncategorized"
-        category = "uncategorized"
+        # category = random.choice(category_codes) if category_codes else ""
+        category = ""
         # # ───────────────────────────────────────────────────────────────────────
 
         papers.append({
@@ -286,7 +286,7 @@ def save_results(papers, author_name, orcid_id, author_categories):
     merged_cats = sorted({
         p["category"] for p in merged_pubs
         if isinstance(p, dict) and isinstance(p.get("category"), str)
-        and p["category"] and p["category"] != "uncategorized"
+        and p["category"] and p["category"] != ""
     })
     merged_cats_str = ", ".join(merged_cats) if merged_cats else (author_categories or "")
 
@@ -336,7 +336,7 @@ def extract_categories_string(papers):
     unique_categories = set()
     for paper in papers:
         cat = paper.get('category')
-        if cat and cat != "uncategorized":
+        if cat and cat != "":
             unique_categories.add(cat)
     return ', '.join(sorted(unique_categories))
 
