@@ -5,37 +5,44 @@
     "category_researchersLink": "#",
     "subcategories": [
       {
-        "subcategories_name": "Astrophysics (astro-ph)",
+        "subcategories_name": "Astrophysics",
+        "subcategories_code": "phy-astro",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "Condensed Matter (cond-ph)",
+        "subcategories_name": "Condensed Matter",
+        "subcategories_code": "phy-cond",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "General Relativity and Cosmology (genrel-ph)",
+        "subcategories_name": "General Relativity and Cosmology",
+        "subcategories_code": "phy-genrel",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "High Energy Physics (hep-ph)",
+        "subcategories_name": "High Energy Physics",
+        "subcategories_code": "phy-hep",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "Nuclear Physics (nucl-ex)",
+        "subcategories_name": "Nuclear Physics",
+        "subcategories_code": "phy-nucl",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "Quantum Physics (quant-ph)",
+        "subcategories_name": "Quantum Physics",
+        "subcategories_code": "phy-quant",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
-        "subcategories_name": "Physics (ph-ph)",
+        "subcategories_name": "Physics",
+        "subcategories_code": "phy-phys",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }
@@ -48,31 +55,37 @@
     "subcategories": [
       {
         "subcategories_name": "Algebra & Number Theory",
+        "subcategories_code": "math-ant",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Analysis & Differential Equations",
+        "subcategories_code": "math-ade",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Geometry & Topology",
+        "subcategories_code": "math-gt",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Applied & Computational Mathematics",
+        "subcategories_code": "math-acm",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Probability & Statistics",
+        "subcategories_code": "math-ps",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Combinatorics & Discrete Mathematics",
+        "subcategories_code": "math-cdm",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }
@@ -85,26 +98,31 @@
     "subcategories": [
       {
         "subcategories_name": "Molecular Biology",
+        "subcategories_code": "bio-mol",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Ecology & Evolution",
+        "subcategories_code": "bio-eco",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Cell Biology",
+        "subcategories_code": "bio-cell",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Neuroscience",
+        "subcategories_code": "bio-neuro",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Genetics & Genomics",
+        "subcategories_code": "bio-gen",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }
@@ -117,26 +135,31 @@
     "subcategories": [
       {
         "subcategories_name": "Organic Chemistry",
+        "subcategories_code": "chem-org",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Inorganic Chemistry",
+        "subcategories_code": "chem-inorg",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Physical Chemistry",
+        "subcategories_code": "chem-phys",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Biochemistry",
+        "subcategories_code": "chem-biochem",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Materials & Nanochemistry",
+        "subcategories_code": "chem-mat",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }
@@ -149,26 +172,31 @@
     "subcategories": [
       {
         "subcategories_name": "Electrical & Computer Engineering",
+        "subcategories_code": "eng-ece",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Mechanical Engineering",
+        "subcategories_code": "eng-mech",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Civil & Environmental Engineering",
+        "subcategories_code": "eng-civ",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Chemical Engineering",
+        "subcategories_code": "eng-chem",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Biomedical Engineering",
+        "subcategories_code": "eng-bio",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }
@@ -181,31 +209,37 @@
     "subcategories": [
       {
         "subcategories_name": "Public Health & Epidemiology",
+        "subcategories_code": "health-phe",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Clinical & Translational Research",
+        "subcategories_code": "health-ctr",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Nursing & Allied Health",
+        "subcategories_code": "health-nah",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Pharmacology & Drug Development",
+        "subcategories_code": "health-pharm",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Global & Community Health",
+        "subcategories_code": "health-gch",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       },
       {
         "subcategories_name": "Biomedical Informatics",
+        "subcategories_code": "health-bi",
         "subcategories_articlesLink": "#",
         "subcategories_researchersLink": "#"
       }

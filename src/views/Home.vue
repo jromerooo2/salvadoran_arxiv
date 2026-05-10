@@ -48,7 +48,9 @@
               :key="subIndex"
               class="text-sm leading-relaxed text-gray-600"
             >
-              <span class="font-medium text-gray-800">{{ subcategory.subcategories_name }}</span>
+              <span class="font-medium text-gray-800">
+                {{ subcategory.subcategories_name }}<span v-if="subcategory.subcategories_code"> ({{ subcategory.subcategories_code }})</span>
+              </span>
               <span class="font-normal text-gray-600">
                 (<a class="text-blue-700 hover:underline" :href="subcategory.subcategories_articlesLink">recent articles</a>,
                 <a class="text-blue-700 hover:underline" :href="subcategory.subcategories_researchersLink">researchers</a>)
