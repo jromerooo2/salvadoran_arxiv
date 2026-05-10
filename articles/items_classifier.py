@@ -221,13 +221,116 @@ def _load_publications_from_orcid_json(json_path: str) -> list[dict]:
     for pub in info.get("publications", []):
         if not isinstance(pub, dict):
             continue
+        # append only if category is unclasified
+        category = pub.get("category", "")
+        if category and category.lower() != "uncategorized":
+            continue
+
         publications.append({
             "title"      : _clean(pub.get("title")),
             "abstract"   : _clean(pub.get("abstract")),
             "journal"    : _clean(pub.get("journal")),
             "affiliation": _clean(pub.get("affiliation")),
+            "category"   : _clean(pub.get("category")),
+            'doi'        : _clean(pub.get("doi")),
         })
     return publications, info
+
+
+def _normalize_doi_for_match(doi) -> str:
+    """Lowercased DOI with common URL/`doi:` prefixes stripped, '' if unusable."""
+    if not isinstance(doi, str):
+        return ""
+    s = doi.strip()
+    if not s or s.upper() == "N/A":
+        return ""
+    lower = s.lower()
+    for prefix in ("https://doi.org/", "http://doi.org/",
+                   "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
+        if lower.startswith(prefix):
+            s = s[len(prefix):]
+            break
+    return s.strip().lower()
+
+
+def update_categories_in_file(json_path: str, results: list[dict]) -> dict:
+    """Rewrite each publication's `category` in `json_path` using `results`.
+
+    For every classification result, look up the discipline code via
+    `DISCIPLINES_CODES` and write it back to the matching publication's
+    `category` field (matching first by normalized DOI, then by title).
+    `author_categories` is re-derived from the updated codes so the file's
+    metadata stays consistent.
+
+    Returns a small report dict with counts of updated / unchanged / unmatched
+    papers and any discipline names that did not map to a code.
+    """
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    pubs = data.get("publications", [])
+    if not isinstance(pubs, list):
+        raise ValueError(f"'publications' in {json_path} is not a list.")
+
+    by_doi: dict[str, str] = {}
+    by_title: dict[str, str] = {}
+    unmapped: list[str] = []
+    for r in results:
+        discipline = str(r.get("discipline", "")).strip().lower()
+        code = DISCIPLINES_CODES.get(discipline)
+        if not code:
+            if discipline and discipline != "n/a":
+                unmapped.append(discipline)
+            continue
+        norm = _normalize_doi_for_match(r.get("doi"))
+        if norm:
+            by_doi[norm] = code
+        title = str(r.get("title", "")).strip().lower()
+        if title:
+            by_title[title] = code
+
+    updated = unchanged = not_matched = 0
+    for pub in pubs:
+        if not isinstance(pub, dict):
+            continue
+        norm = _normalize_doi_for_match(pub.get("doi"))
+        new_code = by_doi.get(norm) if norm else None
+        if not new_code:
+            new_code = by_title.get(str(pub.get("title", "")).strip().lower())
+        if not new_code:
+            not_matched += 1
+            continue
+        if pub.get("category") == new_code:
+            unchanged += 1
+        else:
+            pub["category"] = new_code
+            updated += 1
+
+    cats = sorted({
+        p["category"] for p in pubs
+        if isinstance(p, dict) and isinstance(p.get("category"), str)
+        and p["category"] and p["category"] != "uncategorized"
+    })
+    data["author_categories"] = ", ".join(cats)
+    data["total_publications"] = sum(1 for p in pubs if isinstance(p, dict))
+
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print(f"📝 Categories updated in {json_path}")
+    print(f"   ✏️  {updated} changed | ✓ {unchanged} unchanged | "
+          f"❓ {not_matched} not matched | 🏷️  author_categories: "
+          f"{data['author_categories'] or '(none)'}")
+    if unmapped:
+        print(f"   ⚠️  Disciplines without a code in DISCIPLINES_CODES: "
+              f"{sorted(set(unmapped))}")
+
+    return {
+        "updated": updated,
+        "unchanged": unchanged,
+        "not_matched": not_matched,
+        "unmapped_disciplines": sorted(set(unmapped)),
+    }
 
 
 if __name__ == "__main__":
@@ -250,6 +353,10 @@ if __name__ == "__main__":
           f"({len(sample_publications)} loaded for classification)")
     print("=" * 60)
 
+    if not sample_publications:
+        print("No uncategorized publications to classify. Nothing to do.")
+        raise SystemExit(0)
+
     results = classify_batch(sample_publications, model=OLLAMA_MODEL)
 
     print("\n── Summary ──────────────────────────────────────────────")
@@ -258,3 +365,6 @@ if __name__ == "__main__":
         conf  = f"{r['confidence']:.0%}"
         title = r["title"][:55]
         print(f"  {label} ({conf})  {title}")
+
+    print("\n── Writing categories back to file ──────────────────────")
+    update_categories_in_file(json_path, results)
