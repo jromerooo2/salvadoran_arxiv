@@ -147,26 +147,27 @@ def search_orcid(orcid_id):
  
         time.sleep(0.2)  # Be polite to the API
 
-        # ── ASSIGN CATEGORY ─────────────────────────────────────────────────────
-        # for simplicity, we will assing them randomly
-        # Load category codes from ../src/assets/content.json (relative to this script)
+        # # ── ASSIGN CATEGORY ─────────────────────────────────────────────────────
+        # # for simplicity, we will assing them randomly
+        # # Load category codes from ../src/assets/content.json (relative to this script)
 
-        content_json_path = os.path.join(os.path.dirname(__file__), "../src/assets/content.json")
-        try:
-            with open(content_json_path, "r", encoding="utf-8") as f:
-                toc = json.load(f)
-            category_codes = []
-            for cat in toc:
-                for sub in cat.get("subcategories", []):
-                    code = sub.get("subcategories_code")
-                    if code:
-                        category_codes.append(code)
-        except Exception as e:
-            print(f"Category code loading error: {e}")
-            category_codes = ["phy-phys", "chem-org", "bio-bio", "health-phe", "eng-ece"]  # fallback
+        # content_json_path = os.path.join(os.path.dirname(__file__), "../src/assets/content.json")
+        # try:
+        #     with open(content_json_path, "r", encoding="utf-8") as f:
+        #         toc = json.load(f)
+        #     category_codes = []
+        #     for cat in toc:
+        #         for sub in cat.get("subcategories", []):
+        #             code = sub.get("subcategories_code")
+        #             if code:
+        #                 category_codes.append(code)
+        # except Exception as e:
+        #     print(f"Category code loading error: {e}")
+        #     category_codes = ["phy-phys", "chem-org", "bio-bio", "health-phe", "eng-ece"]  # fallback
 
-        category = random.choice(category_codes) if category_codes else "uncategorized"
-        # ───────────────────────────────────────────────────────────────────────
+        # category = random.choice(category_codes) if category_codes else "uncategorized"
+        category = "uncategorized"
+        # # ───────────────────────────────────────────────────────────────────────
 
         papers.append({
             "title"      : title,
@@ -210,21 +211,121 @@ def display_results(papers, author_name, orcid_id):
 
 
 # ── SAVE TO JSON ───────────────────────────────────────────────────────────────
+def _normalize_doi(doi):
+    """Return a canonical lowercase DOI for deduplication.
+
+    Strips common URL prefixes and surrounding whitespace. Returns an empty
+    string for missing / empty / "N/A" values so callers can treat them as
+    "no usable DOI".
+    """
+    if not isinstance(doi, str):
+        return ""
+    s = doi.strip()
+    if not s or s.upper() == "N/A":
+        return ""
+    lower = s.lower()
+    for prefix in ("https://doi.org/", "http://doi.org/",
+                   "https://dx.doi.org/", "http://dx.doi.org/",
+                   "doi:"):
+        if lower.startswith(prefix):
+            s = s[len(prefix):]
+            break
+    return s.strip().lower()
+
+
 def save_results(papers, author_name, orcid_id, author_categories):
     filename = f"items/{author_name.replace(' ', '_').replace(',', '')}_ORCID_{orcid_id}_publications.json"
 
-    data = {
-        "author"            : author_name,
-        "orcid"             : f"https://orcid.org/{orcid_id}",
-        "source"            : "ORCID + Crossref",
-        "total_publications": len(papers),
-        "author_categories"        : author_categories,
-        "publications"      : papers,
+    # ── Load existing file (if any) so we can merge instead of overwriting ──
+    existing_meta = None
+    existing_pubs = []
+    if os.path.exists(filename):
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                existing_meta = json.load(f)
+            raw_pubs = existing_meta.get("publications", []) if isinstance(existing_meta, dict) else []
+            if isinstance(raw_pubs, list):
+                existing_pubs = raw_pubs
+        except (OSError, json.JSONDecodeError) as e:
+            backup = filename + ".bak"
+            print(f"⚠️  Could not read existing file '{filename}' ({e}).")
+            try:
+                os.rename(filename, backup)
+                print(f"   Existing file backed up to: {backup}")
+            except OSError:
+                pass
+            existing_meta = None
+            existing_pubs = []
+
+    existing_dois = {
+        _normalize_doi(p.get("doi"))
+        for p in existing_pubs
+        if isinstance(p, dict) and _normalize_doi(p.get("doi"))
     }
 
+    # ── Dedupe incoming papers against the existing DOIs ────────────────────
+    added = []
+    duplicates = 0
+    no_doi = 0
+    for paper in papers:
+        norm = _normalize_doi(paper.get("doi") if isinstance(paper, dict) else None)
+        if not norm:
+            # Cannot dedupe safely — skip to avoid silently duplicating on re-runs.
+            no_doi += 1
+            continue
+        if norm in existing_dois:
+            duplicates += 1
+            continue
+        existing_dois.add(norm)
+        added.append(paper)
+
+    merged_pubs = existing_pubs + added
+
+    # Re-derive author_categories from the merged set so metadata stays in sync
+    # with the publications list. Fall back to the supplied value if empty.
+    merged_cats = sorted({
+        p["category"] for p in merged_pubs
+        if isinstance(p, dict) and isinstance(p.get("category"), str)
+        and p["category"] and p["category"] != "uncategorized"
+    })
+    merged_cats_str = ", ".join(merged_cats) if merged_cats else (author_categories or "")
+
+    # ── Build the output, preserving any extra keys from the existing file ──
+    if isinstance(existing_meta, dict):
+        data = dict(existing_meta)
+        data["author"]             = existing_meta.get("author") or author_name
+        data["orcid"]              = existing_meta.get("orcid") or f"https://orcid.org/{orcid_id}"
+        data["source"]             = existing_meta.get("source") or "ORCID + Crossref"
+        data["author_categories"]  = merged_cats_str
+        data["total_publications"] = len(merged_pubs)
+        data["publications"]       = merged_pubs
+    else:
+        data = {
+            "author"            : author_name,
+            "orcid"             : f"https://orcid.org/{orcid_id}",
+            "source"            : "ORCID + Crossref",
+            "total_publications": len(merged_pubs),
+            "author_categories" : merged_cats_str,
+            "publications"      : merged_pubs,
+        }
+
+    os.makedirs(os.path.dirname(filename) or ".", exist_ok=True)
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"✅ Results saved to: {filename}")
+
+    if isinstance(existing_meta, dict):
+        print(f"✅ Updated: {filename}")
+        msg = f"   ➕ {len(added)} new added | ⏭️  {duplicates} duplicate DOI(s) skipped"
+        if no_doi:
+            msg += f" | ⚠️  {no_doi} skipped (no DOI, cannot dedupe)"
+        msg += f" | 📚 total: {len(merged_pubs)}"
+        print(msg)
+    else:
+        msg = f"✅ Created: {filename} ({len(merged_pubs)} papers"
+        if no_doi:
+            msg += f", {no_doi} skipped without DOI"
+        msg += ")"
+        print(msg)
 
 
 def extract_categories_string(papers):
@@ -235,7 +336,7 @@ def extract_categories_string(papers):
     unique_categories = set()
     for paper in papers:
         cat = paper.get('category')
-        if cat and cat != "N/A":
+        if cat and cat != "uncategorized":
             unique_categories.add(cat)
     return ', '.join(sorted(unique_categories))
 
