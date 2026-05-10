@@ -3,7 +3,7 @@
   "orcid": "https://orcid.org/0009-0007-3861-3223",
   "source": "ORCID + Crossref",
   "total_publications": 2,
-  "author_categories": "chem-phys, phy-astro",
+  "author_categories": "chem-org, phy-hep",
   "publications": [
     {
       "title": "Equivalence of dark energy models: A theoretical and Bayesian perspective",
@@ -12,7 +12,7 @@
       "journal": "Physics of the Dark Universe",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1016/j.dark.2025.101901",
-      "category": "phy-astro"
+      "category": "phy-hep"
     },
     {
       "title": "Chaos in inhomogeneous neutrino fast flavor instability",
@@ -21,7 +21,7 @@
       "journal": "Physical Review D",
       "affiliation": "University of Tennessee",
       "doi": "https://doi.org/10.1103/PhysRevD.109.103040",
-      "category": "chem-phys"
+      "category": "chem-org"
     }
   ]
 }
