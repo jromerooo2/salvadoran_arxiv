@@ -75,6 +75,80 @@ def fetch_details_from_crossref(doi, author_name):
 
     return "N/A", "N/A", "N/A"
 
+
+# ── FETCH ABSTRACT + AFFILIATION + JOURNAL FROM SEMANTIC SCHOLAR ──────────────
+def fetch_details_from_semantic_scholar(doi, author_name):
+    """Fallback fetch of abstract, affiliation, and journal name via Semantic Scholar.
+
+    Used when Crossref does not return all fields. Looks up the paper by DOI on
+    the Semantic Scholar Graph API and extracts the same triple as the Crossref
+    helper so the caller can drop in a fallback transparently.
+    """
+    if not doi or doi == "N/A":
+        return "N/A", "N/A", "N/A"
+
+    raw_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
+
+    try:
+        fields = "abstract,authors.name,authors.affiliations,journal,venue"
+        url = (
+            f"https://api.semanticscholar.org/graph/v1/paper/DOI:{raw_doi}"
+            f"?fields={fields}"
+        )
+        headers = {
+            "User-Agent": "PublicationSearchScript/1.0 (mailto:your@email.com)",
+            "Accept": "application/json",
+        }
+        response = requests.get(url, headers=headers, timeout=15)
+
+        if response.status_code == 200:
+            data = response.json() or {}
+
+            # Abstract
+            abstract = data.get("abstract") or "N/A"
+            if abstract != "N/A":
+                abstract = abstract.strip() or "N/A"
+
+            # Affiliation — search among all authors for a name match
+            affiliation = "N/A"
+            s2_authors = data.get("authors") or []
+            author_parts = author_name.lower().split()
+
+            for a in s2_authors:
+                full = (a.get("name") or "").lower()
+                if any(part in full for part in author_parts if len(part) > 2):
+                    affs = a.get("affiliations") or []
+                    if affs:
+                        first = affs[0]
+                        if isinstance(first, str):
+                            cand = first.strip()
+                            if cand:
+                                affiliation = cand
+                        elif isinstance(first, dict):
+                            cand = (first.get("name") or "").strip()
+                            if cand:
+                                affiliation = cand
+                    break
+
+            # Journal — prefer the journal.name; fall back to venue
+            journal = "N/A"
+            j = data.get("journal") or {}
+            jname = (j.get("name") or "").strip() if isinstance(j, dict) else ""
+            if jname:
+                journal = jname
+            if journal == "N/A":
+                venue = (data.get("venue") or "").strip()
+                if venue:
+                    journal = venue
+
+            return abstract, affiliation, journal
+
+    except Exception:
+        pass
+
+    return "N/A", "N/A", "N/A"
+
+
 # ── ORCID SEARCH ───────────────────────────────────────────────────────────────
 def search_orcid(orcid_id):
     """Fetch publications from ORCID public API by ORCID ID."""
@@ -154,13 +228,29 @@ def search_orcid(orcid_id):
         if journal_xref and journal_xref != "N/A":
             journal = journal_xref
 
+        # If Crossref is missing any field, try Semantic Scholar to fill the gaps
+        if abstract == "N/A" or affiliation == "N/A" or journal == "N/A":
+            print(f"           ↳ Fallback: querying Semantic Scholar...")
+            abstract_s2, affiliation_s2, journal_s2 = fetch_details_from_semantic_scholar(
+                doi, author_name,
+            )
+            if abstract == "N/A" and abstract_s2 != "N/A":
+                abstract = abstract_s2
+            if affiliation == "N/A" and affiliation_s2 != "N/A":
+                affiliation = affiliation_s2
+            if journal == "N/A" and journal_s2 != "N/A":
+                journal = journal_s2
+            time.sleep(0.2)  # be polite to the Semantic Scholar API too
+
         # ── Skip articles without a DOI or journal ────────────────────────────────
-        if doi == "N/A" or journal == "N/A":
+        if doi == "N/A" or journal == "N/A" or abstract == "N/A":
             reason = []
             if doi == "N/A":
                 reason.append("no DOI")
             if journal == "N/A":
                 reason.append("no journal")
+            if abstract == "N/A":
+                reason.append("no abstract")
             print(f"  [{idx}/{total}] ⏭️  Skipping ({' and '.join(reason)}): {title[:60]}")
             skipped += 1
             continue
