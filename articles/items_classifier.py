@@ -59,20 +59,55 @@ def _load_disciplines_from_content():
 
 DISCIPLINES, DISCIPLINES_CODES = _load_disciplines_from_content()
 _DISCIPLINES_BULLETS = "\n".join(f"- {d}" for d in DISCIPLINES)
-SYSTEM_PROMPT = f"""You are a scientific publication classifier.
-Your task is to classify a publication into exactly ONE of these disciplines:
+SYSTEM_PROMPT = f"""
+You are an expert scientific publication classifier.
+
+Your task is to classify a scientific publication into EXACTLY ONE primary discipline from the list below.
+
+Available disciplines:
 {_DISCIPLINES_BULLETS}
 
-Rules:
-- Reply ONLY with a valid JSON object, no extra text.
-- The JSON must have two keys:
-    "discipline": one of the disciplines above (lowercase, exact spelling)
-    "confidence": a float from 0.0 to 1.0 indicating how certain you are
-- If the publication clearly spans two disciplines, pick the most dominant one.
-- If you cannot determine the discipline, use "N/A" for discipline and 0.0 for confidence.
+You will receive only:
+- publication title
+- abstract
+- journal name
+- researcher affiliation (when available)
 
-Example output:
-{{"discipline": "{DISCIPLINES[0]}", "confidence": 0.92}}
+Classification instructions:
+- Determine the MOST LIKELY primary discipline based on the scientific content.
+- Use the abstract as the main source of information.
+- Use the title and journal name as additional contextual signals.
+- Use the researcher affiliation only as supporting context when helpful.
+- Always return the single best matching discipline from the provided list.
+- Never return multiple disciplines.
+- Never invent new disciplines.
+- The "discipline" value MUST exactly match one of the provided disciplines.
+- Even if the information is incomplete or ambiguous, choose the closest matching discipline.
+
+Reasoning guidelines:
+- Focus on the main scientific contribution of the work.
+- Ignore generic methodologies unless they are the core topic of the paper.
+- Prefer the underlying scientific field over application domains.
+- If multiple disciplines appear, select the dominant research area.
+
+Confidence guidelines:
+- 0.90–1.00:
+  Very clear classification with strong evidence.
+- 0.70–0.89:
+  Likely classification with moderate ambiguity.
+- 0.40–0.69:
+  Weak or uncertain classification, but still the best available match.
+- Never output 0.0 confidence.
+
+Output rules:
+- Reply ONLY with a valid JSON object.
+- Do NOT include markdown, explanations, comments, or extra text.
+- The JSON object must contain EXACTLY these two keys:
+    "discipline"
+    "confidence"
+
+Valid example:
+{{"discipline": "{DISCIPLINES[0]}", "confidence": 0.91}}
 """
 
 # ── Core classifier ────────────────────────────────────────────────────────────
@@ -85,19 +120,56 @@ def classify_with_ollama(
     model: str = OLLAMA_MODEL,
 ) -> dict:
     """
-    Classify a publication using a local Ollama model.
+    Classify a scientific publication into exactly one primary discipline
+    using a local Ollama LLM.
 
-    Returns a dict with keys:
-        discipline  – one of the five disciplines (or "N/A")
-        confidence  – float 0–1
-        raw         – the raw LLM response string (useful for debugging)
+    Input information:
+        - title
+        - abstract
+        - journal name
+        - researcher affiliation (optional contextual signal)
+
+    Classification strategy:
+        - The abstract is treated as the primary source of information.
+        - The title and journal provide contextual guidance.
+        - The affiliation may help infer the broader research field.
+        - The model must always select the single best matching discipline.
+        - No multi-label classifications are allowed.
+
+    Returns:
+        dict with keys:
+            discipline : str
+                Predicted primary discipline from the predefined list.
+
+            confidence : float
+                Confidence score between 0.0 and 1.0.
+
+            raw : str
+                Raw LLM response for debugging and validation.
     """
-    user_message = f"""Classify this publication:
 
-Title:       {title}
-Abstract:    {abstract}
-Journal:     {journal or 'N/A'}
-Affiliation: {affiliation or 'N/A'}
+    user_message = f"""
+Classify the following scientific publication into EXACTLY ONE discipline.
+
+Publication metadata:
+
+Title:
+{title}
+
+Abstract:
+{abstract}
+
+Journal:
+{journal if journal else "Unknown"}
+
+Researcher affiliation:
+{affiliation if affiliation else "Unknown"}
+
+Instructions:
+- Use the abstract as the primary signal.
+- Use the journal and affiliation as supporting context.
+- Select the SINGLE most likely discipline.
+- Return ONLY valid JSON.
 """
 
     try:
@@ -121,7 +193,6 @@ Affiliation: {affiliation or 'N/A'}
     except Exception as e:
         return {"discipline": "N/A", "confidence": 0.0, "raw": "",
                 "error": f"Unexpected error: {e}"}
-
 
 def _parse_response(text: str) -> dict:
     """Extract JSON from the model reply, tolerating minor formatting issues."""
