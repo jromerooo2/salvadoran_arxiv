@@ -2,8 +2,8 @@
   "author": "Ignacio Gonzalez Oliva",
   "orcid": "https://orcid.org/0000-0002-4229-708X",
   "source": "ORCID + Crossref",
-  "total_publications": 8,
-  "author_categories": "chem-mat, phy-cond, phy-phys",
+  "total_publications": 7,
+  "author_categories": "chem-mat, chem-phys, phy-cond",
   "publications": [
     {
       "title": "Impact of electron–phonon interaction on the electronic structure of interfaces between organic molecules and a MoS2 monolayer",
@@ -12,7 +12,7 @@
       "journal": "The Journal of Chemical Physics",
       "affiliation": "Physics Department and CSMB, Humboldt-Universität zu Berlin 1 , Zum Großen Windkanal 2, 12489 Berlin,",
       "doi": "https://doi.org/10.1063/5.0311371",
-      "category": "phy-phys"
+      "category": "chem-phys"
     },
     {
       "title": "Hybrid Frenkel–Wannier excitons facilitate ultrafast energy transfer at a 2D–organic interface",
@@ -52,29 +52,20 @@
     },
     {
       "title": "Hybrid excitations at the interface between a MoS2 monolayer and organic molecules: A first-principles study",
-      "abstract": "N/A",
+      "abstract": "We present a first-principles investigation of the electronic and optical properties of hybrid organicinorganic interfaces consisting of MoS2 monolayer and the π-conjugate molecules pyrene and pyridine. For both hybrid systems, the quasi-particle band structure obtained from the G0W0 approximation shows – in contrast to density-functional theory – level alignment of type II, owing to the mutual dynamical screening of the interface constituents. Ab initio calculations of the absorption spectrum based on the Bethe-Salpeter equation reveal besides intra-layer excitons on the MoS2 side, hybrid as well as charge-transfer excitons at the interface. These findings indicate that hybrid systems consisting of semiconducting transition-metal dichalcogenides and organic π-conjugate molecules can host a rich variety of optical excitations and thus provide a promising venue to explore many-body interactions and exciton physics in low dimensionality.",
       "year": "2022",
       "journal": "Physical Review Materials",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1103/physrevmaterials.6.054004",
-      "category": "chem-mat"
+      "category": "phy-cond"
     },
     {
       "title": "Changes on the Stokes Shift in Large CdSe Colloidal Quantum Dots by a Ligand Exchange",
-      "abstract": "N/A",
+      "abstract": "In this work, we have studied the optical properties of CdSe colloidal quantum dots (CQDs) that undergo a ligand exchange. The QDs were synthesized by the thermal decomposition method and characterized by using optical spectroscopy techniques and Density Functional Theory (DFT) calculations. Trioctylphosphine (TOP) and Oleic acid (OA) ligands were replaced by Formic acid. This ligand exchange seems to cause an increment of the Stokes shift on the nanostructures. As a result a surface underpassivation of the nanostructures appears. This could be related to the generation of non-radiative states that decreases the quantum yield in our samples and a redistribution of the band edge electronic states that explain to some extent our observed results.",
       "year": "2018",
       "journal": "International Conference of Theoretical and Applied Nanoscience and Nanotechnology",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.11159/tann18.140",
-      "category": "chem-mat"
-    },
-    {
-      "title": "A Theoretical-Experimental Comparison of CdSe Quantum Dot Optical\nProperties",
-      "abstract": "N/A",
-      "year": "2017",
-      "journal": "Proceedings of the 2nd World Congress on Recent Advances in Nanotechnology",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.11159/icnms17.105",
       "category": "chem-mat"
     }
   ]

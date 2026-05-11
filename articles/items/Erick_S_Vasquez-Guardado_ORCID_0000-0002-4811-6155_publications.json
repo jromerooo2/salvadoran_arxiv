@@ -2,8 +2,8 @@
   "author": "Erick S Vasquez-Guardado",
   "orcid": "https://orcid.org/0000-0002-4811-6155",
   "source": "ORCID + Crossref",
-  "total_publications": 38,
-  "author_categories": "chem-mat, chem-phys, edu-bio, edu-chem, edu-eng, eng-bio, eng-chem, math-acm, phy-nucl",
+  "total_publications": 18,
+  "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, math-acm",
   "publications": [
     {
       "title": "Magnetic Nanoparticles: Synthesis and Applications in Life Sciences",
@@ -12,16 +12,7 @@
       "journal": "ChemistryOpen",
       "affiliation": "Department of Chemical and Materials Engineering University of Dayton  300 College Park Ave. Dayton OH 45469‐0256 USA",
       "doi": "https://doi.org/10.1002/open.202500214",
-      "category": "eng-bio"
-    },
-    {
-      "title": "Magnetically Recoverable and Adsorptive Alginate Hydrogel Composite Beads Reinforced with Cellulose Nanocrystals",
-      "abstract": "N/A",
-      "year": "2025",
-      "journal": "ACS Applied Engineering Materials",
-      "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park Ave., Dayton, Ohio 45469, United States",
-      "doi": "https://doi.org/10.1021/acsaenm.5c00699",
-      "category": "eng-chem"
+      "category": "chem-mat"
     },
     {
       "title": "Synthesis and Characterization of Temperature- and pH-Responsive PIA-b-PNIPAM@Fe3O4 Nanocomposites",
@@ -30,43 +21,7 @@
       "journal": "Nanomaterials",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, Dayton, OH 45469, USA",
       "doi": "https://doi.org/10.3390/nano15131041",
-      "category": "eng-bio"
-    },
-    {
-      "title": "CAMINO—Career Advancement, Mentorship, Inspiration, and Opportunities: A STEM K-12 Outreach Initiative.",
-      "abstract": "N/A",
-      "year": "2025",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--56050",
-      "category": "edu-bio"
-    },
-    {
-      "title": "Entrepreneurially Minded Learning (EML) Micromoment Activities Generated Using Students' Experiences in a Fluid Flow and Heat Transfer Course",
-      "abstract": "N/A",
-      "year": "2025",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--56432",
-      "category": "edu-eng"
-    },
-    {
-      "title": "Impacting Global Mindset Using International Case Studies",
-      "abstract": "N/A",
-      "year": "2025",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--56746",
-      "category": "edu-bio"
-    },
-    {
-      "title": "Student-led Video Podcasting in a Chemical Behavior of Materials Course",
-      "abstract": "N/A",
-      "year": "2025",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--57700",
-      "category": "edu-eng"
+      "category": "chem-mat"
     },
     {
       "title": "Carboxymethyl Chitosan‐based Biodegradable Films Preparation and Prospects for Food Preservation",
@@ -85,42 +40,6 @@
       "affiliation": "Department of Chemical and Materials Engineering University of Dayton  Dayton Ohio USA",
       "doi": "https://doi.org/10.1002/jhet.4837",
       "category": "edu-chem"
-    },
-    {
-      "title": "Board 112: Work in Progress: Exploring the Impact of International Experiences on the Development of Students’ Entrepreneurial Mindset",
-      "abstract": "N/A",
-      "year": "2024",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--46668",
-      "category": "edu-eng"
-    },
-    {
-      "title": "Board 225: Collaborative Research: Research Initiation: Assessing Global Engagement Interventions to Advance Global Engineering Competence for Engineering Formation",
-      "abstract": "N/A",
-      "year": "2024",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--46794",
-      "category": "edu-eng"
-    },
-    {
-      "title": "Enhancing Entrepreneurial Minded Learning of Process Control and Heat Transfer Concepts Using Micromoments and Concept Maps",
-      "abstract": "N/A",
-      "year": "2024",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--47306",
-      "category": "edu-eng"
-    },
-    {
-      "title": "Using Micromoments and Concept Maps to Enhance Entrepreneurially Minded Learning of Indoor Air Pollution Control",
-      "abstract": "N/A",
-      "year": "2024",
-      "journal": "N/A",
-      "affiliation": "University of Dayton",
-      "doi": "https://doi.org/10.18260/1-2--48237",
-      "category": "edu-eng"
     },
     {
       "title": "Correction: Gautam et al. Experimental Thermal Conductivity Studies of Agar-Based Aqueous Suspensions with Lignin Magnetic Nanocomposites. Magnetochemistry 2024, 10, 12",
@@ -147,7 +66,7 @@
       "journal": "RSC Advances",
       "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park, Dayton, OH, 45469-0256, USA",
       "doi": "https://doi.org/10.1039/D2RA07952F",
-      "category": "eng-bio"
+      "category": "eng-chem"
     },
     {
       "title": "Identification of Lithocholic Acid as a Molecular Glass Host for Room‐Temperature Phosphorescent Materials",
@@ -160,21 +79,12 @@
     },
     {
       "title": "Analytical model for electromagnetic induction in pulsating ferrofluid pipe flows",
-      "abstract": "N/A",
+      "abstract": "Energy harvesting processes using ferrofluidic induction—a process that generates voltage via the pulsation of a ferrofluid (iron-based nanofluid) through a solenoid—have received increasing attention over the past decade. In this paper an analytical model is proposed to predict the induced electromotive force (EMF) based on the flow behavior and magnetic properties of a pulsating ferrofluid energy harvesting device. The ferrofluid is treated as an idealized series of discrete magnetic ‘slugs’ within passing through the solenoid, and the model identifies key parameters for describing and optimizing ferrofluidic induction in pulsating pipe flows. The resulting expression for induced EMF as a function of slug position relative to the solenoid is numerically integrated to determine the root mean square (RMS) of EMF during one pulsation cycle. Data from a previously documented study using an experimental induced EMF test rig is analyzed to find corresponding measured values of EMF RMS and used to validate the analytical model. Experimental and analytical results both show an increase in induced EMF with higher pulse frequency, increased number of bias magnets, and reduced spacing between the magnet and solenoid. At low magnetic flux densities and pumping frequencies, the EMF is negligible; with 0.3 mT magnetic flux density and 9 and 18 Hz pumping frequencies the measured RMS is nominally zero. For a 9 Hz pumping frequency the RMS value of the induced EMF is less than 1 μV at all magnetic flux densities. For the highest pumping frequency examined, 30 Hz, the induced EMF RMS is greater than 1 μV for all magnetic flux densities greater than 0.7 mT. As the experimentally measured values of EMF lie within the uncertainty bounds of the model, induced EMF can be predicted within an order of magnitude for magnetic fluid-induced energy harvesting systems.",
       "year": "2021",
       "journal": "International Journal of Heat and Mass Transfer",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2021.121325",
       "category": "math-acm"
-    },
-    {
-      "title": "Magnetically induced demulsification of water and castor oil dispersions stabilized by Fe3O4-coated cellulose nanocrystals",
-      "abstract": "N/A",
-      "year": "2021",
-      "journal": "Cellulose",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.1007/s10570-021-03813-x",
-      "category": "eng-bio"
     },
     {
       "title": "Fabrication and Characterization of Electrospun Poly(acrylonitrile-co-Methyl Acrylate)/Lignin Nanofibers: Effects of Lignin Type and Total Polymer Concentration",
@@ -186,17 +96,8 @@
       "category": "eng-chem"
     },
     {
-      "title": "Assessing magnetic iron oxide nanoparticle properties under different thermal treatments",
-      "abstract": "N/A",
-      "year": "2021",
-      "journal": "Journal of Thermal Analysis and Calorimetry",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.1007/s10973-019-09195-4",
-      "category": "chem-mat"
-    },
-    {
       "title": "Optimization and Structural Stability of Gold Nanoparticle–Antibody Bioconjugates",
-      "abstract": "N/A",
+      "abstract": "Gold nanoparticles (AuNPs) bound with biomolecules have emerged as suitable biosensors exploiting unique surface chemistries and optical properties. Many efforts have focused on antibody bioconjugation to AuNPs resulting in a sensitive bioconjugate to detect specific types of bacteria. Unfortunately, bacteria thrive under various harsh environments, and an understanding of bioconjugate stability is needed. Here, we show a method for optimizing Listeria monocytogenes polyclonal antibodies bioconjugation mechanisms to AuNPs via covalent binding at different pH values, from 2 to 11, and 2-(N-morpholino)ethanesulfonic acid (MES), 3-(N-morpholino)propanesulfonic acid, NaOH, HCl conditions. By fitting Lorentz curves to the amide I and II regions, we analyze the stability of the antibody secondary structure. This shows an increase in the apparent breakdown of the antibody secondary structure during bioconjugation as pH decreases from 7.9 to 2. We find variable adsorption efficiency, measured as the percentage of antibody adsorbed to the AuNP surface, from 17 to 27% as pH increases from 2 to 6 before decreasing to 8 and 13% at pH 7.9 and 11, respectively. Transmission electron microscopy (TEM) analysis reveals discrepancies between size and morphological changes due to the corona layer assembly from antibody binding to single nanoparticles versus aggregation or cluster self-assembly into large aggregates. The corona layer formation size increases from 3.9 to 5.1 nm from pH 2 to 6, at pH 7.9, there is incomplete corona formation, whereas at pH 11, there is a corona layer formed of 6.4 nm. These results indicate that the covalent binding process was more efficient at lower pH values; however, aggregation and deactivation of the antibodies were observed. We demonstrate that optimum bioconjugation condition was determined at pH 6 and MES buffer-type by indicators of covalent bonding and stability of the antibody secondary structure using Fourier transform-infrared, the morphological characteristics and corona layer formation using TEM, and low wavelength shifts of ultraviolet–visible after bioconjugation.",
       "year": "2019",
       "journal": "ACS Omega",
       "affiliation": "N/A",
@@ -219,52 +120,16 @@
       "journal": "Nanoscale",
       "affiliation": "Department of Chemical and Materials Engineering",
       "doi": "https://doi.org/10.1039/C9NR05892C",
-      "category": "eng-chem"
-    },
-    {
-      "title": "Experimental and Numerical Investigation of the Silicon Particle Distribution in Electrospun Nanofibers",
-      "abstract": "N/A",
-      "year": "2018",
-      "journal": "Langmuir",
-      "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park, Dayton, Ohio 45469, United States",
-      "doi": "https://doi.org/10.1021/acs.langmuir.8b01167",
-      "category": "eng-chem"
-    },
-    {
-      "title": "Fabricated nanogap-rich plasmonic nanostructures through an optothermal surface bubble in a droplet",
-      "abstract": "N/A",
-      "year": "2018",
-      "journal": "Optics Letters",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.1364/OL.43.000334",
-      "category": ""
-    },
-    {
-      "title": "Uranium based materials as potential thermoelectric couples for future radioisotope power systems",
-      "abstract": "N/A",
-      "year": "2018",
-      "journal": "IEEE Aerospace Conference Proceedings",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.1109/AERO.2018.8396540",
-      "category": "phy-nucl"
+      "category": "math-acm"
     },
     {
       "title": "Bioluminescent magnetic nanoparticles as potential imaging agents for mammalian spermatozoa",
-      "abstract": "N/A",
+      "abstract": "BackgroundNanoparticles have emerged as key materials for developing applications in nanomedicine, nanobiotechnology, bioimaging and theranostics. Existing bioimaging technologies include bioluminescent resonance energy transfer-conjugated quantum dots (BRET-QDs). Despite the current use of BRET-QDs for bioimaging, there are strong concerns about QD nanocomposites containing cadmium which exhibits potential cellular toxicity.ResultsIn this study, bioluminescent composites comprised of magnetic nanoparticles and firefly luciferase (Photinus pyralis) are examined as potential light-emitting agents for imaging, detection, and tracking mammalian spermatozoa. Characterization was carried out using infrared spectroscopy, TEM and cryo-TEM imaging, and ζ-potential measurements to demonstrate the successful preparation of these nanocomposites. Binding interactions between the synthesized nanoparticles and spermatozoon were characterized using confocal and atomic/magnetic force microscopy. Bioluminescence imaging and UV–visible-NIR microscopy results showed light emission from sperm samples incubated with the firefly luciferase-modified nanoparticles. Therefore, these newly synthesized luciferase-modified magnetic nanoparticles show promise as substitutes for QD labeling, and can potentially also be used for in vivo manipulation and tracking, as well as MRI techniques.ConclusionsThese preliminary data indicate that luciferase-magnetic nanoparticle composites can potentially be used for spermatozoa detection and imaging. Their magnetic properties add additional functionality to allow for manipulation, sorting, or tracking of cells using magnetic techniques.",
       "year": "2016",
       "journal": "Journal of Nanobiotechnology",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1186/s12951-016-0168-y",
       "category": "eng-bio"
-    },
-    {
-      "title": "Analysis of Particle Transport and Deposition of Micron-Sized Particles in a 90 degrees Bend Using a Two-Fluid Eulerian-Eulerian Approach",
-      "abstract": "N/A",
-      "year": "2015",
-      "journal": "Aerosol Science and Technology",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.1080/02786826.2015.1062466",
-      "category": "math-acm"
     },
     {
       "title": "Electromagnetic induction by ferrofluid in an oscillating heat pipe",
@@ -273,15 +138,6 @@
       "journal": "Applied Physics Letters",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1063/1.4923400",
-      "category": "math-acm"
-    },
-    {
-      "title": "Energy harvesting via ferrofluidic induction",
-      "abstract": "N/A",
-      "year": "2015",
-      "journal": "Energy Harvesting and Storage: Materials, Devices, and Applications Vi",
-      "affiliation": "N/A",
-      "doi": "https://doi.org/10.1117/12.2178419",
       "category": "math-acm"
     },
     {
@@ -297,27 +153,9 @@
       "title": "Functional holey graphene oxide: a new electrochemically transformed substrate material for dopamine sensing",
       "abstract": "Increasing active sites through generating holes within the basal plane of graphene sheets is an effective strategy to enhance catalytic performance in various applications such as sensors, electrocatalysis, and electronics.",
       "year": "2015",
-      "journal": "Rsc Advances",
+      "journal": "RSC Advances",
       "affiliation": "Department of Chemical and Materials Engineering",
       "doi": "https://doi.org/10.1039/c5ra19991c",
-      "category": "eng-chem"
-    },
-    {
-      "title": "Janus Magnetic Nanoparticles with a Bicompartmental Polymer Brush Prepared Using Electrostatic Adsorption to Facilitate Toposelective Surface-Initiated ATRP",
-      "abstract": "N/A",
-      "year": "2014",
-      "journal": "Langmuir",
-      "affiliation": "Dave C. Swalm School of Chemical\rEngineering and ‡Institute for Imaging and Analytical\rTechnologies, Mississippi State University, Mississippi State, Mississippi 39762, United States",
-      "doi": "https://doi.org/10.1021/la500824r",
-      "category": "eng-chem"
-    },
-    {
-      "title": "Ligand Adsorption and Exchange on Pegylated Gold Nanoparticles",
-      "abstract": "N/A",
-      "year": "2014",
-      "journal": "J. Phys. Chem. C",
-      "affiliation": "Swalm School of Chemical Engineering, Mississippi State University, Mississippi State, Mississippi 39762, United States",
-      "doi": "https://doi.org/10.1021/jp501391x",
       "category": "eng-chem"
     },
     {
@@ -327,25 +165,7 @@
       "journal": "RSC Adv.",
       "affiliation": "Dave C. Swalm School of Chemical Engineering",
       "doi": "https://doi.org/10.1039/c4ra05055j",
-      "category": "eng-bio"
-    },
-    {
-      "title": "Mechanistic Study of Continuous Reactive Aromatic Organothiol Adsorption onto Silver Nanoparticles",
-      "abstract": "N/A",
-      "year": "2013",
-      "journal": "J. Phys. Chem. C",
-      "affiliation": "Swalm School of Chemical Engineering, Mississippi State University, Mississippi State, Mississippi 39762, United States",
-      "doi": "https://doi.org/10.1021/jp4090102",
-      "category": "chem-phys"
-    },
-    {
-      "title": "Simultaneous and Sequential Protein and Organothiol Interactions with Gold Nanoparticles",
-      "abstract": "N/A",
-      "year": "2013",
-      "journal": "J. Phys. Chem. C",
-      "affiliation": "Swalm\rSchool of Chemical Engineering, Mississippi State University, Mississippi State, Mississippi\r39762, United States",
-      "doi": "https://doi.org/10.1021/jp310085u",
-      "category": "chem-phys"
+      "category": "eng-chem"
     }
   ]
 }

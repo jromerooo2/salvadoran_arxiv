@@ -12,7 +12,7 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "Okinawa Institute of Science and Technology Graduate University (沖縄科学技術大学院大学)",
       "doi": "https://doi.org/10.1007/JHEP02(2026)246",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "Evolution with(out) time: relational holography & BPS complexity growth in $$ \\mathcal{N} $$ = 2 double-scaled SYK",
@@ -30,7 +30,7 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP02(2026)036",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "Krylov operator complexity in holographic CFTs: Smeared boundary reconstruction and the dual proper radial momentum",
@@ -39,7 +39,7 @@
       "journal": "Physical Review D",
       "affiliation": "Okinawa Institute of Science and Technology Graduate University",
       "doi": "https://doi.org/10.1103/6bgg-vglp",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "Building the holographic dictionary of the DSSYK from chords, complexity & wormholes with matter",
@@ -75,7 +75,7 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP03(2025)095",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "A multiverse model in T2 dS wedge holography",
@@ -84,7 +84,7 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP11(2024)122",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "Towards complexity in de Sitter space from the doubled-scaled Sachdev-Ye-Kitaev model",
@@ -120,7 +120,7 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP03(2024)173",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "C=Anything and the switchback effect in Schwarzschild-de Sitter space",
@@ -138,11 +138,11 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP03(2024)008",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "Aspects of higher-curvature gravities with covariant derivatives",
-      "abstract": "N/A",
+      "abstract": "We study various aspects of higher-curvature theories of gravity built from contractions of the metric, the Riemann tensor and the covariant derivative, $\\mathcal{L}(g^{ab},R_{abcd},\\nabla_a)$. We characterise the linearized spectrum of these theories and compute the modified Newton potential in the general case. Then, we present the first examples of Generalized Quasi-topological (GQT) gravities involving covariant derivatives of the Riemann tensor. We argue that they always have second-order equations on maximally symmetric backgrounds. Focusing on four spacetime dimensions, we find new densities of that type involving eight and ten derivatives of the metric. In the latter case, we find new modifications of the Schwarzschild black hole. These display thermodynamic properties which depart from the ones of polynomial GQT black holes. In particular, the relation between the temperature and the mass of small black holes, $T\\sim M^{1/3}$, which universally holds for general polynomial GQT modifications of Einstein gravity, gets modified in the presence of the new density with covariant derivatives to $T\\sim M^{3}$. Finally, we consider brane-world gravities induced by Einstein gravity in the AdS bulk. We show that the effective quadratic action for the brane-world theory involving arbitrary high-order terms in the action can be written explicitly in a closed form in terms of Bessel functions. We use this result to compute the propagator of metric perturbations on the brane and its pole structure in various dimensions, always finding infinite towers of ghost modes, as well as tachyons and more exotic modes in some cases.",
       "year": "2023",
       "journal": "Physical Review D",
       "affiliation": "N/A",
@@ -156,38 +156,38 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/JHEP11(2023)225",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "An outsider's perspective on information recovery in de Sitter space",
       "abstract": "Entanglement islands play a crucial role in our understanding of how Hawking radiation encodes information in a black hole, but their relevance in cosmological spacetimes is less clear. In this paper, we continue our investigation of information recovery in de Sitter space and construct a two-dimensional model of gravity containing a domain wall that interpolates between de Sitter space and Rindler space. The Rindler wedges introduce weakly-gravitating asymptotic regions from which de Sitter space can be probed, yielding an outside perspective of the cosmological horizon. In contrast to earlier works, backreaction effects are under control by considering a quantum state that only breaks the thermal equilibrium of the Bunch-Davies state for a finite time. This allows information to be decoded from the Gibbons-Hawking radiation in a controlled fashion.",
       "year": "2023",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/JHEP01(2023)129",
-      "category": "phy-genrel"
+      "category": "phy-hep"
     },
     {
       "title": "Towards an “AdS1/CFT0” correspondence from the D(−1)/D7 system?",
       "abstract": "We argue that a type IIB Euclidean supergravity solution of the form ℝ × S1× 𝕋8 with imaginary self-dual F1 flux through ℝ × S1 belongs to the chain of AdSd× Sd× 𝕋10−2d vacua with (imaginary) self-dual Fd flux, where d ≤ 5. Such vacua come from the near-horizon of D(d − 2)/D(8 − d) branes and are supersymmetric for odd values of d. For d = 1 we speculate that the hallmark of conformal symmetry for the matrix model dual is a vanishing free energy. The matrix dual was recently constructed by [1] by adding matrix interactions coming from strings stretching between the D(−1) and D7 branes to the IKKT matrix model. We find that the corresponding supergravity solution indeed has vanishing on-shell action. Specific F5 fluxes need to be switched on as a consequence of (a T-dual version of) the Hanany-Witten effect.",
       "year": "2022",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/JHEP09(2022)249",
       "category": "phy-hep"
     },
     {
       "title": "Addendum: Islands in multiverse models",
-      "abstract": "N/A",
+      "abstract": ": We append a discussion on backreaction for the two-dimensional models that we considered to provide more details related to the technical issues mentioned in the companion erratum",
       "year": "2022",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/JHEP05(2022)137",
       "category": "phy-hep"
     },
     {
       "title": "On the correspondence principle for the Klein-Gordon and Dirac Equations",
-      "abstract": "N/A",
+      "abstract": "We investigate the asymptotic behavior of the solutions to the Klein-Gordon and Dirac equations using the local spatial averaging approach to Bohr’s correspondence principle in the large principal quantum number regime. The procedure is applied in two basic problems in 1 + 1 -dimensions, the relativistic quantum oscillator and the relativistic particle in a box. In the harmonic oscillator cases, we ﬁnd that the corresponding probability densities reduce to their respective classical single-particle distributions plus a series of terms suppressed by powers of the ~ constant, while particle in a box cases show a diﬀerent structure for the quantum corrections.",
       "year": "2022",
       "journal": "Journal of Theoretical and Applied Physics",
       "affiliation": "N/A",
@@ -198,7 +198,7 @@
       "title": "Islands in multiverse models",
       "abstract": "A\n                    bstract\n                  \n                  We consider multiverse models in two-dimensional linear dilaton-gravity theories as toy models of false vacuum eternal inflation. Coupling conformal matter we calculate the Von Neumann entropy of subregions. When these are sufficiently large we find that an island develops covering most of the rest of the multiverse, leading to a Page-like transition. This resonates with a description of multiverse models in semiclassical quantum cosmology, where a measure for local predictions is given by saddle point geometries which coarse-grain over any structure associated with eternal inflation beyond one’s patch.",
       "year": "2021",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/JHEP11(2021)212",
       "category": "phy-hep"
@@ -207,16 +207,16 @@
       "title": "Entangled universes in dS wedge holography",
       "abstract": "A\n                    bstract\n                  \n                  We develop a new setting in the framework of braneworld holography to describe a pair of coupled and entangled uniformly accelerated universes. The model consists of two branes embedded into AdS space capping off the UV and IR regions, giving rise to a notion of dS wedge holography. Specializing in a three-dimensional bulk, we show that dS JT gravity can emerge as an effective braneworld theory, provided that fluctuations transverse to the branes are included. We study the holographic entanglement entropy between the branes as well as the holographic complexity within the ‘complexity=anything’ proposal. We reproduce a Page curve with respect to an observer collecting radiation on the UV brane, as long as we take the limit where gravity decouples in that universe, thus acting as a non-gravitating bath. The Page curve emerges due to momentum-space (UV/IR) entanglement and can be understood as analogous to the ‘confinement-deconfinement’ transition in theories with a mass gap. Moreover, the analysis of complexity shows that the hyperfast growth phenomenon is displayed within a set of proposals, while late-time linear growth can be recovered for a different set. Our framework thus provides new test grounds for understanding quantum information concepts in dS space and dS holography.",
       "year": "N/A",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP10(2023)156",
       "category": "phy-hep"
     },
     {
       "title": "Erratum to: Islands in multiverse models",
-      "abstract": "N/A",
+      "abstract": "Sergio E. Aguilar-Gutierrez,a Aidan Chatwin-Davies,a,b Thomas Hertog,a Natalia Pinzani-Fokeevac,d and Brandon Robinsona Institute for Theoretical Physics, KU Leuven, Celestijnenlaan 200D, B-3001 Leuven, Belgium Department of Physics and Astronomy, University of British Columbia, 6224 Agricultural Road, Vancouver, BC, V6T 1Z1, Canada Center for Theoretical Physics, Massachusetts Institute of Technology, Cambridge, MA 02139, U.S.A. Dipartimento di Fisica e Astronomia, Università di Firenze, Via G. Sansone 1, I-50019, Sesto Fiorentino, Firenze, Italy E-mail: sergio.ernesto.aguilar@gmail.com, achatwin@phas.ubc.ca, thomas.hertog@kuleuven.be, n.pinzanifokeeva@gmail.com, brandon.robinson@kuleuven.be",
       "year": "N/A",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1007/JHEP05(2022)082",
       "category": "phy-hep"
@@ -225,7 +225,7 @@
       "title": "Holographic complexity of the extended Schwarzschild-de Sitter space",
       "abstract": "According to static patch holography, de Sitter space admits a unitary quantum description in terms of a dual theory living on the stretched horizon, that is a timelike surface close to the cosmological horizon. In this manuscript, we compute several holographic complexity conjectures in a periodic extension of the Schwarzschild-de Sitter black hole. We consider multiple configurations of the stretched horizons to which geometric objects are anchored. The holographic complexity proposals admit a hyperfast growth when the gravitational observables only lie in the cosmological patch, except for a class of complexity=anything observables that admit a linear growth. All the complexity conjectures present a linear increase when restricted to the black hole patch, similar to the AdS case. When both the black hole and the cosmological regions are probed, codimension-zero proposals are time-independent, while codimension-one proposals can have non-trivial evolution with linear increase at late times. As a byproduct of our analysis, we find that codimension-one spacelike surfaces are highly constrained in Schwarzschild-de Sitter space. Therefore, different locations of the stretched horizon give rise to different behaviours of the complexity conjectures.",
       "year": "N/A",
-      "journal": "Journal Of High Energy Physics",
+      "journal": "Journal of High Energy Physics",
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP05(2024)201",
       "category": "phy-genrel"

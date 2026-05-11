@@ -7,7 +7,7 @@
   "publications": [
     {
       "title": "Equivalence of dark energy models: A theoretical and Bayesian perspective",
-      "abstract": "N/A",
+      "abstract": "We explore the background equivalence among three dark energy models by constructing explicit mappings between dynamical dark energy (DDE), interacting dark energy (IDE), and running vacuum (RV). In our approach, the dark sector functions that characterize each model-such as the equation of state parameter $\\bar{w}(a)$ for DDE, the interaction term $Q$ for IDE, and the functional form $\\Lambda(H)$ for RV-are transformed into one another under specific assumptions. Extending previous work by von Marttens et al. (2020), we demonstrate that running vacuum models, characterized by $\\Lambda(H) = a_0 + a_1 \\dot{H} + a_2 H^2$, can be reinterpreted as an interacting dark energy model with $Q = 3H\\gamma \\hat{\\rho}_c$, which in turn is equivalent to a dynamic dark energy model with an appropriately defined $\\bar{w}(a)$. Using Bayesian analysis with Type Ia supernovae, Baryon Acoustic Oscillations, and Cosmic Chronometers, our observational constraints confirm that these theoretical equivalences hold at the background level. This study underscores the importance of seeking convergence in dark energy models, facilitating a better understanding of the dark sector.",
       "year": "2025",
       "journal": "Physics of the Dark Universe",
       "affiliation": "N/A",

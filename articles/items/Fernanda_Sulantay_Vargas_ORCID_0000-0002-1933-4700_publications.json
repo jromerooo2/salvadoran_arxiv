@@ -3,16 +3,16 @@
   "orcid": "https://orcid.org/0000-0002-1933-4700",
   "source": "ORCID + Crossref",
   "total_publications": 1,
-  "author_categories": "chem-mat",
+  "author_categories": "chem-phys",
   "publications": [
     {
       "title": "Robustness of Classical Nucleation Theory to Chemical Heterogeneity of Crystal Nucleating Substrates",
-      "abstract": "N/A",
+      "abstract": "Heterogeneous nucleation is a process wherein extrinsic impurities facilitate freezing by lowering nucleation barriers and constitutes the dominant mechanism for crystallization in most systems. Classical nucleation theory (\\textsc{Cnt}) has been remarkably successful in predicting the kinetics of heterogeneous nucleation, even on chemically and topographically non-uniform surfaces, despite its reliance on several restrictive assumptions, such as the idealized spherical-cap geometry of the crystalline nuclei. Here, we employ molecular dynamics simulations and jumpy forward flux sampling to investigate the kinetics and mechanism of heterogeneous crystal nucleation in a model atomic liquid. We examine both a chemically uniform, weakly attractive liquiphilic surface and a checkerboard surface comprised of alternating liquiphilic and liquiphobic patches. We find the nucleation rate to retain its canonical temperature dependence predicted by \\textsc{Cnt} in both systems. Moreover, the contact angles of crystalline nuclei exhibit negligible dependence on nucleus size and temperature. On the checkerboard surface, nuclei maintain a fixed contact angle through pinning at patch boundaries and vertical growth into the bulk. These findings offer insights into the robustness of \\textsc{Cnt} in experimental scenarios, where nucleating surfaces often feature active hotspots surrounded by inert or liquiphobic domains.",
       "year": "2026",
-      "journal": "Crystal Growth & Design",
+      "journal": "Crystal Growth &amp; Design",
       "affiliation": "Department of Chemical and Environmental Engineering",
       "doi": "https://doi.org/10.1021/acs.cgd.5c01399",
-      "category": "chem-mat"
+      "category": "chem-phys"
     }
   ]
 }
