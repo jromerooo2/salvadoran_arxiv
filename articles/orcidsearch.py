@@ -21,11 +21,11 @@ import time
 import os
 import random
 
-# ── FETCH ABSTRACT + AFFILIATION FROM CROSSREF ────────────────────────────────
+# ── FETCH ABSTRACT + AFFILIATION + JOURNAL FROM CROSSREF ──────────────────────
 def fetch_details_from_crossref(doi, author_name):
-    """Fetch abstract and affiliation for a given DOI using the Crossref API."""
+    """Fetch abstract, affiliation, and journal name for a given DOI via Crossref."""
     if not doi or doi == "N/A":
-        return "N/A", "N/A"
+        return "N/A", "N/A", "N/A"
 
     raw_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
 
@@ -58,13 +58,22 @@ def fetch_details_from_crossref(doi, author_name):
                         affiliation = affiliations[0].get("name", "N/A")
                     break
 
-            return abstract, affiliation
+            # Journal — prefer the full container title; fall back to the short one
+            journal = "N/A"
+            container = data.get("container-title", []) or []
+            if container:
+                journal = (container[0] or "").strip() or "N/A"
+            if journal == "N/A":
+                short = data.get("short-container-title", []) or []
+                if short:
+                    journal = (short[0] or "").strip() or "N/A"
+
+            return abstract, affiliation, journal
 
     except Exception:
         pass
 
-    return "N/A", "N/A"
-
+    return "N/A", "N/A", "N/A"
 
 # ── ORCID SEARCH ───────────────────────────────────────────────────────────────
 def search_orcid(orcid_id):
@@ -137,10 +146,25 @@ def search_orcid(orcid_id):
             skipped += 1
             continue
 
-        # Fetch abstract and affiliation from Crossref
+        # Fetch abstract, affiliation, and journal from Crossref
         print(f"  [{idx}/{total}] Fetching details for: {title[:60]}...")
-        abstract, affiliation = fetch_details_from_crossref(doi, author_name)
-        
+        abstract, affiliation, journal_xref = fetch_details_from_crossref(doi, author_name)
+
+        # Prefer Crossref's journal name when available; fall back to ORCID's
+        if journal_xref and journal_xref != "N/A":
+            journal = journal_xref
+
+        # ── Skip articles without a DOI or journal ────────────────────────────────
+        if doi == "N/A" or journal == "N/A":
+            reason = []
+            if doi == "N/A":
+                reason.append("no DOI")
+            if journal == "N/A":
+                reason.append("no journal")
+            print(f"  [{idx}/{total}] ⏭️  Skipping ({' and '.join(reason)}): {title[:60]}")
+            skipped += 1
+            continue
+
         # Remove leading "Abstract" or variants (case-insensitive, optional colon/space/dot)
         if abstract != "N/A":
             abstract = re.sub(r'^\s*abstract[:\.\s-]*', '', abstract, flags=re.IGNORECASE).lstrip()
