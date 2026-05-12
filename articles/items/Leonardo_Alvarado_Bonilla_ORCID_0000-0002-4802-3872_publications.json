@@ -3,7 +3,7 @@
   "orcid": "https://orcid.org/0000-0002-4802-3872",
   "source": "ORCID + Crossref",
   "total_publications": 13,
-  "author_categories": "bio-eco, math-acm, phy-astro",
+  "author_categories": "bio-eco, chem-biochem, chem-mat, chem-phys, eng-civ, health-ctr, math-acm, phy-astro",
   "publications": [
     {
       "title": "Full mission evaluation of EnMAP water leaving reflectance products using three atmospheric correction processors",
@@ -12,7 +12,7 @@
       "journal": "Optics Express",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1364/OE.523813",
-      "category": ""
+      "category": "chem-mat"
     },
     {
       "title": "Measurement report: Combined use of MAX-DOAS and AERONET ground-based measurements in Montevideo, Uruguay, for the detection of distant biomass burning",
@@ -66,7 +66,7 @@
       "journal": "Environmental Pollution",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1016/j.envpol.2019.05.097",
-      "category": ""
+      "category": "health-ctr"
     },
     {
       "title": "Detection of outflow of formaldehyde and glyoxal from the African continent to the Atlantic Ocean with a MAX-DOAS instrument",
@@ -75,7 +75,7 @@
       "journal": "Atmospheric Chemistry and Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.5194/acp-19-10257-2019",
-      "category": ""
+      "category": "eng-civ"
     },
     {
       "title": "Intercomparison of MAX-DOAS vertical profile retrieval algorithms: studies using synthetic data",
@@ -102,7 +102,7 @@
       "journal": "Atmospheric Chemistry and Physics",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.5194/acp-17-3083-2017",
-      "category": ""
+      "category": "chem-biochem"
     },
     {
       "title": "Liquid water absorption and scattering effects in DOAS retrievals over oceans",
@@ -120,7 +120,7 @@
       "journal": "Atmospheric Measurement Techniques",
       "affiliation": "N/A",
       "doi": "https://doi.org/10.5194/amt-7-4133-2014",
-      "category": ""
+      "category": "chem-phys"
     }
   ]
 }

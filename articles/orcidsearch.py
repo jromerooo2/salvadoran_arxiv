@@ -1,7 +1,9 @@
 """
-Publication Search Script — ORCID + Crossref
+Publication Search Script — ORCID + Crossref + Semantic Scholar
 Fetches publications from ORCID and enriches them with abstracts and
-affiliation at time of publication via Crossref.
+affiliation at time of publication via Crossref, with Semantic Scholar as a
+fallback. Assigns ``category`` codes using Crossref subjects, S2 fieldsOfStudy,
+and text signals (see items_classifier.py).
 
 Requirements:
     pip install requests
@@ -19,134 +21,18 @@ import json
 import re
 import time
 import os
-import random
+import sys
 
-# ── FETCH ABSTRACT + AFFILIATION + JOURNAL FROM CROSSREF ──────────────────────
-def fetch_details_from_crossref(doi, author_name):
-    """Fetch abstract, affiliation, and journal name for a given DOI via Crossref."""
-    if not doi or doi == "N/A":
-        return "N/A", "N/A", "N/A"
+_ARTICLES_DIR = os.path.dirname(os.path.abspath(__file__))
+if _ARTICLES_DIR not in sys.path:
+    sys.path.insert(0, _ARTICLES_DIR)
 
-    raw_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
-
-    try:
-        url = f"https://api.crossref.org/works/{raw_doi}"
-        headers = {"User-Agent": "PublicationSearchScript/1.0 (mailto:your@email.com)"}
-        response = requests.get(url, headers=headers, timeout=10)
-
-        if response.status_code == 200:
-            data = response.json().get("message", {})
-
-            # Abstract — clean JATS XML tags if present
-            abstract = data.get("abstract", "N/A")
-            abstract = re.sub(r"<[^>]+>", "", abstract).strip() if abstract != "N/A" else "N/A"
-
-            # Affiliation — search among all authors for a name match
-            affiliation = "N/A"
-            crossref_authors = data.get("author", [])
-            author_parts = author_name.lower().split()
-
-            for ca in crossref_authors:
-                given  = ca.get("given",  "").lower()
-                family = ca.get("family", "").lower()
-                full   = f"{given} {family}"
-
-                # Match if any part of the ORCID author name appears in this author entry
-                if any(part in full for part in author_parts if len(part) > 2):
-                    affiliations = ca.get("affiliation", [])
-                    if affiliations:
-                        affiliation = affiliations[0].get("name", "N/A")
-                    break
-
-            # Journal — prefer the full container title; fall back to the short one
-            journal = "N/A"
-            container = data.get("container-title", []) or []
-            if container:
-                journal = (container[0] or "").strip() or "N/A"
-            if journal == "N/A":
-                short = data.get("short-container-title", []) or []
-                if short:
-                    journal = (short[0] or "").strip() or "N/A"
-
-            return abstract, affiliation, journal
-
-    except Exception:
-        pass
-
-    return "N/A", "N/A", "N/A"
-
-
-# ── FETCH ABSTRACT + AFFILIATION + JOURNAL FROM SEMANTIC SCHOLAR ──────────────
-def fetch_details_from_semantic_scholar(doi, author_name):
-    """Fallback fetch of abstract, affiliation, and journal name via Semantic Scholar.
-
-    Used when Crossref does not return all fields. Looks up the paper by DOI on
-    the Semantic Scholar Graph API and extracts the same triple as the Crossref
-    helper so the caller can drop in a fallback transparently.
-    """
-    if not doi or doi == "N/A":
-        return "N/A", "N/A", "N/A"
-
-    raw_doi = doi.replace("https://doi.org/", "").replace("http://doi.org/", "")
-
-    try:
-        fields = "abstract,authors.name,authors.affiliations,journal,venue"
-        url = (
-            f"https://api.semanticscholar.org/graph/v1/paper/DOI:{raw_doi}"
-            f"?fields={fields}"
-        )
-        headers = {
-            "User-Agent": "PublicationSearchScript/1.0 (mailto:your@email.com)",
-            "Accept": "application/json",
-        }
-        response = requests.get(url, headers=headers, timeout=15)
-
-        if response.status_code == 200:
-            data = response.json() or {}
-
-            # Abstract
-            abstract = data.get("abstract") or "N/A"
-            if abstract != "N/A":
-                abstract = abstract.strip() or "N/A"
-
-            # Affiliation — search among all authors for a name match
-            affiliation = "N/A"
-            s2_authors = data.get("authors") or []
-            author_parts = author_name.lower().split()
-
-            for a in s2_authors:
-                full = (a.get("name") or "").lower()
-                if any(part in full for part in author_parts if len(part) > 2):
-                    affs = a.get("affiliations") or []
-                    if affs:
-                        first = affs[0]
-                        if isinstance(first, str):
-                            cand = first.strip()
-                            if cand:
-                                affiliation = cand
-                        elif isinstance(first, dict):
-                            cand = (first.get("name") or "").strip()
-                            if cand:
-                                affiliation = cand
-                    break
-
-            # Journal — prefer the journal.name; fall back to venue
-            journal = "N/A"
-            j = data.get("journal") or {}
-            jname = (j.get("name") or "").strip() if isinstance(j, dict) else ""
-            if jname:
-                journal = jname
-            if journal == "N/A":
-                venue = (data.get("venue") or "").strip()
-                if venue:
-                    journal = venue
-
-            return abstract, affiliation, journal
-
-    except Exception:
-        pass
-
-    return "N/A", "N/A", "N/A"
+from external_apis import (
+    fetch_crossref_work,
+    fetch_semantic_scholar_fields_only,
+    fetch_semantic_scholar_work,
+)
+from items_classifier import infer_category_code_from_record
 
 
 # ── ORCID SEARCH ───────────────────────────────────────────────────────────────
@@ -220,27 +106,38 @@ def search_orcid(orcid_id):
             skipped += 1
             continue
 
-        # Fetch abstract, affiliation, and journal from Crossref
+        # Enrich from Crossref (one GET: abstract, affiliation, journal, subjects)
         print(f"  [{idx}/{total}] Fetching details for: {title[:60]}...")
-        abstract, affiliation, journal_xref = fetch_details_from_crossref(doi, author_name)
+        cr = fetch_crossref_work(doi, author_name)
+        abstract = cr["abstract"]
+        affiliation = cr["affiliation"]
+        journal_xref = cr["journal"]
+        crossref_subjects = list(cr.get("subjects") or [])
 
         # Prefer Crossref's journal name when available; fall back to ORCID's
         if journal_xref and journal_xref != "N/A":
             journal = journal_xref
 
-        # If Crossref is missing any field, try Semantic Scholar to fill the gaps
+        fields_of_study: list[str] = []
         if abstract == "N/A" or affiliation == "N/A" or journal == "N/A":
             print(f"           ↳ Fallback: querying Semantic Scholar...")
-            abstract_s2, affiliation_s2, journal_s2 = fetch_details_from_semantic_scholar(
-                doi, author_name,
-            )
-            if abstract == "N/A" and abstract_s2 != "N/A":
-                abstract = abstract_s2
-            if affiliation == "N/A" and affiliation_s2 != "N/A":
-                affiliation = affiliation_s2
-            if journal == "N/A" and journal_s2 != "N/A":
-                journal = journal_s2
-            time.sleep(0.2)  # be polite to the Semantic Scholar API too
+            s2 = fetch_semantic_scholar_work(doi, author_name)
+            if abstract == "N/A" and s2.get("abstract") not in (None, "N/A"):
+                abstract = s2["abstract"]
+            if affiliation == "N/A" and s2.get("affiliation") not in (None, "N/A"):
+                affiliation = s2["affiliation"]
+            if journal == "N/A" and s2.get("journal") not in (None, "N/A"):
+                journal = s2["journal"]
+            fields_of_study = list(s2.get("fields_of_study") or [])
+            time.sleep(0.2)
+        else:
+            # Cheap S2 call only when Crossref has no subject metadata (common for journals)
+            if not crossref_subjects:
+                fields_of_study = fetch_semantic_scholar_fields_only(doi)
+                if fields_of_study:
+                    time.sleep(0.12)
+
+        time.sleep(0.2)  # polite pause after Crossref
 
         # ── Skip articles without a DOI or journal ────────────────────────────────
         if doi == "N/A" or journal == "N/A" or abstract == "N/A":
@@ -257,41 +154,36 @@ def search_orcid(orcid_id):
 
         # Remove leading "Abstract" or variants (case-insensitive, optional colon/space/dot)
         if abstract != "N/A":
-            abstract = re.sub(r'^\s*abstract[:\.\s-]*', '', abstract, flags=re.IGNORECASE).lstrip()
- 
-        time.sleep(0.2)  # Be polite to the API
+            abstract = re.sub(
+                r"^\s*abstract[:\.\s-]*", "", abstract, flags=re.IGNORECASE
+            ).lstrip()
 
-        # # ── ASSIGN CATEGORY ─────────────────────────────────────────────────────
-        # # for simplicity, we will assing them randomly
-        # # Load category codes from ../src/assets/content.json (relative to this script)
+        category = infer_category_code_from_record(
+            {
+                "title": title,
+                "abstract": abstract,
+                "journal": journal,
+                "affiliation": affiliation,
+                "doi": doi,
+                "crossref_subjects": crossref_subjects,
+                "fields_of_study": fields_of_study,
+            },
+            fetch_s2_if_needed=False,
+        )
 
-        # content_json_path = os.path.join(os.path.dirname(__file__), "../src/assets/content.json")
-        # try:
-        #     with open(content_json_path, "r", encoding="utf-8") as f:
-        #         toc = json.load(f)
-        #     category_codes = []
-        #     for cat in toc:
-        #         for sub in cat.get("subcategories", []):
-        #             code = sub.get("subcategories_code")
-        #             if code:
-        #                 category_codes.append(code)
-        # except Exception as e:
-        #     print(f"Category code loading error: {e}")
-        #     category_codes = ["phy-phys", "chem-org", "bio-bio", "health-phe", "eng-ece"]  # fallback
-
-        # category = random.choice(category_codes) if category_codes else ""
-        category = ""
-        # # ───────────────────────────────────────────────────────────────────────
-
-        papers.append({
-            "title"      : title,
-            "abstract"   : abstract,
-            "year"       : pub_year,
-            "journal"    : journal,
-            "affiliation": affiliation,
-            "doi"        : doi,
-            'category'   : category,
-        })
+        papers.append(
+            {
+                "title": title,
+                "abstract": abstract,
+                "year": pub_year,
+                "journal": journal,
+                "affiliation": affiliation,
+                "doi": doi,
+                "category": category,
+                "crossref_subjects": crossref_subjects,
+                "fields_of_study": fields_of_study,
+            }
+        )
 
     # Sort by year descending
     papers.sort(key=lambda x: x["year"] if x["year"] != "N/A" else "0000", reverse=True)

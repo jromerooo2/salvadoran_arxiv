@@ -1,35 +1,39 @@
 """
-Publication discipline classifier using Ollama (local LLM).
+Publication discipline classifier using Crossref subjects, Semantic Scholar
+fieldsOfStudy, and lightweight text signals (no local LLM).
 
 Requirements:
-    pip install ollama
+    pip install requests
 
-Setup:
-    1. Install Ollama: https://ollama.com/download
-    2. Pull a model: ollama pull llama3
-    3. Run the Ollama server (it starts automatically on most installs)
+Ingest (orcidsearch.py) attaches ``crossref_subjects`` and ``fields_of_study`` when
+available so batch runs can classify without repeating full metadata fetches.
+Optional one cheap S2 call (fieldsOfStudy only) fills gaps for older JSON files.
 """
 
-import ollama
+from __future__ import annotations
+
 import json
-import re
 import os
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Any, Iterable
+
+_ARTICLES_DIR = os.path.dirname(os.path.abspath(__file__))
+if _ARTICLES_DIR not in sys.path:
+    sys.path.insert(0, _ARTICLES_DIR)
+
+from external_apis import fetch_semantic_scholar_fields_only
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-OLLAMA_MODEL = "llama3"          # Change to "mistral", "gemma3", etc. as needed
-OLLAMA_HOST  = "http://localhost:11434"  # Default Ollama server address
-MAX_WORKERS  = 4                 # Concurrent LLM requests per file (tune to taste)
-CONTENT_JSON_PATH = os.path.join(os.path.dirname(__file__), '..', 'src', 'assets', 'content.json')
+MAX_WORKERS = 4
+CONTENT_JSON_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "src", "assets", "content.json"
+)
 
-def _load_disciplines_from_content():
-    """Return (sorted discipline names, {name: code}) read from content.json.
 
-    Only `subcategories[*].subcategories_name` / `subcategories_code` are read —
-    top-level `category_name` / `category_code` values (e.g. "Physics", "phy",
-    "Mathematics", "math", ...) are intentionally ignored.
-    """
-    with open(CONTENT_JSON_PATH, 'r', encoding='utf-8') as f:
+def _load_disciplines_from_content() -> tuple[list[str], dict[str, str | None]]:
+    """Return (sorted discipline names, {name: code}) from content.json subcategories."""
+    with open(CONTENT_JSON_PATH, "r", encoding="utf-8") as f:
         content_obj = json.load(f)
 
     if not isinstance(content_obj, list):
@@ -39,17 +43,19 @@ def _load_disciplines_from_content():
     for category in content_obj:
         if not isinstance(category, dict):
             continue
-        subcategories = category.get('subcategories')
+        subcategories = category.get("subcategories")
         if not isinstance(subcategories, list):
             continue
         for sub in subcategories:
             if not isinstance(sub, dict):
                 continue
-            name = sub.get('subcategories_name')
-            code = sub.get('subcategories_code')
+            name = sub.get("subcategories_name")
+            code = sub.get("subcategories_code")
             if isinstance(name, str) and name.strip():
                 key = name.strip().lower()
-                name_to_code[key] = code.strip() if isinstance(code, str) and code.strip() else None
+                name_to_code[key] = (
+                    code.strip() if isinstance(code, str) and code.strip() else None
+                )
 
     if not name_to_code:
         raise ValueError("No subcategory names found in content.json.")
@@ -57,217 +63,516 @@ def _load_disciplines_from_content():
     sorted_names = sorted(name_to_code)
     return sorted_names, {n: name_to_code[n] for n in sorted_names}
 
+
 DISCIPLINES, DISCIPLINES_CODES = _load_disciplines_from_content()
-_DISCIPLINES_BULLETS = "\n".join(f"- {d}" for d in DISCIPLINES)
-SYSTEM_PROMPT = f"""
-You are an expert scientific publication classifier.
+ALL_DISCIPLINE_KEYS = frozenset(DISCIPLINES_CODES.keys())
 
-Your task is to classify a scientific publication into EXACTLY ONE primary discipline from the list below.
+# Semantic Scholar coarse fields (lowercase) -> candidate disciplines (exact keys)
+S2_SCOPE: dict[str, frozenset[str]] = {
+    "physics": frozenset(
+        {
+            "astrophysics",
+            "condensed matter",
+            "general relativity and cosmology",
+            "high energy physics",
+            "nuclear physics",
+            "quantum physics",
+            "physics",
+        }
+    ),
+    "mathematics": frozenset(
+        {
+            "algebra & number theory",
+            "analysis & differential equations",
+            "geometry & topology",
+            "applied & computational mathematics",
+            "probability & statistics",
+            "combinatorics & discrete mathematics",
+        }
+    ),
+    "biology": frozenset(
+        {
+            "molecular biology",
+            "ecology & evolution",
+            "cell biology",
+            "neuroscience",
+            "genetics & genomics",
+        }
+    ),
+    "chemistry": frozenset(
+        {
+            "organic chemistry",
+            "inorganic chemistry",
+            "physical chemistry",
+            "biochemistry",
+            "materials & nanochemistry",
+        }
+    ),
+    "medicine": frozenset(
+        {
+            "public health & epidemiology",
+            "clinical & translational research",
+            "nursing & allied health",
+            "pharmacology & drug development",
+            "global & community health",
+            "biomedical informatics",
+        }
+    ),
+    "engineering": frozenset(
+        {
+            "electrical & computer engineering",
+            "mechanical engineering",
+            "civil & environmental engineering",
+            "chemical engineering",
+            "biomedical engineering",
+        }
+    ),
+    "computer science": frozenset(
+        {
+            "electrical & computer engineering",
+            "mechanical engineering",
+            "biomedical engineering",
+            "biomedical informatics",
+        }
+    ),
+    "materials science": frozenset({"materials & nanochemistry", "physical chemistry"}),
+    "environmental science": frozenset(
+        {"civil & environmental engineering", "ecology & evolution"}
+    ),
+    "education": frozenset(
+        {
+            "physics education",
+            "mathematics education",
+            "biology education",
+            "chemistry education",
+            "engineering education",
+            "health sciences education",
+        }
+    ),
+    "psychology": frozenset({"neuroscience", "clinical & translational research"}),
+    "sociology": frozenset({"public health & epidemiology", "global & community health"}),
+    "political science": frozenset({"global & community health"}),
+    "economics": frozenset({"probability & statistics"}),
+    "geography": frozenset({"ecology & evolution", "civil & environmental engineering"}),
+    "agricultural and food sciences": frozenset(
+        {"ecology & evolution", "molecular biology"}
+    ),
+    "history": frozenset({"physics education"}),  # weak; usually overridden by text
+    "linguistics": frozenset(),
+    "philosophy": frozenset(),
+    "art": frozenset(),
+    "business": frozenset(),
+    "law": frozenset(),
+    "geology": frozenset({"civil & environmental engineering", "ecology & evolution"}),
+}
 
-Available disciplines:
-{_DISCIPLINES_BULLETS}
+S2_SINGLE_DEFAULT: dict[str, str] = {
+    "physics": "physics",
+    "mathematics": "applied & computational mathematics",
+    "biology": "molecular biology",
+    "chemistry": "physical chemistry",
+    "medicine": "clinical & translational research",
+    "engineering": "mechanical engineering",
+    "computer science": "electrical & computer engineering",
+    "materials science": "materials & nanochemistry",
+    "environmental science": "civil & environmental engineering",
+    "education": "physics education",
+    "psychology": "neuroscience",
+    "sociology": "public health & epidemiology",
+    "political science": "global & community health",
+    "economics": "probability & statistics",
+    "geography": "ecology & evolution",
+    "agricultural and food sciences": "ecology & evolution",
+    "geology": "civil & environmental engineering",
+}
 
-You will receive only:
-- publication title
-- abstract
-- journal name
-- researcher affiliation (when available)
+# Longer phrases first: (substring_lower, discipline_key)
+_PHRASE_RULES_RAW: list[tuple[str, str]] = [
+    ("quantum information", "quantum physics"),
+    ("quantum computing", "quantum physics"),
+    ("quantum error", "quantum physics"),
+    ("qubit", "quantum physics"),
+    ("tensor network", "quantum physics"),
+    ("dark energy", "astrophysics"),
+    ("dark matter", "astrophysics"),
+    ("baryon acoustic", "astrophysics"),
+    ("type ia supernova", "astrophysics"),
+    ("supernova", "high energy physics"),
+    ("neutron star merger", "high energy physics"),
+    ("core-collapse supernova", "high energy physics"),
+    ("neutrino fast flavor", "high energy physics"),
+    ("neutrino flavor", "high energy physics"),
+    ("neutrino", "high energy physics"),
+    ("black hole", "astrophysics"),
+    ("gravitational wave", "general relativity and cosmology"),
+    ("general relativity", "general relativity and cosmology"),
+    ("cosmological", "astrophysics"),
+    ("inflationary", "astrophysics"),
+    ("lattice qcd", "high energy physics"),
+    ("standard model", "high energy physics"),
+    ("higgs", "high energy physics"),
+    ("large hadron collider", "high energy physics"),
+    ("particle physics", "high energy physics"),
+    ("quantum field theory", "high energy physics"),
+    ("graphene", "condensed matter"),
+    ("superconduct", "condensed matter"),
+    ("condensed matter", "condensed matter"),
+    ("many-body", "condensed matter"),
+    ("nuclear structure", "nuclear physics"),
+    ("nuclear reaction", "nuclear physics"),
+    ("radioactive", "nuclear physics"),
+    ("protein structure", "biochemistry"),
+    ("enzyme", "biochemistry"),
+    ("metabol", "biochemistry"),
+    ("organic synthesis", "organic chemistry"),
+    ("catalyst", "physical chemistry"),
+    ("polymer", "materials & nanochemistry"),
+    ("nanoparticle", "materials & nanochemistry"),
+    ("genome-wide", "genetics & genomics"),
+    ("crispr", "genetics & genomics"),
+    ("single-cell", "cell biology"),
+    ("neural circuit", "neuroscience"),
+    ("brain imaging", "neuroscience"),
+    ("ecosystem", "ecology & evolution"),
+    ("biodiversity", "ecology & evolution"),
+    ("epidemiolog", "public health & epidemiology"),
+    ("randomized controlled trial", "clinical & translational research"),
+    ("clinical trial", "clinical & translational research"),
+    ("finite element", "mechanical engineering"),
+    ("cfd", "mechanical engineering"),
+    ("structural health", "civil & environmental engineering"),
+    ("wastewater", "civil & environmental engineering"),
+    ("machine learning", "electrical & computer engineering"),
+    ("deep learning", "electrical & computer engineering"),
+    ("neural network", "electrical & computer engineering"),
+    ("reinforcement learning", "electrical & computer engineering"),
+    ("control system", "electrical & computer engineering"),
+    ("semiconductor", "electrical & computer engineering"),
+    ("heat transfer", "mechanical engineering"),
+    ("fluid dynamics", "mechanical engineering"),
+    ("chemical reactor", "chemical engineering"),
+    ("distillation column", "chemical engineering"),
+    ("stem education", "physics education"),
+    ("undergraduate physics", "physics education"),
+    ("algebraic geometry", "geometry & topology"),
+    ("differential geometry", "geometry & topology"),
+    ("partial differential equation", "analysis & differential equations"),
+    ("stochastic process", "probability & statistics"),
+    ("graph theory", "combinatorics & discrete mathematics"),
+    ("prime number", "algebra & number theory"),
+    ("galois theory", "algebra & number theory"),
+    ("health informatics", "biomedical informatics"),
+    ("electronic health record", "biomedical informatics"),
+]
 
-Classification instructions:
-- Determine the MOST LIKELY primary discipline based on the scientific content.
-- Use the abstract as the main source of information.
-- Use the title and journal name as additional contextual signals.
-- Use the researcher affiliation only as supporting context when helpful.
-- Always return the single best matching discipline from the provided list.
-- Never return multiple disciplines.
-- Never invent new disciplines.
-- The "discipline" value MUST exactly match one of the provided disciplines.
-- Even if the information is incomplete or ambiguous, choose the closest matching discipline.
+PHRASE_RULES = sorted(_PHRASE_RULES_RAW, key=lambda x: len(x[0]), reverse=True)
 
-Reasoning guidelines:
-- Focus on the main scientific contribution of the work.
-- Ignore generic methodologies unless they are the core topic of the paper.
-- Prefer the underlying scientific field over application domains.
-- If multiple disciplines appear, select the dominant research area.
+# Keyword hints per discipline (substring match in blob)
+DISCIPLINE_TERMS: dict[str, tuple[str, ...]] = {
+    "astrophysics": (
+        "cosmolog",
+        "galaxy",
+        "dark energy",
+        "dark matter",
+        "cmb",
+        "exoplanet",
+        "astrophys",
+    ),
+    "general relativity and cosmology": (
+        "gravitational wave",
+        "ligo",
+        "black hole",
+        "spacetime",
+        "einstein",
+        "horizon",
+    ),
+    "high energy physics": (
+        "neutrino",
+        "quark",
+        "boson",
+        "collider",
+        "lhc",
+        "particle",
+        "hadron",
+        "electroweak",
+    ),
+    "condensed matter": (
+        "condensed",
+        "superconduct",
+        "graphene",
+        "band gap",
+        "phonon",
+        "lattice",
+    ),
+    "nuclear physics": ("nuclear", "isotope", "fission", "fusion", "nucleon"),
+    "quantum physics": (
+        "quantum",
+        "entanglement",
+        "qubit",
+        "decoherence",
+        "hamiltonian",
+    ),
+    "physics": ("physics", "phys. rev", "physical review"),
+    "algebra & number theory": ("algebra", "number theory", "galois", "ring theory"),
+    "analysis & differential equations": (
+        "pde",
+        "ode",
+        "sobolev",
+        "harmonic analysis",
+    ),
+    "geometry & topology": ("topology", "manifold", "curvature", "cohomology"),
+    "applied & computational mathematics": (
+        "numerical",
+        "finite element",
+        "optimization",
+        "simulation",
+    ),
+    "probability & statistics": (
+        "bayesian",
+        "markov",
+        "regression",
+        "stochastic",
+        "inference",
+    ),
+    "combinatorics & discrete mathematics": (
+        "combinator",
+        "graph theory",
+        "discrete",
+    ),
+    "molecular biology": ("mrna", "protein", "dna", "rna", "replication", "polymerase"),
+    "cell biology": ("cell cycle", "mitochond", "cytoskeleton", "cellular"),
+    "neuroscience": ("neuron", "synapse", "cortex", "eeg", "neuro"),
+    "genetics & genomics": ("genome", "gene", "mutation", "sequencing", "allele"),
+    "ecology & evolution": ("evolution", "species", "ecosystem", "selection", "habitat"),
+    "organic chemistry": ("organic", "synthesis", "reagent", "stereochem"),
+    "inorganic chemistry": ("inorganic", "coordination", "ligand", "metal complex"),
+    "physical chemistry": ("spectroscop", "thermodynam", "kinetics", "electrochem"),
+    "biochemistry": ("enzyme", "substrate", "pathway", "metabol"),
+    "materials & nanochemistry": ("nanoparticle", "nanomaterial", "thin film", "polymer"),
+    "electrical & computer engineering": (
+        "circuit",
+        "fpga",
+        "microcontroller",
+        "signal processing",
+        "antenna",
+        "wireless",
+    ),
+    "mechanical engineering": (
+        "turbine",
+        "robotics",
+        "mechanical",
+        "cfd",
+        "heat exchanger",
+    ),
+    "civil & environmental engineering": (
+        "concrete",
+        "structural",
+        "hydrology",
+        "seismic",
+        "wastewater",
+    ),
+    "chemical engineering": ("reactor", "distillation", "mass transfer", "catalyst bed"),
+    "biomedical engineering": ("prosthetic", "biomaterial", "tissue engineering", "imaging"),
+    "public health & epidemiology": (
+        "epidemi",
+        "population health",
+        "outbreak",
+        "vaccination",
+    ),
+    "clinical & translational research": (
+        "clinical trial",
+        "patient cohort",
+        "diagnosis",
+        "therapy",
+    ),
+    "nursing & allied health": ("nursing", "allied health", "patient care"),
+    "pharmacology & drug development": ("pharmacokinetic", "drug", "dose", "clinical pharmac"),
+    "global & community health": ("community health", "global health", "health equity"),
+    "biomedical informatics": ("ehr", "informatics", "health record", "icd"),
+    "physics education": ("physics education", "concept inventory", "undergraduate physics"),
+    "mathematics education": ("mathematics education", "math anxiety", "calculus class"),
+    "biology education": ("biology education", "biology lab"),
+    "chemistry education": ("chemistry education", "general chemistry"),
+    "engineering education": ("engineering education", "design course"),
+    "health sciences education": ("medical education", "health professions education"),
+}
 
-Confidence guidelines:
-- 0.90–1.00:
-  Very clear classification with strong evidence.
-- 0.70–0.89:
-  Likely classification with moderate ambiguity.
-- 0.40–0.69:
-  Weak or uncertain classification, but still the best available match.
-- Never output 0.0 confidence.
 
-Output rules:
-- Reply ONLY with a valid JSON object.
-- Do NOT include markdown, explanations, comments, or extra text.
-- The JSON object must contain EXACTLY these two keys:
-    "discipline"
-    "confidence"
+def _normalize_list(val: Any) -> list[str]:
+    if not val:
+        return []
+    if isinstance(val, str):
+        return [val] if val.strip() else []
+    if isinstance(val, list):
+        return [str(x).strip() for x in val if isinstance(x, (str, int)) and str(x).strip()]
+    return []
 
-Valid example:
-{{"discipline": "{DISCIPLINES[0]}", "confidence": 0.91}}
-"""
 
-# ── Core classifier ────────────────────────────────────────────────────────────
+def _merge_scopes(fields_lower: Iterable[str]) -> frozenset[str] | None:
+    scopes: list[frozenset[str]] = []
+    for fos in fields_lower:
+        key = fos.strip().lower()
+        sc = S2_SCOPE.get(key)
+        if sc is not None and len(sc) > 0:
+            scopes.append(sc)
+    if not scopes:
+        return None
+    out: set[str] = set()
+    for s in scopes:
+        out |= set(s)
+    return frozenset(out)
 
-def classify_with_ollama(
+
+def _phrase_match(blob: str) -> tuple[str, float] | None:
+    for phrase, disc in PHRASE_RULES:
+        if phrase in blob and disc in ALL_DISCIPLINE_KEYS:
+            return disc, 0.88
+    return None
+
+
+def _score_terms(blob: str, candidates: frozenset[str] | None) -> tuple[str, float]:
+    best_d = ""
+    best_s = 0.0
+    second = 0.0
+    for d, terms in DISCIPLINE_TERMS.items():
+        if candidates is not None and d not in candidates:
+            continue
+        s = sum(len(t) for t in terms if t in blob)
+        if s > best_s:
+            second = best_s
+            best_s = s
+            best_d = d
+        elif s > second:
+            second = s
+    if best_s <= 0 or not best_d:
+        return "", 0.0
+    margin = (best_s - second) / max(best_s, 1.0)
+    conf = min(0.93, 0.52 + 0.18 * margin + 0.01 * min(best_s, 40.0))
+    return best_d, conf
+
+
+def _default_from_s2(fields_lower: list[str]) -> tuple[str, float] | None:
+    if len(fields_lower) == 1:
+        d = S2_SINGLE_DEFAULT.get(fields_lower[0])
+        if d and d in ALL_DISCIPLINE_KEYS:
+            return d, 0.58
+    return None
+
+
+def classify_from_signals(
+    title: str,
+    abstract: str,
+    journal: str,
+    crossref_subjects: list[str] | None,
+    fields_of_study: list[str] | None,
+) -> dict[str, Any]:
+    """
+    Return discipline (content.json subcategory key, lowercased), confidence,
+    and raw trace string. No HTTP performed.
+    """
+    subs = _normalize_list(crossref_subjects)
+    fos = _normalize_list(fields_of_study)
+    parts = [title, abstract, journal, " ".join(subs), " ".join(fos)]
+    blob = " ".join(p for p in parts if isinstance(p, str)).lower()
+    fields_lower = [f.lower() for f in fos]
+
+    trace: list[str] = []
+
+    pm = _phrase_match(blob)
+    if pm:
+        trace.append(f"phrase:{pm[0]}")
+        return {"discipline": pm[0], "confidence": pm[1], "raw": "; ".join(trace)}
+
+    scope = _merge_scopes(fields_lower)
+    if scope is None:
+        scope = ALL_DISCIPLINE_KEYS
+        trace.append("scope:all")
+    else:
+        trace.append(f"scope:s2={','.join(fields_lower)}")
+
+    disc, conf = _score_terms(blob, scope)
+    if disc:
+        trace.append(f"terms:{disc}")
+        return {"discipline": disc, "confidence": conf, "raw": "; ".join(trace)}
+
+    ddef = _default_from_s2(fields_lower)
+    if ddef:
+        trace.append(f"s2_default:{ddef[0]}")
+        return {"discipline": ddef[0], "confidence": ddef[1], "raw": "; ".join(trace)}
+
+    # Last pass: ignore S2 scope if it was too narrow and produced no hit
+    if scope is not ALL_DISCIPLINE_KEYS:
+        disc2, conf2 = _score_terms(blob, ALL_DISCIPLINE_KEYS)
+        if disc2:
+            trace.append(f"terms_global:{disc2}")
+            return {"discipline": disc2, "confidence": conf2 * 0.92, "raw": "; ".join(trace)}
+
+    return {"discipline": "n/a", "confidence": 0.0, "raw": "; ".join(trace) or "no_match"}
+
+
+def classify_with_apis(
     title: str,
     abstract: str,
     journal: str = "",
     affiliation: str = "",
-    model: str = OLLAMA_MODEL,
-) -> dict:
+    doi: str = "",
+    crossref_subjects: list[str] | None = None,
+    fields_of_study: list[str] | None = None,
+    fetch_s2_fields_if_empty: bool = True,
+) -> dict[str, Any]:
     """
-    Classify a scientific publication into exactly one primary discipline
-    using a local Ollama LLM.
-
-    Input information:
-        - title
-        - abstract
-        - journal name
-        - researcher affiliation (optional contextual signal)
-
-    Classification strategy:
-        - The abstract is treated as the primary source of information.
-        - The title and journal provide contextual guidance.
-        - The affiliation may help infer the broader research field.
-        - The model must always select the single best matching discipline.
-        - No multi-label classifications are allowed.
-
-    Returns:
-        dict with keys:
-            discipline : str
-                Predicted primary discipline from the predefined list.
-
-            confidence : float
-                Confidence score between 0.0 and 1.0.
-
-            raw : str
-                Raw LLM response for debugging and validation.
+    Classify using stored API hints; optionally one lightweight S2 fieldsOfStudy
+    request when hints are missing and DOI is available. ``affiliation`` is unused
+    but kept for call-site compatibility.
     """
+    fos = list(fields_of_study or [])
+    if (
+        fetch_s2_fields_if_empty
+        and not fos
+        and doi
+        and str(doi).strip().upper() != "N/A"
+    ):
+        extra = fetch_semantic_scholar_fields_only(doi)
+        if extra:
+            fos = extra
 
-    user_message = f"""
-Classify the following scientific publication into EXACTLY ONE discipline.
-
-Publication metadata:
-
-Title:
-{title}
-
-Abstract:
-{abstract}
-
-Journal:
-{journal if journal else "Unknown"}
-
-Researcher affiliation:
-{affiliation if affiliation else "Unknown"}
-
-Instructions:
-- Use the abstract as the primary signal.
-- Use the journal and affiliation as supporting context.
-- Select the SINGLE most likely discipline.
-- Return ONLY valid JSON.
-"""
-
-    try:
-        client = ollama.Client(host=OLLAMA_HOST)
-        response = client.chat(
-            model=model,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user",   "content": user_message},
-            ],
-            options={"temperature": 0},   # deterministic output
-        )
-        raw = response["message"]["content"].strip()
-        result = _parse_response(raw)
-        result["raw"] = raw
-        return result
-
-    except ollama.ResponseError as e:
-        return {"discipline": "N/A", "confidence": 0.0, "raw": str(e),
-                "error": f"Ollama API error: {e}"}
-    except Exception as e:
-        return {"discipline": "N/A", "confidence": 0.0, "raw": "",
-                "error": f"Unexpected error: {e}"}
-
-def _parse_response(text: str) -> dict:
-    """Extract JSON from the model reply, tolerating minor formatting issues."""
-    # Try direct JSON parse first
-    try:
-        data = json.loads(text)
-        return _validate(data)
-    except json.JSONDecodeError:
-        pass
-
-    # Fallback: extract the first {...} block
-    match = re.search(r"\{.*?\}", text, re.DOTALL)
-    if match:
-        try:
-            data = json.loads(match.group())
-            return _validate(data)
-        except json.JSONDecodeError:
-            pass
-
-    return {"discipline": "N/A", "confidence": 0.0}
+    result = classify_from_signals(
+        title, abstract, journal, crossref_subjects, fos
+    )
+    result["raw"] = (result.get("raw") or "") + (
+        ";s2_fetch" if (fields_of_study or []) != fos and fos else ""
+    )
+    return result
 
 
-def _validate(data: dict) -> dict:
-    """Ensure discipline is one of the allowed values."""
-    discipline = str(data.get("discipline", "N/A")).strip().lower()
-    if discipline not in DISCIPLINES:
-        discipline = "N/A"
-    confidence = float(data.get("confidence", 0.0))
-    confidence = max(0.0, min(1.0, confidence))
-    return {"discipline": discipline, "confidence": confidence}
-
-
-# ── Batch helper ───────────────────────────────────────────────────────────────
-
-def classify_batch(publications: list[dict], model: str = OLLAMA_MODEL) -> list[dict]:
-    """
-    Classify a list of publications sequentially.
-
-    Each item in `publications` should be a dict with keys:
-        title, abstract, journal (optional), affiliation (optional)
-
-    Returns the same list with 'discipline' and 'confidence' added to each item.
-    """
+def classify_batch(publications: list[dict], **kw: Any) -> list[dict]:
     results = []
+    fetch = kw.get("fetch_s2_fields_if_empty", True)
     for i, pub in enumerate(publications, 1):
         print(f"  [{i}/{len(publications)}] Classifying: {pub.get('title', '')[:60]}...")
-        classification = classify_with_ollama(
+        classification = classify_with_apis(
             title=pub.get("title", ""),
             abstract=pub.get("abstract", ""),
             journal=pub.get("journal", ""),
             affiliation=pub.get("affiliation", ""),
-            model=model,
+            doi=pub.get("doi", ""),
+            crossref_subjects=pub.get("crossref_subjects"),
+            fields_of_study=pub.get("fields_of_study"),
+            fetch_s2_fields_if_empty=fetch,
         )
         results.append({**pub, **classification})
-        print(f"           → {classification['discipline']} "
-              f"(confidence: {classification['confidence']:.2f})")
-        if classification.get("error"):
-            print(f"           ! {classification['error']}")
-            exit()
-            
+        print(
+            f"           → {classification['discipline']} "
+            f"(confidence: {classification['confidence']:.2f})"
+        )
     return results
 
 
 def classify_batch_parallel(
     publications: list[dict],
-    model: str = OLLAMA_MODEL,
     max_workers: int = MAX_WORKERS,
+    fetch_s2_fields_if_empty: bool = True,
 ) -> list[dict]:
-    """Like `classify_batch`, but issues up to `max_workers` LLM calls concurrently.
-
-    The Ollama call is HTTP I/O-bound, so a thread pool gives a real speedup
-    even though Python has the GIL. Order of the returned list matches the
-    order of `publications`. Errors on individual papers are logged but do not
-    abort the rest of the batch.
-    """
     if not publications:
         return []
 
@@ -276,33 +581,34 @@ def classify_batch_parallel(
     results: list[dict | None] = [None] * total
     done = 0
 
-    def _classify_one(idx: int, pub: dict):
-        classification = classify_with_ollama(
+    def _one(idx: int, pub: dict):
+        classification = classify_with_apis(
             title=pub.get("title", ""),
             abstract=pub.get("abstract", ""),
             journal=pub.get("journal", ""),
             affiliation=pub.get("affiliation", ""),
-            model=model,
+            doi=pub.get("doi", ""),
+            crossref_subjects=pub.get("crossref_subjects"),
+            fields_of_study=pub.get("fields_of_study"),
+            fetch_s2_fields_if_empty=fetch_s2_fields_if_empty,
         )
         return idx, pub, classification
 
     print(f"  Classifying {total} publications with {workers} parallel workers...")
     with ThreadPoolExecutor(max_workers=workers) as ex:
-        futures = [ex.submit(_classify_one, i, p) for i, p in enumerate(publications)]
+        futures = [ex.submit(_one, i, p) for i, p in enumerate(publications)]
         for fut in as_completed(futures):
             idx, pub, classification = fut.result()
             results[idx] = {**pub, **classification}
             done += 1
-            print(f"  [{done}/{total}] → {classification['discipline']:20s} "
-                  f"(conf: {classification['confidence']:.2f})  "
-                  f"{pub.get('title', '')[:55]}")
-            if classification.get("error"):
-                print(f"           ! {classification['error']}")
+            print(
+                f"  [{done}/{total}] → {classification['discipline']:32s} "
+                f"(conf: {classification['confidence']:.2f})  "
+                f"{pub.get('title', '')[:45]}"
+            )
 
     return [r for r in results if r is not None]
 
-
-# ── Drop-in replacement for the original heuristic function ───────────────────
 
 def classify_section_discipline(
     title: str,
@@ -310,27 +616,45 @@ def classify_section_discipline(
     journal: str = "",
     affiliation: str = "",
 ) -> str:
-    """
-    Drop-in replacement for the original keyword-based classifier.
-    Returns only the discipline string (or 'N/A'), matching the original API.
-    """
-    result = classify_with_ollama(title, abstract, journal, affiliation)
-    return result["discipline"]
+    r = classify_with_apis(
+        title,
+        abstract,
+        journal,
+        affiliation,
+        doi="",
+        crossref_subjects=None,
+        fields_of_study=None,
+        fetch_s2_fields_if_empty=False,
+    )
+    return r["discipline"]
 
 
-# ── Demo ───────────────────────────────────────────────────────────────────────
+def infer_category_code_from_record(
+    pub: dict,
+    *,
+    fetch_s2_if_needed: bool = True,
+) -> str:
+    """Return a ``subcategories_code`` value or '' if classification fails."""
+    r = classify_with_apis(
+        title=str(pub.get("title") or ""),
+        abstract=str(pub.get("abstract") or ""),
+        journal=str(pub.get("journal") or ""),
+        affiliation=str(pub.get("affiliation") or ""),
+        doi=str(pub.get("doi") or ""),
+        crossref_subjects=pub.get("crossref_subjects"),
+        fields_of_study=pub.get("fields_of_study"),
+        fetch_s2_fields_if_empty=fetch_s2_if_needed,
+    )
+    disc = str(r.get("discipline", "")).strip().lower()
+    code = DISCIPLINES_CODES.get(disc)
+    return code if isinstance(code, str) and code.strip() else ""
 
-def _load_publications_from_orcid_json(json_path: str) -> list[dict]:
-    """Build a `sample_publications`-style list from an ORCID + Crossref JSON file.
 
-    Keeps only the fields the classifier consumes (title, abstract, journal,
-    affiliation) and normalizes "N/A" / missing values to empty strings so the
-    LLM prompt isn't polluted with placeholder text.
-    """
+def _load_publications_from_orcid_json(json_path: str) -> tuple[list[dict], dict]:
     with open(json_path, "r", encoding="utf-8") as f:
         info = json.load(f)
 
-    def _clean(v):
+    def _clean(v: Any) -> str:
         if not isinstance(v, str):
             return ""
         s = v.strip()
@@ -340,50 +664,46 @@ def _load_publications_from_orcid_json(json_path: str) -> list[dict]:
     for pub in info.get("publications", []):
         if not isinstance(pub, dict):
             continue
-        # append only if category is unclasified
         category = pub.get("category", "")
-        if category and category.lower() != "uncategorized":
+        if category and str(category).lower() != "uncategorized":
             continue
 
-        publications.append({
-            "title"      : _clean(pub.get("title")),
-            "abstract"   : _clean(pub.get("abstract")),
-            "journal"    : _clean(pub.get("journal")),
-            "affiliation": _clean(pub.get("affiliation")),
-            "category"   : _clean(pub.get("category")),
-            'doi'        : _clean(pub.get("doi")),
-        })
+        publications.append(
+            {
+                "title": _clean(pub.get("title")),
+                "abstract": _clean(pub.get("abstract")),
+                "journal": _clean(pub.get("journal")),
+                "affiliation": _clean(pub.get("affiliation")),
+                "category": _clean(pub.get("category")),
+                "doi": _clean(pub.get("doi")),
+                "crossref_subjects": _normalize_list(pub.get("crossref_subjects")),
+                "fields_of_study": _normalize_list(pub.get("fields_of_study")),
+            }
+        )
     return publications, info
 
 
-def _normalize_doi_for_match(doi) -> str:
-    """Lowercased DOI with common URL/`doi:` prefixes stripped, '' if unusable."""
+def _normalize_doi_for_match(doi: Any) -> str:
     if not isinstance(doi, str):
         return ""
     s = doi.strip()
     if not s or s.upper() == "N/A":
         return ""
     lower = s.lower()
-    for prefix in ("https://doi.org/", "http://doi.org/",
-                   "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
+    for prefix in (
+        "https://doi.org/",
+        "http://doi.org/",
+        "https://dx.doi.org/",
+        "http://dx.doi.org/",
+        "doi:",
+    ):
         if lower.startswith(prefix):
-            s = s[len(prefix):]
+            s = s[len(prefix) :]
             break
     return s.strip().lower()
 
 
-def update_categories_in_file(json_path: str, results: list[dict]) -> dict:
-    """Rewrite each publication's `category` in `json_path` using `results`.
-
-    For every classification result, look up the discipline code via
-    `DISCIPLINES_CODES` and write it back to the matching publication's
-    `category` field (matching first by normalized DOI, then by title).
-    `author_categories` is re-derived from the updated codes so the file's
-    metadata stays consistent.
-
-    Returns a small report dict with counts of updated / unchanged / unmatched
-    papers and any discipline names that did not map to a code.
-    """
+def update_categories_in_file(json_path: str, results: list[dict]) -> dict[str, Any]:
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -425,11 +745,16 @@ def update_categories_in_file(json_path: str, results: list[dict]) -> dict:
             pub["category"] = new_code
             updated += 1
 
-    cats = sorted({
-        p["category"] for p in pubs
-        if isinstance(p, dict) and isinstance(p.get("category"), str)
-        and p["category"] and p["category"] != "uncategorized"
-    })
+    cats = sorted(
+        {
+            p["category"]
+            for p in pubs
+            if isinstance(p, dict)
+            and isinstance(p.get("category"), str)
+            and p["category"]
+            and p["category"] != "uncategorized"
+        }
+    )
     data["author_categories"] = ", ".join(cats)
     data["total_publications"] = sum(1 for p in pubs if isinstance(p, dict))
 
@@ -437,12 +762,16 @@ def update_categories_in_file(json_path: str, results: list[dict]) -> dict:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
     print(f"📝 Categories updated in {json_path}")
-    print(f"   ✏️  {updated} changed | ✓ {unchanged} unchanged | "
-          f"❓ {not_matched} not matched | 🏷️  author_categories: "
-          f"{data['author_categories'] or '(none)'}")
+    print(
+        f"   ✏️  {updated} changed | ✓ {unchanged} unchanged | "
+        f"❓ {not_matched} not matched | 🏷️  author_categories: "
+        f"{data['author_categories'] or '(none)'}"
+    )
     if unmapped:
-        print(f"   ⚠️  Disciplines without a code in DISCIPLINES_CODES: "
-              f"{sorted(set(unmapped))}")
+        print(
+            f"   ⚠️  Disciplines without a code in DISCIPLINES_CODES: "
+            f"{sorted(set(unmapped))}"
+        )
 
     return {
         "updated": updated,
@@ -453,7 +782,6 @@ def update_categories_in_file(json_path: str, results: list[dict]) -> dict:
 
 
 if __name__ == "__main__":
-
     items_dir = os.path.join(os.path.dirname(__file__), "items")
     items_paths = [
         os.path.join(items_dir, fname)
@@ -474,13 +802,14 @@ if __name__ == "__main__":
             print(f"Error reading {json_path}: {e}")
             continue
 
-        print("Publication Classifier — Ollama")
-        print(f"Model  : {OLLAMA_MODEL}")
+        print("Publication Classifier — Crossref / Semantic Scholar signals")
         print(f"Author : {info.get('author')}")
         print(f"ORCID  : {info.get('orcid')}")
         print(f"Source : {info.get('source')}")
-        print(f"Total  : {info.get('total_publications')} "
-              f"({len(sample_publications)} loaded for classification)")
+        print(
+            f"Total  : {info.get('total_publications')} "
+            f"({len(sample_publications)} loaded for classification)"
+        )
         print(f"Workers: {MAX_WORKERS}")
         print("=" * 60)
 
@@ -490,8 +819,8 @@ if __name__ == "__main__":
 
         results = classify_batch_parallel(
             sample_publications,
-            model=OLLAMA_MODEL,
             max_workers=MAX_WORKERS,
+            fetch_s2_fields_if_empty=True,
         )
 
         print("\n── Writing categories back to file ──────────────────────")

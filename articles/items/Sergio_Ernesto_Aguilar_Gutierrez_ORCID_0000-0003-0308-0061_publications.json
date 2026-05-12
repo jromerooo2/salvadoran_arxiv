@@ -2,8 +2,8 @@
   "author": "Sergio Ernesto Aguilar Gutierrez",
   "orcid": "https://orcid.org/0000-0003-0308-0061",
   "source": "ORCID + Crossref",
-  "total_publications": 25,
-  "author_categories": "phy-genrel, phy-hep, phy-phys, phy-quant",
+  "total_publications": 26,
+  "author_categories": "phy-astro, phy-genrel, phy-hep, phy-phys, phy-quant",
   "publications": [
     {
       "title": "Geometry of chord intertwiner, multiple shocks and switchback in double-scaled SYK",
@@ -229,6 +229,17 @@
       "affiliation": "KU Leuven",
       "doi": "https://doi.org/10.1007/JHEP05(2024)201",
       "category": "phy-genrel"
+    },
+    {
+      "title": "Cosmological entanglement entropy from the von Neumann algebra of double-scaled SYK & its connection with Krylov complexity",
+      "abstract": "A\n                    bstract\n                  \n                  \n                    We investigate entanglement entropy between the pair of type II\n                    1\n                    algebras of the double-scaled SYK (DSSYK) model given a chord state, its holographic interpretation as generalized horizon entropy; particularly in the (anti-)de Sitter ((A)dS) space limits of the bulk dual; and its connection with Krylov complexity. The density matrices in this formalism are operators in the algebras, which are specified by the choice of global state; and there exists a trace to evaluate their von Neumann entropy since the algebras are commutants of each other, which leads to a notion of algebraic entanglement entropy. We match it in triple-scaling limits to an area computed through a\n                    Ryu-Takayanagi formula\n                    in (A)dS\n                    2\n                    space with entangling surfaces at the asymptotic timelike or spacelike boundaries respectively; providing a first-principles example of holographic entanglement entropy for (A)dS\n                    2\n                    space. This result reproduces the Bekenstein-Hawking and Gibbons-Hawking entropy formulas for specific entangling regions points, while it decreases for others. This construction does not display some of the puzzling features in dS holography. The entanglement entropy remains real-valued since the theory is unitary, and it depends on the Krylov spread complexity of the Hartle-Hawking state.",
+      "year": "2026",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University",
+      "doi": "https://doi.org/10.1007/JHEP05(2026)080",
+      "category": "phy-astro",
+      "crossref_subjects": [],
+      "fields_of_study": []
     }
   ]
 }

@@ -2,7 +2,7 @@
   "author": "Erick Urquilla",
   "orcid": "https://orcid.org/0009-0007-3861-3223",
   "source": "ORCID + Crossref",
-  "total_publications": 2,
+  "total_publications": 3,
   "author_categories": "phy-astro, phy-hep",
   "publications": [
     {
@@ -21,6 +21,15 @@
       "journal": "Physical Review D",
       "affiliation": "University of Tennessee",
       "doi": "https://doi.org/10.1103/PhysRevD.109.103040",
+      "category": "phy-hep"
+    },
+    {
+      "title": "Testing common approximations of neutrino fast flavor conversion",
+      "abstract": "A new chapter is opening in the theory of core-collapse supernovae and neutron star mergers as simulations of these events begin to incorporate fast flavor conversion (FFC) and other forms of neutrino flavor mixing. Using numerical experiments, we show that the approximations of FFC that have been implemented so far are limited by at least two of three factors: (1) approximating continuous evolution as a discrete sequence of instabilities, (2) using spatially homogeneous asymptotic states, and (3) assuming that FFC must be accompanied by instability. The factors we identify in this work will be important considerations as the research area progresses from initial exploratory studies to more quantitatively precise assessments.",
+      "year": "2026",
+      "journal": "Physical Review D",
+      "affiliation": "University of Tennessee",
+      "doi": "https://doi.org/10.1103/xmxv-9sb2",
       "category": "phy-hep"
     }
   ]
