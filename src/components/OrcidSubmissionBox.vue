@@ -78,7 +78,7 @@
 <script>
 const ORCID_REGEX = /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdbadlo'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeedlegn'
 const FORMSPREE_SUBJECT = 'A new ORCID was recieved from ssscience.org'
 
 export default {
