@@ -11,6 +11,8 @@
       <SearchBar layout="hero" :centered="true" />
     </section>
 
+    <OrcidSubmissionBox />
+
     <Tarjetas />
   </div>
 
@@ -20,11 +22,13 @@
 
   import Tarjetas from '../components/Tarjetas.vue';
   import SearchBar from '../components/SearchBar.vue';
+  import OrcidSubmissionBox from '../components/OrcidSubmissionBox.vue';
   
   export default {
     components: {
       Tarjetas,
       SearchBar,
+      OrcidSubmissionBox,
     }
   }
 </script>

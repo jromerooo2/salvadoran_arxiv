@@ -10,6 +10,8 @@
       <SearchBar layout="hero" :centered="true" />
     </section>
 
+    <OrcidSubmissionBox />
+
     <div class="flex w-full max-w-none flex-col gap-6">
       <article
         v-for="(r, index) in researchers"
@@ -85,6 +87,7 @@
 
 <script>
 import SearchBar from '../components/SearchBar.vue'
+import OrcidSubmissionBox from '../components/OrcidSubmissionBox.vue'
 import { getResearchers, orcidDisplayId } from '../data/researchers.js'
 import { getAllArticles } from '../data/articleItems.js'
 
@@ -92,6 +95,7 @@ export default {
   name: 'Researchers',
   components: {
     SearchBar,
+    OrcidSubmissionBox,
   },
   data() {
     return {

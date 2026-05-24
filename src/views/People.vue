@@ -1,5 +1,7 @@
 <template>
   <div class="space-y-10">
+    <OrcidSubmissionBox />
+
     <section class="mx-auto w-full space-y-6 font-sans">
       <header class="space-y-2">
         <p class="text-sm text-gray-600">
@@ -41,9 +43,13 @@
 
 <script>
 import peopleData from '../../comunidad/people.json'
+import OrcidSubmissionBox from '../components/OrcidSubmissionBox.vue'
 
 export default {
   name: 'People',
+  components: {
+    OrcidSubmissionBox,
+  },
   data() {
     return {
       people: [],
