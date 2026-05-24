@@ -78,7 +78,8 @@
 <script>
 const ORCID_REGEX = /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const CONTACT_EMAIL = 'elsalvador.stem@gmail.com'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdbadlo'
+const FORMSPREE_SUBJECT = 'A new ORCID was recieved from ssscience.org'
 
 export default {
   name: 'OrcidSubmissionBox',
@@ -136,33 +137,63 @@ export default {
       }
       return true
     },
-    handleSubmit() {
+    async handleSubmit() {
       this.setMessage('', 'info')
       if (!this.validate()) return
 
       this.submitting = true
       try {
-        const subject = encodeURIComponent(
-          `ORCID submission: ${this.orcid}`,
-        )
-        const body = encodeURIComponent(
-          [
-            'New Salvadoran researcher ORCID submission.',
-            '',
-            `ORCID iD: ${this.orcid}`,
-            `Email: ${this.email}`,
-            'Confirmed Salvadoran researcher: yes',
-          ].join('\n'),
-        )
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+        const payload = {
+          _subject: FORMSPREE_SUBJECT,
+          _replyto: this.email,
+          message: `${this.orcid}\n${this.email}`,
+          orcid: this.orcid,
+          email: this.email,
+          confirmed_salvadoran_researcher: 'yes',
+        }
 
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        })
+
+        if (response.ok) {
+          this.setMessage(
+            'Thanks! Your ORCID submission has been received.',
+            'success',
+          )
+          this.orcid = ''
+          this.email = ''
+          this.confirmed = false
+          return
+        }
+
+        let detail = ''
+        try {
+          const data = await response.json()
+          if (Array.isArray(data?.errors) && data.errors.length > 0) {
+            detail = data.errors
+              .map((e) => e?.message)
+              .filter(Boolean)
+              .join(' ')
+          }
+        } catch (_) {
+          // ignore JSON parse failures and fall back to generic message
+        }
         this.setMessage(
-          'Thanks! Your email client should open with the submission ready to send.',
-          'success',
+          detail ||
+            'Sorry, your submission could not be sent. Please try again later.',
+          'error',
         )
-        this.orcid = ''
-        this.email = ''
-        this.confirmed = false
+      } catch (_) {
+        this.setMessage(
+          'Network error. Please check your connection and try again.',
+          'error',
+        )
       } finally {
         this.submitting = false
       }
