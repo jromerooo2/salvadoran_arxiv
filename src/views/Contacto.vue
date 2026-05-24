@@ -49,6 +49,10 @@ export default {
             'For general inquiries, collaboration ideas, or to get involved with the Salvadoran scientific community.',
           people: [
             {
+              name: 'General inquiries',
+              email: 'elsalvador.stem@gmail.com',
+            },
+            {
               name: 'Fernanda Sulantay Vargas',
               email: 'fernandasulantay@gmail.com',
             },
