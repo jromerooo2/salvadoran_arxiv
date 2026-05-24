@@ -5,7 +5,7 @@
     <section class="mx-auto w-full space-y-6 font-sans">
       <header class="space-y-2">
         <p class="text-sm text-gray-600">
-          Public members of the Salvadoran Society of Sciences
+          Public members of our community
         </p>
       </header>
 

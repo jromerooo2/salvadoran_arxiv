@@ -5,7 +5,7 @@
       <div class="space-y-4">
         <h2 class="text-xl font-bold text-gray-900">About our community</h2>
         <p class="text-base leading-relaxed text-gray-700">
-          The <strong class="font-semibold text-gray-900">Salvadoran Society of Sciences</strong> was born from a chance encounter between Salvadoran scientists during the American Astronomical Society meeting in New Orleans in January 2024, Luisiana, US. What began as a conversation among Salvadorans pursuing careers in science abroad quickly became the foundation for a growing scientific community connected by a shared origin, curiosity, and commitment to supporting one another.
+          Our community was born from a chance encounter between Salvadoran scientists during the American Astronomical Society meeting in New Orleans in January 2024, Luisiana, US. What began as a conversation among Salvadorans pursuing careers in science abroad quickly became the foundation for a growing scientific community connected by a shared origin, curiosity, and commitment to supporting one another.
         </p>
         <p class="text-base leading-relaxed text-gray-700">
           The initiative was originally started by Miguel Montalvo, a PhD student in Astrophysical Sciences at Princeton University, Fernanda Suyantal, a PhD student in Chemical Engineering at Yale University and Erick Urquilla, a PhD student in Physics at the University of Tennessee. Soon after, more Salvadoran students and researchers joined the effort, including undergraduate students, PhD candidates, and postdoctoral researchers across multiple scientific disciplines.
@@ -21,7 +21,7 @@
       <div class="space-y-4">
         <h2 class="text-xl font-bold text-gray-900">About this repository</h2>
         <p class="text-base leading-relaxed text-gray-700">
-          This scientific repository was conceived and built by <strong class="font-semibold text-gray-900">Erick Urquilla</strong>, a PhD student in Physics at the University of Tennessee, Knoxville, and <strong class="font-semibold text-gray-900">Juan Romero</strong>, a Mechanical Engineering student at the Georgia Institute of Technology — two Salvadorans studying at leading research universities in the United States, thousands of miles from home.
+          This scientific repository was conceived and built by Erick Urquilla, a PhD student in Physics at the University of Tennessee, Knoxville, and Juan Romero, a Mechanical Engineering student at the Georgia Institute of Technology — two Salvadorans studying at leading research universities in the United States, thousands of miles from home.
         </p>
         <p class="text-base leading-relaxed text-gray-700">
           Their shared vision was simple but ambitious: to bridge the distance between Salvadoran scientists working at research institutions around the world and the local scientific community back home.
@@ -35,8 +35,8 @@
         <p class="text-base leading-relaxed text-gray-700">
           But perhaps more importantly, we hope this space serves as proof — to every student in El Salvador who has ever doubted whether someone like them could have a place in science — that they can, and that others already do.
         </p>
-        <p class="text-base font-semibold leading-relaxed text-gray-900">
-          This is for the next generation.
+        <p class="text-center text-base italic leading-relaxed text-gray-700">
+          This is for the next generation of Salvadorans in science.
         </p>
       </div>
     </section>
