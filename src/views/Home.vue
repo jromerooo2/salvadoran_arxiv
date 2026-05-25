@@ -9,8 +9,6 @@
       <SearchBar layout="hero" :centered="true" />
     </section>
 
-    <OrcidSubmissionBox />
-
     <nav
       class="category-index mx-auto flex w-full flex-col gap-6"
       aria-label="Browse by field"
@@ -75,14 +73,12 @@
 
 <script>
 import SearchBar from '../components/SearchBar.vue'
-import OrcidSubmissionBox from '../components/OrcidSubmissionBox.vue'
 import contentData from '../assets/content.json'
 import { getAllArticles } from '../data/articleItems.js'
 
 export default {
   components: {
     SearchBar,
-    OrcidSubmissionBox,
   },
   data() {
     return {
