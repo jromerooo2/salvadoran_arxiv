@@ -62,7 +62,7 @@ export default {
             },
             {
               name: 'Erick Urquilla',
-              email: 'erickurquilla@gmail.com',
+              email: 'erickurq@gmail.com',
             },
           ],
         },
@@ -73,7 +73,7 @@ export default {
           people: [
             {
               name: 'Erick Urquilla',
-              email: 'erickurquilla@gmail.com',
+              email: 'erickurq@gmail.com',
             },
             {
               name: 'Juan Romero',
