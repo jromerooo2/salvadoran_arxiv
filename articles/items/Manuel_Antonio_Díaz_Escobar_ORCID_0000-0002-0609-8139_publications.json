@@ -1,0 +1,50 @@
+{
+  "author": "Manuel Antonio Díaz Escobar",
+  "orcid": "https://orcid.org/0000-0002-0609-8139",
+  "source": "ORCID + Crossref",
+  "total_publications": 3,
+  "author_categories": "eng-ece, math-acm, math-ade",
+  "publications": [
+    {
+      "title": "A conservative numerical scheme for modeling nonlinear acoustic propagation in thermoviscous homogeneous media",
+      "abstract": "A nonlinear system of partial differential equations capable of describing the nonlinear propagation and attenuation of finite amplitude perturbations in thermoviscous media is presented. This system constitutes a full nonlinear wave model that has been formulated in the conservation form. Initially, this model is investigated analytically in the inviscid limit where it has been found that the resulting flux function fulfills the Lax–Wendroff theorem, and the scheme can match the solutions of the Westervelt and Burgers equations numerically. Here, high-order numerical descriptions of strongly nonlinear wave propagations become of great interest. For that matter we consider finite difference formulations of the weighted essentially non-oscillatory (WENO) schemes associated with explicit strong stability preserving Runge–Kutta (SSP-RK) time integration methods. Although this strategy is known to be computationally demanding, it is found to be effective when implemented to be solved in graphical processing units (GPUs). As we consider wave propagations in unbounded domains, perfectly matching layers (PML) have been also considered in this work. The proposed system model is validated and illustrated by using one- and two-dimensional benchmark test cases proposed in the literature for nonlinear acoustic propagation in homogeneous thermoviscous media.",
+      "year": "2018",
+      "journal": "Journal of Computational Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.jcp.2018.02.005",
+      "category": "math-ade",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Computer Science",
+        "Mathematics"
+      ]
+    },
+    {
+      "title": "High-performance multi-GPU solver for describing nonlinear acoustic waves in homogeneous thermoviscous media",
+      "abstract": "A double-precision numerical solver to describe the propagation of high-intensity ultrasound fluctuations using a novel finite-amplitude compressible acoustic model working in multiple processing units (GPUs) is presented. The present solver is based on a conservative hyperbolic formulation derived from a variational analysis of the compressible Navier–Stokes equations and is implemented using an explicit high-order finite difference strategy. In this work, a WENO–Z reconstruction scheme along with a high-order finite-difference stencil are used to approximate the contributions of convective and diffusive spatial operators, respectively. The spatial operators are then associated to a low–storage Runge–Kutta scheme to integrate the system explicitly in time. The present multi-GPU implementation aims to make the best use of every single GPU and gain optimal performance of the algorithm on the per-node basis. To assess the performance of the present solver, a typical mini-server computer with 4 Tesla K80 dual GPU accelerators is used. The results show that the present formulation scales linearly for large domain problems. Moreover, when compared to an OpenMP implementation running with an i7 processor of 4.2 GHz, this is outperformed by our MPI-GPU implementation by a factor of 99. In this work, the present multi-GPU solver is illustrated with a three-dimensional simulation of a highly-intense focused ultrasound propagation.",
+      "year": "2018",
+      "journal": "Computers &amp; Fluids",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.compfluid.2018.03.008",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Computer Science"
+      ]
+    },
+    {
+      "title": "Numerical solutions of ideal quantum gas dynamical flows governed by semiclassical ellipsoidal-statistical distribution",
+      "abstract": "The ideal quantum gas dynamics as manifested by the semiclassical ellipsoidal-statistical (ES) equilibrium distribution derived in Wu\n                    et al.\n                    (Wu\n                    et al\n                    . 2012\n                    Proc. R. Soc. A\n                    468\n                    , 1799–1823 (\n                    doi:10.1098/rspa.2011.0673\n                    )) is numerically studied for particles of three statistics. This anisotropic ES equilibrium distribution was derived using the maximum entropy principle and conserves the mass, momentum and energy, but differs from the standard Fermi–Dirac or Bose–Einstein distribution. The present numerical method combines the discrete velocity (or momentum) ordinate method in momentum space and the high-resolution shock-capturing method in physical space. A decoding procedure to obtain the necessary parameters for determining the ES distribution is also devised. Computations of two-dimensional Riemann problems are presented, and various contours of the quantities unique to this ES model are illustrated. The main flow features, such as shock waves, expansion waves and slip lines and their complex nonlinear interactions, are depicted and found to be consistent with existing calculations for a classical gas.",
+      "year": "2013",
+      "journal": "Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+      "affiliation": "Institute of Applied Mechanics, National Taiwan University, Taipei 10764, Taiwan, Republic of China",
+      "doi": "https://doi.org/10.1098/rspa.2013.0413",
+      "category": "math-acm",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Mathematics",
+        "Medicine"
+      ]
+    }
+  ]
+}

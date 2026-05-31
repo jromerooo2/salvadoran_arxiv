@@ -1,0 +1,70 @@
+{
+  "author": "Carlos Landaverde Alvarado",
+  "orcid": "https://orcid.org/0000-0003-4384-6623",
+  "source": "ORCID + Crossref",
+  "total_publications": 5,
+  "author_categories": "chem-mat, chem-phys, eng-ece",
+  "publications": [
+    {
+      "title": "WIP: Developing and Accessing Programs for Improving Safety-Related Communications in Chemical Engineering Departments",
+      "abstract": "This work-in-progress research-to-practice paper discusses the implementation of initiatives led by graduate students for enhancing safety communication within a research-based graduate chemical engineering program. Research studies have underlined the difficulties in maintaining a strong safety culture in academia owing to differences in the prioritization of safety between research groups. Thus, we aim to develop and assess the impact of programs for fostering frequent and open communications in academic research settings. Our study focuses on communications between students and the Environmental Health & Safety (EHS) department., students and industry professionals., and students and their colleagues., with an emphasis on one-to-one and small group communications. To improve communications between students and EHS, we are making the incident reporting process readily accessible and facilitating meetings between EHS and students. To gain insights from industry, we are hosting visits from safety professionals and developing an industry-sponsored safety fellowship program. To increase the frequency of safety-related communications between students, we implemented a peer-to-peer lab evaluation program. This work demonstrates efforts that can be implemented to increase safety-related communications and improve the safety culture within engineering departments. Moving forward., we will continue implementing these programs and quantifying their impact through direct observations and surveys.",
+      "year": "2025",
+      "journal": "2025 IEEE Frontiers in Education Conference (FIE)",
+      "affiliation": "The University of Texas at Austin,McKetta Department of Chemical Engineering,Austin,TX,USA",
+      "doi": "https://doi.org/10.1109/fie63693.2025.11328587",
+      "category": "",
+      "crossref_subjects": [],
+      "fields_of_study": []
+    },
+    {
+      "title": "WIP: Integrating Sustainability in Engineering Through Undergraduate Research and Hands-on Laboratory Projects",
+      "abstract": "This work-in-progress research-to-practice paper details the development of undergraduate research experiences in the context of an undergraduate laboratory course to integrate the practice of sustainability in chemical engineering. In this research, we are blending undergraduate research experiences with laboratory courses that integrate experiment-based learning and project-based learning to: (1) inform the creation of effective undergraduate research experiences focused on sustainability, (2) implement processes to recycle non-conventional plastic streams produced by research laboratories, and (3) evaluate the viability of these processes and integrate sustainability research as an experimental class project in engineering laboratory courses. To this day, the research team has developed a process to reuse single-use research plastics (e.g., pipettes) by implementing a step-by-step method to recycle these materials. We continue to refine our methods, study potential campus applications, and evaluate their impact on the university sustainable goals. Additionally, our explored research methodology has been integrated into a laboratory course as a class project. In this manuscript, we present data on the research experience, the recycling process, and the project integration within the engineering laboratory course. Overall, our research serves as a catalyst to incorporate sustainability into engineering programs, create campus awareness on recycling methods, and train sustainable engineers. We expect to continue developing more practical educational opportunities on sustainability as we finalize the study and incorporate our results into our courses and campus.",
+      "year": "2025",
+      "journal": "2025 IEEE Frontiers in Education Conference (FIE)",
+      "affiliation": "The University of Texas at Austin,McKetta Department of Chemical Engineering,Austin,TX,USA",
+      "doi": "https://doi.org/10.1109/fie63693.2025.11328424",
+      "category": "chem-phys",
+      "crossref_subjects": [],
+      "fields_of_study": []
+    },
+    {
+      "title": "WIP: Graduate-Student Led Initiatives for Enhanced Safety Learning and an Improved Safety Culture in Engineering Departments",
+      "abstract": "This work-in-progress research-to-practice paper describes the development of safety projects and the implementation of safety-related initiates to improve the overall safety culture in engineering programs at the graduate level. Safety in chemical engineering refers to the application of engineering concepts in the identification of hazards, the management of risks, and the prevention of accidents that may result in loss of life and/or property. Multiple studies highlight how the practice of laboratory and process safety in engineering offers educational benefits and opportunities to help the professional development of students; nonetheless, the implementation of these educational experiences has been inconsistent, contributing to a gap in knowledge in engineering graduates. This research addresses graduate safety education. A high percentage of our graduates typically proceed to work in laboratory and/or manufacturing environments that require safety knowledge. Our goal is to contribute to the creation of a homogeneous safety training at the graduate level that prepares students for their careers more effectively. This study was developed by the Graduate Student Safety Committee at The University of Texas at Austin (GSSC at UT Austin). We are currently working on three projects to improve our departmental safety culture: (1) the deployment of safety-related flyers on campus, (2) a safety-focused seminar series, and (3) the creation of an engineering safety climate survey. In this manuscript, we describe the development and implementation of our current safety initiatives. We highlight how student-led initiatives can enhance safety culture in engineering departments and we summarize our initial efforts to make safety training at the graduate level more homogenous. We anticipate this work will lead to the creation of a safety training program available to engineering students.",
+      "year": "2024",
+      "journal": "2024 IEEE Frontiers in Education Conference (FIE)",
+      "affiliation": "The University of Texas at Austin,McKetta Department of Chemical Engineering,Austin,TX,USA",
+      "doi": "https://doi.org/10.1109/fie61694.2024.10893392",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Computer Science"
+      ]
+    },
+    {
+      "title": "WIP: Mobile Experiments for an Enhanced Engineering Learning Experience",
+      "abstract": "This work-in-progress research-to-practice paper describes the development and fabrication of pilot-scale mobile experiments and their use in classroom demonstrations to enhance the practical learning experience of chemical engineering students. We recently renovated the undergraduate teaching laboratories in the chemical engineering department at the University of Texas at Austin., our main objective with these renovations was to update and improve the content., teaching effectiveness., and general learning experience offered by our laboratory sequence. As we progressed in our renovation efforts., we noticed that our students had limited opportunities to experiment hands-on with real applications of concepts discussed in their courses before the junior year. Thus., we recognized it was a priority to provide these opportunities earlier in our program to improve learning and enhance engagement. To this end., we have developed four pilot-scale flexible experimental stations that are custom build., modular., and on wheels for easy transport to classrooms (i.e.., mobile experiments). The experiments are created to be used in demonstrations and they cover a wide area of engineering concepts and applications. In this work., we propose that the use of mobile experiments in engineering classes offers advantages over traditional engineering instruction: they can deliver a more tailored learning experience., they can be easily modified and updated to explain concepts., and they can promote an enhanced student-centered educational experience that invites discussion. By this work-in-progress., we take the initial steps to answer the following research question: Does the development and utilization of hands-on flexible experiments that can be transported to classes to demonstrate engineering concepts result in improved classroom learning and an enhanced engagement with the major? In this paper., we describe the development of one experiment and we highlight how mobile experiments can contribute to an enhance learning. We detail their proposed applications in core courses., their use in laboratories., and their advantages in demonstrations. We present preliminary data on student perception; this feedback suggests that the use of these experiments can enhance engagement and contribute to the learning and understanding of engineering concepts. We conclude by summarizing our future work to study the benefits of the use of pilot-scale mobile experiment demonstrations in lecture-based engineering courses.",
+      "year": "2024",
+      "journal": "2024 IEEE Frontiers in Education Conference (FIE)",
+      "affiliation": "The University of Texas at Austin,McKetta Department of Chemical Engineering,Austin,TX,USA",
+      "doi": "https://doi.org/10.1109/fie61694.2024.10893147",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Computer Science"
+      ]
+    },
+    {
+      "title": "Characterization of gas permeation in the pores of Zn(II)-based metal organic framework (MOF)/polymer composite membranes",
+      "abstract": "The separation of greenhouse gases from industrial processes is an ongoing focus for research aimed at mitigating environmental impacts. As a result, it is important to develop experimental techniques for the characterization of the transport of gases through porous crystalline materials with potential applications in gas separations. We report on the fabrication and characterization of gas transport in supported Zn(II)-based MOF membranes. The MOF membranes were used to develop an approach to study membrane quality and determine the transport mechanism through the pores of the crystalline membrane. Membranes were synthesized via a solvothermal method with structural defects sealed by a low-permeability polymer coating, allowing for the measurement of permeation in materials that do not form uniform, defect-free films. Membrane permeation was proportional to the inverse square root of the molecular weight of the permeant gases, indicating that diffusion occurs via Knudsen diffusion. Membrane quality was studied via selectivity measurements as a function of temperature. A study of the gas permeation through a polymer coated sparse MOF membrane, was used to confirm that gas transport occurs through the pores of the MOF, rather than through pinholes or defects in the structure.",
+      "year": "2020",
+      "journal": "Separation Science and Technology",
+      "affiliation": "Department of Chemical Engineering and the Macromolecules Innovation Institute, Virginia Tech, Blacksburg, Virginia, USA",
+      "doi": "https://doi.org/10.1080/01496395.2019.1646283",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Chemistry"
+      ]
+    }
+  ]
+}

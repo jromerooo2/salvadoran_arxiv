@@ -2,7 +2,7 @@
   "author": "Sergio Ernesto Aguilar Gutierrez",
   "orcid": "https://orcid.org/0000-0003-0308-0061",
   "source": "ORCID + Crossref",
-  "total_publications": 26,
+  "total_publications": 27,
   "author_categories": "phy-astro, phy-genrel, phy-hep, phy-phys, phy-quant",
   "publications": [
     {
@@ -237,6 +237,17 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "Okinawa Institute of Science and Technology Graduate University",
       "doi": "https://doi.org/10.1007/JHEP05(2026)080",
+      "category": "phy-astro",
+      "crossref_subjects": [],
+      "fields_of_study": []
+    },
+    {
+      "title": "Deforming the Double‐Scaled SYK and Reaching the Stretched Horizon From Finite Cutoff Holography",
+      "abstract": "We study the properties of the double‐scaled SYK (DSSYK) model under chord Hamiltonian deformations based on finite cutoff holography for general dilaton gravity theories with Dirichlet boundaries. The formalism immediately incorporates a lower‐dimensional analog of  deformations, denoted , as special cases. In general, the deformation mixes the chord basis of the Hilbert space in the seed theory, which we order through the Lanczos algorithm. The resulting Krylov complexity for the Hartle–Hawking state represents a wormhole length at a finite cutoff in the bulk. We study the thermodynamic properties of the deformed theory; the growth of Krylov complexity; the evolution of ‐point correlation functions with matter chords; and the entanglement entropy between the double‐scaled algebras of the DSSYK model for a given chord state. The latter, in the triple‐scaling limit, manifests as the minimal codimension‐two area in the bulk following the Ryu–Takayanagi formula. By performing a sequence of  and  deformations in the upper tail of the energy spectrum in the deformed DSSYK, we concretely realize the cosmological stretched horizon proposal in de Sitter holography by Susskind. We discuss other extensions with sine dilaton gravity, end‐of‐the‐world branes, and the Almheiri–Goel–Hu model.",
+      "year": "2026",
+      "journal": "Fortschritte der Physik",
+      "affiliation": "Qubits and Spacetime Unit Okinawa Institute of Science and Technology Graduate University Onna Okinawa Japan",
+      "doi": "https://doi.org/10.1002/prop.70112",
       "category": "phy-astro",
       "crossref_subjects": [],
       "fields_of_study": []

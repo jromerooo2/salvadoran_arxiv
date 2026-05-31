@@ -1,0 +1,35 @@
+{
+  "author": "Carlos Gutierrez",
+  "orcid": "https://orcid.org/0000-0002-0247-2664",
+  "source": "ORCID + Crossref",
+  "total_publications": 2,
+  "author_categories": "eng-civ, eng-mech",
+  "publications": [
+    {
+      "title": "Phosphorus speciation in municipal wastewater solids and implications for phosphorus recovery",
+      "abstract": "The most popular method for recovering phosphorus from municipal wastewater solids is precipitation of dissolved phosphate (e.g., Struvite). New technologies are being developed to recover particulate phosphorus that are not typically recovered. However, to identify the optimum recovery technology for a given wastewater solids stream, the speciation and concentration of phosphorus within the solids must first be determined for conventional wastewater treatment plants as well as those with enhanced phosphorus recovery. To this end, the present study: (1) examined the potential for phosphorus recovery as a function of the type of wastewater treatment plant process and P recovery technology; (2) assessed the potential for improving N:P2O5 ratios in the spent dewatered biosolids after phosphorus recovery and (3) determined the effects of solid treatment processes on phosphorus speciation in municipal wastewater solids. The results of the study indicate that the selection of technologies for P recovery should consider the type of wastewater treatment process and phosphorus speciation present. Finally, the current analysis suggests that only enhanced technologies that target particulate phosphorus phases have the potential to improve N:P2O5 in the spent biosolids.",
+      "year": "2020",
+      "journal": "Environmental Engineering Science",
+      "affiliation": "Civil, Architectural and Environmental Engineering Department, The University of Texas at Austin, Austin, Texas.",
+      "doi": "https://doi.org/10.1089/ees.2019.0360",
+      "category": "eng-civ",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Environmental Science"
+      ]
+    },
+    {
+      "title": "Take a Mixed Approach to Mixing",
+      "abstract": "Authors’ note: This column, prepared by members of the AWWA Coagulation and Filtration Committee, is the first in the series “Hot Topics in Water Quality,” presented by the Water Quality Technology Division, as introduced in the April 2019 issue of Journal AWWA. Next month's column will feature hot topics from the AWWA Source Water Protection Committee.",
+      "year": "2019",
+      "journal": "Journal AWWA",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1002/awwa.1295",
+      "category": "eng-mech",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Engineering"
+      ]
+    }
+  ]
+}

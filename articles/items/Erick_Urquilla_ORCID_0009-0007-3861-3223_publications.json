@@ -10,7 +10,7 @@
       "abstract": "We explore the background equivalence among three dark energy models by constructing explicit mappings between dynamical dark energy (DDE), interacting dark energy (IDE), and running vacuum (RV). In our approach, the dark sector functions that characterize each model-such as the equation of state parameter $\\bar{w}(a)$ for DDE, the interaction term $Q$ for IDE, and the functional form $\\Lambda(H)$ for RV-are transformed into one another under specific assumptions. Extending previous work by von Marttens et al. (2020), we demonstrate that running vacuum models, characterized by $\\Lambda(H) = a_0 + a_1 \\dot{H} + a_2 H^2$, can be reinterpreted as an interacting dark energy model with $Q = 3H\\gamma \\hat{\\rho}_c$, which in turn is equivalent to a dynamic dark energy model with an appropriately defined $\\bar{w}(a)$. Using Bayesian analysis with Type Ia supernovae, Baryon Acoustic Oscillations, and Cosmic Chronometers, our observational constraints confirm that these theoretical equivalences hold at the background level. This study underscores the importance of seeking convergence in dark energy models, facilitating a better understanding of the dark sector.",
       "year": "2025",
       "journal": "Physics of the Dark Universe",
-      "affiliation": "N/A",
+      "affiliation": "Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996, USA.",
       "doi": "https://doi.org/10.1016/j.dark.2025.101901",
       "category": "phy-astro"
     },
@@ -19,7 +19,7 @@
       "abstract": "In dense neutrino gases, the neutrino-neutrino coherent forward scattering gives rise to a complex flavor oscillation phenomenon not fully incorporated in simulations of neutron star mergers (NSM) and core collapse supernovae (CCSNe). Moreover, it has been proposed to be chaotic, potentially limiting our ability to predict neutrino flavor transformations in simulations. To address this issue, we explore how small flavor perturbations evolve in the nonlinear regime of the neutrino quantum kinetic equation within a narrow centimeter-scale region inside a NSM and a toy neutrino distribution. Our findings reveal that paths in the flavor state space of solutions with similar initial conditions diverge exponentially, exhibiting chaos. This inherent chaos makes the microscopic scales of neutrino flavor transformations unpredictable. However, the domain-averaged neutrino density matrix remains relatively stable, with chaos minimally affecting it. This particular property suggests that domain-averaged quantities remain reliable despite the exponential amplification of errors.\n          \n            \n            \n              \n                Published by the American Physical Society\n                2024",
       "year": "2024",
       "journal": "Physical Review D",
-      "affiliation": "University of Tennessee",
+      "affiliation": "Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996, USA.",
       "doi": "https://doi.org/10.1103/PhysRevD.109.103040",
       "category": "phy-hep"
     },
@@ -28,7 +28,7 @@
       "abstract": "A new chapter is opening in the theory of core-collapse supernovae and neutron star mergers as simulations of these events begin to incorporate fast flavor conversion (FFC) and other forms of neutrino flavor mixing. Using numerical experiments, we show that the approximations of FFC that have been implemented so far are limited by at least two of three factors: (1) approximating continuous evolution as a discrete sequence of instabilities, (2) using spatially homogeneous asymptotic states, and (3) assuming that FFC must be accompanied by instability. The factors we identify in this work will be important considerations as the research area progresses from initial exploratory studies to more quantitatively precise assessments.",
       "year": "2026",
       "journal": "Physical Review D",
-      "affiliation": "University of Tennessee",
+      "affiliation": "Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996, USA.",
       "doi": "https://doi.org/10.1103/xmxv-9sb2",
       "category": "phy-hep"
     }

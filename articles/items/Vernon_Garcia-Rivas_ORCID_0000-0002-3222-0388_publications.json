@@ -1,0 +1,153 @@
+{
+  "author": "Vernon Garcia-Rivas",
+  "orcid": "https://orcid.org/0000-0002-3222-0388",
+  "source": "ORCID + Crossref",
+  "total_publications": 11,
+  "author_categories": "bio-neuro, chem-biochem, eng-ece, health-ctr, health-pharm",
+  "publications": [
+    {
+      "title": "Legal blood alcohol concentration limits and alcohol-attributable traffic mortality rates: an analysis across 165 countries",
+      "abstract": "Summary Background Alcohol-impaired driving remains a leading cause of road traffic deaths worldwide, yet despite widespread adoption, the effectiveness of national blood alcohol concentration (BAC) limits across diverse structural conditions and population risks remains poorly understood. Methods We conducted a cross-national multilevel analysis of 165 countries using 2019 data on alcohol-attributable traffic mortality rates (ATMRs), national legal BAC limits, and structural country-level indicators. The primary outcome was ATMRs, defined as age-standardized death rates per 100,000 population among individuals aged 15 and older. Key predictors included national BAC limits, sex, and their interaction. Models were adjusted for national income, healthcare system infrastructure, gender inequality, and per capita alcohol consumption. Findings Lower national BAC limits were associated with lower ATMRs, with significantly stronger effects observed among males versus females (β = −2.58, p < 0.01). Structural factors, including lower national income (β = −0.31, p < 0.01), greater gender inequality (β = 1.61, p < 0.01), and higher alcohol consumption (β = 0.16, p < 0.001) each predicted higher ATMRs. Our final model explained 71% of the variance in ATMRs. Interpretation ATMRs represent a preventable global burden, with World Health Organization (WHO) BAC guidelines being exceeded in ∼30% of countries examined. While lower BAC limits reduce ATMRs overall for both women and men, men experienced a disproportionately higher share of the mortality burden. Further reduction in ATMRs would be maximized by considering country-level structural factors. Funding NIH T32AA029259(CLJC), U54AA027989(SAM), K01AA029706(YZ), R01AA030971(TLV), Office of the Assistant Secretary of Defense for Health Affairs W81XWH-22-2-0081, PASA3(MRP/AAM) and 10.13039/100000738Veterans Affairs VISN1-CDA(MRP).",
+      "year": "2026",
+      "journal": "eClinicalMedicine",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.eclinm.2026.103794",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Identifying clinical correlates of drinking clusters during treatment for alcohol use disorder",
+      "abstract": "Background and Objectives\n                    Despite the availability of treatments for alcohol use disorder (AUD), relapse prevalence and health‐related consequences associated with AUD remains high. Using data‐driven approaches that enhance generalizability can help elucidate relationships between treatment outcomes and alcohol consumption, aiding in the discovery of novel treatment targets for AUD subtypes.\n                  \n                  \n                    Methods\n                    \n                      We merged data (\n                      n\n                       = 2045) across four Phase 2 randomized clinical trials affiliated with the NIAAA Clinical Investigations Group and a Phase 3 trial (NIAAA Sponsored). Participants were clustered based on self‐reported drinking during treatment maintenance. A gradient boosted machine learning model with end‐of‐treatment clinical features was used to predict the clusters we identified.\n                    \n                  \n                  \n                    Results\n                    \n                      We identified a three‐cluster solution corresponding to low (\n                      M\n                      Standard Drinking Units (SDU)\n                       = 1.68,\n                      n\n                       = 1677), moderate (\n                      M\n                      SDU\n                       = 6.70,\n                      n\n                       = 253), and high (\n                      M\n                      SDU\n                       = 12.92,\n                      n\n                       = 115) clusters of alcohol consumption during treatment maintenance. We achieved modest prediction of the clusters (Accuracy\n                      Train \n                      = 71.0%; AUC\n                      Train\n                       = 0.79) using demographics and end‐of‐treatment clinical and biological assessments. Between‐cluster differences were observed between low and high clusters on measures of depression and anxiety (\n                      M\n                      Difference \n                      = 0.49, SE = 0.13,\n                      p\n                       = .004), drinking consequences (\n                      M\n                      Difference \n                      = 1.02, SE = 0.13,\n                      p\n                       &lt; .001) and liver functioning (0.39 ≤ \n                      M\n                      Difference\n                       ≤ 0.52, 0.12 ≤ SE ≤ 0.13, 0.001 ≤ \n                      p\n                       ≤ .005)\n                    \n                  \n                  \n                    Discussion and Conclusions\n                    These findings suggest that generalizable clusters of alcohol consumption exist across these clinical trials characterized by core demographics, clinical, and biological phenotypes, irrespective of the treatment received. We further show that some assessments may not be useful in distinguishing between higher levels of consumption.\n                  \n                  \n                    Scientific Significance\n                    Identifying predictive features of AUD subtypes, across different phases of treatment, can assist clinicians in identifying individuals who require additional support.",
+      "year": "2026",
+      "journal": "The American Journal on Addictions",
+      "affiliation": "Department of Psychiatry Yale University School of Medicine New Haven Connecticut USA",
+      "doi": "https://doi.org/10.1111/ajad.70132",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Alcohol use during pregnancy: the impact of social determinants of health on alcohol consumption among pregnant women",
+      "abstract": "Background\n            There is no safe amount or time of alcohol consumption during pregnancy; however, many women drink while pregnant placing themselves and their fetuses at risk for alcohol-related health complications. Social Determinants of Health (SDoH) impact alcohol use during pregnancy. Understanding the impact of SDoH across pregnancy will elucidate important information to reduce rates of prenatal alcohol exposure.\n          \n          \n            Methods\n            Cross-sectional data from the National Survey of Drug Use and Health from 2009 to 2019 was used to explore the impact of SDoH on alcohol use across pregnancy. The study assesses past month alcohol use and past month binge drinking, as well as various SDoH. The sample included 8,638 pregnant women.\n          \n          \n            Results\n            Over 9% of pregnant women reported alcohol use within the past 30 days and 5.25% reported drinking on three or more days within the past month. 3.65% reported past month binge drinking. Past month alcohol use and past month binge drinking decreased in the second and third trimesters; however, a subset of women continued alcohol use, including binge drinking. Specific SDoH emerged as increasing the likelihood of alcohol use within the past month, including not being married (ORs = 1.54 to 1.94), criminal justice involvement (arrested and booked; OR = 1.88), and past year psychiatric distress (OR = 1.86). Conversely, other determinants were associated with a lower likelihood of alcohol use, including identifying as Asian or Hispanic (ORs = 0.41 and 0.64) and unemployment (OR = 0.52) and other employment (OR = 0.66). Older age was associated with a lower likelihood of binge drinking within the past month (ORs = 0.32). Unique SDoH emerged when examining alcohol use by trimester.\n          \n          \n            Conclusion\n            Specific SDoH (i.e., not married, criminal justice involvement, past year psychiatric distress) are related to increased alcohol use during pregnancy, while other determinants (i.e., identifying as Asian or Hispanic, not requiring full time/part-time employment) are associated with a decreased risk for past month alcohol use. Older individuals (35–49 years old) and those with a high school education had a decreased likelihood of binge drinking. Accordingly, healthcare providers should screen all pregnant women for alcohol use throughout pregnancy, especially among populations or groups identified as being vulnerable to continue alcohol use during pregnancy.",
+      "year": "2025",
+      "journal": "Biology of Sex Differences",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1186/s13293-025-00731-6",
+      "category": "health-pharm",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Preclinical and clinical sex differences in the effects of alcohol on measures of brain dopamine: a systematic review",
+      "abstract": "Introduction\n            Dopamine is involved in reward processing and plays a critical role in the development and progression of alcohol use disorder (AUD). However, little is known about the effect of sex on the relationship between dopamine and alcohol use/AUD. There is a critical need to identify the neurobiological mechanisms that contribute to sex differences in AUD to inform treatment approaches. This study aimed to review existing literature on sex differences in the effects of alcohol on brain dopamine measures in animals and individuals with heavy drinking/AUD.\n          \n          \n            Methods\n            A systematic review was conducted using Preferred Reporting Items for Systematic reviews and Meta-Analyses (PRISMA) guidelines. PubMed was searched from inception to July 23rd, 2024.\n          \n          \n            Results\n            Of the 1,412 articles identified, 10 met study criteria (1 human, 9 animal), including in vivo (two positron emission tomography, four microdialysis) and ex vivo (two liquid chromatography, two fast-scan cyclic voltammetry) studies. Six studies included an alcohol challenge; three showed that females had greater alcohol-induced dopamine release than males in the ventral striatum and frontal cortex, while three showed no sex-related differences. Notably, the latter three studies examined sex in a combined AUD/control group or measured dopamine levels days after alcohol exposure. Two studies that examined the effects of prenatal alcohol exposure showed that prenatal-alcohol-exposed male offspring versus sex-matched air-exposed controls had greater prefrontal cortical dopamine D1 receptor availability, and prenatal-alcohol-exposed female offspring versus sex-matched air-exposed controls had greater striatal dopamine concentration. Two studies investigating the mu-opioid receptor (MOR) regulation of alcohol-induced dopamine release showed a faster decline in females relative to males while the other study found females may be less dependent on MOR activity at lower doses of alcohol relative to higher doses.\n          \n          \n            Conclusions\n            This systematic review showed mixed results regarding sex differences in brain dopamine measures in alcohol-exposed animals and individuals with AUD, which may arise from differences in the timing, quantity, and duration of alcohol exposure, species, conditions, models, and techniques. More research examining the effect of sex on the relationship between alcohol use and brain dopamine measures is needed to enhance our understanding of AUD development, progression, and treatment in both females and males.",
+      "year": "2025",
+      "journal": "Biology of Sex Differences",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1186/s13293-025-00706-7",
+      "category": "health-pharm",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Sex differences in the microglial response to stress and chronic alcohol exposure in mice",
+      "abstract": "Background\n            Women are more susceptible to stress-induced alcohol drinking, and preclinical data suggest that stress can increase alcohol intake in female rodents; however, a comprehensive understanding of the neurobiological processes underlying this sex difference is still emerging. Neuroimmune signaling, particularly by microglia, the brain’s macrophages, is known to contribute to dysregulation of limbic circuits following stress and alcohol exposure. Females exhibit heightened immune reactivity, so we set out to characterize sex differences in the microglial response to stress and alcohol exposure.\n          \n          \n            Methods\n            Male and female C57BL/6J mice were administered alcohol over 15 or 22 trials of a modified Drinking in the Dark paradigm, with repeated exposure to inescapable footshock stress and the stress-paired context. Mice were perfused immediately after drinking and we performed immunohistochemical analyses of microglial density, morphology, and protein expression in subregions of the amygdala and hippocampus.\n          \n          \n            Results\n            We observed dynamic sex differences in microglial phenotypes at baseline and in response to stress and alcohol. Microglia in the hippocampus displayed more prominent sex differences and heightened reactivity to stress and alcohol. Chronic alcohol exposure decreased density of amygdala microglia and lysosomal expression.\n          \n          \n            Conclusion\n            We analyzed multiple measures of microglial activation, resulting in a comprehensive assessment of microglial changes mediated by sex, stress, and alcohol. These findings highlight the complexity of microglial contributions to the development of AUD and comorbid mood and stress disorders in men and women.",
+      "year": "2025",
+      "journal": "Biology of Sex Differences",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1186/s13293-025-00701-y",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Alcohol drinking is attenuated by PDE4 inhibition but partial microglia depletion is not sufficient to block stress-induced escalation of alcohol intake in female mice",
+      "abstract": "Stress is a major contributing factor to binge drinking and development of alcohol use disorders (AUD), particularly in women. Both stress and chronic ethanol can enhance neuroinflammatory processes, which may dysregulate limbic circuits involved in ethanol reinforcement. Clinical and preclinical studies have identified sex differences in alcohol intake in response to neuroinflammatory triggers. Since both cyclic AMP (cAMP) signaling and microglial activation contribute to neuroinflammation, we explored their contribution to stress-induced ethanol drinking in mice. To this end, we first trained C57BL/6J male and female mice to volitionally drink ethanol through a modified version of the \"Drinking-in-the-Dark\" paradigm. We then assessed whether exposure to foot shock stress followed by repeated exposure to the previously stress-paired context might alter volitional ethanol drinking. We observed that stress exposure resulted in a delayed increase in ethanol intake, but only in female mice. The anti-inflammatory drug Apremilast, an inhibitor of phosphodiesterase type 4 (PDE4; the primary enzyme for cAMP degradation in the brain), reduced ethanol intake and decreased preference for ethanol regardless of stress exposure in females. In contrast, a partial pharmacological depletion of microglia via PLX3397 treatment did not alter baseline ethanol drinking or stress-induced ethanol drinking significantly in female mice. This study shows that female mice are more susceptible to stress-induced ethanol drinking than males, and that this occurs even after partial microglial depletion. In addition, modulation of cAMP signaling by Apremilast administration reduced ethanol drinking regardless of stress exposure, supporting the idea that it might be useful for treatment of AUD.",
+      "year": "2025",
+      "journal": "Alcohol",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.alcohol.2024.12.004",
+      "category": "chem-biochem",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Individual variations in motives for nicotine self-administration in male rats: evidence in support for a precision psychopharmacology",
+      "abstract": "The significant heterogeneity in smoking behavior among smokers, coupled with the inconsistent efficacy of approved smoking cessation therapies, supports the presence of individual variations in the mechanisms underlying smoking. This emphasizes the need to shift from standardized to personalized smoking cessation therapies. However, informed precision medicine demands precision fundamental research. Tobacco smoking is influenced and sustained by diverse psychopharmacological interactions between nicotine and environmental stimuli. In the classical experimental rodent model for studying tobacco dependence, namely intravenous self-administration of nicotine, seeking behavior is reinforced by the combined delivery of nicotine and a discrete cue (nicotine+cue). Whether self-administration behavior is driven by the same psychopharmacological mechanisms across individual rats remains unknown and unexplored. To address this, we employed behavioral pharmacology and unbiased cluster analysis to investigate individual differences in the mechanisms supporting classical intravenous nicotine self-administration (0.04 mg/kg/infusion) in male outbred Sprague–Dawley rats. Our analysis identified two clusters: one subset of rats sought nicotine primarily for its reinforcing effects, while the second subset sought nicotine to enhance the reinforcing effects of the discrete cue. Varenicline (1 mg/kg i.p.) reduced seeking behavior in the former group, whereas it tended to increase in the latter group. Crucially, despite this fundamental qualitative difference revealed by behavioral manipulation, the two clusters exhibited quantitatively identical nicotine+cue self-administration behavior. The traditional application of rodent models to study the reinforcing and addictive effects of nicotine may mask individual variability in the underlying motivational mechanisms. Accounting for this variability could significantly enhance the predictive validity of translational research.",
+      "year": "2024",
+      "journal": "Translational Psychiatry",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1038/s41398-024-02774-6",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Sex differences in stress-induced alcohol intake: a review of preclinical studies focused on amygdala and inflammatory pathways",
+      "abstract": "Clinical studies suggest that women are more likely than men to relapse to alcohol drinking in response to stress; however, the mechanisms underlying this sex difference are not well understood. A number of preclinical behavioral models have been used to study stress-induced alcohol intake. Here, we review paradigms used to study effects of stress on alcohol intake in rodents, focusing on findings relevant to sex differences. To date, studies of sex differences in stress-induced alcohol drinking have been somewhat limited; however, there is evidence that amygdala-centered circuits contribute to effects of stress on alcohol seeking. In addition, we present an overview of inflammatory pathways leading to microglial activation that may contribute to alcohol-dependent behaviors. We propose that sex differences in neuronal function and inflammatory signaling in circuits centered on the amygdala are involved in sex-dependent effects on stress-induced alcohol seeking and suggest that this is an important area for future studies.",
+      "year": "2022",
+      "journal": "Psychopharmacology",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/s00213-022-06120-w",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Varenicline Targets the Reinforcing-Enhancing Effect of Nicotine on Its Associated Salient Cue During Nicotine Self-administration in the Rat.",
+      "abstract": "Nicotine is acknowledged as the key addictive compound of tobacco. Varenicline (Champix® or Chantix®), mainly acting as a partial agonist at the α4β2 nicotinic receptor, is an approved smoking cessation pharmacotherapy, although with efficacy limited to a portion of smokers. Smokers differ in the motives that drive their drug seeking and Varenicline might be more efficient in some groups more than others. Studies in rodents revealed that nicotine-seeking is strongly supported by complex interactions between nicotine and environmental cues, and notably the ability of nicotine to enhance the reinforcing properties of salient environmental stimuli. It is not yet understood whether the decrease of nicotine-seeking by acute Varenicline in rats results from antagonism of the primary reinforcing effects of nicotine, of the reinforcement-enhancing effect of nicotine on cues, or of a combination of both. Thanks to a protocol that allows assessment of the reinforcement-enhancing effect of nicotine on cues during self-administration in rats, we showed that Varenicline targets both nicotine reinforcing effects and reinforcement-enhancing effect of nicotine on cues. Importantly, individual variations in the latter determined the amplitude of acute Varenicline-induced decrease in seeking. These results suggest that Varenicline might be more beneficial in smokers who are more sensitive to nicotine effects on surrounding stimuli.",
+      "year": "2019",
+      "journal": "Frontiers in Behavioral Neuroscience",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.3389/fnbeh.2019.00159",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Not all smokers appear to seek nicotine for the same reasons: implications for preclinical research in nicotine dependence.",
+      "abstract": "Tobacco use leads to 6 million deaths every year due to severe long‐lasting diseases. The main component of tobacco, nicotine, is recognized as one of the most addictive drugs, making smoking cessation difficult, even when 70 percent of smokers wish to do so. Clinical and preclinical studies have demonstrated consistently that nicotine seeking is a complex behavior involving various psychopharmacological mechanisms. Evidence supports that the population of smokers is heterogeneous, particularly as regards the breadth of motives that determine the urge to smoke. Here, we review converging psychological, genetic and neurobiological data from clinical and preclinical studies supporting that the mechanisms controlling nicotine seeking may vary from individual to individual. It appears timely that basic neuroscience integrates this heterogeneity to refine our understanding of the neurobiology of nicotine seeking, as tremendous progress has been made in modeling the various psychopharmacological mechanisms driving nicotine seeking in rodents. For a better understanding of the mechanisms that drive nicotine seeking, we emphasize the need for individual‐based research strategies in which nicotine seeking, and eventually treatment efficacy, are determined while taking into account individual variations in the mechanisms of nicotine seeking.",
+      "year": "2018",
+      "journal": "Addiction Biology",
+      "affiliation": "Université de Bordeaux France",
+      "doi": "https://doi.org/10.1111/adb.12607",
+      "category": "health-pharm",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Plant-derived polyphenols attenuate lipopolysaccharide-induced nitric oxide and tumour necrosis factor production in murine microglia and macrophages.",
+      "abstract": "Lipopolysaccharides released during bacterial infections induce the expression of pro‐inflammatory cytokines and lead to complications such as neuronal damage in the CNS and septic shock in the periphery. While the initial infection is treated by antibiotics, anti‐inflammatory agents would be advantageous add‐on medications. In order to identify such compounds, we have compared 29 commercially available polyphenol‐containing plant extracts and pure compounds for their ability to prevent LPS‐induced up‐regulation of NO production. Among the botanical extracts, bearberry and grape seed were the most active preparations, exhibiting IC50 values of around 20 μg/mL. Among the pure compounds, IC50 values for apigenin, diosmetin and silybin were 15, 19 and 12 μM, in N‐11 murine microglia, and 7, 16 and 25 μM, in RAW 264.7 murine macrophages, respectively. In addition, these flavonoids were also able to down‐regulate LPS‐induced tumour necrosis factor production. Structure‐activity relationships of the flavonoids demonstrated three distinct principles: (i) flavonoid‐aglycons are more potent than the corresponding glycosides, (ii) flavonoids with a 4′‐OH substitution in the B‐ring are more potent than those with a 3′‐OH‐4′‐methoxy substitution, (iii) flavonoids of the flavone type (with a C2=C3 double bond) are more potent than those of the flavanone type (with a at C2‐C3 single bond).",
+      "year": "2008",
+      "journal": "Molecular Nutrition &amp; Food Research",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1002/mnfr.200700180",
+      "category": "bio-neuro",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Chemistry",
+        "Medicine"
+      ]
+    }
+  ]
+}

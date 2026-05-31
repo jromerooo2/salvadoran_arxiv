@@ -2,7 +2,7 @@
   "author": "Erick S Vasquez-Guardado",
   "orcid": "https://orcid.org/0000-0002-4811-6155",
   "source": "ORCID + Crossref",
-  "total_publications": 18,
+  "total_publications": 20,
   "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, math-acm",
   "publications": [
     {
@@ -166,6 +166,28 @@
       "affiliation": "Dave C. Swalm School of Chemical Engineering",
       "doi": "https://doi.org/10.1039/c4ra05055j",
       "category": "eng-chem"
+    },
+    {
+      "title": "Magnetic Cellulose Nanocrystal Composites: Synthesis, Properties, Applications, and Opportunities",
+      "abstract": "Cellulose nanocrystals (CNCs) are abundant, renewable, biodegradable, non-toxic, and cost-effective nanomaterials with exceptional properties, making them highly appealing for nanocomposite material fabrication. Recognized for their sustainability, CNCs are emerging as promising substrates for the fabrication of functional, stimuli-responsive nanomaterials. This review highlights nanocomposites comprising magnetic nanoparticles with various forms of cellulose-based materials, with a primary focus on magnetic cellulose nanocrystal (MCNC) composites, yielding materials capable of controlled, on-demand responses to external magnetic fields. The magnetic properties of these nanocomposites can be precisely tuned by adjusting the magnetic nanoparticle content on CNC surfaces. At the nanoscale, magnetic CNCs exhibit remarkable properties, including facile and rapid magnetic separation, which holds great potential for numerous applications. This review examines the latest synthesis and modification methods for CNCs functionalized with various magnetic nanoparticles, as well as their applications in the biological, packaging, environmental, and biomedical fields.",
+      "year": "2026",
+      "journal": "Nanomaterials",
+      "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park Ave., Dayton, OH 45469, USA",
+      "doi": "https://doi.org/10.3390/nano16110645",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": []
+    },
+    {
+      "title": "Polymer-Derived Silicon Oxycarbide (SiOC) and Silicon Carbonitride (SiCN) Ceramics for Advanced Electrochemical Energy Storage Applications",
+      "abstract": "Preceramic polymers, especially silicon oxycarbide (SiOC) and silicon carbonitride (SiCN) ceramics, have gained significant attention due to their wide range of applications in many fields, particularly in energy storage devices beyond conventional lithium-ion batteries (LIBs). This review focuses on the synthesis, structural characteristics, and properties of SiOC and SiCN ceramics as electrodes for battery applications. Furthermore, their promising applications as electrode materials for energy storage systems are explored, along with the most recent advances in the development of such materials and their use in lithium-ion batteries (LIBs), lithium-sulfur batteries (LSBs), potassium-ion batteries (PIBs), sodium-ion batteries (SIBs), and supercapacitors. This review addresses the distinct advantages of SiOC and SiCN ceramics, including high thermal stability, mechanical robustness, and adaptable microstructures. It also examines the challenges associated with the commercialization of these ceramics, including issues related to electronic conductivity and ion transport pathways.",
+      "year": "2026",
+      "journal": "Journal of Composites Science",
+      "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, Dayton, OH 45469-0256, USA",
+      "doi": "https://doi.org/10.3390/jcs10060280",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": []
     }
   ]
 }
