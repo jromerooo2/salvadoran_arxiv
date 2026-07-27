@@ -1,0 +1,22 @@
+{
+  "author": "Luis Huezo",
+  "orcid": "https://orcid.org/0000-0003-2099-544X",
+  "source": "ORCID + Crossref",
+  "total_publications": 1,
+  "author_categories": "health-ctr",
+  "publications": [
+    {
+      "title": "Manure nutrient cycling in US animal agriculture basins—North Carolina case study",
+      "abstract": "Nutrient cycling in crop–animal production is impacted by changes in both systems, with imbalance hotspots in concentrated animal production regions severely impacting water quality. This study assesses manure–crop nutrient balances in five river basins in North Carolina and demonstrates a new approach for partial nutrient balances along hydrological boundaries. County‐level crop production data were combined with crop‐type spatial distribution data to derive spatially referenced nutrient uptake and removal. Similarly, spatially referred animal production inventory data were used to derive excreted and recovered manure nutrients. Partial nutrient balances were developed for both N and P in basins and hydrologic units. Excreted manure N and P were 139% and 159% of respective plant N and P removal at harvest across the five basins. Finer geographical scales revealed hotspots for manure surplus, particularly within the Cape Fear basin (up to 96% N and 97% P). Despite N hotspots, plant‐available manure N met only 38% of crop N demand due to significant losses during storage. Plant‐available manure P exceeded crop P removal by 54% over the entire area. Cape Fear showed the greatest P excess, 76% greater than crop removal. This study contributes to nutrient cycling improvements by connecting crop–animal nutrient budgets to hydrologic resources. Furthermore, we show the value of finer spatial scales to identify hotspots that play a significant role in nutrient losses. We conclude that nutrient‐surplus basins require, in addition to manure nutrient conservation, a basin‐wide redistribution and export strategies to address nutrient excesses and water quality impacts.",
+      "year": "2024",
+      "journal": "Journal of Environmental Quality",
+      "affiliation": "Biological and Agricultural Engineering Department North Carolina State University  Raleigh North Carolina USA",
+      "doi": "https://doi.org/10.1002/jeq2.20545",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    }
+  ]
+}

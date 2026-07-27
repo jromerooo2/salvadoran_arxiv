@@ -1,0 +1,72 @@
+{
+  "author": "Rebeca Nicole Rodriguez",
+  "orcid": "https://orcid.org/0000-0002-0129-2303",
+  "source": "ORCID + Crossref",
+  "total_publications": 5,
+  "author_categories": "chem-biochem, chem-mat, health-ctr",
+  "publications": [
+    {
+      "title": "Investigating Olfactory Receptor 558 during Early Postnatal Development",
+      "abstract": "Sex differences in blood pressure are well-established: during the reproductive years, females have blood pressure that is ~10mmHg less than that of males. Previously, we reported that an evolutionarily conserved G protein-coupled receptor, Olfactory receptor 558 (Olfr558), is required for sex differences in blood pressure (PMID: 38507492). We also found that Olfr558 is expressed in vascular smooth muscle cells, and, in renin positive juxtaglomerular granular cells of the kidney. Given that sex differences in blood pressure first appear during puberty, this study aimed to investigate changes in Olfr558 expression during early postnatal development. To investigate this, we collected tissues with the highest Olfr558 expression (heart, kidney, skeletal muscle, and brown adipose tissue) from both male and female mice. In all of these tissues, Olfr558 is found in vascular smooth muscle. Four developmental timepoints were selected for tissue collections: postnatal day 0 (P0), postnatal day 20 (P20, directly after ‘mini-puberty’), 6-weeks (around the time of puberty), and 10-weeks (sexually mature adults). Olfr558 mRNA expression levels were quantified using quantitative polymerase chain reaction (qPCR). The Ct values for each tissue were normalized to a reference gene which was stable across age/sex: TATA-Box Binding Protein (TBP, for kidney, skeletal muscle, and brown adipose tissue) or Glyceraldehyde 3-Phosphate Dehydrogenase (GAPDH, for heart). ΔCt values were normalized to P0 males for each tissue. The results revealed a tissue-specific expression pattern for Olfr558. In the kidney, Olfr558 expression levels increase from P0 to P20 then decrease from P20 to 6 weeks, in both males and females. Sex differences in kidney Olfr558 expression are not seen at P0 or P20 but emerge at 6-weeks, with females exhibiting higher Olfr558 expression levels than males (females: 0.720 AU +/- 0.021 N=7 males: 0.473 AU +/- 0.032, N=7 p=0.029). In the heart, a transient sex difference is seen only at the P20 timepoint, with females having lower expression than males (females: 0.777 AU +/- 0.047 N=7, males: 0.977 AU +/- 0.017 N=7 p=0.031). In skeletal muscle, sex differences were seen at P20 and 6 weeks, with males exhibiting higher Olfr558 expression than females (P20 females: 0.784 AU +/- 0.048 N=7, P20 males: 1.002 AU +/- 0.027 N=7, p=0.001; 6 wk females: 0.405 AU +/- 0.022 N=7, 6 wk males: 0.567 AU +/- 0.036, p=0.0066). Both sexes exhibited decreased expression in skeletal muscle by 10 weeks, and sex differences were no longer apparent at 10 weeks. No significant expression changes were noted in brown adipose tissue throughout early development for either sex. The results support a tissue-specific pattern of expression for Olfr558 during early postnatal development; notably, sex differences in Olfr558 expression emerge around the time of puberty in the kidney and are sustained thereafter. Future studies will further explore the role of Olfr558’s sibling receptor Olfactory receptor 78 (Olfr78) during early development and the implications of Olfr558 expression on renin-expressing cells during development.\n                  This abstract was presented at the American Physiology Summit 2026 and is only available in HTML format. There is no downloadable file or PDF version. The Physiology editorial board was not involved in the peer review process.",
+      "year": "2026",
+      "journal": "Physiology",
+      "affiliation": "Johns Hopkins University School of Medicine, Baltimore, Maryland, United States",
+      "doi": "https://doi.org/10.1152/physiol.2026.41.s1.2299141",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": []
+    },
+    {
+      "title": "Deleting the ribosomal prolyl hydroxylase OGFOD1 protects mice against diet-induced obesity and insulin resistance",
+      "abstract": "Type 2 diabetes predisposes patients to heart disease, which is the primary cause of death across the globe. Type 2 diabetes often accompanies obesity and is defined by insulin resistance and abnormal glucose handling. Insulin resistance impairs glucose uptake and results in hyperglycemia, which damages tissues such as kidneys, liver, and heart. 2-oxoglutarate (2-OG)- and iron-dependent oxygenases (2-OGDOs), a family of enzymes regulating various aspects of cellular physiology, have been studied for their role in obesity and diet-induced insulin resistance. However, nothing is known of the 2-OGDO family member 2-oxoglutarate and iron-dependent prolyl hydroxylase domain containing protein 1 (OGFOD1) in this setting. OGFOD1 deletion leads to protection in cardiac ischemia-reperfusion injury and cardiac hypertrophy, which are two cardiac events that can lead to heart failure. Considering the remarkable correlation between heart disease and diabetes, the cardioprotection observed in OGFOD1-knockout mice led us to challenge these knockouts with high-fat diet. Wildtype mice fed a high-fat diet developed diet-induced obesity, insulin resistance, and glucose intolerance, but OGFOD1 knockout mice fed this same diet were resistant to diet-induced obesity and insulin resistance. These results support OGFOD1 down-regulation as a strategy for preventing obesity and insulin handling defects.",
+      "year": "2024",
+      "journal": "PLOS ONE",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1371/journal.pone.0304761",
+      "category": "chem-biochem",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "OGFOD1 modulates the transcriptional and proteomic landscapes to alter isoproterenol-induced hypertrophy susceptibility",
+      "abstract": "Cardiac hypertrophy is associated with increased translation. However, little is known of the mechanisms that regulate translation in hypertrophy. Members of the 2-oxoglutarate-dependent dioxygenase family regulate several aspects of gene expression, including translation. An important member of this family is OGFOD1. Here, we show OGFOD1 accumulates in failing human hearts. Upon OGFOD1 deletion, murine hearts showed transcriptomic and proteomic changes, with only 21 proteins and mRNAs (0.6%) changing in the same direction. Additionally, OGFOD1-KO mice were protected from induced hypertrophy, supporting a role for OGFOD1 in the cardiac response to chronic stress.",
+      "year": "2023",
+      "journal": "Journal of Molecular and Cellular Cardiology",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.yjmcc.2023.04.002",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Casein kinases are required for the stability of the glucose-sensing receptor Rgt2 in yeast",
+      "abstract": "In yeast, glucose induction of HXT (glucose transporter gene) expression is achieved via the Rgt2 and Snf3 glucose sensing receptor (GSR)-mediated signal transduction pathway. The membrane-associated casein kinases Yck1 and Yck2 (Ycks) are involved in this pathway, but their exact role remains unclear. Previous work suggests that the Ycks are activated by the glucose-bound GSRs and transmit the glucose signal from the plasma membrane to the nucleus. However, here we provide evidence that the YCks are constitutively active and required for the stability of the Rgt2 receptor. Cell surface levels of Rgt2 are significantly decreased in a yck1Δyck2ts mutant, but this is not due to endocytosis-mediated vacuolar degradation of the receptor. Similar observations are made in an akr1Δ mutant, where the Ycks are no longer associated with the membrane, and in a sod1Δ mutant in which the kinases are unstable. Of note, in an akr1Δ mutant, both the Ycks and Rgt2 are mislocalized to the cytoplasm, where Rgt2 is stable and functions as an effective receptor for glucose signaling. We also demonstrate that Rgt2 is phosphorylated on the putative Yck consensus phosphorylation sites in its C-terminal domain (CTD) in a Yck-dependent manner and that this glucose-induced modification is critical for its stability and function. Thus, these results indicate a role for the Ycks in stabilizing Rgt2 and suggest that Rgt2 may use glucose binding as a molecular switch not to activate the Ycks but to promote Yck-dependent interaction and phosphorylation of the CTD that increases its stability.",
+      "year": "2022",
+      "journal": "Scientific Reports",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1038/s41598-022-05569-1",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Glucose regulation of the paralogous glucose sensing receptors Rgt2 and Snf3 of the yeast Saccharomyces cerevisiae",
+      "abstract": "BACKGROUND\nThe yeast Saccharomyces cerevisiae senses extracellular glucose levels through the two paralogous glucose sensing receptors Rgt2 and Snf3, which appear to sense high and low levels of glucose, respectively.\n\n\nMETHODS\nWestern blotting and qRT-PCR were used to determine expression levels of the glucose sensing receptors.\n\n\nRESULTS\nRgt2 and Snf3 are expressed at different levels in response to different glucose concentrations. SNF3 expression is repressed by high glucose, whereas Rgt2 is turned over in response to glucose starvation. As a result, Rgt2 is predominant in cells grown on high glucose, whereas Snf3 is more abundant of the two paralogs in cells grown on low glucose. When expressed from a constitutive promoter, however, Snf3 behaves like Rgt2, being able to transduce the high glucose signal that induces HXT1 expression. Of note, constitutively active Rgt2 does not undergo glucose starvation-induced endocytic downregulation, whereas signaling defective Rgt2 is constitutively targeted for vacuolar degradation. These results suggest that glucose protects Rgt2 from endocytic degradation and reveal a previously unknown function of glucose as a signaling molecule that regulates the stability of its receptor.\n\n\nCONCLUSION\nExpression of Rgt2 and Snf3 is regulated by different mechanisms: Rgt2 expression is highly regulated at the level of protein stability; Snf3 expression is mainly regulated at the level of transcription.\n\n\nGENERAL SIGNIFICANCE\nThe difference in the roles of Rgt2 and Snf3 in glucose sensing is a consequence of their cell surface abundance rather than a result of the two paralogous proteins having different functions.",
+      "year": "2021",
+      "journal": "Biochimica et Biophysica Acta (BBA) - General Subjects",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.bbagen.2021.129881",
+      "category": "health-ctr",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    }
+  ]
+}

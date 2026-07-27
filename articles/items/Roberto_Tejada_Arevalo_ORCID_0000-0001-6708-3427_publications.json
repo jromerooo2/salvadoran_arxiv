@@ -2,7 +2,7 @@
   "author": "Roberto Tejada Arevalo",
   "orcid": "https://orcid.org/0000-0001-6708-3427",
   "source": "ORCID + Crossref",
-  "total_publications": 14,
+  "total_publications": 15,
   "author_categories": "phy-astro",
   "publications": [
     {
@@ -130,6 +130,19 @@
       "affiliation": "N/A",
       "doi": "https://doi.org/10.3847/1538-3881/ab6663",
       "category": "phy-astro"
+    },
+    {
+      "title": "Next-generation Atmosphere Models for Giant Planets with Application to Coupled Interior Composition and Spectral Evolution. I. Cloudless Models with Equilibrium Chemistry",
+      "abstract": "We present updated atmosphere models designed for calculating the postformation evolution and cooling of giant planets with masses between 0.3 and 10\n                    M\n                    J\n                    . Our tables provide the entropy in the convective region at the base of the atmosphere, temperature (\n                    T\n                    )–pressure (\n                    P\n                    ) profiles, and emergent spectra for atmospheres calculated using the radiative transfer code\n                    CoolTLusty\n                    for\n                    T\n                    eff\n                    values over the range of 100–1400 K and log\n                    10\n                    (\n                    g\n                    ) from 2.8 to 4.4 (cgs) with the latest opacities and equations of state (EOSs). Each spectrum and thermal profile is calculated using line-by-line opacity sampling. We construct tables at three different metallicities (\n                    Z\n                     = 1, 3.16, 10\n                    Z\n                    ⊙\n                    ) and two different helium fractions (\n                    Y\n                     = 0.15, 0.275), with the improvement that we adopt a metal-inclusive EOS that treats heavy elements consistently with the opacity metallicity (rather than folding it into an effective\n                    Y\n                    ). The result is tables that accommodate both changes in\n                    Y\n                    due to helium rain and potential variations in\n                    Z\n                    during envelope evolution. We present a comparison between\n                    T\n                    and\n                    P\n                    profiles, modeled spectra, and evolutionary tracks, and find that on-the-fly interpolation of boundary conditions in atmospheric composition has a notable impact on the late stages of giant planet evolution, altering the timing of helium rain and therefore the subsequent cooling history and atmospheric helium depletion. We also provide a ready-to-use toolkit that generates spectra and boundary conditions via efficient interpolation across the four-dimensional parameter space\n                    \n                      \n                        \n                      \n                      \n                        (\n                        \n                          \n                            T\n                          \n                          \n                            eff\n                          \n                        \n                        ,\n                        \n                          \n                            log\n                          \n                          \n                            10\n                          \n                        \n                        g\n                        ,\n                        Y\n                        ,\n                        Z\n                        )\n                      \n                    \n                    , which is useful for postprocessing evolutionary tracks to produce fully time-resolved spectral evolutions.",
+      "year": "2026",
+      "journal": "The Astrophysical Journal",
+      "affiliation": "Princeton University",
+      "doi": "https://doi.org/10.3847/1538-4357/ae7f20",
+      "category": "phy-astro",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Physics"
+      ]
     }
   ]
 }

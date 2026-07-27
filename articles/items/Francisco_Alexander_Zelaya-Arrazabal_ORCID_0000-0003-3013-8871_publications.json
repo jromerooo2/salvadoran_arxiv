@@ -2,7 +2,7 @@
   "author": "Francisco Alexander Zelaya-Arrazabal",
   "orcid": "https://orcid.org/0000-0003-3013-8871",
   "source": "ORCID + Crossref",
-  "total_publications": 11,
+  "total_publications": 12,
   "author_categories": "eng-ece, math-acm",
   "publications": [
     {
@@ -103,6 +103,19 @@
       "affiliation": "N/A",
       "doi": "https://doi.org/10.1109/naps.2018.8600636",
       "category": "eng-ece"
+    },
+    {
+      "title": "Switch-Based Oscillation Control via State-Space Projections in Interconnected Systems",
+      "abstract": "Oscillatory dynamics are inherent in many circuits and systems, arising from the exchange of energy in reactive components and feedback interconnections. While oscillations are central to resonant design and synchronization phenomena, insufficient damping can degrade performance and compromise stability. This paper introduces a projection-based switched control framework that suppresses oscillations by constructing a switching surface in state space and applying strategically timed on–off actions. The methodology leverages modal decompositions and orthogonal projections, enabling significant attenuation of targeted dominant modes without sustained actuation. The approach is first illustrated on an RLC circuit, and then extended to benchmark power systems, where the application is referred to as Switched Power Oscillation Damping (S-POD). Simulation results demonstrate rapid, high-impact on oscillation amplitude reduction, underscoring the potential of the proposed framework as a complementary layer to conventional continuous damping in circuits and networked systems.",
+      "year": "2026",
+      "journal": "IEEE Transactions on Circuits and Systems I: Regular Papers",
+      "affiliation": "Department of Electrical Engineering and Computer Science, The University of Tennessee, Knoxville, TN, USA",
+      "doi": "https://doi.org/10.1109/TCSI.2026.3664676",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Computer Science"
+      ]
     }
   ]
 }

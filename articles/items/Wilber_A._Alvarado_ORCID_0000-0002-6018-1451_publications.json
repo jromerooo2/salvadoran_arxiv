@@ -1,0 +1,23 @@
+{
+  "author": "Wilber A. Alvarado",
+  "orcid": "https://orcid.org/0000-0002-6018-1451",
+  "source": "ORCID + Crossref",
+  "total_publications": 1,
+  "author_categories": "chem-biochem",
+  "publications": [
+    {
+      "title": "Description of the ovarian microbiota of Aedes aegypti (L) Rockefeller strain",
+      "abstract": "Aedes aegypti is one of the vectors responsible for transmitting the viruses that cause dengue, Zika and chikungunya in the human population. Mosquitoes have bacterial communities in different organs, mainly in the midgut, but to a lesser extent in their reproductive organs, such as the ovaries, where replication and vertical transmission is decisive for dengue virus. These bacteria also influence metabolic and physiological processes such as ingestion and digestion of blood. In this study, aerobic bacterial communities associated with ovaries of A. aegypti Rockefeller strain were determined, describing their potential function during ovocitary development. The groups of mosquitoes were separated into three treatments: diet with 10% sugar solution, diet with blood supply, and blood feeding combined with tetracycline. The ovaries were extracted from the mosquitoes, and then put in enriched culture media (blood and nutritive agar) by direct inoculation, for subsequent isolation and macroscopic and microscopic characterization of the colonies. The taxonomic determination of bacterial isolates was achieved by sequence analysis of the 16S rRNA gene. A higher bacterial load was observed in the sugar feeding group (6 × 10³ CFU/ml) in contrast to the group fed only with blood, with and without an antibiotic (4.03-4.04 × 10³CFU/ml; 4.85-5.04 × 10³CFU/ml). As a result, a total of 35 colonies were isolated, of which 80% were gram-negative and 20% gram-positive; 72% were lactose negative and 8% lactose positive. Of the total bacteria, 83% had gamma hemolysis, 17% alpha hemolysis, and none presented beta hemolysis. After phenotypic and biochemical characterization, 17 isolates were selected for molecular identification. Only phyla Actinobacteria and Proteobacteria were found. Bacteria associated with ovaries of A. aegypti were mainly identified as belonging to the Serratia and Klebsiella genera. Some bacteria (Serratia marcescens, Pantoea dispersa and Klebsiella oxytoca) have wide biotechnological potential due to their entomopathogenic power and their bioactivity against different pathogens.",
+      "year": "2021",
+      "journal": "Acta Tropica",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.actatropica.2020.105765",
+      "category": "chem-biochem",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine",
+        "Biology"
+      ]
+    }
+  ]
+}

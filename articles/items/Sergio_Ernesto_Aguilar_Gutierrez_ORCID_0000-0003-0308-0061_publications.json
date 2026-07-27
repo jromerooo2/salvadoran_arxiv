@@ -2,7 +2,7 @@
   "author": "Sergio Ernesto Aguilar Gutierrez",
   "orcid": "https://orcid.org/0000-0003-0308-0061",
   "source": "ORCID + Crossref",
-  "total_publications": 27,
+  "total_publications": 28,
   "author_categories": "phy-astro, phy-genrel, phy-hep, phy-phys, phy-quant",
   "publications": [
     {
@@ -251,6 +251,19 @@
       "category": "phy-astro",
       "crossref_subjects": [],
       "fields_of_study": []
+    },
+    {
+      "title": "Probing the chaos to integrability transition in double-scaled SYK",
+      "abstract": "A\n                    bstract\n                  \n                  We investigate how a thermodynamical first-order phase transition affects the dynamical chaotic behaviour of a given model. To this effect, we analyze the model of Berkooz, Brukner, Jia and Mamroud that interpolates between the double-scaled SYK model and an integrable chord Hamiltonian. This model exhibits a first-order transition, characterized by a kink in the free energy, between the chaotic and quasi-integrable phases, with the branch of subdominant saddles interpolating between them. We characterize the dynamical behavior across the phase diagram using the chord number, Krylov complexity, and operator size. The chord number, which is proportional to the Krylov state complexity in the classical limit, exhibits a discontinuous transition from linear to quadratic growth at the transition point. Similarly, the Krylov operator complexity and the operator size, as scrambling diagnostics, exhibit discontinuous transitions from exponential to quadratic growth. We also discuss a possible holographic interpretation of the model.",
+      "year": "2026",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University",
+      "doi": "https://doi.org/10.1007/JHEP06(2026)109",
+      "category": "phy-quant",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Physics"
+      ]
     }
   ]
 }

@@ -2,8 +2,8 @@
   "author": "Ignacio Gonzalez Oliva",
   "orcid": "https://orcid.org/0000-0002-4229-708X",
   "source": "ORCID + Crossref",
-  "total_publications": 7,
-  "author_categories": "chem-mat, chem-phys, phy-cond",
+  "total_publications": 8,
+  "author_categories": "chem-mat, chem-phys, eng-ece, phy-cond",
   "publications": [
     {
       "title": "Impact of electron–phonon interaction on the electronic structure of interfaces between organic molecules and a MoS2 monolayer",
@@ -67,6 +67,20 @@
       "affiliation": "N/A",
       "doi": "https://doi.org/10.11159/tann18.140",
       "category": "chem-mat"
+    },
+    {
+      "title": "An exciting Approach to Theoretical Spectroscopy",
+      "abstract": "Theoretical spectroscopy, and more generally, electronic‐structure theory, are powerful concepts for describing the complex many‐body interactions in materials. They cover methods from ground‐state properties to lattice excitations and light‐matter interaction, including time‐resolved variants. Among the various electronic‐structure codes,\n                    exciting\n                    is an all‐electron full‐potential package that has a very rich portfolio, with a particular focus on excitations. It implements the linearized augmented planewave plus local orbital (LAPW+LO) basis, which is known as the gold standard for solving the Kohn‐Sham equations of density‐functional theory (DFT).\n                    exciting\n                    also offers benchmark‐quality results for a wide range of excited‐state methods. In this review, we provide an overview of the most recent features implemented in\n                    exciting\n                    , accompanied by summaries on the state of the art of the underlying methodologies. They comprise DFT and time‐dependent density‐functional theory (TDDFT), density‐functional perturbation theory (DFPT) for phonons and electron‐phonon coupling, and many‐body perturbation theory in terms of the  approach and the Bethe‐Salpeter equation (BSE). Moreover,\n                    exciting\n                    can handle resonant inelastic x‐ray scattering (RIXS), pump‐probe spectroscopy, as well as exciton‐phonon coupling (EXPC). Finally, we cover workflows and a view on data and machine learning (ML). All aspects are demonstrated with examples for scientifically relevant materials.",
+      "year": "2026",
+      "journal": "Advanced Science",
+      "affiliation": "Department of Physics and CSMB Humboldt‐Universität zu Berlin  Berlin Germany",
+      "doi": "https://doi.org/10.1002/advs.76167",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine",
+        "Physics"
+      ]
     }
   ]
 }

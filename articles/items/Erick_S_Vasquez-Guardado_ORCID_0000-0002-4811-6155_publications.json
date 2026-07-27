@@ -2,7 +2,7 @@
   "author": "Erick S Vasquez-Guardado",
   "orcid": "https://orcid.org/0000-0002-4811-6155",
   "source": "ORCID + Crossref",
-  "total_publications": 20,
+  "total_publications": 21,
   "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, math-acm",
   "publications": [
     {
@@ -188,6 +188,19 @@
       "category": "chem-mat",
       "crossref_subjects": [],
       "fields_of_study": []
+    },
+    {
+      "title": "Analysis of Particle Transport and Deposition of Micron-Sized Particles in a 90 degrees Bend Using a Two-Fluid Eulerian-Eulerian Approach",
+      "abstract": "Two-phase flows involving dispersed particle and droplet phases are common in a variety of natural and industrial processes, such as aerosols, blood flow, emulsions, and gas-catalyst systems. For sufficiently dilute particle/aerosol phases, a simplified one-way coupling is often assumed, in which the continuous primary phase is unaffected by the presence of the dispersed secondary phase and standard CFD methods can be applied. To predict the transport and deposition of the particle phase, typically a Lagrangian particle-tracking or Eulerian one-fluid/two-phase drift-flux approach is used. Here, a full two-fluid Eulerian modeling approach is presented for coarse particles (>1 μm), in which transport equations are numerically solved for both particle-phase continuity and particle-phase momentum. Simulation results were obtained for a laminar flow regime (Re 100 and 1000) in a 90° elbow, and the effects of grid topology and resolution were investigated. Additionally, gravity effects were considered for both Re cases. Results using this full two-fluid Eulerian approach were validated against experimental data and other computational studies. One key novel contribution of this work is presentation of a simple algorithm for stabilizing the Eulerian particle-phase equation. To the authors' knowledge, this is the first study documenting a full two-fluid Eulerian approach for dilute particle phases in laminar flow on unstructured (prism/tetrahedral) meshes. The results show the potential of the two-fluid approach for providing a useful alternative to the more typical Lagrangian approach for prediction of coarse-particle transport and wall deposition. Copyright 2015 American Association for Aerosol Research",
+      "year": "2015",
+      "journal": "Aerosol Science and Technology",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1080/02786826.2015.1062466",
+      "category": "chem-phys",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Chemistry"
+      ]
     }
   ]
 }
