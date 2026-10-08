@@ -2,7 +2,14 @@
     <nav class="nav-salvador w-full border-b border-black/10 px-4 py-4 sm:px-6 lg:px-8">
       <div class="mx-auto flex w-full max-w-none items-center justify-between">
         <!-- Brand Logo -->
-        <router-link to="/" class="text-white font-bold text-xl">Salvadoran Society of Sciences</router-link>
+        <router-link to="/" class="flex items-center gap-3 text-white font-bold text-xl">
+          <img
+            :src="logo"
+            alt="Salvadoran Society of Sciences logo"
+            class="h-[60px] w-auto object-contain"
+          />
+          <span>Salvadoran Society of Sciences</span>
+        </router-link>
         
         <!-- Hamburger Icon for Mobile -->
         <button
@@ -53,11 +60,13 @@
   </template>
   
   <script>
+  import logo from '../../images/SSS_logo_page-2_white_transparent.png';
   
   export default {
     data() {
       return {
         isOpen: false, // Controls the mobile menu toggle
+        logo,
       };
     },
   };
