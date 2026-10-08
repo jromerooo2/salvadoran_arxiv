@@ -2,8 +2,8 @@
   "author": "Leonardo Alvarado Bonilla",
   "orcid": "https://orcid.org/0000-0002-4802-3872",
   "source": "ORCID + Crossref",
-  "total_publications": 13,
-  "author_categories": "bio-eco, chem-biochem, chem-mat, chem-phys, eng-civ, health-ctr, math-acm, phy-astro",
+  "total_publications": 14,
+  "author_categories": "bio-eco, chem-biochem, chem-mat, chem-phys, eng-civ, health-ctr, math-acm, phy-astro, phy-phys",
   "publications": [
     {
       "title": "Full mission evaluation of EnMAP water leaving reflectance products using three atmospheric correction processors",
@@ -121,6 +121,17 @@
       "affiliation": "N/A",
       "doi": "https://doi.org/10.5194/amt-7-4133-2014",
       "category": "chem-phys"
+    },
+    {
+      "title": "Reassessment of the glyoxal-to-formaldehyde ratio RGF as a proxy for VOC source identification",
+      "abstract": "The glyoxal-to-formaldehyde ratio (\n                    R\n                    GF\n                    ) has been proposed as a proxy to distinguish sources of volatile organic compounds (VOCs) in the atmosphere. However, the interpretation of its variability remains uncertain because of the diverse processes that affect VOC emissions and chemistry. In this study, we revisit the applicability and limitations of\n                    R\n                    GF\n                    using multi-year ground-based MAX-DOAS measurements at four distinct sites: two biogenic (Orléans, France, and ATTO Tower, Brazil) and two anthropogenic (Athens, Greece, and Incheon, South Korea). The results show higher\n                    R\n                    GF\n                    in anthropogenic environments and lower at biogenic sites. Seasonal\n                    R\n                    GF\n                    patterns are broadly consistent across sites, with lower values in summer and higher values in winter, driven by formaldehyde variability. Diurnal cycles are primarily controlled by glyoxal variability and are more pronounced at urban sites, which also show a weekend reduction of 10 %. Correlations between\n                    R\n                    GF\n                    and NO\n                    2\n                    vary, even among anthropogenic stations, highlighting the importance of local emission contributions. Increasing temperatures from 15 to 35 °C decrease\n                    R\n                    GF\n                    by up to 1.9 percentage points across all sites, driven by the stronger temperature response of formaldehyde compared to glyoxal. We further discuss four effects that complicate cross-study comparability of\n                    R\n                    GF\n                    : differences in measurement volume, vertical sensitivity, temporal sampling, and the impact of averaging-ratioing order. Our findings suggest that ground-based remote sensing\n                    R\n                    GF\n                    contains valuable diagnostic information about VOC source environments. However, its use as a universal proxy remains challenging, as our incomplete understanding of the various effects currently limits the reliable use of\n                    R\n                    GF\n                    for VOC source attribution.",
+      "year": "2026",
+      "journal": "Atmospheric Chemistry and Physics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.5194/acp-26-8809-2026",
+      "category": "phy-phys",
+      "crossref_subjects": [],
+      "fields_of_study": []
     }
   ]
 }

@@ -2,8 +2,8 @@
   "author": "Francisco Alexander Zelaya-Arrazabal",
   "orcid": "https://orcid.org/0000-0003-3013-8871",
   "source": "ORCID + Crossref",
-  "total_publications": 12,
-  "author_categories": "eng-ece, math-acm",
+  "total_publications": 14,
+  "author_categories": "eng-ece, math-acm, math-ade",
   "publications": [
     {
       "title": "Coordination of damping controllers: A novel data-informed approach for adaptability",
@@ -116,6 +116,31 @@
       "fields_of_study": [
         "Computer Science"
       ]
+    },
+    {
+      "title": "Modal-based Prediction of Power System Frequency Response and Frequency Nadir",
+      "abstract": "This paper introduces a novel approach for predicting system frequency response (SFR) and frequency nadir based on modal analysis. By decomposing the full system dynamic response, the method identifies dominant modes based on their participation in frequency behavior and derives a closed-form expression for the frequency trajectory. Unlike traditional approaches based on the Average System Frequency (ASF) model, this method captures the true system dynamics and avoids oversimplified representations. The dominant modes exhibit low sensitivity to system parameters, enabling robust and accurate estimations across diverse operating conditions. The proposed approach is tested on two benchmark systems as well as the Salvadoran transmission planning network, demonstrating its scalability, precision, and adaptability. This methodology represents a shift from observing a simplified average system frequency response to a more detailed analysis focusing on system dynamics.",
+      "year": "2026",
+      "journal": "IEEE Transactions on Power Systems",
+      "affiliation": "University of Tennessee",
+      "doi": "https://doi.org/10.1109/TPWRS.2026.3723266",
+      "category": "math-ade",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Engineering",
+        "Computer Science"
+      ]
+    },
+    {
+      "title": "Enhancing Wide-Area Damping Controllers Via Data-Assisted Power System Linear Models",
+      "abstract": "This paper proposes an inter-area oscillation damping control strategy by exploiting the Loewner interpolation method (LIM) and Bellman’s principle. The novelty of this methodology lies in providing a data-assisted WADC architecture to damp out interarea oscillations. The architecture is supported by a linear quadratic Gaussian (LQG) controller, based on the Bellman’s optimal principle and composed by a linear quadratic regulator (LQR) and a Linear Quadratic Estimator (LQE), which is constituted taking into account a high-fidelity power system linear model derived from the LIM. The control structure is then embedded on a wide-area monitoring system (WAMS) that collects synchrophasor measurements from generation units to conform a wide-area damping control (WADC) system. The proposed scheme exploits the local controllers available in a selected set of generation units regarding the center of inertia (COI) in a power system area. To demonstrate the effectiveness of the proposal, two benchmark power systems: the 2-area Kundur system and the 5-area NETS-NYPS system are simulated including communication delays, wind power plants (WPPs) and HVDC lines. The attained simulation results confirm that a combination of Loewner and LQG-equipped WADC can effectively and timely mitigate inter-area oscillations.",
+      "year": "2022",
+      "journal": "SSRN",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.2139/ssrn.4059938",
+      "category": "math-acm",
+      "crossref_subjects": [],
+      "fields_of_study": []
     }
   ]
 }

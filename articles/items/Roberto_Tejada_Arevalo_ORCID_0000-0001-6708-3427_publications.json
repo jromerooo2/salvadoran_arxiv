@@ -2,7 +2,7 @@
   "author": "Roberto Tejada Arevalo",
   "orcid": "https://orcid.org/0000-0001-6708-3427",
   "source": "ORCID + Crossref",
-  "total_publications": 15,
+  "total_publications": 16,
   "author_categories": "phy-astro",
   "publications": [
     {
@@ -138,6 +138,19 @@
       "journal": "The Astrophysical Journal",
       "affiliation": "Princeton University",
       "doi": "https://doi.org/10.3847/1538-4357/ae7f20",
+      "category": "phy-astro",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Physics"
+      ]
+    },
+    {
+      "title": "ORCHARD: A General Planetary Evolution Code",
+      "abstract": "We present\n                    ORCHARD\n                    , a publicly available planetary evolution code based on the gas giant evolution code,\n                    APPLE\n                    , capable of modeling the evolution and structures of terrestrial, super-Earth, sub-Neptune, Neptune, and gas giant planets and exoplanets from 0.5\n                    M\n                    ⊕\n                    to 10\n                    M\n                    J\n                    . It supports not only the inhomogeneous and nonadiabatic evolution of gas giants and sub-Neptunes, but also the solidification of the mantles and cores of terrestrial planets, sub-Neptunes, and super-Earths.\n                    ORCHARD\n                    incorporates a state-of-the-art hydrogen–helium equation of state, “metal” equations of state (water, ice mixtures, enstatite/perovskite, olivine/forsterite, and iron), and atmospheric boundary conditions ranging from detailed nongray radiative transfer models for solar system giants to irradiated sub-Neptune atmospheres and bare rocky surfaces.\n                    ORCHARD\n                    also supports static calculations with state-of-the-art equations of state. The purpose of\n                    ORCHARD\n                    is to provide the scientific community with a flexible, unified tool for modeling planetary structures and evolution across the entire mass continuum of general astrophysical and planetary interest.",
+      "year": "2026",
+      "journal": "The Astrophysical Journal",
+      "affiliation": "Princeton University",
+      "doi": "https://doi.org/10.3847/1538-4357/ae9f4b",
       "category": "phy-astro",
       "crossref_subjects": [],
       "fields_of_study": [

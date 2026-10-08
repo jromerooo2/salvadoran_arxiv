@@ -2,8 +2,8 @@
   "author": "Erick S Vasquez-Guardado",
   "orcid": "https://orcid.org/0000-0002-4811-6155",
   "source": "ORCID + Crossref",
-  "total_publications": 21,
-  "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, math-acm",
+  "total_publications": 22,
+  "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, eng-civ, math-acm",
   "publications": [
     {
       "title": "Magnetic Nanoparticles: Synthesis and Applications in Life Sciences",
@@ -201,6 +201,17 @@
       "fields_of_study": [
         "Chemistry"
       ]
+    },
+    {
+      "title": "Synergistic reinforcement of lignin–chitosan hydrogels using vanillin as a sustainable green crosslinker",
+      "abstract": "While bio-based hydrogels derived from lignin and chitosan are promising sustainable adsorbents, their practical application is hindered by poor mechanical stability. This study addresses this limitation by synthesizing lignin-chitosan hydrogels using vanillin as a green, bio-derived crosslinker via a facile solution-casting method. The formation of imine (Schiff base) linkages between the aldehyde groups of vanillin and the primary amines of chitosan was confirmed by FTIR spectroscopy (C = N stretching at ~ 1602 cm− 1). SEM and TGA results demonstrated a reduction in the pore size of the crosslinked hydrogel and an enhanced residual thermal mass. Rheological and tensile testing revealed robust network reinforcement, with a 32.3% increase in tensile strength compared to non-crosslinked analogs. Despite a slight decrease in swelling capacity due to a denser network, the crosslinked hydrogels exhibited versatile, dual-functional adsorption, effectively sequestering both cationic and anionic dyes. These achieved ~ 95% removal of methylene blue, ~ 94% removal of rhodamine 590 chloride, and ~ 92% removal of methyl orange. The adsorption adhered to the Langmuir isotherm and pseudo-first-order kinetics, suggesting a controlled, monolayer chemisorption process. These findings highlight the potential of vanillin-mediated crosslinking to produce high-performance, fully bio-based adsorbents for sustainable wastewater remediation.",
+      "year": "2026",
+      "journal": "Polymer Bulletin",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1007/s00289-026-06625-w",
+      "category": "eng-civ",
+      "crossref_subjects": [],
+      "fields_of_study": []
     }
   ]
 }

@@ -2,7 +2,7 @@
   "author": "Ignacio Gonzalez Oliva",
   "orcid": "https://orcid.org/0000-0002-4229-708X",
   "source": "ORCID + Crossref",
-  "total_publications": 8,
+  "total_publications": 9,
   "author_categories": "chem-mat, chem-phys, eng-ece, phy-cond",
   "publications": [
     {
@@ -81,6 +81,17 @@
         "Medicine",
         "Physics"
       ]
+    },
+    {
+      "title": "Stacking-dependent quasiparticle and excitonic properties of bilayer o−B2N2",
+      "abstract": "Orthorhombic boron nitride (\n                    \n                      \n                        o\n                        −\n                        \n                          B\n                          2\n                        \n                        \n                          N\n                          2\n                        \n                      \n                    \n                    ) has recently emerged as a promising two-dimensional semiconductor, yet most studies have so far focused on its monolayer. Using first-principles calculations, we systematically investigate the stacking-dependent electronic structure and optical response of bilayer\n                    \n                      \n                        o\n                        −\n                        \n                          B\n                          2\n                        \n                        \n                          N\n                          2\n                        \n                      \n                    \n                    . We demonstrate that different stacking configurations substantially modify the electronic structure, enabling the tunability of the quasiparticle band gap between slightly below 2 and about 3 eV while preserving a direct-gap character. The optical spectra exhibit pronounced anisotropy and are dominated by strong excitonic effects in the visible region, with exciton binding energies reaching up to 0.39 eV. Analysis of the exciton wave functions reveals a stacking-driven crossover in exciton character. While the\n                    \n                      \n                        \n                          AA\n                        \n                        \n                          ′\n                          ′\n                        \n                      \n                    \n                    , AB, and\n                    \n                      \n                        \n                          AB\n                        \n                        ′\n                      \n                    \n                    stackings host tightly bound intralayer excitons, AA,\n                    \n                      \n                        \n                          AA\n                        \n                        ′\n                      \n                    \n                    , and\n                    \n                      \n                        \n                          AB\n                        \n                        \n                          ′\n                          ′\n                        \n                      \n                    \n                    favor mixed intralayer-interlayer excitons, characterized by smaller binding energies. These findings establish a direct connection between stacking configuration, quasiparticle electronic structure, and excitonic properties in bilayer\n                    \n                      \n                        o\n                        −\n                        \n                          B\n                          2\n                        \n                        \n                          N\n                          2\n                        \n                      \n                    \n                    , highlighting stacking engineering as an effective route for tailoring the material's optoelectronic response.",
+      "year": "2026",
+      "journal": "Physical Review B",
+      "affiliation": "Humboldt-Universität zu Berlin",
+      "doi": "https://doi.org/10.1103/8n2m-pqlw",
+      "category": "eng-ece",
+      "crossref_subjects": [],
+      "fields_of_study": []
     }
   ]
 }

@@ -2,7 +2,7 @@
   "author": "Sergio Ernesto Aguilar Gutierrez",
   "orcid": "https://orcid.org/0000-0003-0308-0061",
   "source": "ORCID + Crossref",
-  "total_publications": 28,
+  "total_publications": 29,
   "author_categories": "phy-astro, phy-genrel, phy-hep, phy-phys, phy-quant",
   "publications": [
     {
@@ -259,6 +259,19 @@
       "journal": "Journal of High Energy Physics",
       "affiliation": "Okinawa Institute of Science and Technology Graduate University",
       "doi": "https://doi.org/10.1007/JHEP06(2026)109",
+      "category": "phy-quant",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Physics"
+      ]
+    },
+    {
+      "title": "q-Askey deformations of double-scaled SYK",
+      "abstract": "A\n                    bstract\n                  \n                  \n                    We construct families of deformations of the double-scaled SYK (DSSYK) model and investigate their bulk interpretation. We introduce microscopic deformations of the SYK model which, after ensemble-averaging and in the double-scaling limit, are described by a transfer matrix encoding the recurrence relations of basic orthogonal polynomials in the q-Askey scheme. For certain families of deformations in the semiclassical limit at finite temperature, the chord number (encoding Krylov complexity) corresponds to the length of an Einstein-Rosen bridge connecting an End-Of-The-World brane to an anti-de Sitter asymptotic boundary. By increasing one of the deformation parameters, the models eventually exhibit discrete energy levels, signaling a new geometric transition in sine dilaton gravity. Via the SYK-Schur duality, Krylov complexity also admits a representation-theoretic interpretation as the spread of the SU(2) spin in the index of an\n                    \n                      \n                        $$ \\mathcal{N} $$\n                        \n                          N\n                        \n                      \n                    \n                    = 2 SU(2) gauge theory. We study the operator algebras of the deformed theories. The algebras can be type II\n                    1\n                    or type I\n                    \n                      ∞\n                    \n                    factors, depending on the operators that are included. The entanglement entropy between the type II\n                    1\n                    algebras for a pure state manifests as an extremal surface through the Ryu-Takayanagi formula. We discuss connections between our results and the emergence of baby universes in the bulk.",
+      "year": "2026",
+      "journal": "Journal of High Energy Physics",
+      "affiliation": "Okinawa Institute of Science and Technology Graduate University",
+      "doi": "https://doi.org/10.1007/JHEP09(2026)196",
       "category": "phy-quant",
       "crossref_subjects": [],
       "fields_of_study": [
