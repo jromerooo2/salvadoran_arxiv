@@ -7,7 +7,7 @@
     <div
       class="mx-auto flex w-full max-w-none flex-col items-center justify-between gap-2 text-sm sm:flex-row"
     >
-      <p>© {{ copyrightRange }} Salvadoran Repository of Sciences</p>
+      <p>© {{ copyrightRange }} Salvadoran Society of Sciences</p>
       <a
         href="mailto:elsalvador.stem@gmail.com"
         class="text-white hover:underline focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-[#0047ab]"

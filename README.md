@@ -1,4 +1,4 @@
-# Salvadoran Repository of Sciences — ssscience.org
+# Salvadoran Society of Sciences — ssscience.org
 
 A public, open repository that gathers the scientific output of Salvadoran
 researchers around the world. The idea is simple: if a Salvadoran researcher
