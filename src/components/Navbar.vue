@@ -2,13 +2,11 @@
     <nav class="nav-salvador w-full border-b border-black/10 px-4 py-4 sm:px-6 lg:px-8">
       <div class="mx-auto flex w-full max-w-none items-center justify-between">
         <!-- Brand Logo -->
-        <router-link to="/" class="flex items-center gap-3 text-white font-bold text-xl">
+        <router-link to="/" class="brand-mark" aria-label="Salvadoran Society of Sciences">
           <img
             :src="logo"
-            alt="Salvadoran Society of Sciences logo"
-            class="h-[60px] w-auto object-contain"
+            alt="Salvadoran Society of Sciences"
           />
-          <span>Salvadoran Society of Sciences</span>
         </router-link>
         
         <!-- Hamburger Icon for Mobile -->
@@ -60,7 +58,7 @@
   </template>
   
   <script>
-  import logo from '../../images/SSS_logo_page-2_white_transparent.png';
+  import logo from '../../images/SSS_logo_page-3_white_transparent.png';
   
   export default {
     data() {
@@ -76,5 +74,26 @@
   /* Cobalt blue of the El Salvador flag stripes (~RGB 0, 71, 171) */
   .nav-salvador {
     background-color: #0047ab;
+  }
+
+  /* The PNG canvas is mostly transparent padding. Crop to the mark
+     (bbox 889,1487–7212,2641 on an 8000×4500 image) so the wordmark
+     fills the bar instead of shrinking inside the empty canvas. */
+  .brand-mark {
+    position: relative;
+    display: block;
+    height: 44px;
+    width: calc(44px * 6324 / 1155);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .brand-mark img {
+    position: absolute;
+    height: calc(44px * 4500 / 1155);
+    width: calc(44px * 8000 / 1155);
+    max-width: none;
+    left: calc(44px * -889 / 1155);
+    top: calc(44px * -1487 / 1155);
   }
   </style>
