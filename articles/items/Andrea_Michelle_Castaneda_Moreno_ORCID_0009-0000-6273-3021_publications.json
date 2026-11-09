@@ -1,0 +1,22 @@
+{
+  "author": "Andrea Michelle Castaneda Moreno",
+  "orcid": "https://orcid.org/0009-0000-6273-3021",
+  "source": "ORCID + Crossref",
+  "total_publications": 1,
+  "author_categories": "chem-biochem",
+  "publications": [
+    {
+      "title": "Bridging Cyanobacteria to Neurodegenerative Diseases: A New Potential Source of Bioactive Compounds against Alzheimer’s Disease",
+      "abstract": "Neurodegenerative diseases (NDs) represent a drawback in society given the ageing population. Dementias are the most prevalent NDs, with Alzheimer’s disease (AD) representing around 70% of all cases. The current pharmaceuticals for AD are symptomatic and with no effects on the progression of the disease. Thus, research on molecules with therapeutic relevance has become a major focus for the scientific community. Cyanobacteria are a group of photosynthetic prokaryotes rich in biomolecules with confirmed activity in pathologies such as cancer, and with feasible potential in NDs such as AD. In this review, we aimed to compile the research works focused in the anti-AD potential of cyanobacteria, namely regarding the inhibition of the enzyme β-secretase (BACE1) as a fundamental enzyme in the generation of β-amyloid (Aβ), the inhibition of the enzyme acetylcholinesterase (AChE) lead to an increase in the availability of the neurotransmitter acetylcholine in the synaptic cleft and the antioxidant and anti-inflammatory effects, as phenomena associated with neurodegeneration mechanisms.",
+      "year": "2021",
+      "journal": "Marine Drugs",
+      "affiliation": "CISA, Health and Environment Research Centre, School of Health, Polytechnic Institute of Porto (ESS/P.PORTO), Rua Dr. António Bernardino de Almeida, 400, 4200-072 Porto, Portugal",
+      "doi": "https://doi.org/10.3390/md19060343",
+      "category": "chem-biochem",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "author": "Olga Merino-Chavez",
+  "orcid": "https://orcid.org/0009-0004-9828-7114",
+  "source": "ORCID + Crossref",
+  "total_publications": 1,
+  "author_categories": "chem-biochem",
+  "publications": [
+    {
+      "title": "The NanoBridge system for targeted post-translational modification of challenging proteins.",
+      "abstract": "The ability to edit posttranslational modifications (PTMs) of endogenous proteins within cells is essential for precisely delineating the biological roles of PTMs and for developing targeted therapeutics. While the paradigm of chemically induced proximity (CIP) has advanced this field by enabling the recruitment of PTM enzymes to the proximity of proteins of interest (POIs), CIP requires small-molecule binders that are difficult to obtain for proteins without well-defined binding pockets. In principle, the use of biomolecular ligands that target disordered proteins should overcome this limitation. In this work, we developed the NanoBridge as a modular and generalizable platform to enable PTM editing of challenging POIs in live cells. The NanoBridge employs biologic binders to transiently direct the small protein tag FKBP12\n                  F36V\n                  to unmodified target proteins, thereby enabling multiplex PTM editing upon use of heterobifunctional small molecules that recruit endogenous PTM enzymes. Compared with existing approaches, the NanoBridge offers greater flexibility to induce multiple types of PTMs on the same POI while providing precise temporal control and avoiding the introduction of exogenous PTM writers. Using eight protein binders targeting three structurally diverse and largely unstructured proteins - BCL11A (a hemoglobin regulator), KRAS (a cancer driver), and p53 (a tumor suppressor) – the NanoBridge mediated targeted degradation, phosphorylation, and acetylation in a rapid, reversible, and temporally controlled manner. As such, the NanoBridge represents a versatile strategy for the targeted modulation of endogenous proteins, particularly those lacking accessible small molecule ligands, and presents new opportunities for investigating the physiology of PTMs on challenging proteins.",
+      "year": "2026",
+      "journal": "bioRxiv : the preprint server for biology",
+      "affiliation": "Department of Chemical and Systems Biology, Stanford University School of Medicine, Stanford, California 94305, United States",
+      "doi": "https://doi.org/10.64898/2026.06.08.730974",
+      "category": "chem-biochem",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine",
+        "Biology"
+      ]
+    }
+  ]
+}

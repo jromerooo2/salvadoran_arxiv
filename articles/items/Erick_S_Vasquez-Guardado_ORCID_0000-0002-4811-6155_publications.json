@@ -2,8 +2,8 @@
   "author": "Erick S Vasquez-Guardado",
   "orcid": "https://orcid.org/0000-0002-4811-6155",
   "source": "ORCID + Crossref",
-  "total_publications": 22,
-  "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, eng-civ, math-acm",
+  "total_publications": 28,
+  "author_categories": "chem-mat, chem-phys, edu-chem, eng-bio, eng-chem, eng-civ, eng-mech, math-acm",
   "publications": [
     {
       "title": "Magnetic Nanoparticles: Synthesis and Applications in Life Sciences",
@@ -212,6 +212,82 @@
       "category": "eng-civ",
       "crossref_subjects": [],
       "fields_of_study": []
+    },
+    {
+      "title": "Metal oxide nanoparticle-integrated pHEMA hydrogels: Morphology, chemical properties, and biological interaction",
+      "abstract": "Hydrogels offer attractive matrices for incorporating inorganic metal oxide nanoparticles (NPs) to generate multifunctional hybrid materials, but challenges remain in scalable synthesis and correlating their properties to bio-interaction. Therefore, we report the synthesis and characterization of poly(2-hydroxyethyl methacrylate) (pHEMA) hydrogels, and pHEMA hydrogels encapsulating iron oxide or zinc oxide NPs, using a modified free-radical polymerization. Dose-dependent survivorship studies on Drosophila melanogaster revealed that both NP-embedded hydrogels are tolerated over a wide dose range (e.g., 50–200 mg), although ZnO NP-gels exhibit lower survivorship at some concentrations due to their inherent composition and a wider size distribution of iron oxide NPs.",
+      "year": "2026",
+      "journal": "MRS Communications",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1557/s43579-026-00992-1",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": []
+    },
+    {
+      "title": "Self-Assembly Interactions in Magnetite-Coated Cellulose Nanocrystals: Implications for Magnetic Hyperthermia Applications",
+      "abstract": "Magnetic cellulose nanocrystal (MCNC) nanocomposites are promising sustainable and biocompatible platforms for magnetic hyperthermia; however, the molecular mechanisms governing Fe3O4 adsorption and deposition onto CNCs remain poorly understood. Here, sulfated (S-CNC) and TEMPO-oxidized CNCs (T-CNC) were used to prepare nanocomposites at 1:2 and 1:4 CNC:Fe3O4 mass ratios, enabling a systematic evaluation of how surface chemistry and nanoparticle loading dictate interfacial interactions and magneto-colloidal behavior. Bare magnetite nanoparticles were 21 ± 5 nm by TEM but grew to 144 ± 18 in the DLS measurement at pH 7. The S-CNC nanocomposites had hydrodynamic sizes between 144 and 210 nm, not much larger than the 140 nm long CNC rods, suggesting an enhanced dispersion stability compared to Fe3O4 alone. X-ray photoelectron spectroscopy combined with density functional theory revealed that −OH and −COOH groups drive electrostatic adsorption with charge transfer from Fe3O4 to the CNC surface, while T-CNCs showed more favorable adsorption energies and evidence of covalent Fe–O bonding. Vibrating sample magnetometry demonstrated superparamagnetic behavior for all samples, with S-CNC/Fe3O4 1:4 and 1:2 displaying saturation magnetizations of 78 and 77 emu/g-Fe3O4, close to the 83 emu/g of bare magnetite. The T-CNC composites showed lower (60 and 66 emu/g-Fe3O4) saturation magnetizations. Zero-field-cooled/field-cooled measurements resulted in a blocking temperature of 112 K for all samples, except T-CNC/Fe3O4 1:2 (100 K). Magnetic hyperthermia studies revealed that specific absorption rate (SAR) increased with field strength and Fe3O4 content; however, S-CNC/Fe3O4 (1:2) achieved the highest intrinsic SAR per gram of Fe3O4 (649 W/g-Fe3O4) likely due to its anisotropy and fast magnetic relaxation. Cytotoxicity assays confirmed that all nanocomposites were nontoxic toward mammalian cells. These results establish quantitative structure–property relationships between CNC surface chemistry, interfacial bonding mechanisms, and magnetic heating performance, providing a foundation for rational design of biocompatible magnetic nanocomposites for hyperthermia and related applications.",
+      "year": "2026",
+      "journal": "ACS Applied Nano Materials",
+      "affiliation": "Department of Chemical and Materials Engineering, University of Dayton, 300 College Park, Dayton, Ohio 45469-0256, United States",
+      "doi": "https://doi.org/10.1021/acsanm.5c05783",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Detection and Aggregation of Listeria Monocytogenes Using Polyclonal Antibody Gold-Coated Magnetic Nanoshells Surface-Enhanced Raman Spectroscopy Substrates",
+      "abstract": "Magnetic nanoshells with tailored surface chemistry can enhance bacterial detection and separation technologies. This work demonstrated a simple technique to detect, capture, and aggregate bacteria with the aid of end-functionalized polyclonal antibody gold-coated magnetic nanoshells (pAb-Lis-AuMNs) as surface-enhanced Raman spectroscopy (SERS) probes. Listeria monocytogenes were used as the pathogenic bacteria and the pAb-Lis-AuMNs, 300 nm diameter, were used as probes allowing facile magnetic separation and aggregation. An optimized covalent bioconjugation procedure between the magnetic nanoshells and the polyclonal antibody was performed at pH six via a carbodiimide crosslinking reaction. Spectroscopic and morphological characterization techniques confirmed the fabrication of stable pAb-Lis-AuMNs. The resulting pAb-Lis-AuMNs acted as a SERS probe for L. monocytogenes based on the targeted capture via surface binding interactions and magnetically induced aggregation. Label-free SERS measurements were recorded for the minimum detectable amount of L. monocytogenes based on the SERS intensity at the 1388 cm−1 Raman shift. L. monocytogenes concentrations exhibited detection limits in the range of 104–107 CFU ml−1, before and after aggregation. By fitting these concentrations, the limit of detection of this method was ∼103 CFU ml−1. Using a low-intensity magnetic field of 35 G, pAb-Lis-AuMNs aggregated L. monocytogenes as demonstrated with microscopy techniques, including SEM and optical microscopy. Overall, this work presents a label-free SERS probe method comprised of a surface-modified polyclonal antibody sub-micron magnetic nanoshell structures with high sensitivity and magnetic induced separation that could lead to the fabrication of multiple single-step sensors.",
+      "year": "2021",
+      "journal": "Frontiers in Nanotechnology",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.3389/fnano.2021.653744",
+      "category": "chem-phys",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Materials Science"
+      ]
+    },
+    {
+      "title": "Facile fabrication and characterization of kraft lignin@Fe3O4 nanocomposites using pH driven precipitation: Effects on increasing lignin content",
+      "abstract": "This work offers a facile fabrication method for lignin nanocomposites through the assembly of kraft lignin onto magnetic nanoparticles (Fe3O4) based on pH-driven precipitation, without needing organic solvents or lignin functionalization. Kraft lignin@Fe3O4 multicore nanocomposites fabrication proceeded using a simple, Ph-driven precipitation technique. An alkaline solution for kraft lignin (pH 12) was rapidly injected into an aqueous-based Fe3O4 nanoparticle colloidal suspension (pH 7) under constant mixing conditions, allowing the fabrication of lignin magnetic nanocomposites. The effects of increasing lignin to initial Fe3O4 mass content (g/g), increasing in ratio from 1:1 to 20:1, are discussed with a complete chemical, structural, and morphological characterization. Results showed that nanocomposites fabricated above 5:1 lignin:Fe3O4 had the highest lignin coverage and content (>20%), possessed superparamagnetic properties (Ms≈45,000 A·m2/kg2); had a negative surface charge (−30 mV), and formed multicore nanostructures (DH ≈ 150 nm). The multicore lignin@Fe3O4 nanocomposites allowed rapid magnetically induced separations from suspension. After 5 min exposure to a rare-earth neodymium magnet (1.27 mm × 1.27 mm × 5.08 mm), lignin@Fe3O4 nanocomposites exhibited a maximum methylene blue removal efficiency of 74.1% ± 7.1%. These nanocomposites have potential in magnetically induced separations to remove organic dyes, heavy metals, or other lignin adsorbates.",
+      "year": "2021",
+      "journal": "International Journal of Biological Macromolecules",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1016/j.ijbiomac.2021.03.105",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Medicine"
+      ]
+    },
+    {
+      "title": "Active and ultrasensitive chemical and biosensing through optothermally generated microbubble",
+      "abstract": "An ultrasensitive chemical and biosensing method has been demonstrated for active sensing of analytes. This method works based on an optothermal microbubble which is generated through laser heating of metallic nanoparticles solution.",
+      "year": "2020",
+      "journal": "Conference on Lasers and Electro-Optics",
+      "affiliation": "N/A",
+      "doi": "https://doi.org/10.1364/CLEO_AT.2020.AW3I.2",
+      "category": "chem-mat",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Materials Science"
+      ]
+    },
+    {
+      "title": "Physicochemical characterization of mammalian mucus and mucin solutions in response to pH and [Ca2+]",
+      "abstract": "Mucus is a complex fluid that maintains moisture and simultaneously acts as a barrier and facilitates transport of select materials between the body and adjacent fluids. While mucus is comprised primarily of water, it is highly heterogeneous containing the biopolymer mucin along with lipids, salts, DNA, proteins, and cells. Complex mechanisms control the reversible network formation observed in mucus and mucin solutions. Some isolated relationships between biopolymer network structure, pH and ionic strength, and rheology have been identified; however, a complete understanding of the interplay in these mechanisms is lacking. In this effort, rheology of native mucus and mucin solutions was examined as a function of pH and salt concentration. Bulk rheology of native and artificial lung mucus confirmed that native mucus displays a solid-like behavior at low strain values. Mucus displays this solid-like gel behavior at pH values ca. 4 and below, and displays solution behavior at higher pH values. Ion concentration also plays an important role with divalent cations (Ca2+) reducing the viscosity of gelled mucin and increasing the viscosity of solution-state mucin. In addition to rheological characterization, mucin-mucin and mucin-solute interactions and resultant changes in microstructure were also studied. Morphological and chemical changes at the nano-scale were correlated to the micro-structural changes observed with rheology. Dynamic light scattering showed mucin polymer particle size heterogeneity as well as a significant increase in particle size at pH values ca. 4 and below — where the solutions display a gel behavior. Using zeta potential a decrease in dispersive forces was observed that allows for polymer-polymer interaction and particle aggregation at low pH values. Atomic force micrography showed spheroid-like aggregates between adjacent mucin particles under acidic conditions. The ability to understand and control the reversible association of network structures in polymer and biopolymer systems, such as mucin, through supramolecular interactions has fundamental impacts in the field of polymer science and engineering. There is also significant potential to advance applications involving novel hydrogel materials, such as disease treatments and drug delivery.",
+      "year": "2019",
+      "journal": "Volume 4: Fluid Measurement and Instrumentation; Micro and Nano Fluid Dynamics",
+      "affiliation": "University of Dayton, Dayton, OH",
+      "doi": "https://doi.org/10.1115/AJKFluids2019-4944",
+      "category": "eng-mech",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Chemistry"
+      ]
     }
   ]
 }

@@ -2,7 +2,7 @@
   "author": "Erick Urquilla",
   "orcid": "https://orcid.org/0009-0007-3861-3223",
   "source": "ORCID + Crossref",
-  "total_publications": 3,
+  "total_publications": 4,
   "author_categories": "phy-astro, phy-hep",
   "publications": [
     {
@@ -31,6 +31,19 @@
       "affiliation": "Department of Physics and Astronomy, University of Tennessee, Knoxville, TN 37996, USA.",
       "doi": "https://doi.org/10.1103/xmxv-9sb2",
       "category": "phy-hep"
+    },
+    {
+      "title": "Neutrino transport and flavor instabilities in a postmerger disk",
+      "abstract": "Neutron star mergers are multimessenger sources whose dynamics and signals depend critically on neutrinos and their flavor transformations. We investigate whether fast and collisional neutrino flavor instabilities (FFIs and CFIs) arise in a GW170817-like post-merger accretion disk using the six-dimensional phase-space particle-in-cell transport code \\texttt{EMU}. In the accretion disk, the neutrino radiation field naturally develops electron-lepton-number crossings through the interplay between the more isotropic electron-neutrino field and the more anisotropic electron-antineutrino field. The disk's neutrino field is also unstable to CFI, though on longer timescales than FFI. We study how instabilities relax by performing quantum-kinetic simulations in centimeter-wide domains with periodic boundary conditions at selected points. We find that the isolated effects of FFI and CFI increase the heavy-lepton neutrino fluxes. CFI breaks the initial symmetry of the heavy-flavor sector by raising the average energy of heavy-flavor antineutrinos above that of heavy-flavor neutrinos. We perform global quantum-kinetic simulations using a Hamiltonian attenuated by factors between $10^{-12}$ and $10^{-5}$. Although we resolve unstable flavor waves, attenuation increases the instability growth timescale by orders of magnitude relative to the advection timescale; therefore, neutrinos leave the domain before FFI and CFI can saturate. The in-medium effective mixing angles and mass splittings, driven by the combined vacuum, matter, and neutrino-neutrino potentials, then govern the quantum-kinetic evolution. These results highlight the resolution and scaling requirements for future global simulations that capture instability growth, saturation, and advection simultaneously.",
+      "year": "2026",
+      "journal": "Physical Review D",
+      "affiliation": "University of Tennessee",
+      "doi": "https://doi.org/10.1103/4nhz-gs2f",
+      "category": "phy-hep",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Physics"
+      ]
     }
   ]
 }

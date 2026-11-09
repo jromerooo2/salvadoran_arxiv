@@ -2,7 +2,7 @@
   "author": "Roberto Tejada Arevalo",
   "orcid": "https://orcid.org/0000-0001-6708-3427",
   "source": "ORCID + Crossref",
-  "total_publications": 16,
+  "total_publications": 17,
   "author_categories": "phy-astro",
   "publications": [
     {
@@ -151,6 +151,19 @@
       "journal": "The Astrophysical Journal",
       "affiliation": "Princeton University",
       "doi": "https://doi.org/10.3847/1538-4357/ae9f4b",
+      "category": "phy-astro",
+      "crossref_subjects": [],
+      "fields_of_study": [
+        "Physics"
+      ]
+    },
+    {
+      "title": "Saturn’s Evolutionary History and Seismology: Survival of Deep Stably Stratified Regions in Evolutionary Models of Saturn Consistent with Ring Seismology",
+      "abstract": "With recent advances in the modeling of the solar system giant planets, rapid progress has been made in understanding the remaining questions pertaining to their formation and evolution. However, this progress has largely neglected the significant constraints on the interior of Saturn’s structure imposed by the observed oscillation frequencies in its rings. Here, we study initial conditions for Saturn’s evolution that, after 4.56 Gyr of evolution, give rise to planetary structures admitting oscillation frequencies consistent with those observed via Saturn’s ring seismology. Restricting our attention to models without compact rocky cores, we achieve simultaneous good agreement with most observed properties of Saturn at the level of current evolutionary models and with key frequencies in the observed oscillation spectrum. Our preliminary work suggests that Saturn’s interior stably stratified region may be moderately less extended (∼0.4–0.5\n                    R\n                    Sat\n                    ) than previously thought, which is important for reconciling the seismic constraints with evolutionary models. We also tentatively find that the deep helium gradients inferred by previous, static structural modeling of Saturn’s ring seismology may not be required to reproduce the observed seismology data.",
+      "year": "2026",
+      "journal": "The Astrophysical Journal",
+      "affiliation": "Princeton University",
+      "doi": "https://doi.org/10.3847/1538-4357/aeb40f",
       "category": "phy-astro",
       "crossref_subjects": [],
       "fields_of_study": [
